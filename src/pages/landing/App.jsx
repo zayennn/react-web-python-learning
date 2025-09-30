@@ -3,32 +3,14 @@ import './App.css';
 
 import { Link } from 'react-router-dom';
 
+
+// components
+import Footer from '../../components/footer/footer';
+import LandingNavbar from '../../components/navbar/LandingNavbar';
+
 const Landing = () => {
-    const [activeSection, setActiveSection] = useState('home');
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ['home', 'about', 'features', 'get-started'];
-            const scrollPosition = window.scrollY + 100;
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
-                    setActiveSection(section);
-                    break;
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -43,45 +25,8 @@ const Landing = () => {
     return (
         <div className="app">
             {/* Navbar */}
-            <nav className="navbar">
-                <div className="nav-container">
-                    <div className="nav-logo">
-                        <span className="logo-icon">🐍</span>
-                        <span>Python Learning</span>
-                    </div>
-                    <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-                        <div
-                            className={`nav-item ${activeSection === 'home' ? 'active' : ''}`}
-                            onClick={() => scrollToSection('home')}
-                        >
-                            Home
-                        </div>
-                        <div
-                            className={`nav-item ${activeSection === 'about' ? 'active' : ''}`}
-                            onClick={() => scrollToSection('about')}
-                        >
-                            Tentang Python
-                        </div>
-                        <div
-                            className={`nav-item ${activeSection === 'features' ? 'active' : ''}`}
-                            onClick={() => scrollToSection('features')}
-                        >
-                            Keunggulan
-                        </div>
-                        <div
-                            className={`nav-item ${activeSection === 'get-started' ? 'active' : ''}`}
-                            onClick={() => scrollToSection('get-started')}
-                        >
-                            Mulai Belajar
-                        </div>
-                    </div>
-                    <div className="nav-toggle" onClick={toggleMenu}>
-                        <span className="bar"></span>
-                        <span className="bar"></span>
-                        <span className="bar"></span>
-                    </div>
-                </div>
-            </nav>
+            <LandingNavbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            
 
             {/* Hero Section */}
             <section id="home" className="hero">
@@ -249,26 +194,7 @@ const Landing = () => {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="footer">
-                <div className="container">
-                    <div className="footer-content">
-                        <div className="footer-logo">
-                            <span className="logo-icon">🐍</span>
-                            <span>Python Learning</span>
-                        </div>
-                        <div className="footer-links">
-                            <a href="#home">Home</a>
-                            <a href="#about">Tentang</a>
-                            <a href="#features">Keunggulan</a>
-                            <a href="#get-started">Mulai Belajar</a>
-                        </div>
-                    </div>
-                    <div className="footer-bottom">
-                        <p>&copy; 2023 Python Learning. Dibuat dengan ❤️ untuk para developer.</p>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

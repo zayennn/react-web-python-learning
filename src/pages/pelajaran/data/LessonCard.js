@@ -1,19 +1,23 @@
-export const lessonCard = {
-    id: 1,
-    title: "Dasar-Dasar Python",
-    description: "Pelajari fundamental Python seperti variabel, tipe data, operator, dan sintaksis dasar.",
-    level: "Pemula",
-    duration: "2 jam",
-    lessons: 5,
-    progress: 0,
-    image: "🐍",
-    topics: [
-        "Variabel dan Tipe Data",
-        "Operator Aritmatika",
-        "String Operations",
-        "Input dan Output",
-        "Komentar dalam Kode"
-    ]
-};
+export const lessonCards = [
+    {
+        id: 1,
+        title: "Dasar-Dasar Python: Hello World & Variabel",
+        description: "Belajar Python dari nol: cara instalasi, menjalankan program pertama, mengenal variabel, tipe data, operator dasar, string, dan input dari user.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 6,
+        progress: 0,
+        image: "🐍",
+        topics: [
+            "Instalasi & Hello World",
+            "Variabel dan Tipe Data",
+            "String & f-Strings",
+            "Operator Aritmatika",
+            "Input & Output",
+            "Latihan: Genap/Ganjil, Tabel Perkalian, Prima"
+        ],
+        color: "#4F46E5"
+    },
+];
 
-export default lessonCard;
+export default lessonCards;
