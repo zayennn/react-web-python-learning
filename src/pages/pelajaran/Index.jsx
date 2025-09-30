@@ -32,6 +32,36 @@ const App = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentLessons = lessonCards.slice(startIndex, startIndex + itemsPerPage);
 
+    const handlePrevious = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    // Generate visible page numbers (show max 5 pages at a time)
+    const getVisiblePages = () => {
+        const visiblePages = [];
+        const maxVisible = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+        
+        if (endPage - startPage + 1 < maxVisible) {
+            startPage = Math.max(1, endPage - maxVisible + 1);
+        }
+        
+        for (let i = startPage; i <= endPage; i++) {
+            visiblePages.push(i);
+        }
+        
+        return visiblePages;
+    };
+
     return (
         <div className="app">
             <PelajaranNavbar />
@@ -83,16 +113,55 @@ const App = () => {
                     </div>
 
                     {totalPages > 1 && (
-                        <div className="pagination">
-                            {Array.from({ length: totalPages }, (_, i) => (
-                                <button
-                                    key={i}
-                                    className={`page-btn ${currentPage === i + 1 ? 'active' : ''}`}
-                                    onClick={() => setCurrentPage(i + 1)}
+                        <div className="pagination-container">
+                            {/* Navigation Buttons */}
+                            <div className="pagination-nav">
+                                <button 
+                                    className="pagination-nav-btn prev"
+                                    onClick={handlePrevious}
+                                    disabled={currentPage === 1}
                                 >
-                                    {i + 1}
+                                    ← Sebelumnya
                                 </button>
-                            ))}
+                                
+                                {/* Page Numbers */}
+                                <div className="pagination">
+                                    {getVisiblePages().map(page => (
+                                        <button
+                                            key={page}
+                                            className={`page-btn ${currentPage === page ? 'active' : ''}`}
+                                            onClick={() => setCurrentPage(page)}
+                                        >
+                                            {page}
+                                        </button>
+                                    ))}
+                                    
+                                    {totalPages > 5 && currentPage < totalPages - 2 && (
+                                        <>
+                                            <span className="pagination-ellipsis">...</span>
+                                            <button
+                                                className={`page-btn ${currentPage === totalPages ? 'active' : ''}`}
+                                                onClick={() => setCurrentPage(totalPages)}
+                                            >
+                                                {totalPages}
+                                            </button>
+                                        </>
+                                    )}
+                                </div>
+                                
+                                <button 
+                                    className="pagination-nav-btn next"
+                                    onClick={handleNext}
+                                    disabled={currentPage === totalPages}
+                                >
+                                    Selanjutnya →
+                                </button>
+                            </div>
+                            
+                            {/* Page Info */}
+                            <div className="pagination-info">
+                                Menampilkan {startIndex + 1}-{Math.min(startIndex + itemsPerPage, lessonCards.length)} dari {lessonCards.length} materi
+                            </div>
                         </div>
                     )}
 

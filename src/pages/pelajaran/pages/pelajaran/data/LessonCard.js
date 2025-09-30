@@ -1361,6 +1361,145 @@ else:
                 ]
             }
         ]
+    },
+    {
+        id: 11,
+        title: "Operasi Logika & Boolean",
+        description: "Pelajari tipe data boolean (True/False), operator logika (and, or, not), serta cara menggunakannya dalam kondisi.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔀",
+        topics: [
+            "Apa itu Boolean?",
+            "Operator Logika",
+            "Perbandingan & Boolean",
+            "Latihan Praktik"
+        ],
+        color: "#FFD93D",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu Boolean?",
+                type: "theory",
+                content: `
+# Boolean di Python
+
+Boolean = tipe data yang hanya punya **dua nilai**:
+- \`True\`
+- \`False\`
+
+Biasanya dipakai untuk **logika / kondisi**.
+                `,
+                codeExample: `is_sunny = True
+is_raining = False
+print(is_sunny, is_raining, type(is_sunny))`,
+                expectedOutput: `True False <class 'bool'>`
+            },
+            {
+                id: 2,
+                title: "Operator Logika",
+                type: "theory",
+                content: `
+# Operator Logika di Python
+
+- \`and\` → True kalau **dua-duanya True**
+- \`or\` → True kalau **minimal salah satu True**
+- \`not\` → membalik nilai (True jadi False)
+
+Tabel kebenaran (*truth table*):
+
+| A     | B     | A and B | A or B |
+|-------|-------|---------|--------|
+| True  | True  | True    | True   |
+| True  | False | False   | True   |
+| False | True  | False   | True   |
+| False | False | False   | False  |
+                `,
+                codeExample: `print(True and True)   # True
+print(True and False)  # False
+print(True or False)   # True
+print(not True)        # False`,
+                expectedOutput: `True
+False
+True
+False`
+            },
+            {
+                id: 3,
+                title: "Perbandingan & Boolean",
+                type: "theory",
+                content: `
+# Boolean dari Operator Perbandingan
+
+Hasil perbandingan di Python juga berupa Boolean.
+
+- \`==\` : sama dengan
+- \`!=\` : tidak sama dengan
+- \`>\`, \`<\` : lebih besar / kecil
+- \`>=\`, \`<=\` : lebih besar/kecil sama dengan
+                `,
+                codeExample: `x = 10
+y = 5
+print(x > y)    # True
+print(x == 10)  # True
+print(y != 5)   # False`,
+                expectedOutput: `True
+True
+False`
+            },
+            {
+                id: 4,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Boolean & Logika
+
+Coba selesaikan soal berikut:
+1. Cek apakah angka positif DAN genap.
+2. Cek apakah nama yang dimasukkan adalah "admin" atau "user".
+3. Buat sistem login sederhana: username dan password benar → akses diterima.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Positif & Genap",
+                        description: "Input angka, cek apakah positif DAN genap.",
+                        hint: "Gunakan operator and & modulus %.",
+                        solution: `n = int(input("Masukkan angka: "))
+if n > 0 and n % 2 == 0:
+    print("Angka positif dan genap")
+else:
+    print("Tidak memenuhi syarat")`
+                    },
+                    {
+                        id: 2,
+                        title: "Cek Nama User",
+                        description: "Input nama, cek apakah 'admin' atau 'user'.",
+                        hint: "Gunakan operator or.",
+                        solution: `nama = input("Masukkan nama: ")
+if nama == "admin" or nama == "user":
+    print("Akses diterima")
+else:
+    print("Akses ditolak")`
+                    },
+                    {
+                        id: 3,
+                        title: "Sistem Login",
+                        description: "Buat login dengan username='admin' dan password='1234'.",
+                        hint: "Bandingkan string input dengan nilai yang ditentukan.",
+                        solution: `username = input("Username: ")
+password = input("Password: ")
+
+if username == "admin" and password == "1234":
+    print("Login berhasil!")
+else:
+    print("Login gagal!")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

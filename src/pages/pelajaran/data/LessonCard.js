@@ -172,6 +172,23 @@ export const lessonCards = [
             "Latihan Soal"
         ],
         color: "#3396D3",
+    },
+    {
+        id: 11,
+        title: "Operasi Logika & Boolean",
+        description: "Pelajari tipe data boolean (True/False), operator logika (and, or, not), serta cara menggunakannya dalam kondisi.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔀",
+        topics: [
+            "Apa itu Boolean?",
+            "Operator Logika",
+            "Perbandingan & Boolean",
+            "Latihan Praktik"
+        ],
+        color: "#FFD93D",
     }
 ];
 
