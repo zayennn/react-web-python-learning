@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const LessonCard = ({ card, handleStartLesson }) => (
     <div className="lesson-card">
         <div
@@ -44,7 +46,7 @@ const LessonCard = ({ card, handleStartLesson }) => (
                 </div>
             </div>
 
-            <div className="progress-container">
+            {/* <div className="progress-container">
                 <div className="progress-info">
                     <span>Progress Belajar</span>
                     <span>{card.progress}%</span>
@@ -58,15 +60,16 @@ const LessonCard = ({ card, handleStartLesson }) => (
                         }}
                     ></div>
                 </div>
-            </div>
+            </div> */}
 
-            <button
-                className="start-button"
-                onClick={() => handleStartLesson(card.id)}
-                style={{ background: card.color }}
-            >
-                {card.progress > 0 ? 'Lanjutkan Belajar' : 'Mulai Belajar'}
-            </button>
+            <Link to={`/pelajaran/materi/${card.id}`}>
+                <button
+                    className="start-button"
+                    style={{ background: card.color }}
+                >
+                    {card.progress > 0 ? 'Lanjutkan Belajar' : 'Mulai Belajar'}
+                </button>
+            </Link>
         </div>
     </div>
 );
