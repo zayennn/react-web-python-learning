@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Materi.css';
 
 // import data lesson
-import lessonCards from './LessonCard';
+import lessonCards1 from './data/LessonCard1';
 
 const Materi = () => {
     const [currentLesson, setCurrentLesson] = useState(0);
@@ -11,7 +11,7 @@ const Materi = () => {
     const [codeOutput, setCodeOutput] = useState('');
     const [userCode, setUserCode] = useState('');
 
-    const lesson = lessonCards[0];
+    const lesson = lessonCards1[0];
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -19,13 +19,27 @@ const Materi = () => {
 
     const nextContent = () => {
         if (currentContent < lesson.content.length - 1) {
-            setCurrentContent(currentContent + 1);
+            setCurrentContent((prev) => {
+                const newIndex = prev + 1;
+                const newContent = lesson.content[newIndex];
+                setUserCode(newContent.codeExample || '');
+                setCodeOutput('');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return newIndex;
+            });
         }
     };
 
     const prevContent = () => {
         if (currentContent > 0) {
-            setCurrentContent(currentContent - 1);
+            setCurrentContent((prev) => {
+                const newIndex = prev - 1;
+                const newContent = lesson.content[newIndex];
+                setUserCode(newContent.codeExample || '');
+                setCodeOutput('');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return newIndex;
+            });
         }
     };
 
