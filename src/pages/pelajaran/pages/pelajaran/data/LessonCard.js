@@ -1074,6 +1074,146 @@ print(f"Hasil: {angka} ** {pangkat} = {hasil}")`
                 ]
             }
         ]
+    },
+    {
+        id: 9,
+        title: "Latihan Perhitungan Sederhana",
+        description: "Praktik dasar matematika di Python: penjumlahan, pengurangan, perkalian, pembagian, modulus, dan latihan mini-kalkulator.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧮",
+        topics: [
+            "Penjumlahan & Pengurangan",
+            "Perkalian & Pembagian",
+            "Modulus & Pangkat",
+            "Latihan Mini-Kalkulator"
+        ],
+        color: "#DC143C",
+        content: [
+            {
+                id: 1,
+                title: "Penjumlahan & Pengurangan",
+                type: "theory",
+                content: `
+# Penjumlahan (+) & Pengurangan (-)
+
+Dua operasi paling basic dalam matematika.
+
+\`\`\`python
+a = 10
+b = 4
+print("Penjumlahan:", a + b)
+print("Pengurangan:", a - b)
+\`\`\`
+                `,
+                codeExample: `a = 10
+b = 4
+print("Penjumlahan:", a + b)
+print("Pengurangan:", a - b)`,
+                expectedOutput: `Penjumlahan: 14
+Pengurangan: 6`
+            },
+            {
+                id: 2,
+                title: "Perkalian & Pembagian",
+                type: "theory",
+                content: `
+# Perkalian (*) & Pembagian (/)  
+
+- * → perkalian biasa  
+- / → pembagian hasil desimal  
+- // → pembagian bulat (dibulatkan ke bawah)
+
+\`\`\`python
+x = 7
+y = 2
+print("Kali:", x * y)
+print("Bagi:", x / y)
+print("Bagi Bulat:", x // y)
+\`\`\`
+                `,
+                codeExample: `x = 7
+y = 2
+print("Kali:", x * y)
+print("Bagi:", x / y)
+print("Bagi Bulat:", x // y)`,
+                expectedOutput: `Kali: 14
+Bagi: 3.5
+Bagi Bulat: 3`
+            },
+            {
+                id: 3,
+                title: "Modulus & Pangkat",
+                type: "theory",
+                content: `
+# Modulus (%) & Pangkat (**)
+
+- % → sisa pembagian  
+- ** → pangkat
+
+\`\`\`python
+print("Sisa bagi 10 % 3 =", 10 % 3)
+print("2 pangkat 4 =", 2 ** 4)
+\`\`\`
+                `,
+                codeExample: `print("Sisa bagi 10 % 3 =", 10 % 3)
+print("2 pangkat 4 =", 2 ** 4)`,
+                expectedOutput: `Sisa bagi 10 % 3 = 1
+2 pangkat 4 = 16`
+            },
+            {
+                id: 4,
+                title: "Latihan Mini-Kalkulator",
+                type: "practice",
+                content: `
+# Latihan Perhitungan
+
+Sekarang waktunya latihan. Buat program sederhana untuk menghitung beberapa operasi matematika.
+
+## Tantangan
+1. Input 2 angka dari user, lalu tampilkan hasil tambah, kurang, kali, dan bagi.  
+2. Buat program untuk mengecek apakah suatu angka habis dibagi 5 atau tidak.  
+3. Buat program yang menghitung kuadrat dan kubik dari angka yang diinput user.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Kalkulator 2 Angka",
+                        description: "Minta 2 angka dari user, lalu tampilkan hasil operasi dasar.",
+                        hint: "Gunakan input() + int().",
+                        solution: `a = int(input("Masukkan angka pertama: "))
+b = int(input("Masukkan angka kedua: "))
+
+print("Tambah:", a + b)
+print("Kurang:", a - b)
+print("Kali:", a * b)
+print("Bagi:", a / b)`
+                    },
+                    {
+                        id: 2,
+                        title: "Cek Habis Dibagi 5",
+                        description: "Input angka, cek apakah habis dibagi 5.",
+                        hint: "Gunakan operator %.",
+                        solution: `n = int(input("Masukkan angka: "))
+if n % 5 == 0:
+    print("Habis dibagi 5")
+else:
+    print("Tidak habis dibagi 5")`
+                    },
+                    {
+                        id: 3,
+                        title: "Kuadrat & Kubik",
+                        description: "Hitung kuadrat (²) dan kubik (³) dari angka input.",
+                        hint: "Gunakan operator **.",
+                        solution: `n = int(input("Masukkan angka: "))
+print("Kuadrat:", n ** 2)
+print("Kubik:", n ** 3)`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

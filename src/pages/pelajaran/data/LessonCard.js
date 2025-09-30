@@ -139,6 +139,23 @@ export const lessonCards = [
             "Latihan Praktik"
         ],
         color: "#59AC77",
+    },
+    {
+        id: 9,
+        title: "Latihan Perhitungan Sederhana",
+        description: "Praktik dasar matematika di Python: penjumlahan, pengurangan, perkalian, pembagian, modulus, dan latihan mini-kalkulator.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧮",
+        topics: [
+            "Penjumlahan & Pengurangan",
+            "Perkalian & Pembagian",
+            "Modulus & Pangkat",
+            "Latihan Mini-Kalkulator"
+        ],
+        color: "#DC143C",
     }
 ];
 

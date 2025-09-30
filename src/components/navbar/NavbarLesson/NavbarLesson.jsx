@@ -1,13 +1,10 @@
-import { useState } from "react";
+import React, { useState } from 'react'
 
-const PelajaranNavbar = () => {
-
+const NavbarLesson = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-    
     return (
         <nav className="navbar">
             <div className="nav-container">
@@ -17,14 +14,11 @@ const PelajaranNavbar = () => {
                 </div>
                 <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <div className="nav-item active">
-                        Materi
+                        Belajar
                     </div>
                     {/* <div className="nav-item">
-                        Progress
-                    </div>
-                    <div className="nav-item">
-                        Tentang
-                    </div> */}
+                            Progress
+                        </div> */}
                 </div>
                 <div className="nav-toggle" onClick={toggleMenu}>
                     <span className="bar"></span>
@@ -36,4 +30,4 @@ const PelajaranNavbar = () => {
     )
 }
 
-export default PelajaranNavbar
+export default NavbarLesson
