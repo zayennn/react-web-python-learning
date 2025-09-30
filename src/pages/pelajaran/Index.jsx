@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 
+// import data
+import lessonCard from './data/LessonCard';
+
 const Pelajaran = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,25 +54,6 @@ const Pelajaran = () => {
     setIsMenuOpen(false);
   };
 
-  // Data contoh untuk card materi
-  const lessonCard = {
-    id: 1,
-    title: "Dasar-Dasar Python",
-    description: "Pelajari fundamental Python seperti variabel, tipe data, operator, dan sintaksis dasar.",
-    level: "Pemula",
-    duration: "2 jam",
-    lessons: 5,
-    progress: 0,
-    image: "🐍",
-    topics: [
-      "Variabel dan Tipe Data",
-      "Operator Aritmatika",
-      "String Operations",
-      "Input dan Output",
-      "Komentar dalam Kode"
-    ]
-  };
-
   // Komponen untuk halaman lessons
   const LessonsPage = () => (
     <div className="lessons-page">
@@ -84,7 +68,6 @@ const Pelajaran = () => {
 
         <div className="lessons-grid">
           <LessonCard card={lessonCard} />
-          {/* Card lainnya bisa ditambahkan di sini nanti */}
         </div>
 
         <div className="coming-soon">
