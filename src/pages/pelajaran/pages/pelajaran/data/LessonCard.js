@@ -451,7 +451,7 @@ print(type(status))`
             "NoneType",
             "Latihan"
         ],
-        color: "#F59E0B",
+        color: "#FA812F",
         content: [
             {
                 id: 1,
@@ -664,7 +664,8 @@ print(unik)`
                 ]
             }
         ]
-    }
+    },
+    
 ];
 
 export default lessonCards;

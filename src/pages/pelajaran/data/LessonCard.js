@@ -66,7 +66,29 @@ export const lessonCards = [
             "Latihan Praktik"
         ],
         color: "#3C467B",
-    }
+    },
+    {
+        id: 5,
+        title: "Tipe Data di Python",
+        description: "Belajar berbagai tipe data penting di Python: angka, string, boolean, list, tuple, set, dict, dan NoneType.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 7,
+        progress: 0,
+        image: "📦",
+        topics: [
+            "Angka (int & float)",
+            "String (str)",
+            "Boolean (bool)",
+            "List",
+            "Tuple",
+            "Set",
+            "Dictionary (dict)",
+            "NoneType",
+            "Latihan"
+        ],
+        color: "#FA812F",
+    },
 ];
 
 export default lessonCards;
