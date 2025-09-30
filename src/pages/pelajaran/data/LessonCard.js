@@ -122,6 +122,24 @@ export const lessonCards = [
         ],
         color: "#F39F9F",
     },
+    {
+        id: 8,
+        title: "Operasi Aritmatika di Python",
+        description: "Pelajari cara melakukan operasi matematika dasar di Python, mulai dari tambah, kurang, kali, bagi, sampai modulus dan pangkat.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 5,
+        progress: 0,
+        image: "➕",
+        topics: [
+            "Penjumlahan & Pengurangan",
+            "Perkalian & Pembagian",
+            "Modulus & Floor Division",
+            "Pangkat",
+            "Latihan Praktik"
+        ],
+        color: "#59AC77",
+    }
 ];
 
 export default lessonCards;

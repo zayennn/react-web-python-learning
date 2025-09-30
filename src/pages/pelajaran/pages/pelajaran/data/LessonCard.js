@@ -928,6 +928,152 @@ print(f"Luas persegi panjang = {luas}")`
                 ]
             }
         ]
+    },
+    {
+        id: 8,
+        title: "Operasi Aritmatika di Python",
+        description: "Pelajari cara melakukan operasi matematika dasar di Python, mulai dari tambah, kurang, kali, bagi, sampai modulus dan pangkat.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 5,
+        progress: 0,
+        image: "➕",
+        topics: [
+            "Penjumlahan & Pengurangan",
+            "Perkalian & Pembagian",
+            "Modulus & Floor Division",
+            "Pangkat",
+            "Latihan Praktik"
+        ],
+        color: "#59AC77",
+        content: [
+            {
+                id: 1,
+                title: "Penjumlahan & Pengurangan",
+                type: "theory",
+                content: `
+# + dan -
+
+Operator paling basic di Python:
+- \`+\` untuk menambah
+- \`-\` untuk mengurangi
+                `,
+                codeExample: `a = 10
+b = 3
+print("a + b =", a + b)
+print("a - b =", a - b)`,
+                expectedOutput: `a + b = 13
+a - b = 7`
+            },
+            {
+                id: 2,
+                title: "Perkalian & Pembagian",
+                type: "theory",
+                content: `
+# * dan /
+
+- \`*\` untuk perkalian  
+- \`/\` untuk pembagian (hasilnya float)  
+                `,
+                codeExample: `x = 7
+y = 2
+print("x * y =", x * y)
+print("x / y =", x / y)`,
+                expectedOutput: `x * y = 14
+x / y = 3.5`
+            },
+            {
+                id: 3,
+                title: "Modulus & Floor Division",
+                type: "theory",
+                content: `
+# % dan //
+
+- \`%\` modulus → sisa bagi  
+- \`//\` floor division → hasil bagi dibulatkan ke bawah
+                `,
+                codeExample: `print("7 % 3 =", 7 % 3)
+print("7 // 3 =", 7 // 3)`,
+                expectedOutput: `7 % 3 = 1
+7 // 3 = 2`
+            },
+            {
+                id: 4,
+                title: "Pangkat",
+                type: "theory",
+                content: `
+# ** Pangkat
+
+Gunakan \`**\` untuk pangkat.
+                `,
+                codeExample: `print("2 ** 3 =", 2 ** 3)
+print("5 ** 2 =", 5 ** 2)`,
+                expectedOutput: `2 ** 3 = 8
+5 ** 2 = 25`
+            },
+            {
+                id: 5,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi Aritmatika
+
+Coba kerjain soal berikut:
+1. Buat program yang minta 2 angka, lalu tampilkan hasil tambah, kurang, kali, bagi.  
+2. Minta input angka, tampilkan apakah dia habis dibagi 5 atau tidak.  
+3. Hitung luas persegi panjang dari input panjang dan lebar.  
+4. Hitung hasil pangkat dari angka dan eksponen yang dimasukkan user.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Kalkulator Mini",
+                        description: "Input 2 angka, tampilkan hasil tambah, kurang, kali, bagi.",
+                        hint: "Gunakan operator +, -, *, /",
+                        solution: `a = int(input("Masukkan angka pertama: "))
+b = int(input("Masukkan angka kedua: "))
+
+print("Tambah:", a + b)
+print("Kurang:", a - b)
+print("Kali:", a * b)
+print("Bagi:", a / b)`
+                    },
+                    {
+                        id: 2,
+                        title: "Cek Kelipatan 5",
+                        description: "Input angka, cek apakah habis dibagi 5.",
+                        hint: "Gunakan operator % (modulus).",
+                        solution: `n = int(input("Masukkan angka: "))
+if n % 5 == 0:
+    print("Angka ini kelipatan 5")
+else:
+    print("Bukan kelipatan 5")`
+                    },
+                    {
+                        id: 3,
+                        title: "Luas Persegi Panjang",
+                        description: "Hitung luas persegi panjang dari input panjang dan lebar.",
+                        hint: "Luas = panjang * lebar",
+                        solution: `p = int(input("Masukkan panjang: "))
+l = int(input("Masukkan lebar: "))
+
+luas = p * l
+print("Luas persegi panjang:", luas)`
+                    },
+                    {
+                        id: 4,
+                        title: "Hitung Pangkat",
+                        description: "Input angka dan eksponen, lalu hitung hasil pangkatnya.",
+                        hint: "Gunakan operator **",
+                        solution: `angka = int(input("Masukkan angka: "))
+pangkat = int(input("Masukkan eksponen: "))
+
+hasil = angka ** pangkat
+print(f"Hasil: {angka} ** {pangkat} = {hasil}")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
