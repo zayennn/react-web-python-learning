@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Materi.css';
 
 // import data lesson
-import lessonCards1 from './data/LessonCard1';
+import lessonCards from './data/LessonCard';
 
 const Materi = () => {
     const [currentLesson, setCurrentLesson] = useState(0);
@@ -11,7 +11,7 @@ const Materi = () => {
     const [codeOutput, setCodeOutput] = useState('');
     const [userCode, setUserCode] = useState('');
 
-    const lesson = lessonCards1[0];
+    const lesson = lessonCards[0];
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);

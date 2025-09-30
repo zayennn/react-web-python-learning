@@ -1,23 +1,38 @@
 export const lessonCards = [
     {
         id: 1,
-        title: "Dasar-Dasar Python: Hello World & Variabel",
-        description: "Belajar Python dari nol: cara instalasi, menjalankan program pertama, mengenal variabel, tipe data, operator dasar, string, dan input dari user.",
+        title: "Apa Itu Python?",
+        description: "Kenalan dulu sama Python: sejarah singkat, kelebihan, kegunaan, dan kenapa banyak dipakai pemula maupun expert.",
         level: "Pemula",
-        duration: "2 jam",
-        lessons: 6,
+        duration: "1 jam",
+        lessons: 4,
         progress: 0,
         image: "🐍",
         topics: [
-            "Instalasi & Hello World",
-            "Variabel dan Tipe Data",
-            "String & f-Strings",
-            "Operator Aritmatika",
-            "Input & Output",
-            "Latihan: Genap/Ganjil, Tabel Perkalian, Prima"
+            "Sejarah & Asal Usul",
+            "Kenapa Python Populer?",
+            "Bidang Penggunaan Python",
+            "Program Pertama: Hello World"
         ],
-        color: "#4F46E5"
+        color: "#10B981",
     },
+    {
+        id: 2,
+        title: "Installasi Python & VS Code di Windows",
+        description: "Panduan step-by-step install Python dan Visual Studio Code di Windows, termasuk cara cek instalasi.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "💻",
+        topics: [
+            "Download & Install Python",
+            "Set PATH Python",
+            "Install VS Code",
+            "Cek Instalasi & Test Program"
+        ],
+        color: "#2563EB",
+    }
 ];
 
 export default lessonCards;
