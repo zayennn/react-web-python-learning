@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import mixitup from 'mixitup';
 import './index.css';
 
 // components
@@ -6,21 +7,35 @@ import Footer from '../../components/footer/footer';
 import LessonCard from '../../components/card/LessonCards';
 import PelajaranNavbar from '../../components/navbar/PelajaranNavbar';
 
-
 // data lesson cards
 import lessonCards from './data/LessonCard';
 
 const App = () => {
+    const gridRef = useRef(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
 
-    const handleStartLesson = (lessonId) => {
-        alert(`Memulai pelajaran dengan ID: ${lessonId}`);
-    };
+    useEffect(() => {
+        if (gridRef.current) {
+            mixitup(gridRef.current, {
+                selectors: {
+                    target: '.lesson-item'
+                },
+                animation: {
+                    duration: 300
+                }
+            });
+        }
+    }, []);
+
+    const totalPages = Math.ceil(lessonCards.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentLessons = lessonCards.slice(startIndex, startIndex + itemsPerPage);
 
     return (
         <div className="app">
             <PelajaranNavbar />
 
-            {/* Lessons Page */}
             <div className="lessons-page">
                 <div className="container">
                     <div className="lessons-header">
@@ -28,10 +43,10 @@ const App = () => {
                         <p>Pilih materi yang ingin dipelajari dan mulai perjalanan coding Anda. Mulai dari dasar hingga tingkat lanjut.</p>
 
                         <div className="filter-tabs">
-                            <button className="filter-tab active">Semua</button>
-                            <button className="filter-tab">Pemula</button>
-                            <button className="filter-tab">Menengah</button>
-                            <button className="filter-tab">Lanjutan</button>
+                            <button className="filter-tab active" data-filter="all">Semua</button>
+                            <button className="filter-tab" data-filter=".pemula">Pemula</button>
+                            <button className="filter-tab" data-filter=".menengah">Menengah</button>
+                            <button className="filter-tab" data-filter=".lanjutan">Lanjutan</button>
                         </div>
                     </div>
 
@@ -59,11 +74,27 @@ const App = () => {
                         </div>
                     </div>
 
-                    <div className="lessons-grid">
-                        {lessonCards.map(card => (
-                            <LessonCard key={card.id} card={card} />
+                    <div className="lessons-grid" ref={gridRef}>
+                        {currentLessons.map(card => (
+                            <div key={card.id} className={`lesson-item ${card.level.toLowerCase()}`}>
+                                <LessonCard card={card} />
+                            </div>
                         ))}
                     </div>
+
+                    {totalPages > 1 && (
+                        <div className="pagination">
+                            {Array.from({ length: totalPages }, (_, i) => (
+                                <button
+                                    key={i}
+                                    className={`page-btn ${currentPage === i + 1 ? 'active' : ''}`}
+                                    onClick={() => setCurrentPage(i + 1)}
+                                >
+                                    {i + 1}
+                                </button>
+                            ))}
+                        </div>
+                    )}
 
                     <div className="coming-soon">
                         <div className="coming-soon-icon">🚀</div>
