@@ -665,7 +665,140 @@ print(unik)`
             }
         ]
     },
-    
+    {
+        id: 6,
+        title: "Casting Tipe Data di Python",
+        description: "Belajar cara mengubah tipe data (casting) di Python: int, float, str, dan bool. Lengkap dengan contoh dan latihan.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Apa Itu Casting?",
+            "Casting ke Integer & Float",
+            "Casting ke String & Boolean",
+            "Latihan Praktik"
+        ],
+        color: "#6F00FF",
+        content: [
+            {
+                id: 1,
+                title: "Apa Itu Casting?",
+                type: "theory",
+                content: `
+# Apa Itu Casting?
+
+**Casting** = proses mengubah tipe data dari satu jenis ke jenis lain.
+
+Kenapa perlu casting?
+- Input dari \`input()\` selalu berupa **string**.
+- Kadang kita perlu angka buat operasi matematika.
+- Atau sebaliknya, ubah angka jadi teks biar bisa digabung di print.
+                `
+            },
+            {
+                id: 2,
+                title: "Casting ke Integer & Float",
+                type: "theory",
+                content: `
+# Integer & Float
+
+- \`int()\` → ubah ke bilangan bulat.
+- \`float()\` → ubah ke bilangan desimal.
+
+Contoh:
+                `,
+                codeExample: `# string ke int
+angka1 = int("10")
+print(angka1, type(angka1))
+
+# string ke float
+angka2 = float("3.14")
+print(angka2, type(angka2))
+
+# float ke int (desimal dibuang)
+angka3 = int(9.99)
+print(angka3, type(angka3))`,
+                expectedOutput: `10 <class 'int'>
+3.14 <class 'float'>
+9 <class 'int'>`
+            },
+            {
+                id: 3,
+                title: "Casting ke String & Boolean",
+                type: "theory",
+                content: `
+# String & Boolean
+
+- \`str()\` → ubah ke teks.
+- \`bool()\` → ubah ke True/False.
+
+Aturan bool:
+- 0, "", None → False
+- Selain itu → True
+                `,
+                codeExample: `# int ke string
+umur = 20
+print("Umurku " + str(umur))
+
+# cek bool dari angka
+print(bool(0))   # False
+print(bool(5))   # True
+
+# cek bool dari string
+print(bool(""))   # False
+print(bool("halo"))  # True`,
+                expectedOutput: `Umurku 20
+False
+True
+False
+True`
+            },
+            {
+                id: 4,
+                title: "Latihan Casting",
+                type: "practice",
+                content: `
+# Latihan Casting
+
+Coba kerjain soal berikut:
+1. Minta input umur (string), ubah jadi int, lalu hitung tahun depan.
+2. Minta input angka desimal (float), ubah ke int, lalu tampilkan hasilnya.
+3. Buat program yang minta input teks, cek apakah teks kosong atau tidak (pakai bool()).
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Umur Tahun Depan",
+                        description: "Minta input umur (string), ubah ke int, lalu tampilkan umur tahun depan.",
+                        hint: "Gunakan int() untuk konversi input.",
+                        solution: `umur = int(input("Masukkan umurmu: "))
+print(f"Tahun depan umurmu {umur+1}")`
+                    },
+                    {
+                        id: 2,
+                        title: "Ubah Float ke Int",
+                        description: "Input angka desimal (float), ubah ke integer.",
+                        hint: "Gunakan float() lalu int().",
+                        solution: `angka = float(input("Masukkan angka desimal: "))
+print("Hasil casting ke int:", int(angka))`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek String Kosong",
+                        description: "Program cek apakah string kosong atau tidak.",
+                        hint: "Gunakan bool() pada input string.",
+                        solution: `teks = input("Masukkan teks: ")
+if bool(teks):
+    print("Teks tidak kosong")
+else:
+    print("Teks kosong")`
+                    }
+                ]
+            }
+        ]
+    }
 ];
 
 export default lessonCards;

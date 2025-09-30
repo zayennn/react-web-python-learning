@@ -89,6 +89,23 @@ export const lessonCards = [
         ],
         color: "#FA812F",
     },
+    {
+        id: 6,
+        title: "Casting Tipe Data di Python",
+        description: "Belajar cara mengubah tipe data (casting) di Python: int, float, str, dan bool. Lengkap dengan contoh dan latihan.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Apa Itu Casting?",
+            "Casting ke Integer & Float",
+            "Casting ke String & Boolean",
+            "Latihan Praktik"
+        ],
+        color: "#6F00FF",
+    }
 ];
 
 export default lessonCards;
