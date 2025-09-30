@@ -192,7 +192,7 @@ print("Halo, Python dari VS Code!")
             "Interpreter Python",
             "Eksperimen Bytecode"
         ],
-        color: "#F59E0B",
+        color: "#F29E93",
         content: [
             {
                 id: 1,
@@ -257,6 +257,414 @@ dis.dis(halo)`,
             }
         ]
     },
+    {
+        id: 4,
+        title: "Mengenal Variabel",
+        description: "Belajar tentang variabel di Python: apa itu variabel, cara membuatnya, aturan penamaan, tipe data dasar, dan latihan praktik.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📦",
+        topics: [
+            "Apa Itu Variabel?",
+            "Membuat Variabel",
+            "Aturan Penamaan",
+            "Tipe Data Dasar",
+            "Latihan Praktik"
+        ],
+        color: "#3C467B",
+        content: [
+            {
+                id: 1,
+                title: "Apa Itu Variabel?",
+                type: "theory",
+                content: `
+# Apa Itu Variabel?
+
+Variabel = **wadah untuk menyimpan data**.  
+Bayangin variabel kayak kotak yang punya label, dan di dalamnya ada isinya.
+
+Contoh:
+- Kotak bernama \`umur\` berisi angka 20.
+- Kotak bernama \`nama\` berisi teks "Zayen".
+                `,
+                codeExample: `umur = 20
+nama = "Zayen"
+print(umur, nama)`,
+                expectedOutput: `20 Zayen`
+            },
+            {
+                id: 2,
+                title: "Membuat Variabel",
+                type: "theory",
+                content: `
+# Cara Membuat Variabel
+
+Di Python, bikin variabel **gampang banget**:
+- Tinggal tulis nama variabel = nilai
+- Gak perlu deklarasi tipe data (Python otomatis ngerti)
+
+Contoh:
+\`\`\`python
+a = 10
+b = 3.14
+c = "Halo"
+\`\`\`
+
+Output:
+\`\`\`
+10 3.14 Halo
+\`\`\`
+                `,
+                codeExample: `a = 10
+b = 3.14
+c = "Halo"
+print(a, b, c)`,
+                expectedOutput: `10 3.14 Halo`
+            },
+            {
+                id: 3,
+                title: "Aturan Penamaan",
+                type: "theory",
+                content: `
+# Aturan Nama Variabel
+
+✅ Boleh:
+- Huruf, angka, underscore (\_)
+- Huruf kecil/besar (case-sensitive)
+
+❌ Tidak boleh:
+- Diawali angka (contoh: \`1nama\`)
+- Pakai spasi (contoh: \`nama saya\`)
+- Pakai simbol aneh (contoh: \`nama@\`)
+
+📌 Best practice:
+- Gunakan huruf kecil: \`umur\`, \`nama_lengkap\`
+- Nama jelas & mudah dipahami
+                `,
+                codeExample: `nama_lengkap = "Budi Setiawan"
+Umur = 21  # ini beda sama 'umur'
+print(nama_lengkap, Umur)`,
+                expectedOutput: `Budi Setiawan 21`
+            },
+            {
+                id: 4,
+                title: "Tipe Data Dasar",
+                type: "theory",
+                content: `
+# Tipe Data di Variabel
+
+Python punya beberapa tipe dasar:
+- \`int\` → bilangan bulat
+- \`float\` → bilangan desimal
+- \`str\` → teks
+- \`bool\` → True / False
+- \`None\` → kosong
+
+Gunakan fungsi \`type()\` untuk cek tipe data.
+                `,
+                codeExample: `x = 10
+y = 3.14
+z = "Halo"
+flag = True
+kosong = None
+
+print(type(x))
+print(type(y))
+print(type(z))
+print(type(flag))
+print(type(kosong))`,
+                expectedOutput: `<class 'int'>
+<class 'float'>
+<class 'str'>
+<class 'bool'>
+<class 'NoneType'>`
+            },
+            {
+                id: 5,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Variabel
+
+Coba kerjain soal berikut:
+1. Buat variabel nama, umur, kota → lalu tampilkan dalam satu kalimat.
+2. Simpan dua angka lalu tampilkan hasil penjumlahan.
+3. Cek tipe data dari variabel \`angka\`, \`teks\`, dan \`status\`.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Data Diri",
+                        description: "Buat variabel nama, umur, dan kota. Cetak dengan f-string: 'Halo, saya [nama], umur [umur], dari [kota]'.",
+                        hint: "Gunakan f-string.",
+                        solution: `nama = "Zayen"
+umur = 20
+kota = "Jakarta"
+
+print(f"Halo, saya {nama}, umur {umur}, dari {kota}")`
+                    },
+                    {
+                        id: 2,
+                        title: "Hitung Penjumlahan",
+                        description: "Simpan dua angka (misal a=7, b=5), lalu tampilkan hasil tambahannya.",
+                        hint: "Gunakan operator +.",
+                        solution: `a = 7
+b = 5
+print("Hasil penjumlahan:", a + b)`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek Tipe Data",
+                        description: "Buat variabel angka=10, teks='Python', status=True. Cetak tipe data masing-masing.",
+                        hint: "Gunakan type().",
+                        solution: `angka = 10
+teks = "Python"
+status = True
+
+print(type(angka))
+print(type(teks))
+print(type(status))`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "Tipe Data di Python",
+        description: "Belajar berbagai tipe data penting di Python: angka, string, boolean, list, tuple, set, dict, dan NoneType.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 7,
+        progress: 0,
+        image: "📦",
+        topics: [
+            "Angka (int & float)",
+            "String (str)",
+            "Boolean (bool)",
+            "List",
+            "Tuple",
+            "Set",
+            "Dictionary (dict)",
+            "NoneType",
+            "Latihan"
+        ],
+        color: "#F59E0B",
+        content: [
+            {
+                id: 1,
+                title: "Angka (int & float)",
+                type: "theory",
+                content: `
+# Angka (Number)
+
+Python punya 2 tipe angka utama:
+- **int** → bilangan bulat (1, -5, 1000)
+- **float** → bilangan desimal (3.14, -0.5)
+
+Bisa dipakai buat operasi matematika.
+                `,
+                codeExample: `a = 10       # int
+b = 3.14     # float
+print(a + b)
+print(type(a), type(b))`,
+                expectedOutput: `13.14
+<class 'int'> <class 'float'>`
+            },
+            {
+                id: 2,
+                title: "String (str)",
+                type: "theory",
+                content: `
+# String (Teks)
+
+String = teks. Bisa pakai tanda kutip tunggal ('') atau ganda ("").
+
+Operasi:
+- Gabung: "Py" + "thon"
+- Ulang: "ha" * 3
+- Panjang: len("hello")
+- Akses huruf: teks[0]
+                `,
+                codeExample: `s = "Python"
+print(s[0])      # P
+print(s[-1])     # n
+print(len(s))    # 6
+print(s.upper()) # PYTHON`,
+                expectedOutput: `P
+n
+6
+PYTHON`
+            },
+            {
+                id: 3,
+                title: "Boolean (bool)",
+                type: "theory",
+                content: `
+# Boolean
+
+Tipe data logika, hanya ada:
+- True
+- False
+
+Biasanya hasil dari perbandingan.
+                `,
+                codeExample: `print(5 > 3)
+print(10 == 2)
+is_active = True
+print(is_active)`,
+                expectedOutput: `True
+False
+True`
+            },
+            {
+                id: 4,
+                title: "List",
+                type: "theory",
+                content: `
+# List
+
+List = kumpulan data berurutan. Bisa berisi campuran tipe.
+
+Ciri: **pakai tanda kurung siku [ ]**
+                `,
+                codeExample: `angka = [1, 2, 3, 4]
+campur = [1, "halo", True]
+
+print(angka[0])     # akses elemen
+angka.append(5)     # tambah elemen
+print(angka)`,
+                expectedOutput: `1
+[1, 2, 3, 4, 5]`
+            },
+            {
+                id: 5,
+                title: "Tuple",
+                type: "theory",
+                content: `
+# Tuple
+
+Mirip list, tapi **tidak bisa diubah** (immutable).
+
+Ciri: **pakai tanda kurung ( )**
+                `,
+                codeExample: `data = (10, 20, 30)
+print(data[1])
+# data[1] = 99  # ❌ error, tuple immutable`,
+                expectedOutput: `20`
+            },
+            {
+                id: 6,
+                title: "Set",
+                type: "theory",
+                content: `
+# Set
+
+Kumpulan data unik, **tidak berurutan**.
+
+Ciri: **pakai tanda kurung kurawal { }**
+                `,
+                codeExample: `s = {1, 2, 3, 3, 2}
+print(s)     # duplikat hilang
+s.add(4)
+print(s)`,
+                expectedOutput: `{1, 2, 3}
+{1, 2, 3, 4}`
+            },
+            {
+                id: 7,
+                title: "Dictionary (dict)",
+                type: "theory",
+                content: `
+# Dictionary
+
+Struktur data **key → value**.  
+Mirip objek/map di bahasa lain.
+
+Ciri: **pakai { key: value }**
+                `,
+                codeExample: `mhs = {
+    "nama": "Zayen",
+    "umur": 20,
+    "jurusan": "Informatika"
+}
+print(mhs["nama"])
+print(mhs.get("umur"))`,
+                expectedOutput: `Zayen
+20`
+            },
+            {
+                id: 8,
+                title: "NoneType",
+                type: "theory",
+                content: `
+# NoneType
+
+Dipakai buat nilai kosong / belum ada.
+                `,
+                codeExample: `x = None
+print(x)
+print(type(x))`,
+                expectedOutput: `None
+<class 'NoneType'>`
+            },
+            {
+                id: 9,
+                title: "Latihan",
+                type: "practice",
+                content: `
+# Latihan Tipe Data
+
+Coba selesaikan soal berikut:
+1. Buat list berisi 5 nama, lalu tampilkan nama ke-3.
+2. Buat dict berisi data diri (nama, umur, hobi) dan tampilkan hobi.
+3. Cek apakah angka input dari user genap/ganjil pakai boolean.
+4. Buat set dari list [1,2,2,3,3,4,4] → pastikan tidak ada duplikat.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "List Nama",
+                        description: "Buat list 5 nama, cetak nama ke-3.",
+                        hint: "Ingat, index mulai dari 0.",
+                        solution: `nama = ["Ali", "Budi", "Citra", "Dewi", "Eka"]
+print(nama[2])`
+                    },
+                    {
+                        id: 2,
+                        title: "Dictionary Data Diri",
+                        description: "Buat dict dengan nama, umur, dan hobi. Cetak hobi.",
+                        hint: "Gunakan mhs['hobi'].",
+                        solution: `mhs = {
+    "nama": "Zayen",
+    "umur": 20,
+    "hobi": "Coding"
+}
+print(mhs["hobi"])`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek Genap/Ganjil",
+                        description: "Input angka, cek genap/ganjil.",
+                        hint: "Gunakan % 2 == 0.",
+                        solution: `n = int(input("Masukkan angka: "))
+print(n % 2 == 0)`
+                    },
+                    {
+                        id: 4,
+                        title: "Set Unik",
+                        description: "Ubah list [1,2,2,3,3,4,4] jadi set unik.",
+                        hint: "Gunakan fungsi set().",
+                        solution: `data = [1,2,2,3,3,4,4]
+unik = set(data)
+print(unik)`
+                    }
+                ]
+            }
+        ]
+    }
 ];
 
 export default lessonCards;

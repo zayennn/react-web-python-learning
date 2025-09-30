@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Materi.css';
+import { useParams } from 'react-router-dom';
 
 // import data lesson
 import lessonCards from './data/LessonCard';
@@ -11,7 +12,11 @@ const Materi = () => {
     const [codeOutput, setCodeOutput] = useState('');
     const [userCode, setUserCode] = useState('');
 
-    const lesson = lessonCards[0];
+    const { id } = useParams();
+
+    const lessonId = parseInt(id, 10);
+
+    const lesson = lessonCards.find((lesson) => lesson.id === lessonId) || lessonCards[0];
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);

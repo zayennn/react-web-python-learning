@@ -47,7 +47,25 @@ export const lessonCards = [
             "Interpreter Python",
             "Eksperimen Bytecode"
         ],
-        color: "#F59E0B",
+        color: "#F29E93",
+    },
+    {
+        id: 4,
+        title: "Mengenal Variabel",
+        description: "Belajar tentang variabel di Python: apa itu variabel, cara membuatnya, aturan penamaan, tipe data dasar, dan latihan praktik.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📦",
+        topics: [
+            "Apa Itu Variabel?",
+            "Membuat Variabel",
+            "Aturan Penamaan",
+            "Tipe Data Dasar",
+            "Latihan Praktik"
+        ],
+        color: "#3C467B",
     }
 ];
 
