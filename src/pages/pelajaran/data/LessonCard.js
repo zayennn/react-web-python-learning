@@ -18,20 +18,36 @@ export const lessonCards = [
     },
     {
         id: 2,
-        title: "Installasi Python & VS Code di Windows",
-        description: "Panduan step-by-step install Python dan Visual Studio Code di Windows, termasuk cara cek instalasi.",
+        title: "Instalasi Python & VS Code",
+        description: "Panduan install Python 3 dan Visual Studio Code di Windows & MacOS, termasuk setting awal biar siap ngoding.",
         level: "Pemula",
-        duration: "1 jam",
+        duration: "1.5 jam",
         lessons: 4,
         progress: 0,
         image: "💻",
         topics: [
-            "Download & Install Python",
-            "Set PATH Python",
-            "Install VS Code",
-            "Cek Instalasi & Test Program"
+            "Download & Install Python di Windows",
+            "Download & Install Python di MacOS",
+            "Install Visual Studio Code",
+            "Setting Awal VS Code untuk Python"
         ],
-        color: "#2563EB",
+        color: "#F59E0B",
+    },
+    {
+        id: 3,
+        title: "Cara Kerja Program & Bytecode",
+        description: "Pelajari bagaimana Python menjalankan kode: dari source code, bytecode, hingga interpreter Python.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⚙️",
+        topics: [
+            "Dari Source Code ke Bytecode",
+            "Interpreter Python",
+            "Eksperimen Bytecode"
+        ],
+        color: "#F59E0B",
     }
 ];
 

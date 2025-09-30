@@ -124,9 +124,9 @@ const Materi = () => {
                         <div className="nav-item active">
                             Belajar
                         </div>
-                        <div className="nav-item">
+                        {/* <div className="nav-item">
                             Progress
-                        </div>
+                        </div> */}
                     </div>
                     <div className="nav-toggle" onClick={toggleMenu}>
                         <span className="bar"></span>
