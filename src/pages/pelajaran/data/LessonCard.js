@@ -189,6 +189,24 @@ export const lessonCards = [
             "Latihan Praktik"
         ],
         color: "#FFD93D",
+    },
+    {
+        id: 12,
+        title: "Latihan Komparasi dan Logika",
+        description: "Latihan pemahaman operator perbandingan dan logika di Python. Dari membandingkan angka hingga menggabungkan kondisi dengan AND, OR, dan NOT.",
+        level: "Menengah",
+        duration: "2 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🧠",
+        topics: [
+            "Operator Perbandingan",
+            "Operator Logika",
+            "Kombinasi Kondisi",
+            "Latihan Kasus",
+            "Soal Praktik"
+        ],
+        color: "#154D71",
     }
 ];
 

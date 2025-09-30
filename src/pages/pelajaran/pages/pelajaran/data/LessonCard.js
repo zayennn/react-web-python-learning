@@ -1500,6 +1500,164 @@ else:
                 ]
             }
         ]
+    },
+    {
+        id: 12,
+        title: "Latihan Komparasi dan Logika",
+        description: "Latihan pemahaman operator perbandingan dan logika di Python. Dari membandingkan angka hingga menggabungkan kondisi dengan AND, OR, dan NOT.",
+        level: "Menengah",
+        duration: "2 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🧠",
+        topics: [
+            "Operator Perbandingan",
+            "Operator Logika",
+            "Kombinasi Kondisi",
+            "Latihan Kasus",
+            "Soal Praktik"
+        ],
+        color: "#154D71",
+        content: [
+            {
+                id: 1,
+                title: "Operator Perbandingan",
+                type: "theory",
+                content: `
+# Operator Perbandingan
+
+Dipakai untuk membandingkan dua nilai:
+
+- \`==\` sama dengan
+- \`!=\` tidak sama dengan
+- \`>\` lebih besar
+- \`<\` lebih kecil
+- \`>=\` lebih besar sama dengan
+- \`<=\` lebih kecil sama dengan
+
+Hasilnya selalu \`True\` atau \`False\`.
+                `,
+                codeExample: `x = 10
+y = 7
+print(x == y)   # False
+print(x != y)   # True
+print(x > y)    # True
+print(x <= y)   # False`,
+                expectedOutput: `False
+True
+True
+False`
+            },
+            {
+                id: 2,
+                title: "Operator Logika",
+                type: "theory",
+                content: `
+# Operator Logika
+
+Dipakai untuk menggabungkan kondisi:
+
+- \`and\` → True jika semua kondisi True
+- \`or\` → True jika salah satu kondisi True
+- \`not\` → membalik nilai boolean
+                `,
+                codeExample: `x = 5
+print(x > 0 and x < 10)   # True
+print(x > 0 or x > 10)    # True
+print(not (x > 0))        # False`,
+                expectedOutput: `True
+True
+False`
+            },
+            {
+                id: 3,
+                title: "Kombinasi Kondisi",
+                type: "theory",
+                content: `
+# Kombinasi Kondisi
+
+Bisa digabung pakai tanda kurung buat logika yang lebih kompleks.
+                `,
+                codeExample: `umur = 20
+punya_ktp = True
+
+if umur >= 17 and punya_ktp:
+    print("Boleh bikin SIM")
+else:
+    print("Belum boleh")`,
+                expectedOutput: `Boleh bikin SIM`
+            },
+            {
+                id: 4,
+                title: "Latihan Kasus",
+                type: "theory",
+                content: `
+# Contoh Kasus
+
+Cek kelulusan ujian berdasarkan nilai:
+- Minimal 75 = Lulus
+- Kalau nilai < 75 = Gagal
+                `,
+                codeExample: `nilai = 80
+if nilai >= 75:
+    print("Lulus")
+else:
+    print("Gagal")`,
+                expectedOutput: `Lulus`
+            },
+            {
+                id: 5,
+                title: "Soal Praktik",
+                type: "practice",
+                content: `
+# Latihan Operator Komparasi & Logika
+
+Kerjain soal-soal ini biar makin jago:
+1. Cek apakah sebuah angka positif, negatif, atau nol.
+2. Minta umur user, cek apakah dia remaja (13–17) atau bukan.
+3. Program login sederhana (username & password).
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Cek Angka Positif/Negatif",
+                        description: "Input angka, tampilkan 'Positif', 'Negatif', atau 'Nol'.",
+                        hint: "Gunakan if-elif-else.",
+                        solution: `n = int(input("Masukkan angka: "))
+if n > 0:
+    print("Positif")
+elif n < 0:
+    print("Negatif")
+else:
+    print("Nol")`
+                    },
+                    {
+                        id: 2,
+                        title: "Cek Usia Remaja",
+                        description: "Input umur, cek apakah antara 13–17.",
+                        hint: "Gunakan operator and.",
+                        solution: `umur = int(input("Umur kamu: "))
+if umur >= 13 and umur <= 17:
+    print("Remaja")
+else:
+    print("Bukan remaja")`
+                    },
+                    {
+                        id: 3,
+                        title: "Program Login",
+                        description: "Minta username dan password, cek apakah sesuai.",
+                        hint: "Gunakan operator == pada string.",
+                        solution: `user = input("Username: ")
+pw = input("Password: ")
+
+if user == "admin" and pw == "1234":
+    print("Login berhasil")
+else:
+    print("Login gagal")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
