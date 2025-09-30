@@ -156,6 +156,22 @@ export const lessonCards = [
             "Latihan Mini-Kalkulator"
         ],
         color: "#DC143C",
+    },
+    {
+        id: 10,
+        title: "Operasi Komparasi",
+        description: "Belajar operator perbandingan di Python: ==, !=, >, <, >=, <=. Pahami gimana cara membandingkan nilai.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⚖️",
+        topics: [
+            "Apa Itu Operator Komparasi?",
+            "Contoh Pemakaian",
+            "Latihan Soal"
+        ],
+        color: "#3396D3",
     }
 ];
 

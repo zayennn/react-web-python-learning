@@ -1214,6 +1214,153 @@ print("Kubik:", n ** 3)`
                 ]
             }
         ]
+    },
+    {
+        id: 10,
+        title: "Operasi Komparasi",
+        description: "Belajar operator perbandingan di Python: ==, !=, >, <, >=, <=. Pahami gimana cara membandingkan nilai.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⚖️",
+        topics: [
+            "Apa Itu Operator Komparasi?",
+            "Contoh Pemakaian",
+            "Latihan Soal"
+        ],
+        color: "#3396D3",
+        content: [
+            {
+                id: 1,
+                title: "Apa Itu Operator Komparasi?",
+                type: "theory",
+                content: `
+# Operator Komparasi
+
+Operator komparasi = operator buat **membandingkan** dua nilai.  
+Hasilnya selalu berupa **boolean** (\`True\` atau \`False\`).
+
+## Daftar Operator
+- \`==\` → sama dengan
+- \`!=\` → tidak sama dengan
+- \`>\` → lebih besar dari
+- \`<\` → lebih kecil dari
+- \`>=\` → lebih besar atau sama dengan
+- \`<=\` → lebih kecil atau sama dengan
+                `
+            },
+            {
+                id: 2,
+                title: "Contoh Pemakaian",
+                type: "theory",
+                content: `
+# Contoh Operator Komparasi
+
+Coba bandingkan angka atau string:
+
+\`\`\`python
+a = 10
+b = 5
+
+print(a == b)   # sama dengan
+print(a != b)   # tidak sama dengan
+print(a > b)    # lebih besar
+print(a < b)    # lebih kecil
+print(a >= 10)  # lebih besar/sama dengan
+print(b <= 5)   # lebih kecil/sama dengan
+
+# Komparasi string
+print("Python" == "python")
+print("A" < "B")
+\`\`\`
+
+Outputnya:
+
+\`\`\`
+False
+True
+True
+False
+True
+True
+False
+True
+\`\`\`
+                `,
+                codeExample: `a = 10
+b = 5
+
+print(a == b)   # False
+print(a != b)   # True
+print(a > b)    # True
+print(a < b)    # False
+print(a >= 10)  # True
+print(b <= 5)   # True
+
+print("Python" == "python") # False
+print("A" < "B")            # True`,
+                expectedOutput: `False
+True
+True
+False
+True
+True
+False
+True`
+            },
+            {
+                id: 3,
+                title: "Latihan Operasi Komparasi",
+                type: "practice",
+                content: `
+# Latihan Operasi Komparasi
+
+Coba kerjain soal berikut:
+1. Buat program yang minta input umur. Jika umur >= 18, tampilkan "Dewasa", selain itu "Belum Dewasa".
+2. Minta dua angka, cek apakah angka pertama lebih besar dari angka kedua.
+3. Cek apakah sebuah string input user sama dengan "Python" (case sensitive).
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Cek Dewasa atau Belum",
+                        description: "Input umur, tampilkan status dewasa atau belum.",
+                        hint: "Gunakan operator >=.",
+                        solution: `umur = int(input("Masukkan umur: "))
+if umur >= 18:
+    print("Dewasa")
+else:
+    print("Belum Dewasa")`
+                    },
+                    {
+                        id: 2,
+                        title: "Bandingkan Dua Angka",
+                        description: "Input dua angka, cek apakah angka pertama lebih besar dari kedua.",
+                        hint: "Gunakan >.",
+                        solution: `a = int(input("Angka pertama: "))
+b = int(input("Angka kedua: "))
+
+if a > b:
+    print("Angka pertama lebih besar")
+else:
+    print("Angka pertama tidak lebih besar")`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek String Python",
+                        description: "Input string, cek apakah sama dengan 'Python'.",
+                        hint: "Gunakan operator ==.",
+                        solution: `kata = input("Masukkan kata: ")
+
+if kata == "Python":
+    print("Benar, itu Python!")
+else:
+    print("Bukan Python.")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
