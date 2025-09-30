@@ -105,7 +105,23 @@ export const lessonCards = [
             "Latihan Praktik"
         ],
         color: "#6F00FF",
-    }
+    },
+    {
+        id: 7,
+        title: "Mengambil Input Data dari User",
+        description: "Belajar cara menerima input dari pengguna dengan fungsi input(), mengolahnya, dan menampilkannya kembali.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⌨️",
+        topics: [
+            "Fungsi input()",
+            "Konversi Tipe Data",
+            "Latihan Praktik"
+        ],
+        color: "#F39F9F",
+    },
 ];
 
 export default lessonCards;

@@ -798,6 +798,136 @@ else:
                 ]
             }
         ]
+    },
+    {
+        id: 7,
+        title: "Mengambil Input Data dari User",
+        description: "Belajar cara menerima input dari pengguna dengan fungsi input(), mengolahnya, dan menampilkannya kembali.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⌨️",
+        topics: [
+            "Fungsi input()",
+            "Konversi Tipe Data",
+            "Latihan Praktik"
+        ],
+        color: "#F39F9F",
+        content: [
+            {
+                id: 1,
+                title: "Fungsi input()",
+                type: "theory",
+                content: `
+# Fungsi input()
+
+Di Python, kita bisa ambil data dari user pakai fungsi \`input()\`.
+
+Contoh sederhana:
+
+\`\`\`python
+nama = input("Siapa nama kamu? ")
+print("Halo,", nama)
+\`\`\`
+
+Kalau user ngetik \`Zayen\`, outputnya jadi:
+
+\`\`\`
+Siapa nama kamu? Zayen
+Halo, Zayen
+\`\`\`
+
+> Catatan: \`input()\` **selalu menghasilkan string (str)**, meskipun yang dimasukin angka.
+                `,
+                codeExample: `nama = input("Siapa nama kamu? ")
+print("Halo,", nama)`,
+                expectedOutput: `Siapa nama kamu? [User input]
+Halo, [User input]`
+            },
+            {
+                id: 2,
+                title: "Konversi Tipe Data",
+                type: "theory",
+                content: `
+# Konversi Input
+
+Karena \`input()\` selalu string, kita perlu konversi kalau butuh angka:
+
+- \`int()\` → ubah ke bilangan bulat
+- \`float()\` → ubah ke bilangan desimal
+
+Contoh:
+
+\`\`\`python
+umur = int(input("Umur kamu berapa? "))
+tinggi = float(input("Tinggi badan (m): "))
+
+print("Umur:", umur)
+print("Tinggi:", tinggi)
+\`\`\`
+
+Output (kalau user masukin 20 dan 1.75):
+
+\`\`\`
+Umur kamu berapa? 20
+Tinggi badan (m): 1.75
+Umur: 20
+Tinggi: 1.75
+\`\`\`
+                `,
+                codeExample: `umur = int(input("Umur kamu berapa? "))
+tinggi = float(input("Tinggi badan (m): "))
+
+print("Umur:", umur)
+print("Tinggi:", tinggi)`,
+                expectedOutput: `Umur kamu berapa? [User input]
+Tinggi badan (m): [User input]
+Umur: [angka]
+Tinggi: [angka desimal]`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Input
+
+Coba kerjain soal berikut untuk melatih pemahamanmu tentang input() dan konversi tipe data:
+1. Buat program yang minta nama user lalu menyapanya.
+2. Buat program hitung umur di tahun depan.
+3. Buat program kalkulator luas persegi panjang dari input panjang & lebar.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Halo User",
+                        description: "Minta input nama, lalu tampilkan sapaan.",
+                        hint: "Gunakan input() dan print().",
+                        solution: `nama = input("Masukkan nama kamu: ")
+print(f"Halo, {nama}!")`
+                    },
+                    {
+                        id: 2,
+                        title: "Umur Tahun Depan",
+                        description: "Minta umur user, lalu hitung umur tahun depan.",
+                        hint: "Gunakan int() untuk konversi.",
+                        solution: `umur = int(input("Umur kamu berapa? "))
+print(f"Tahun depan umurmu {umur + 1}")`
+                    },
+                    {
+                        id: 3,
+                        title: "Luas Persegi Panjang",
+                        description: "Minta input panjang & lebar, hitung luasnya.",
+                        hint: "Gunakan int() atau float() sesuai kebutuhan.",
+                        solution: `panjang = float(input("Masukkan panjang: "))
+lebar = float(input("Masukkan lebar: "))
+luas = panjang * lebar
+print(f"Luas persegi panjang = {luas}")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
