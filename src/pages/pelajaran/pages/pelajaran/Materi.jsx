@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Materi.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 // import data lesson
 import lessonCards from './data/LessonCard';
@@ -11,12 +11,34 @@ const Materi = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [codeOutput, setCodeOutput] = useState('');
     const [userCode, setUserCode] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+    const [showSearchResults, setShowSearchResults] = useState(false);
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const lessonId = parseInt(id, 10);
-
     const lesson = lessonCards.find((lesson) => lesson.id === lessonId) || lessonCards[0];
+    const currentLessonIndex = lessonCards.findIndex(l => l.id === lessonId);
+
+    // Filter lessons based on search query
+    useEffect(() => {
+        if (searchQuery.trim() === '') {
+            setSearchResults([]);
+            setShowSearchResults(false);
+        } else {
+            const query = searchQuery.toLowerCase();
+            const filtered = lessonCards.filter(card => 
+                card.title.toLowerCase().includes(query) ||
+                card.description.toLowerCase().includes(query) ||
+                card.level.toLowerCase().includes(query) ||
+                card.topics.some(topic => topic.toLowerCase().includes(query))
+            );
+            setSearchResults(filtered.slice(0, 5)); // Limit to 5 results
+            setShowSearchResults(true);
+        }
+    }, [searchQuery]);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -32,6 +54,12 @@ const Materi = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 return newIndex;
             });
+        } else {
+            // Move to next lesson if available
+            const nextLesson = lessonCards[currentLessonIndex + 1];
+            if (nextLesson) {
+                navigate(`/pelajaran/materi/${nextLesson.id}`);
+            }
         }
     };
 
@@ -45,6 +73,12 @@ const Materi = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 return newIndex;
             });
+        } else {
+            // Move to previous lesson if available
+            const prevLesson = lessonCards[currentLessonIndex - 1];
+            if (prevLesson) {
+                navigate(`/pelajaran/materi/${prevLesson.id}`);
+            }
         }
     };
 
@@ -59,6 +93,21 @@ const Materi = () => {
         const current = lesson.content[currentContent];
         setUserCode(current.codeExample || '');
         setCodeOutput('');
+    };
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (searchResults.length > 0) {
+            navigate(`/pelajaran/materi/${searchResults[0].id}`);
+            setSearchQuery('');
+            setShowSearchResults(false);
+        }
+    };
+
+    const handleSearchResultClick = (lessonId) => {
+        navigate(`/pelajaran/materi/${lessonId}`);
+        setSearchQuery('');
+        setShowSearchResults(false);
     };
 
     const ContentRenderer = ({ content }) => {
@@ -125,13 +174,63 @@ const Materi = () => {
                         <span className="logo-icon">🐍</span>
                         <span>Python Learning</span>
                     </div>
+                    
+                    {/* Search Bar in Navbar */}
+                    <div className="nav-search-container">
+                        <form onSubmit={handleSearchSubmit} className="nav-search-form">
+                            <div className="nav-search-wrapper">
+                                <div className="nav-search-icon">🔍</div>
+                                <input
+                                    type="text"
+                                    placeholder="Cari materi..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="nav-search-input"
+                                />
+                                {searchQuery && (
+                                    <button 
+                                        type="button"
+                                        className="nav-clear-search-btn"
+                                        onClick={() => setSearchQuery('')}
+                                    >
+                                        ✕
+                                    </button>
+                                )}
+                            </div>
+                        </form>
+                        
+                        {/* Search Results Dropdown */}
+                        {showSearchResults && searchResults.length > 0 && (
+                            <div className="nav-search-results">
+                                {searchResults.map(lesson => (
+                                    <div 
+                                        key={lesson.id}
+                                        className="nav-search-result-item"
+                                        onClick={() => handleSearchResultClick(lesson.id)}
+                                    >
+                                        <div className="search-result-image">
+                                            {lesson.image}
+                                        </div>
+                                        <div className="search-result-content">
+                                            <div className="search-result-title">{lesson.title}</div>
+                                            <div className="search-result-level">{lesson.level}</div>
+                                            <div className="search-result-description">
+                                                {lesson.description.length > 80 
+                                                    ? `${lesson.description.substring(0, 80)}...`
+                                                    : lesson.description
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                         <div className="nav-item active">
                             Belajar
                         </div>
-                        {/* <div className="nav-item">
-                            Progress
-                        </div> */}
                     </div>
                     <div className="nav-toggle" onClick={toggleMenu}>
                         <span className="bar"></span>
@@ -177,7 +276,12 @@ const Materi = () => {
                                     <div
                                         key={content.id}
                                         className={`topic-item ${index === currentContent ? 'active' : ''}`}
-                                        onClick={() => setCurrentContent(index)}
+                                        onClick={() => {
+                                            setCurrentContent(index);
+                                            const newContent = lesson.content[index];
+                                            setUserCode(newContent.codeExample || '');
+                                            setCodeOutput('');
+                                        }}
                                     >
                                         <div className="topic-number">{index + 1}</div>
                                         <div className="topic-info">
@@ -234,21 +338,21 @@ const Materi = () => {
                             <button
                                 className="nav-button prev"
                                 onClick={prevContent}
-                                disabled={currentContent === 0}
+                                disabled={currentContent === 0 && currentLessonIndex === 0}
                             >
-                                ← Sebelumnya
+                                {currentContent === 0 && currentLessonIndex > 0 ? '← Materi Sebelumnya' : '← Sebelumnya'}
                             </button>
 
                             <div className="progress-indicator">
-                                {currentContent + 1} / {lesson.content.length}
+                                Materi {lessonId} - {currentContent + 1} / {lesson.content.length}
                             </div>
 
                             <button
                                 className="nav-button next"
                                 onClick={nextContent}
-                                disabled={currentContent === lesson.content.length - 1}
+                                disabled={currentContent === lesson.content.length - 1 && currentLessonIndex === lessonCards.length - 1}
                             >
-                                Selanjutnya →
+                                {currentContent === lesson.content.length - 1 && currentLessonIndex < lessonCards.length - 1 ? 'Materi Selanjutnya →' : 'Selanjutnya →'}
                             </button>
                         </div>
                     </div>

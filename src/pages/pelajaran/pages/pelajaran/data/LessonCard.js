@@ -1856,7 +1856,7 @@ cek_genap_ganjil(10)`
             "Macam-Macam Operator Assignment",
             "Latihan Praktik"
         ],
-        color: "#D97D55",
+        color: "#5A9690",
         content: [
             {
                 id: 1,
@@ -2036,6 +2036,212 @@ saldo += 200
 saldo -= 150
 saldo *= 2
 print(saldo)  # 2100`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 15,
+        title: "Pengenalan String",
+        description: "Belajar tipe data string di Python: cara membuat, mengakses, memodifikasi, dan operasi penting pada string.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🔤",
+        topics: [
+            "Apa Itu String?",
+            "Mengakses Karakter dalam String",
+            "Slicing String",
+            "Metode Penting pada String",
+            "Latihan Praktik"
+        ],
+        color: "#6B3F69",
+        content: [
+            {
+                id: 1,
+                title: "Apa Itu String?",
+                type: "theory",
+                content: `
+# Apa Itu String?
+
+String = tipe data teks di Python.  
+Dibuat dengan tanda kutip:
+- Kutip tunggal → 'halo'
+- Kutip ganda → "halo"
+- Tiga kutip → '''halo''' atau """halo"""
+
+String bisa berisi huruf, angka, spasi, bahkan simbol.
+
+Contoh:
+\`\`\`python
+teks1 = "Hello"
+teks2 = 'Python'
+teks3 = """Belajar Python itu seru!"""
+\`\`\`
+                `,
+                codeExample: `teks1 = "Hello"
+teks2 = 'Python'
+teks3 = """Belajar Python itu seru!"""
+
+print(teks1)
+print(teks2)
+print(teks3)`,
+                expectedOutput: `Hello
+Python
+Belajar Python itu seru!`
+            },
+            {
+                id: 2,
+                title: "Mengakses Karakter dalam String",
+                type: "theory",
+                content: `
+# Mengakses Karakter
+
+String = kumpulan karakter, jadi bisa diakses pakai **index**.  
+Index di Python mulai dari 0.
+
+\`\`\`python
+kata = "Python"
+print(kata[0])  # huruf pertama
+print(kata[1])  # huruf kedua
+print(kata[-1]) # huruf terakhir
+\`\`\`
+
+- Index positif: mulai dari depan (0,1,2,...)
+- Index negatif: mulai dari belakang (-1,-2,...)
+                `,
+                codeExample: `kata = "Python"
+print(kata[0])
+print(kata[1])
+print(kata[-1])`,
+                expectedOutput: `P
+y
+n`
+            },
+            {
+                id: 3,
+                title: "Slicing String",
+                type: "theory",
+                content: `
+# Slicing String
+
+Slicing = mengambil sebagian string.  
+Format: \`string[start:end]\`
+
+- start → index mulai (default 0)
+- end → index berhenti (tidak termasuk)
+
+\`\`\`python
+kata = "Python"
+print(kata[0:3])   # ambil huruf index 0 sampai 2
+print(kata[:4])    # sama dengan [0:4]
+print(kata[2:])    # dari index 2 sampai akhir
+print(kata[-3:])   # 3 huruf terakhir
+\`\`\`
+                `,
+                codeExample: `kata = "Python"
+print(kata[0:3])
+print(kata[:4])
+print(kata[2:])
+print(kata[-3:])`,
+                expectedOutput: `Pyt
+Pyth
+thon
+hon`
+            },
+            {
+                id: 4,
+                title: "Metode Penting pada String",
+                type: "theory",
+                content: `
+# Metode Penting
+
+Python punya banyak metode string bawaan:
+
+- \`.upper()\` → jadi huruf besar semua  
+- \`.lower()\` → jadi huruf kecil semua  
+- \`.capitalize()\` → huruf pertama jadi besar  
+- \`.strip()\` → hapus spasi di depan & belakang  
+- \`.replace(a,b)\` → ganti teks  
+- \`.split()\` → pisah string jadi list  
+- \`len(string)\` → hitung panjang string  
+
+Contoh:
+\`\`\`python
+teks = "  Belajar Python  "
+print(teks.upper())
+print(teks.lower())
+print(teks.strip())
+print(teks.replace("Python", "Coding"))
+print(teks.split())
+print(len(teks))
+\`\`\`
+                `,
+                codeExample: `teks = "  Belajar Python  "
+print(teks.upper())
+print(teks.lower())
+print(teks.strip())
+print(teks.replace("Python", "Coding"))
+print(teks.split())
+print(len(teks))`,
+                expectedOutput: `  BELAJAR PYTHON  
+  belajar python  
+Belajar Python
+  Belajar Coding  
+['Belajar', 'Python']
+17`
+            },
+            {
+                id: 5,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan String
+
+Coba kerjain soal ini biar makin jago:
+1. Ambil huruf pertama & terakhir dari string yang dimasukkan user.
+2. Ubah input user jadi huruf besar semua.
+3. Cek apakah kata "python" ada di input user (case-insensitive).
+4. Balikkan string (contoh: "halo" → "olah").
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Huruf Pertama & Terakhir",
+                        description: "Minta user input string, tampilkan huruf pertama dan terakhir.",
+                        hint: "Gunakan index [0] dan [-1].",
+                        solution: `teks = input("Masukkan teks: ")
+print("Huruf pertama:", teks[0])
+print("Huruf terakhir:", teks[-1])`
+                    },
+                    {
+                        id: 2,
+                        title: "Uppercase",
+                        description: "Minta user input string, tampilkan dalam huruf besar semua.",
+                        hint: "Gunakan .upper().",
+                        solution: `teks = input("Masukkan teks: ")
+print(teks.upper())`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek Python",
+                        description: "Cek apakah kata 'python' ada dalam input user (case-insensitive).",
+                        hint: "Gunakan .lower() lalu 'in'.",
+                        solution: `teks = input("Masukkan teks: ")
+if "python" in teks.lower():
+    print("Mengandung kata 'python'")
+else:
+    print("Tidak mengandung 'python'")`
+                    },
+                    {
+                        id: 4,
+                        title: "Balik String",
+                        description: "Minta user input string, tampilkan string dalam keadaan terbalik.",
+                        hint: "Gunakan slicing [::-1].",
+                        solution: `teks = input("Masukkan teks: ")
+print(teks[::-1])`
                     }
                 ]
             }

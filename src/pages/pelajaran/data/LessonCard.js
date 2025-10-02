@@ -244,7 +244,40 @@ export const lessonCards = [
         ],
         color: "#D97D55",
     },
-    {}
+    {
+        id: 14,
+        title: "Operator Assignment di Python",
+        description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "✍️",
+        topics: [
+            "Apa itu Operator Assignment?",
+            "Macam-Macam Operator Assignment",
+            "Latihan Praktik"
+        ],
+        color: "#5A9690",
+    },
+    {
+        id: 15,
+        title: "Pengenalan String",
+        description: "Belajar tipe data string di Python: cara membuat, mengakses, memodifikasi, dan operasi penting pada string.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🔤",
+        topics: [
+            "Apa Itu String?",
+            "Mengakses Karakter dalam String",
+            "Slicing String",
+            "Metode Penting pada String",
+            "Latihan Praktik"
+        ],
+        color: "#6B3F69",
+    }
 ];
 
 export default lessonCards;

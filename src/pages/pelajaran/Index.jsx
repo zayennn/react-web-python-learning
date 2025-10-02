@@ -13,6 +13,8 @@ import lessonCards from './data/LessonCard';
 const App = () => {
     const gridRef = useRef(null);
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredLessons, setFilteredLessons] = useState(lessonCards);
     const itemsPerPage = 10;
 
     useEffect(() => {
@@ -28,9 +30,26 @@ const App = () => {
         }
     }, []);
 
-    const totalPages = Math.ceil(lessonCards.length / itemsPerPage);
+    // Filter lessons based on search query
+    useEffect(() => {
+        if (searchQuery.trim() === '') {
+            setFilteredLessons(lessonCards);
+        } else {
+            const query = searchQuery.toLowerCase();
+            const filtered = lessonCards.filter(card => 
+                card.title.toLowerCase().includes(query) ||
+                card.description.toLowerCase().includes(query) ||
+                card.topics.some(topic => topic.toLowerCase().includes(query)) ||
+                card.level.toLowerCase().includes(query)
+            );
+            setFilteredLessons(filtered);
+        }
+        setCurrentPage(1); // Reset to first page when search changes
+    }, [searchQuery]);
+
+    const totalPages = Math.ceil(filteredLessons.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentLessons = lessonCards.slice(startIndex, startIndex + itemsPerPage);
+    const currentLessons = filteredLessons.slice(startIndex, startIndex + itemsPerPage);
 
     const handlePrevious = () => {
         if (currentPage > 1) {
@@ -61,6 +80,10 @@ const App = () => {
         return visiblePages;
     };
 
+    const clearSearch = () => {
+        setSearchQuery('');
+    };
+
     return (
         <div className="app">
             <PelajaranNavbar />
@@ -71,11 +94,32 @@ const App = () => {
                         <h1>Materi Belajar Python</h1>
                         <p>Pilih materi yang ingin dipelajari dan mulai perjalanan coding Anda. Mulai dari dasar hingga tingkat lanjut.</p>
 
-                        <div className="filter-tabs">
-                            <button className="filter-tab active" data-filter="all">Semua</button>
-                            <button className="filter-tab" data-filter=".pemula">Pemula</button>
-                            <button className="filter-tab" data-filter=".menengah">Menengah</button>
-                            <button className="filter-tab" data-filter=".lanjutan">Lanjutan</button>
+                        {/* Search Input */}
+                        <div className="search-container">
+                            <div className="search-input-wrapper">
+                                <div className="search-icon">🔍</div>
+                                <input
+                                    type="text"
+                                    placeholder="Cari materi... (judul, deskripsi, topik, level)"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="search-input"
+                                />
+                                {searchQuery && (
+                                    <button 
+                                        className="clear-search-btn"
+                                        onClick={clearSearch}
+                                        aria-label="Clear search"
+                                    >
+                                        ✕
+                                    </button>
+                                )}
+                            </div>
+                            {searchQuery && (
+                                <div className="search-results-info">
+                                    Ditemukan {filteredLessons.length} materi untuk "{searchQuery}"
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -83,7 +127,7 @@ const App = () => {
                         <div className="stat-card">
                             <div className="stat-icon">📚</div>
                             <div className="stat-info">
-                                <h3>{lessonCards.length}</h3>
+                                <h3>{filteredLessons.length}</h3>
                                 <p>Total Materi</p>
                             </div>
                         </div>
@@ -103,68 +147,83 @@ const App = () => {
                         </div>
                     </div>
 
-                    <div className="lessons-grid" ref={gridRef}>
-                        {currentLessons.map(card => {
-                            console.log(card);
-                            return (
-                                <div key={card.id} className={`lesson-item ${card.level?.toLowerCase() || ''}`}>
-                                    <LessonCard card={card} />
-                                </div>
-                            );
-                        })}
+                    {filteredLessons.length > 0 ? (
+                        <>
+                            <div className="lessons-grid" ref={gridRef}>
+                                {currentLessons.map(card => {
+                                    console.log(card);
+                                    return (
+                                        <div key={card.id} className={`lesson-item ${card.level?.toLowerCase() || ''}`}>
+                                            <LessonCard card={card} />
+                                        </div>
+                                    );
+                                })}
+                            </div>
 
-                    </div>
-
-                    {totalPages > 1 && (
-                        <div className="pagination-container">
-                            {/* Navigation Buttons */}
-                            <div className="pagination-nav">
-                                <button
-                                    className="pagination-nav-btn prev"
-                                    onClick={handlePrevious}
-                                    disabled={currentPage === 1}
-                                >
-                                    ← Sebelumnya
-                                </button>
-
-                                {/* Page Numbers */}
-                                <div className="pagination">
-                                    {getVisiblePages().map(page => (
+                            {totalPages > 1 && (
+                                <div className="pagination-container">
+                                    {/* Navigation Buttons */}
+                                    <div className="pagination-nav">
                                         <button
-                                            key={page}
-                                            className={`page-btn ${currentPage === page ? 'active' : ''}`}
-                                            onClick={() => setCurrentPage(page)}
+                                            className="pagination-nav-btn prev"
+                                            onClick={handlePrevious}
+                                            disabled={currentPage === 1}
                                         >
-                                            {page}
+                                            ← Sebelumnya
                                         </button>
-                                    ))}
 
-                                    {totalPages > 5 && currentPage < totalPages - 2 && (
-                                        <>
-                                            <span className="pagination-ellipsis">...</span>
-                                            <button
-                                                className={`page-btn ${currentPage === totalPages ? 'active' : ''}`}
-                                                onClick={() => setCurrentPage(totalPages)}
-                                            >
-                                                {totalPages}
-                                            </button>
-                                        </>
-                                    )}
+                                        {/* Page Numbers */}
+                                        <div className="pagination">
+                                            {getVisiblePages().map(page => (
+                                                <button
+                                                    key={page}
+                                                    className={`page-btn ${currentPage === page ? 'active' : ''}`}
+                                                    onClick={() => setCurrentPage(page)}
+                                                >
+                                                    {page}
+                                                </button>
+                                            ))}
+
+                                            {totalPages > 5 && currentPage < totalPages - 2 && (
+                                                <>
+                                                    <span className="pagination-ellipsis">...</span>
+                                                    <button
+                                                        className={`page-btn ${currentPage === totalPages ? 'active' : ''}`}
+                                                        onClick={() => setCurrentPage(totalPages)}
+                                                    >
+                                                        {totalPages}
+                                                    </button>
+                                                </>
+                                            )}
+                                        </div>
+
+                                        <button
+                                            className="pagination-nav-btn next"
+                                            onClick={handleNext}
+                                            disabled={currentPage === totalPages}
+                                        >
+                                            Selanjutnya →
+                                        </button>
+                                    </div>
+
+                                    {/* Page Info */}
+                                    <div className="pagination-info">
+                                        Menampilkan {startIndex + 1}-{Math.min(startIndex + itemsPerPage, filteredLessons.length)} dari {filteredLessons.length} materi
+                                    </div>
                                 </div>
-
-                                <button
-                                    className="pagination-nav-btn next"
-                                    onClick={handleNext}
-                                    disabled={currentPage === totalPages}
-                                >
-                                    Selanjutnya →
-                                </button>
-                            </div>
-
-                            {/* Page Info */}
-                            <div className="pagination-info">
-                                Menampilkan {startIndex + 1}-{Math.min(startIndex + itemsPerPage, lessonCards.length)} dari {lessonCards.length} materi
-                            </div>
+                            )}
+                        </>
+                    ) : (
+                        <div className="no-results">
+                            <div className="no-results-icon">🔍</div>
+                            <h3>Tidak ada materi yang ditemukan</h3>
+                            <p>Tidak ada materi yang cocok dengan pencarian "{searchQuery}"</p>
+                            <button 
+                                className="clear-search-btn-large"
+                                onClick={clearSearch}
+                            >
+                                Tampilkan Semua Materi
+                            </button>
                         </div>
                     )}
 
