@@ -1,0 +1,13 @@
+{
+    "name": "patrickkunka/mixitup",
+    "type": "library",
+    "homepage": "https://github.com/patrickkunka/mixitup/",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "KunkaLabs Limited"
+        }
+    ],
+    "description": "A high-performance, dependency-free library for animated filtering, sorting and more",
+    "keywords": ["javascript", "animate", "filtering", "sorting"]
+}
