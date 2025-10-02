@@ -1658,6 +1658,189 @@ else:
                 ]
             }
         ]
+    },
+    {
+        id: 13,
+        title: "Operator Bitwise di Python",
+        description: "Pelajari cara kerja operator bitwise (AND, OR, XOR, NOT, shift) untuk memanipulasi data biner di Python.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 6,
+        progress: 0,
+        image: "🔢",
+        topics: [
+            "Apa Itu Bitwise?",
+            "Operator AND (&)",
+            "Operator OR (|)",
+            "Operator XOR (^)",
+            "Operator NOT (~)",
+            "Shift Kiri & Kanan (<<, >>)",
+            "Latihan"
+        ],
+        color: "#0046FF",
+        content: [
+            {
+                id: 1,
+                title: "Apa Itu Bitwise?",
+                type: "theory",
+                content: `
+# Apa Itu Operator Bitwise?
+
+- Operator bitwise bekerja pada **representasi biner** suatu angka.  
+- Angka di komputer disimpan dalam bentuk biner (0 dan 1).  
+- Bitwise memungkinkan manipulasi langsung tiap bit.
+
+Contoh:
+- Angka 6 → biner: 110
+- Angka 3 → biner: 011
+                `
+            },
+            {
+                id: 2,
+                title: "Operator AND (&)",
+                type: "theory",
+                content: `
+# Operator AND (&)
+
+Hasilnya 1 jika **kedua bit bernilai 1**, selain itu 0.
+
+Contoh:
+- 6 (110)
+- 3 (011)
+- 6 & 3 → 010 (hasil: 2)
+                `,
+                codeExample: `a = 6  # 110
+b = 3  # 011
+print(a & b)`,
+                expectedOutput: `2`
+            },
+            {
+                id: 3,
+                title: "Operator OR (|)",
+                type: "theory",
+                content: `
+# Operator OR (|)
+
+Hasilnya 1 jika **salah satu bit bernilai 1**.
+
+Contoh:
+- 6 (110)
+- 3 (011)
+- 6 | 3 → 111 (hasil: 7)
+                `,
+                codeExample: `a = 6
+b = 3
+print(a | b)`,
+                expectedOutput: `7`
+            },
+            {
+                id: 4,
+                title: "Operator XOR (^)",
+                type: "theory",
+                content: `
+# Operator XOR (^)
+
+Hasilnya 1 jika **kedua bit berbeda**.  
+Kalau sama → hasil 0.
+
+Contoh:
+- 6 (110)
+- 3 (011)
+- 6 ^ 3 → 101 (hasil: 5)
+                `,
+                codeExample: `a = 6
+b = 3
+print(a ^ b)`,
+                expectedOutput: `5`
+            },
+            {
+                id: 5,
+                title: "Operator NOT (~)",
+                type: "theory",
+                content: `
+# Operator NOT (~)
+
+Membalik semua bit (0 jadi 1, 1 jadi 0).  
+Dalam Python → hasilnya = -(angka + 1).
+
+Contoh:
+- ~6 = -(6+1) = -7
+                `,
+                codeExample: `a = 6
+print(~a)`,
+                expectedOutput: `-7`
+            },
+            {
+                id: 6,
+                title: "Shift Kiri (<<) & Kanan (>>)",
+                type: "theory",
+                content: `
+# Operator Shift
+
+- **<< (kiri)**: geser bit ke kiri (sama dengan dikali 2).
+- **>> (kanan)**: geser bit ke kanan (sama dengan dibagi 2, dibulatkan).
+
+Contoh:
+- 6 (110) << 1 → 1100 (12)
+- 6 (110) >> 1 → 11 (3)
+                `,
+                codeExample: `a = 6
+print(a << 1)  # geser kiri
+print(a >> 1)  # geser kanan`,
+                expectedOutput: `12
+3`
+            },
+            {
+                id: 7,
+                title: "Latihan Operator Bitwise",
+                type: "practice",
+                content: `
+# Latihan Operator Bitwise
+
+Coba kerjain soal ini biar makin paham:
+1. Buat program yang minta input dua angka, lalu tampilkan hasil AND, OR, XOR.
+2. Geser angka 15 ke kiri 2 kali, lalu ke kanan 1 kali.
+3. Buat fungsi untuk mengecek apakah sebuah angka **ganjil/genap** menggunakan operator bitwise.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Bitwise Kalkulator",
+                        description: "Minta dua angka, tampilkan hasil AND, OR, XOR.",
+                        hint: "Gunakan &, |, ^",
+                        solution: `a = int(input("Masukkan angka pertama: "))
+b = int(input("Masukkan angka kedua: "))
+
+print("AND:", a & b)
+print("OR:", a | b)
+print("XOR:", a ^ b)`
+                    },
+                    {
+                        id: 2,
+                        title: "Geser Angka",
+                        description: "Geser angka 15 ke kiri 2 kali, lalu ke kanan 1 kali.",
+                        hint: "Gunakan << dan >>",
+                        solution: `x = 15
+print("Geser kiri 2:", x << 2)
+print("Geser kanan 1:", x >> 1)`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek Genap/Ganjil dengan Bitwise",
+                        description: "Gunakan operator & untuk cek genap/ganjil.",
+                        hint: "Angka genap → bit terakhir = 0",
+                        solution: `def cek_genap_ganjil(n):
+    if n & 1 == 0:
+        print("Genap")
+    else:
+        print("Ganjil")
+
+cek_genap_ganjil(7)
+cek_genap_ganjil(10)`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

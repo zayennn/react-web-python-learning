@@ -207,6 +207,26 @@ export const lessonCards = [
             "Soal Praktik"
         ],
         color: "#154D71",
+    },
+    {
+        id: 13,
+        title: "Operator Bitwise di Python",
+        description: "Pelajari cara kerja operator bitwise (AND, OR, XOR, NOT, shift) untuk memanipulasi data biner di Python.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 6,
+        progress: 0,
+        image: "🔢",
+        topics: [
+            "Apa Itu Bitwise?",
+            "Operator AND (&)",
+            "Operator OR (|)",
+            "Operator XOR (^)",
+            "Operator NOT (~)",
+            "Shift Kiri & Kanan (<<, >>)",
+            "Latihan"
+        ],
+        color: "#0046FF",
     }
 ];
 

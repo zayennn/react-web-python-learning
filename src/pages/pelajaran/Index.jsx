@@ -44,7 +44,6 @@ const App = () => {
         }
     };
 
-    // Generate visible page numbers (show max 5 pages at a time)
     const getVisiblePages = () => {
         const visiblePages = [];
         const maxVisible = 5;
