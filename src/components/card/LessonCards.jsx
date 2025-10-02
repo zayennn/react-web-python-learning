@@ -26,7 +26,7 @@ const LessonCard = ({ card, handleStartLesson }) => (
             <div className="card-topics">
                 <h4>Topik yang dipelajari:</h4>
                 <ul>
-                    {card.topics.map((topic, index) => (
+                    {(card.topics || []).map((topic, index) => (
                         <li key={index}>
                             <span className="topic-bullet">•</span>
                             {topic}

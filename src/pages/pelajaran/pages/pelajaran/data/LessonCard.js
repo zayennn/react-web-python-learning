@@ -1841,6 +1841,205 @@ cek_genap_ganjil(10)`
                 ]
             }
         ]
+    },
+    {
+        id: 14,
+        title: "Operator Assignment di Python",
+        description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "✍️",
+        topics: [
+            "Apa itu Operator Assignment?",
+            "Macam-Macam Operator Assignment",
+            "Latihan Praktik"
+        ],
+        color: "#D97D55",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu Operator Assignment?",
+                type: "theory",
+                content: `
+# Operator Assignment
+
+Operator **assignment** itu dipakai buat **menyimpan nilai ke dalam variabel**.  
+Simbol utamanya adalah tanda sama dengan (=).
+
+Contoh:
+\`\`\`python
+x = 10
+\`\`\`
+Artinya: *variabel x dikasih nilai 10.*
+
+Selain "=" biasa, Python juga punya bentuk assignment lain yang lebih singkat.  
+Misalnya: 
+- \`+=\` buat nambah nilai ke variabel
+- \`-=\` buat ngurangin nilai variabel
+- dst.
+
+Jadi, assignment operator ini kaya shortcut biar kita ga nulis kode panjang.
+                `
+            },
+            {
+                id: 2,
+                title: "Macam-Macam Operator Assignment",
+                type: "theory",
+                content: `
+# Macam-Macam Operator Assignment di Python
+
+Berikut operator assignment yang sering dipakai:
+
+1. **= (assignment biasa)**  
+   Kasih nilai awal.  
+   \`\`\`python
+   x = 5
+   \`\`\`
+
+2. **+= (tambah lalu simpan)**  
+   Sama dengan: \`x = x + ...\`  
+   \`\`\`python
+   x = 5
+   x += 3   # sama dengan x = x + 3
+   print(x) # 8
+   \`\`\`
+
+3. **-= (kurang lalu simpan)**  
+   Sama dengan: \`x = x - ...\`  
+   \`\`\`python
+   x = 10
+   x -= 4
+   print(x) # 6
+   \`\`\`
+
+4. ***= (kali lalu simpan)**  
+   Sama dengan: \`x = x * ...\`  
+   \`\`\`python
+   x = 7
+   x *= 2
+   print(x) # 14
+   \`\`\`
+
+5. **/= (bagi lalu simpan)**  
+   Sama dengan: \`x = x / ...\`  
+   \`\`\`python
+   x = 20
+   x /= 5
+   print(x) # 4.0
+   \`\`\`
+
+6. **//= (bagi bulat lalu simpan)**  
+   Sama dengan: \`x = x // ...\`  
+   \`\`\`python
+   x = 20
+   x //= 3
+   print(x) # 6
+   \`\`\`
+
+7. **%= (modulus lalu simpan)**  
+   Sama dengan: \`x = x % ...\`  
+   \`\`\`python
+   x = 10
+   x %= 3
+   print(x) # 1
+   \`\`\`
+
+8. **\*\*= (pangkat lalu simpan)**  
+   Sama dengan: \`x = x ** ...\`  
+   \`\`\`python
+   x = 2
+   x **= 3
+   print(x) # 8
+   \`\`\`
+
+9. **Operator assignment untuk bitwise (lanjutan):**  
+   - \`&=\` AND  
+   - \`|=\` OR  
+   - \`^=\` XOR  
+   - \`>>=\` geser kanan  
+   - \`<<=\` geser kiri  
+
+   (Biasanya dipakai di level menengah, contohnya di bidang pemrosesan data biner).
+                `,
+                codeExample: `x = 5
+x += 2
+print("Hasil += :", x)
+
+x -= 1
+print("Hasil -= :", x)
+
+x *= 3
+print("Hasil *= :", x)
+
+x /= 2
+print("Hasil /= :", x)
+
+x **= 2
+print("Hasil **= :", x)`,
+                expectedOutput: `Hasil += : 7
+Hasil -= : 6
+Hasil *= : 18
+Hasil /= : 9.0
+Hasil **= : 81.0`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operator Assignment
+
+Coba kerjain soal berikut buat nguji pemahaman kamu:
+1. Mulai dengan \`x = 10\`, lalu tambahkan 5 menggunakan operator assignment.
+2. Buat variabel \`y = 50\`, lalu kurangi 20 menggunakan \`-=\`.
+3. Buat variabel \`z = 4\`, kalikan dengan 3, lalu pangkatkan 2 (gunakan operator assignment).
+4. Simulasi tabungan: Mulai dengan saldo = 1000, lalu tambah 200, kurangi 150, dan kalikan 2 (karena dapet bonus). Tampilkan saldo akhir.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Tambah 5",
+                        description: "Gunakan x = 10 lalu tambahkan 5 pakai operator assignment.",
+                        hint: "Pakai +=.",
+                        solution: `x = 10
+x += 5
+print(x)  # 15`
+                    },
+                    {
+                        id: 2,
+                        title: "Kurangi 20",
+                        description: "Buat y = 50, lalu kurangi 20.",
+                        hint: "Pakai -=.",
+                        solution: `y = 50
+y -= 20
+print(y)  # 30`
+                    },
+                    {
+                        id: 3,
+                        title: "Kali dan Pangkat",
+                        description: "Buat z = 4, kali 3 lalu pangkat 2.",
+                        hint: "Gunakan *= dan **=.",
+                        solution: `z = 4
+z *= 3   # z = 12
+z **= 2  # z = 144
+print(z)`
+                    },
+                    {
+                        id: 4,
+                        title: "Simulasi Tabungan",
+                        description: "Mulai dengan saldo = 1000, lalu +200, -150, ×2.",
+                        hint: "Urutkan pakai +=, -=, *=.",
+                        solution: `saldo = 1000
+saldo += 200
+saldo -= 150
+saldo *= 2
+print(saldo)  # 2100`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

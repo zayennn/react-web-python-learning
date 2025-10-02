@@ -227,7 +227,24 @@ export const lessonCards = [
             "Latihan"
         ],
         color: "#0046FF",
-    }
+    },
+    {
+        id: 14,
+        title: "Operator Assignment di Python",
+        description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "✍️",
+        topics: [
+            "Apa itu Operator Assignment?",
+            "Macam-Macam Operator Assignment",
+            "Latihan Praktik"
+        ],
+        color: "#D97D55",
+    },
+    {}
 ];
 
 export default lessonCards;
