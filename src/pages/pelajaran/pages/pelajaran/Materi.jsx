@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Materi.css';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 // import data lesson
 import lessonCards from './data/LessonCard';
@@ -416,7 +416,7 @@ const Materi = () => {
                             <span>Python Learning</span>
                         </div>
                         <div className="footer-links">
-                            <a href="/pelajaran">Materi</a>
+                            <Link to="/pelajaran">Materi</Link>
                         </div>
                     </div>
                     <div className="footer-bottom">

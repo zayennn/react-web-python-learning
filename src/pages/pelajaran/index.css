@@ -19,6 +19,70 @@
   --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Timer Animation */
+.stat-card:nth-child(2) .stat-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive timer text */
+.stat-card:nth-child(2) h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* Search placeholder update */
+.search-input::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Enhanced stat cards for better readability */
+.stat-card .stat-info h3 {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-info p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Mobile responsive for timer */
+@media (max-width: 768px) {
+    .stat-card:nth-child(2) h3 {
+        font-size: 1.2rem;
+    }
+    
+    .stats-overview {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card:nth-child(2) h3 {
+        font-size: 1.1rem;
+    }
+    
+    .search-input::placeholder {
+        font-size: 0.8rem;
+    }
+}
 
 /* search */
 /* Search Styles */

@@ -15,7 +15,53 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredLessons, setFilteredLessons] = useState(lessonCards);
+    const [studyTime, setStudyTime] = useState(0); // waktu dalam detik
     const itemsPerPage = 10;
+
+    // Timer effect - berjalan terus menerus
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setStudyTime(prevTime => prevTime + 1);
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    // Format waktu dari detik ke HH:MM:SS
+    const formatTime = (totalSeconds) => {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    // Hitung total durasi semua materi (dalam menit)
+    const totalDurationMinutes = lessonCards.reduce((total, card) => {
+        const duration = card.duration;
+        const hoursMatch = duration.match(/(\d+)\s*jam/);
+        const minutesMatch = duration.match(/(\d+)\s*menit/);
+        
+        let minutes = 0;
+        if (hoursMatch) minutes += parseInt(hoursMatch[1]) * 60;
+        if (minutesMatch) minutes += parseInt(minutesMatch[1]);
+        
+        return total + minutes;
+    }, 0);
+
+    // Format durasi total
+    const formatTotalDuration = (totalMinutes) => {
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+        
+        if (hours > 0 && minutes > 0) {
+            return `${hours} jam ${minutes} menit`;
+        } else if (hours > 0) {
+            return `${hours} jam`;
+        } else {
+            return `${minutes} menit`;
+        }
+    };
 
     useEffect(() => {
         if (gridRef.current) {
@@ -37,17 +83,14 @@ const App = () => {
         });
     }, [currentPage]);
 
-    // Filter lessons based on search query
+    // Filter lessons based on search query - HANYA BERDASARKAN TITLE
     useEffect(() => {
         if (searchQuery.trim() === '') {
             setFilteredLessons(lessonCards);
         } else {
             const query = searchQuery.toLowerCase();
             const filtered = lessonCards.filter(card =>
-                card.title.toLowerCase().includes(query) ||
-                card.description.toLowerCase().includes(query) ||
-                card.topics.some(topic => topic.toLowerCase().includes(query)) ||
-                card.level.toLowerCase().includes(query)
+                card.title.toLowerCase().includes(query)
             );
             setFilteredLessons(filtered);
         }
@@ -107,7 +150,7 @@ const App = () => {
                                 <div className="search-icon">🔍</div>
                                 <input
                                     type="text"
-                                    placeholder="Cari materi... (judul, deskripsi, topik, level)"
+                                    placeholder="Cari materi berdasarkan judul..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     className="search-input"
@@ -141,15 +184,15 @@ const App = () => {
                         <div className="stat-card">
                             <div className="stat-icon">⏱️</div>
                             <div className="stat-info">
-                                <h3>14 jam</h3>
+                                <h3>{formatTime(studyTime)}</h3>
                                 <p>Durasi Belajar</p>
                             </div>
                         </div>
                         <div className="stat-card">
                             <div className="stat-icon">🎯</div>
                             <div className="stat-info">
-                                <h3>0%</h3>
-                                <p>Progress Overall</p>
+                                <h3>{formatTotalDuration(totalDurationMinutes)}</h3>
+                                <p>Total Konten</p>
                             </div>
                         </div>
                     </div>
