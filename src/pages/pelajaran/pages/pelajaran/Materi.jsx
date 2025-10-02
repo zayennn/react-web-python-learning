@@ -14,6 +14,8 @@ const Materi = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResults, setShowSearchResults] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -40,6 +42,29 @@ const Materi = () => {
         }
     }, [searchQuery]);
 
+    // Reset to first content when lesson changes
+    useEffect(() => {
+        setCurrentContent(0);
+        const firstContent = lesson.content[0];
+        setUserCode(firstContent.codeExample || '');
+        setCodeOutput('');
+        
+        // Show alert when lesson changes
+        if (lessonId) {
+            showNavigationAlert(`Anda sekarang berada di Materi ${lessonId}: ${lesson.title}`);
+        }
+    }, [lessonId, lesson]);
+
+    const showNavigationAlert = (message) => {
+        setAlertMessage(message);
+        setShowAlert(true);
+        
+        // Auto hide alert after 3 seconds
+        setTimeout(() => {
+            setShowAlert(false);
+        }, 3000);
+    };
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -59,6 +84,9 @@ const Materi = () => {
             const nextLesson = lessonCards[currentLessonIndex + 1];
             if (nextLesson) {
                 navigate(`/pelajaran/materi/${nextLesson.id}`);
+                // Alert will be shown in the useEffect
+            } else {
+                showNavigationAlert("Ini adalah materi terakhir!");
             }
         }
     };
@@ -78,6 +106,9 @@ const Materi = () => {
             const prevLesson = lessonCards[currentLessonIndex - 1];
             if (prevLesson) {
                 navigate(`/pelajaran/materi/${prevLesson.id}`);
+                // Alert will be shown in the useEffect
+            } else {
+                showNavigationAlert("Ini adalah materi pertama!");
             }
         }
     };
@@ -167,6 +198,22 @@ const Materi = () => {
 
     return (
         <div className="app">
+            {/* Navigation Alert */}
+            {showAlert && (
+                <div className="navigation-alert">
+                    <div className="alert-content">
+                        <span className="alert-icon">📚</span>
+                        <span className="alert-message">{alertMessage}</span>
+                        <button 
+                            className="alert-close"
+                            onClick={() => setShowAlert(false)}
+                        >
+                            ✕
+                        </button>
+                    </div>
+                </div>
+            )}
+
             {/* Navbar */}
             <nav className="navbar">
                 <div className="nav-container">
@@ -281,6 +328,7 @@ const Materi = () => {
                                             const newContent = lesson.content[index];
                                             setUserCode(newContent.codeExample || '');
                                             setCodeOutput('');
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
                                         }}
                                     >
                                         <div className="topic-number">{index + 1}</div>
@@ -368,9 +416,7 @@ const Materi = () => {
                             <span>Python Learning</span>
                         </div>
                         <div className="footer-links">
-                            <a href="#materi">Materi</a>
-                            <a href="#progress">Progress</a>
-                            <a href="#bantuan">Bantuan</a>
+                            <a href="/pelajaran">Materi</a>
                         </div>
                     </div>
                     <div className="footer-bottom">
