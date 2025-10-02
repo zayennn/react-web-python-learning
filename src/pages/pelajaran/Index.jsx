@@ -30,13 +30,20 @@ const App = () => {
         }
     }, []);
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    }, [currentPage]);
+
     // Filter lessons based on search query
     useEffect(() => {
         if (searchQuery.trim() === '') {
             setFilteredLessons(lessonCards);
         } else {
             const query = searchQuery.toLowerCase();
-            const filtered = lessonCards.filter(card => 
+            const filtered = lessonCards.filter(card =>
                 card.title.toLowerCase().includes(query) ||
                 card.description.toLowerCase().includes(query) ||
                 card.topics.some(topic => topic.toLowerCase().includes(query)) ||
@@ -44,7 +51,7 @@ const App = () => {
             );
             setFilteredLessons(filtered);
         }
-        setCurrentPage(1); // Reset to first page when search changes
+        setCurrentPage(1);
     }, [searchQuery]);
 
     const totalPages = Math.ceil(filteredLessons.length / itemsPerPage);
@@ -106,7 +113,7 @@ const App = () => {
                                     className="search-input"
                                 />
                                 {searchQuery && (
-                                    <button 
+                                    <button
                                         className="clear-search-btn"
                                         onClick={clearSearch}
                                         aria-label="Clear search"
@@ -218,7 +225,7 @@ const App = () => {
                             <div className="no-results-icon">🔍</div>
                             <h3>Tidak ada materi yang ditemukan</h3>
                             <p>Tidak ada materi yang cocok dengan pencarian "{searchQuery}"</p>
-                            <button 
+                            <button
                                 className="clear-search-btn-large"
                                 onClick={clearSearch}
                             >
