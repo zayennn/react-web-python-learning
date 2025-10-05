@@ -2992,6 +2992,202 @@ print(f"|{kata:=^10}|")  # =Python==`
                 ]
             }
         ]
+    },
+    {
+        id: 20,
+        title: "Latihan Date and Time",
+        description: "Latihan praktis buat memperdalam pemahaman tentang modul datetime: ambil waktu sekarang, hitung selisih tanggal, dan format tanggal sesuai kebutuhan.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⏰",
+        topics: [
+            "Membuat dan Menampilkan Waktu",
+            "Menghitung Selisih Waktu (timedelta)",
+            "Latihan Praktik: Kalkulator Umur & Event Reminder"
+        ],
+        color: "#6A5ACD",
+        content: [
+            {
+                id: 1,
+                title: "Membuat dan Menampilkan Waktu",
+                type: "theory",
+                content: `
+# Modul datetime di Python
+
+Python punya modul bawaan namanya **datetime**, yang bisa bantu kita ngatur tanggal dan waktu dengan mudah.
+
+\`\`\`python
+from datetime import datetime
+
+# ambil waktu sekarang
+waktu_sekarang = datetime.now()
+print("Waktu sekarang:", waktu_sekarang)
+\`\`\`
+
+Output-nya kira-kira kayak gini:
+\`\`\`
+Waktu sekarang: 2025-10-05 22:15:30.123456
+\`\`\`
+
+### Format tanggal
+Kita bisa ubah tampilannya pakai method \`strftime()\`.
+
+\`\`\`python
+print(waktu_sekarang.strftime("%d/%m/%Y"))
+print(waktu_sekarang.strftime("%H:%M:%S"))
+print(waktu_sekarang.strftime("%A, %d %B %Y"))
+\`\`\`
+
+Beberapa kode format penting:
+- **%d** → Tanggal (01–31)
+- **%m** → Bulan (01–12)
+- **%Y** → Tahun lengkap
+- **%H:%M:%S** → Jam, menit, detik
+- **%A** → Nama hari
+- **%B** → Nama bulan
+            `
+            },
+            {
+                id: 2,
+                title: "Menghitung Selisih Waktu (timedelta)",
+                type: "theory",
+                content: `
+# Menghitung Selisih Waktu
+
+Kalau lo mau tau jarak antara dua tanggal, bisa pakai **timedelta**.
+
+\`\`\`python
+from datetime import datetime, timedelta
+
+hari_ini = datetime.now()
+minggu_depan = hari_ini + timedelta(days=7)
+
+print("Hari ini:", hari_ini.strftime("%d-%m-%Y"))
+print("Minggu depan:", minggu_depan.strftime("%d-%m-%Y"))
+\`\`\`
+
+Selain itu, lo juga bisa **ngurangin dua tanggal**:
+\`\`\`python
+tanggal1 = datetime(2025, 10, 5)
+tanggal2 = datetime(2025, 12, 25)
+
+selisih = tanggal2 - tanggal1
+print("Selisih hari:", selisih.days)
+\`\`\`
+
+Output:
+\`\`\`
+Selisih hari: 81
+\`\`\`
+
+Jadi gampang banget buat hitung mundur, umur, atau reminder event.
+            `,
+                codeExample: `from datetime import datetime, timedelta
+
+hari_ini = datetime.now()
+deadline = hari_ini + timedelta(days=14)
+
+print("Hari ini:", hari_ini.strftime("%d/%m/%Y"))
+print("Deadline:", deadline.strftime("%d/%m/%Y"))
+
+selisih = deadline - hari_ini
+print("Sisa waktu (hari):", selisih.days)`,
+                expectedOutput: `Hari ini: 05/10/2025
+Deadline: 19/10/2025
+Sisa waktu (hari): 14`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik: Kalkulator Umur & Event Reminder",
+                type: "practice",
+                content: `
+# LATIHAN DATE & TIME
+
+Sekarang waktunya lo praktek.  
+Kerjain langkah-langkah berikut:
+
+1. **Kalkulator Umur**  
+   - Minta user masukin tanggal lahirnya (format: YYYY-MM-DD)  
+   - Hitung berapa umur dia hari ini  
+   - Tampilkan dalam tahun dan hari
+
+2. **Event Reminder**  
+   - Buat program yang bisa ngitung berapa hari lagi ke tanggal tertentu (misal ulang tahun, ujian, atau liburan).  
+   - Tampilkan hasilnya dalam format yang rapi.
+
+3. **Format Custom**  
+   - Ubah tampilan waktu sekarang jadi seperti ini:  
+     "Hari ini: Minggu, 5 Oktober 2025 - Jam: 22:30"
+
+---
+
+Contoh solusi (boleh dijadiin referensi):
+\`\`\`python
+from datetime import datetime, timedelta
+
+# 1. Kalkulator umur
+lahir = input("Masukkan tanggal lahir kamu (YYYY-MM-DD): ")
+tanggal_lahir = datetime.strptime(lahir, "%Y-%m-%d")
+hari_ini = datetime.now()
+
+umur_hari = (hari_ini - tanggal_lahir).days
+umur_tahun = umur_hari // 365
+
+print(f"Umur kamu sekitar {umur_tahun} tahun ({umur_hari} hari).")
+
+# 2. Event reminder
+event = datetime(2025, 12, 31)
+selisih = event - hari_ini
+print(f"Menuju tahun baru tinggal {selisih.days} hari lagi!")
+
+# 3. Format custom
+print("Hari ini:", hari_ini.strftime("%A, %d %B %Y - Jam: %H:%M"))
+\`\`\`
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Kalkulator Umur",
+                        description: "Buat program yang bisa menghitung umur user berdasarkan tanggal lahir.",
+                        hint: "Gunakan datetime.now() dan strptime().",
+                        solution: `from datetime import datetime
+
+lahir = input("Masukkan tanggal lahir kamu (YYYY-MM-DD): ")
+tanggal_lahir = datetime.strptime(lahir, "%Y-%m-%d")
+hari_ini = datetime.now()
+
+umur_hari = (hari_ini - tanggal_lahir).days
+umur_tahun = umur_hari // 365
+print(f"Umur kamu sekitar {umur_tahun} tahun ({umur_hari} hari).")`
+                    },
+                    {
+                        id: 2,
+                        title: "Event Reminder",
+                        description: "Hitung berapa hari lagi menuju tanggal tertentu (contohnya 25 Desember 2025).",
+                        hint: "Kurangi dua datetime object.",
+                        solution: `from datetime import datetime
+
+hari_ini = datetime.now()
+event = datetime(2025, 12, 25)
+
+selisih = event - hari_ini
+print(f"Menuju Natal tinggal {selisih.days} hari lagi!")`
+                    },
+                    {
+                        id: 3,
+                        title: "Format Custom",
+                        description: "Tampilkan tanggal sekarang dalam format unik: 'Hari ini: Senin, 06 Oktober 2025 - Jam: 21:45'",
+                        hint: "Gunakan strftime dengan %A, %d, %B, %Y, dan %H:%M.",
+                        solution: `from datetime import datetime
+
+waktu = datetime.now()
+print(waktu.strftime("Hari ini: %A, %d %B %Y - Jam: %H:%M"))`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

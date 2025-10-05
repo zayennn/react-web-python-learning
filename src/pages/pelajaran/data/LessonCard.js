@@ -344,6 +344,22 @@ export const lessonCards = [
             "Latihan Formatting String"
         ],
         color: "#4B8F8C",
+    },
+    {
+        id: 20,
+        title: "Latihan Date and Time",
+        description: "Latihan praktis buat memperdalam pemahaman tentang modul datetime: ambil waktu sekarang, hitung selisih tanggal, dan format tanggal sesuai kebutuhan.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⏰",
+        topics: [
+            "Membuat dan Menampilkan Waktu",
+            "Menghitung Selisih Waktu (timedelta)",
+            "Latihan Praktik: Kalkulator Umur & Event Reminder"
+        ],
+        color: "#6A5ACD",
     }
 ];
 
