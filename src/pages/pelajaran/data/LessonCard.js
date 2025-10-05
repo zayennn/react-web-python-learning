@@ -311,6 +311,23 @@ export const lessonCards = [
             "Formatting String (f-string, format)"
         ],
         color: "#FAB12F",
+    },
+    {
+        id: 18,
+        title: "Format String di Python",
+        description: "Belajar gimana cara menampilkan teks dengan variabel di dalamnya menggunakan teknik format string — biar output jadi lebih rapi dan dinamis.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Apa itu Format String?",
+            "Cara Lama vs Cara Baru",
+            "f-string: Cara Modern Python",
+            "Latihan Praktik"
+        ],
+        color: "#6C63FF",
     }
 ];
 

@@ -2635,6 +2635,205 @@ print(f"Halo {nama}, kamu suka {bahasa} ya?")`
                 ]
             }
         ]
+    },
+    {
+        id: 18,
+        title: "Format String di Python",
+        description: "Belajar gimana cara menampilkan teks dengan variabel di dalamnya menggunakan teknik format string — biar output jadi lebih rapi dan dinamis.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Apa itu Format String?",
+            "Cara Lama vs Cara Baru",
+            "f-string: Cara Modern Python",
+            "Latihan Praktik"
+        ],
+        color: "#6C63FF",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu Format String?",
+                type: "theory",
+                content: `
+# Apa itu Format String?
+
+Kadang kita pengen **nampilin teks yang di dalamnya ada variabel**.  
+Contoh simpel:
+
+\`\`\`python
+nama = "Zayen"
+umur = 19
+print("Halo, nama saya", nama, "dan umur saya", umur, "tahun.")
+\`\`\`
+
+Itu bisa jalan, tapi... keliatan **berantakan dan ribet**, apalagi kalo banyak variabel.  
+Nah, biar lebih rapi dan fleksibel, Python punya fitur yang namanya **format string**.
+            `
+            },
+            {
+                id: 2,
+                title: "Cara Lama: Metode format()",
+                type: "theory",
+                content: `
+# Format String Cara Lama
+
+Dulu (versi Python 2 & awal Python 3), cara format string kayak gini:
+
+\`\`\`python
+nama = "Zayen"
+umur = 19
+teks = "Halo, nama saya {} dan umur saya {} tahun.".format(nama, umur)
+print(teks)
+\`\`\`
+
+Output:
+\`\`\`
+Halo, nama saya Zayen dan umur saya 19 tahun.
+\`\`\`
+
+Kita juga bisa kasih urutan manual:
+\`\`\`python
+teks = "Nama: {0}, Umur: {1}".format("Zayen", 19)
+print(teks)
+\`\`\`
+
+Atau bahkan pakai nama variabel:
+\`\`\`python
+teks = "Nama: {nama}, Umur: {umur}".format(nama="Zayen", umur=19)
+print(teks)
+\`\`\`
+
+Tapi seiring waktu, muncul cara yang **lebih simple dan modern** 👇
+            `
+            },
+            {
+                id: 3,
+                title: "Cara Modern: f-string (Python 3.6+)",
+                type: "theory",
+                content: `
+# f-string (Format String Modern)
+
+Mulai dari Python 3.6, muncul fitur baru: **f-string** (format string literal).  
+Ini cara paling gampang dan paling sering dipakai sekarang.
+
+Contoh:
+\`\`\`python
+nama = "Zayen"
+umur = 19
+print(f"Halo, nama saya {nama} dan umur saya {umur} tahun.")
+\`\`\`
+
+Output:
+\`\`\`
+Halo, nama saya Zayen dan umur saya 19 tahun.
+\`\`\`
+
+Keren kan?  
+Kita cukup tulis **f"..."** di depan string, lalu masukin variabel langsung pakai kurung kurawal **{}**.
+
+---
+
+Kita juga bisa masukin ekspresi di dalamnya:
+\`\`\`python
+a = 5
+b = 3
+print(f"Hasil dari {a} + {b} = {a + b}")
+\`\`\`
+
+Output:
+\`\`\`
+Hasil dari 5 + 3 = 8
+\`\`\`
+
+---
+
+Dan bisa atur **format angka** juga:
+\`\`\`python
+nilai = 90.6789
+print(f"Nilai ujian: {nilai:.2f}")  # tampilkan 2 angka di belakang koma
+\`\`\`
+
+Output:
+\`\`\`
+Nilai ujian: 90.68
+\`\`\`
+
+f-string = clean, cepat, dan modern ✨
+            `,
+                codeExample: `nama = "Zayen"
+umur = 19
+tinggi = 172.5
+
+print(f"Halo, nama saya {nama}. Umur saya {umur} tahun.")
+print(f"Tinggi saya {tinggi} cm.")
+print(f"Dalam 5 tahun, umur saya akan jadi {umur + 5} tahun.")`,
+                expectedOutput: `Halo, nama saya Zayen. Umur saya 19 tahun.
+Tinggi saya 172.5 cm.
+Dalam 5 tahun, umur saya akan jadi 24 tahun.`
+            },
+            {
+                id: 4,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Format String
+
+Coba latihan berikut biar makin jago:
+
+1. Buat variabel \`nama\`, \`umur\`, dan \`kota\`.  
+   Tampilkan kalimat pakai **f-string**:  
+   "Halo, saya [nama], umur [umur] tahun, dan saya tinggal di [kota]."
+
+2. Buat dua variabel angka (\`a\` dan \`b\`), lalu tampilkan hasil penjumlahan dan perkaliannya dengan f-string.
+
+3. Format nilai desimal agar hanya tampil **2 angka di belakang koma**.
+
+4. Bonus: Buat program kecil yang minta input dari user (nama dan umur), lalu tampilkan kalimat dengan f-string.
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Perkenalan Diri",
+                        description: "Buat teks perkenalan dengan f-string.",
+                        hint: "Gunakan f\"...\" dan {} untuk variabel.",
+                        solution: `nama = "Zayen"
+umur = 19
+kota = "Bandung"
+print(f"Halo, saya {nama}, umur {umur} tahun, dan saya tinggal di {kota}.")`
+                    },
+                    {
+                        id: 2,
+                        title: "Operasi Angka",
+                        description: "Tampilkan hasil a + b dan a * b pakai f-string.",
+                        hint: "Ekspresi bisa langsung ditulis di dalam {}.",
+                        solution: `a = 7
+b = 3
+print(f"Hasil dari {a} + {b} = {a + b}")
+print(f"Hasil dari {a} × {b} = {a * b}")`
+                    },
+                    {
+                        id: 3,
+                        title: "Format Desimal",
+                        description: "Batasi 2 angka di belakang koma pakai format .2f.",
+                        hint: "Gunakan {variabel:.2f}.",
+                        solution: `nilai = 89.5678
+print(f"Nilai kamu: {nilai:.2f}")  # 89.57`
+                    },
+                    {
+                        id: 4,
+                        title: "Input Dinamis",
+                        description: "Minta input dari user lalu tampilkan hasil pakai f-string.",
+                        hint: "Gunakan input() dan f\"...\".",
+                        solution: `nama = input("Masukkan nama: ")
+umur = input("Masukkan umur: ")
+print(f"Halo {nama}, umur kamu {umur} tahun!")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
