@@ -2246,6 +2246,395 @@ print(teks[::-1])`
                 ]
             }
         ]
+    },
+    {
+        id: 16,
+        title: "Operasi dan Manipulasi String (Part 1)",
+        description: "Belajar cara menggabungkan, mengulang, dan memeriksa string di Python. Dasar penting sebelum lanjut ke manipulasi string lanjutan.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Penggabungan String (Concatenation)",
+            "Pengulangan String",
+            "Mengecek Panjang String",
+            "Latihan Praktik"
+        ],
+        color: "#0065F8",
+        content: [
+            {
+                id: 1,
+                title: "Penggabungan String (Concatenation)",
+                type: "theory",
+                content: `
+# Penggabungan String (Concatenation)
+
+Kata *concatenate* artinya *menggabungkan*.  
+Di Python, kita bisa gabung dua atau lebih string pakai tanda **+**.
+
+\`\`\`python
+nama_depan = "Zayen"
+nama_belakang = "Dev"
+nama_lengkap = nama_depan + " " + nama_belakang
+print(nama_lengkap)
+\`\`\`
+
+Output:
+\`\`\`
+Zayen Dev
+\`\`\`
+
+Kita juga bisa menggabungkan string langsung di dalam print:
+\`\`\`python
+print("Halo, " + "selamat datang!")
+\`\`\`
+
+⚠️ Catatan:
+Kalo mau gabung string dengan angka, **harus diubah dulu ke string** pakai \`str()\`.
+
+\`\`\`python
+umur = 19
+print("Umur saya " + str(umur))
+\`\`\`
+`
+            },
+            {
+                id: 2,
+                title: "Pengulangan String",
+                type: "theory",
+                content: `
+# Pengulangan String
+
+Kita bisa ngulang string pakai tanda **\*** (bintang).  
+Cocok buat efek teks atau formatting sederhana.
+
+\`\`\`python
+print("Python! " * 3)
+\`\`\`
+
+Output:
+\`\`\`
+Python! Python! Python!
+\`\`\`
+
+Bisa juga dipakai untuk bikin border teks:
+\`\`\`python
+print("=" * 20)
+print("Belajar Python".center(20))
+print("=" * 20)
+\`\`\`
+
+Output:
+\`\`\`
+====================
+   Belajar Python   
+====================
+\`\`\`
+`
+            },
+            {
+                id: 3,
+                title: "Mengecek Panjang String",
+                type: "theory",
+                content: `
+# Mengecek Panjang String
+
+Kita bisa tahu berapa banyak karakter di dalam string pakai fungsi **len()**.
+
+\`\`\python
+teks = "Belajar Python"
+print(len(teks))
+\`\`\`
+
+Output:
+\`\`\`
+14
+\`\`\`
+
+Termasuk spasi ya!  
+Kalimat "Halo Dunia" berarti panjangnya 10 (karena ada 1 spasi).
+`
+            },
+            {
+                id: 4,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi String (Part 1)
+
+Coba latihan di bawah ini biar makin paham cara pakai operator string:
+
+1. Buat variabel \`nama_depan\` dan \`nama_belakang\`, lalu gabungkan jadi \`nama_lengkap\`.
+2. Cetak kata "Python " sebanyak 5 kali.
+3. Buat teks \`judul = "Belajar Python Itu Seru"\`, lalu tampilkan panjang string-nya.
+4. Cetak teks "Halo Zayen!" tapi gunakan variabel \`nama = "Zayen"\` (gabungkan string dan variabel).
+5. Bikin border dari karakter "=" sepanjang 30 karakter dan tulis teks di tengahnya.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Gabung Nama",
+                        description: "Gabungkan nama depan dan nama belakang jadi satu string.",
+                        hint: "Gunakan tanda + dan tambahkan spasi.",
+                        solution: `nama_depan = "Zayen"
+nama_belakang = "Dev"
+nama_lengkap = nama_depan + " " + nama_belakang
+print(nama_lengkap)  # Zayen Dev`
+                    },
+                    {
+                        id: 2,
+                        title: "Ulang Kata",
+                        description: "Cetak kata 'Python ' sebanyak 5 kali.",
+                        hint: "Gunakan operator *.",
+                        solution: `print("Python " * 5)`
+                    },
+                    {
+                        id: 3,
+                        title: "Hitung Panjang String",
+                        description: "Buat teks dan tampilkan jumlah karakternya.",
+                        hint: "Gunakan fungsi len().",
+                        solution: `judul = "Belajar Python Itu Seru"
+print(len(judul))  # 24`
+                    },
+                    {
+                        id: 4,
+                        title: "Gabung dengan Variabel",
+                        description: "Cetak 'Halo Zayen!' tapi pakai variabel nama.",
+                        hint: "Gabungkan string dan variabel pakai +.",
+                        solution: `nama = "Zayen"
+print("Halo " + nama + "!")`
+                    },
+                    {
+                        id: 5,
+                        title: "Border Teks",
+                        description: "Bikin teks di tengah border '=' sepanjang 30 karakter.",
+                        hint: "Gunakan print('=' * 30) dan .center().",
+                        solution: `print("=" * 30)
+print("Belajar Python".center(30))
+print("=" * 30)`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 17,
+        title: "Operasi dan Manipulasi String (Part 2)",
+        description: "Belajar berbagai method string di Python untuk ubah huruf, ganti teks, pecah string jadi list, dan gabungin lagi dengan cara singkat dan efektif.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Mengubah Huruf (upper, lower, title, capitalize)",
+            "Mencari & Mengganti Teks (find, replace)",
+            "Memecah & Menggabung String (split, join)",
+            "Formatting String (f-string, format)"
+        ],
+        color: "#FAB12F",
+        content: [
+            {
+                id: 1,
+                title: "Mengubah Huruf (Upper, Lower, Title, Capitalize)",
+                type: "theory",
+                content: `
+# Mengubah Huruf di String
+
+Kadang kita butuh ubah teks jadi huruf besar, kecil, atau format judul.  
+Python udah nyediain method bawaan yang gampang banget dipakai.
+
+\`\`\`python
+teks = "belajar python itu seru!"
+
+print(teks.upper())      # Semua huruf jadi besar
+print(teks.lower())      # Semua huruf jadi kecil
+print(teks.title())      # Huruf pertama tiap kata jadi besar
+print(teks.capitalize()) # Hanya huruf pertama di awal kalimat
+\`\`\`
+
+Output:
+\`\`\`
+BELAJAR PYTHON ITU SERU!
+belajar python itu seru!
+Belajar Python Itu Seru!
+Belajar python itu seru!
+\`\`\`
+
+✨ **Tips:**  
+Biasanya ini kepakai waktu bikin input user biar konsisten (misal, semua username disimpan lowercase).
+            `
+            },
+            {
+                id: 2,
+                title: "Mencari & Mengganti Teks (find, replace)",
+                type: "theory",
+                content: `
+# Mencari & Mengganti Teks di String
+
+Kalau lo pengen **nyari kata tertentu** atau **ganti teks lama jadi baru**,  
+metode yang sering dipakai adalah \`.find()\` dan \`.replace()\`.
+
+\`\`\`python
+kalimat = "aku suka python, python itu keren banget!"
+
+# Cari posisi kata
+posisi = kalimat.find("python")
+print("Posisi kata 'python':", posisi)
+
+# Ganti teks
+baru = kalimat.replace("python", "JavaScript")
+print("Kalimat baru:", baru)
+\`\`\`
+
+Output:
+\`\`\`
+Posisi kata 'python': 9
+Kalimat baru: aku suka JavaScript, JavaScript itu keren banget!
+\`\`\`
+
+🧠 Catatan:
+- Kalau kata yang dicari gak ada, \`.find()\` bakal hasilin **-1**.
+- \`.replace(old, new)** bisa ganti semua kemunculan kata lama jadi kata baru.
+            `
+            },
+            {
+                id: 3,
+                title: "Memecah & Menggabung String (split, join)",
+                type: "theory",
+                content: `
+# Split & Join di String
+
+Metode ini dipakai buat **pecah teks jadi list** atau **gabungin list jadi teks** lagi.
+
+\`\`\`python
+kalimat = "Python itu mudah dan seru"
+
+# Pecah jadi list kata
+kata = kalimat.split()  
+print(kata)
+
+# Gabung lagi jadi string, dipisahkan dengan tanda "-"
+hasil = "-".join(kata)
+print(hasil)
+\`\`\`
+
+Output:
+\`\`\`
+['Python', 'itu', 'mudah', 'dan', 'seru']
+Python-itu-mudah-dan-seru
+\`\`\`
+
+✨ Bisa juga tentuin pemisah khusus:
+\`\`\`python
+data = "apel,jeruk,mangga"
+buah = data.split(",")
+print(buah)
+\`\`\`
+
+Output:
+\`\`\`
+['apel', 'jeruk', 'mangga']
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Formatting String (f-string, format)",
+                type: "theory",
+                content: `
+# Formatting String
+
+Formatting itu cara buat **nyisipin variabel ke dalam teks** dengan rapi.  
+Ada 2 cara populer: pakai \`f-string\` dan \`.format()\`.
+
+## 1. F-String (cara modern dan paling mudah)
+\`\`\`python
+nama = "Zayen"
+umur = 20
+
+print(f"Halo {nama}, umur kamu {umur} tahun.")
+\`\`\`
+
+Output:
+\`\`\`
+Halo Zayen, umur kamu 20 tahun.
+\`\`\`
+
+## 2. Metode .format()
+\`\`\`python
+nama = "Rafi"
+umur = 18
+
+print("Halo {}, umur kamu {} tahun.".format(nama, umur))
+\`\`\`
+
+Output:
+\`\`\`
+Halo Rafi, umur kamu 18 tahun.
+\`\`\`
+
+⚡ F-string lebih cepat dan mudah dibaca, jadi direkomendasikan di Python 3.6+.
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi String (Part 2)
+
+Cobain beberapa latihan biar makin paham gimana cara ngolah teks di Python:
+1. Ubah teks "belajar python itu asik" jadi huruf besar semua.
+2. Ganti semua kata "python" jadi "JavaScript".
+3. Pecah kalimat "apel jeruk mangga" jadi list kata.
+4. Gabung list \`["aku", "suka", "python"]\` jadi satu string, pisahkan dengan spasi.
+5. Gunakan f-string buat bikin kalimat: "Halo [nama], kamu suka [bahasa] ya?"
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Ubah ke Huruf Besar",
+                        hint: "Gunakan .upper()",
+                        solution: `teks = "belajar python itu asik"
+print(teks.upper())`
+                    },
+                    {
+                        id: 2,
+                        title: "Ganti Kata",
+                        hint: "Gunakan .replace()",
+                        solution: `kalimat = "python itu asik"
+kalimat = kalimat.replace("python", "JavaScript")
+print(kalimat)`
+                    },
+                    {
+                        id: 3,
+                        title: "Pecah Kalimat",
+                        hint: "Gunakan .split()",
+                        solution: `buah = "apel jeruk mangga".split()
+print(buah)`
+                    },
+                    {
+                        id: 4,
+                        title: "Gabung List",
+                        hint: "Gunakan .join()",
+                        solution: `kata = ["aku", "suka", "python"]
+hasil = " ".join(kata)
+print(hasil)`
+                    },
+                    {
+                        id: 5,
+                        title: "Gunakan f-string",
+                        hint: "Pakai f\"...{variabel}...\"",
+                        solution: `nama = "Zayen"
+bahasa = "Python"
+print(f"Halo {nama}, kamu suka {bahasa} ya?")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

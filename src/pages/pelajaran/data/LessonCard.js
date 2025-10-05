@@ -277,6 +277,40 @@ export const lessonCards = [
             "Latihan Praktik"
         ],
         color: "#6B3F69",
+    },
+    {
+        id: 16,
+        title: "Operasi dan Manipulasi String (Part 1)",
+        description: "Belajar cara menggabungkan, mengulang, dan memeriksa string di Python. Dasar penting sebelum lanjut ke manipulasi string lanjutan.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Penggabungan String (Concatenation)",
+            "Pengulangan String",
+            "Mengecek Panjang String",
+            "Latihan Praktik"
+        ],
+        color: "#0065F8",
+    },
+    {
+        id: 17,
+        title: "Operasi dan Manipulasi String (Part 2)",
+        description: "Belajar berbagai method string di Python untuk ubah huruf, ganti teks, pecah string jadi list, dan gabungin lagi dengan cara singkat dan efektif.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Mengubah Huruf (upper, lower, title, capitalize)",
+            "Mencari & Mengganti Teks (find, replace)",
+            "Memecah & Menggabung String (split, join)",
+            "Formatting String (f-string, format)"
+        ],
+        color: "#FAB12F",
     }
 ];
 
