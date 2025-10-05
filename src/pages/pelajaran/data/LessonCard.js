@@ -328,6 +328,22 @@ export const lessonCards = [
             "Latihan Praktik"
         ],
         color: "#6C63FF",
+    },
+    {
+        id: 19,
+        title: "String Width dan Alignment di Python",
+        description: "Belajar cara ngatur lebar teks (width) dan posisi teks (alignment) di output Python biar rapi dan profesional.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📏",
+        topics: [
+            "Konsep Lebar (Width) String",
+            "Alignment: Rata Kiri, Kanan, dan Tengah",
+            "Latihan Formatting String"
+        ],
+        color: "#4B8F8C",
     }
 ];
 

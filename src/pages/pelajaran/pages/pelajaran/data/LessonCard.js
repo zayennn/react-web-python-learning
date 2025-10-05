@@ -2834,6 +2834,164 @@ print(f"Halo {nama}, umur kamu {umur} tahun!")`
                 ]
             }
         ]
+    },
+    {
+        id: 19,
+        title: "String Width dan Alignment di Python",
+        description: "Belajar cara ngatur lebar teks (width) dan posisi teks (alignment) di output Python biar rapi dan profesional.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📏",
+        topics: [
+            "Konsep Lebar (Width) String",
+            "Alignment: Rata Kiri, Kanan, dan Tengah",
+            "Latihan Formatting String"
+        ],
+        color: "#4B8F8C",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Lebar (Width) String",
+                type: "theory",
+                content: `
+# Lebar (Width) String
+
+Kadang kita pengin output teks keliatan **rapi**, sejajar, atau punya **panjang tertentu**.  
+Contohnya pas bikin tabel, laporan, atau tampilan CLI.
+
+Python bisa ngatur **lebar teks (width)** pakai format string.
+
+Contoh dasar:
+\`\`\`python
+nama = "Zayen"
+print(f"Nama: {nama:10}")  # kasih lebar 10 karakter
+\`\`\`
+
+Output:
+\`\`\`
+Nama: Zayen     
+\`\`\`
+
+➡️ Artinya, Python bakal nambahin **spasi di belakang** biar total panjangnya jadi 10 karakter.
+
+Kalo teksnya lebih pendek dari width, sisanya diisi spasi.  
+Kalau teksnya lebih panjang, width-nya otomatis ngikutin teks (ga bakal kepotong).
+            `
+            },
+            {
+                id: 2,
+                title: "Alignment: Rata Kiri, Kanan, dan Tengah",
+                type: "theory",
+                content: `
+# Alignment (Perataan Teks)
+
+Python bisa ngatur posisi teks di dalam lebar tertentu.
+
+Gunakan format:
+\`\`\`python
+{variabel:<lebar}   # rata kiri
+{variabel:>lebar}   # rata kanan
+{variabel:^lebar}   # rata tengah
+\`\`\`
+
+Contoh:
+\`\`\`python
+data1 = "apel"
+data2 = "jeruk"
+data3 = "mangga"
+
+print(f"|{data1:<10}|")  # rata kiri
+print(f"|{data2:>10}|")  # rata kanan
+print(f"|{data3:^10}|")  # rata tengah
+\`\`\`
+
+Output:
+\`\`\`
+|apel      |
+|     jeruk|
+|  mangga  |
+\`\`\`
+
+Keterangan:
+- **<** → kiri  
+- **>** → kanan  
+- **^** → tengah  
+
+Kamu juga bisa ganti spasi padding dengan karakter lain, misalnya tanda \`-\` atau \`*\`:
+\`\`\`python
+print(f"|{data1:-<10}|")  # isi sisa dengan '-'
+print(f"|{data2:*>10}|")  # isi sisa dengan '*'
+print(f"|{data3:.^10}|")  # isi sisa dengan '.'
+\`\`\`
+
+Output:
+\`\`\`
+|apel------|
+|*****jeruk|
+|..mangga..|
+\`\`\`
+            `,
+                codeExample: `buah = "nanas"
+
+print(f"|{buah:<10}|  # rata kiri")
+print(f"|{buah:>10}|  # rata kanan")
+print(f"|{buah:^10}|  # rata tengah")
+
+print(f"|{buah:-<10}|  # padding '-' kiri")
+print(f"|{buah:*>10}|  # padding '*' kanan")
+print(f"|{buah:.^10}|  # padding '.' tengah")`,
+                expectedOutput: `|nanas     |  # rata kiri
+|     nanas|  # rata kanan
+|  nanas   |  # rata tengah
+|nanas-----|  # padding '-'
+|*****nanas|  # padding '*'
+|..nanas...|  # padding '.'`
+            },
+            {
+                id: 3,
+                title: "Latihan Formatting String",
+                type: "practice",
+                content: `
+# Latihan String Width dan Alignment
+
+Coba buat output seperti tabel sederhana di bawah ini:
+
+\`\`\`
+| Nama     | Umur | Kota      |
+|-----------|------|-----------|
+| Zayen     |  20  | Bandung   |
+| Alicia    |  19  | Jakarta   |
+| Rafi      |  21  | Surabaya  |
+\`\`\`
+
+Gunakan f-string dengan alignment biar hasilnya sejajar.  
+Hint: Gunakan kombinasi \`<\`, \`>\`, dan \`^\` dengan width yang pas.
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Tabel Sederhana",
+                        description: "Buat tabel dengan lebar kolom rata seperti contoh di atas.",
+                        hint: "Gunakan f-string dengan format {var:<10}, {var:^6}, {var:<10}.",
+                        solution: `print("|{:<10}|{:^6}|{:<10}|".format("Nama", "Umur", "Kota"))
+print("|-----------|------|-----------|")
+print("|{:<10}|{:^6}|{:<10}|".format("Zayen", "20", "Bandung"))
+print("|{:<10}|{:^6}|{:<10}|".format("Alicia", "19", "Jakarta"))
+print("|{:<10}|{:^6}|{:<10}|".format("Rafi", "21", "Surabaya"))`
+                    },
+                    {
+                        id: 2,
+                        title: "Custom Padding",
+                        description: "Tampilkan teks yang rata tengah tapi isi padding-nya pakai tanda '='.",
+                        hint: "Gunakan format seperti {var:=^10}.",
+                        solution: `kata = "Python"
+print(f"|{kata:=^10}|")  # =Python==`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
