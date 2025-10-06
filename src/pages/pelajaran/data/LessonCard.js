@@ -639,6 +639,24 @@ export const lessonCards = [
             "Latihan Kombinasi List"
         ],
         color: "#F97316",
+    },
+    {
+        id: 37,
+        title: "Tuples dan Set",
+        description: "Pelajari tuple (immutable) dan set (unik & tidak berurutan) di Python. Keduanya sering dipakai buat data yang berbeda dari list.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔹",
+        topics: [
+            "Apa itu Tuple?",
+            "Akses & Operasi Tuple",
+            "Apa itu Set?",
+            "Operasi Set",
+            "Latihan Tuple & Set"
+        ],
+        color: "#8B5CF6",
     }
 ];
 

@@ -6231,6 +6231,172 @@ Hasil perkalian: [[2, 4, 6], [8, 198, 12], [14, 16, 18]]
             `
             }
         ]
+    },
+    {
+        id: 37,
+        title: "Tuples dan Set",
+        description: "Pelajari tuple (immutable) dan set (unik & tidak berurutan) di Python. Keduanya sering dipakai buat data yang berbeda dari list.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔹",
+        topics: [
+            "Apa itu Tuple?",
+            "Akses & Operasi Tuple",
+            "Apa itu Set?",
+            "Operasi Set",
+            "Latihan Tuple & Set"
+        ],
+        color: "#8B5CF6",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu Tuple?",
+                type: "theory",
+                content: `
+# Tuple
+
+Tuple mirip list, tapi **immutable** → setelah dibuat, elemen tidak bisa diubah, ditambah, atau dihapus.
+
+\`\`\`python
+data = (1, 2, 3, "Python")
+print(data)
+print(type(data))
+\`\`\`
+
+Output:
+\`\`\`
+(1, 2, 3, 'Python')
+<class 'tuple'>
+\`\`\`
+
+💡 Cocok buat data yang **tetap** seperti koordinat, konfigurasi, atau constants.
+            `
+            },
+            {
+                id: 2,
+                title: "Akses & Operasi Tuple",
+                type: "theory",
+                content: `
+# Akses Tuple
+
+- Menggunakan indeks:
+\`\`\`python
+data = (10, 20, 30)
+print(data[0])  # 10
+print(data[-1]) # 30
+\`\`\`
+
+- Bisa slicing:
+\`\`\`python
+print(data[0:2]) # (10, 20)
+\`\`\`
+
+- Karena immutable, operasi seperti append(), remove() → ❌ error.  
+- Bisa di-loop pakai for:
+\`\`\`python
+for d in data:
+    print(d)
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Apa itu Set?",
+                type: "theory",
+                content: `
+# Set
+
+Set = kumpulan elemen **unik** dan **tidak berurutan**.  
+Mirip list tapi:
+- Tidak ada duplikat
+- Tidak bisa diakses pakai indeks
+
+\`\`\`python
+angka = {1, 2, 2, 3, 4}
+print(angka)
+\`\`\`
+
+Output:
+\`\`\`
+{1, 2, 3, 4}
+\`\`\`
+
+💡 Cocok buat ngecek anggota (membership), hapus duplikat, atau operasi matematika.
+            `
+            },
+            {
+                id: 4,
+                title: "Operasi Set",
+                type: "theory",
+                content: `
+# Operasi Set
+
+\`\`\`python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a.union(b))      # gabung: {1, 2, 3, 4, 5}
+print(a.intersection(b)) # irisan: {3}
+print(a.difference(b))   # beda a-b: {1,2}
+print(a.symmetric_difference(b)) # elemen beda: {1,2,4,5}
+\`\`\`
+
+- Tambah elemen: \`a.add(10)\`  
+- Hapus elemen: \`a.remove(2)\` atau \`a.discard(2)\`
+- Loop pakai for tetap bisa
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Tuple & Set",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat tuple berisi 5 angka → print angka pertama & terakhir.  
+2. Loop tuple → tampilkan tiap elemen.  
+3. Buat set berisi beberapa angka duplikat → print setnya (hapus duplikat otomatis).  
+4. Tambah angka baru ke set → hapus angka tertentu.  
+5. Lakukan operasi union & intersection dengan set lain.
+            `,
+                codeExample: `
+# Tuple
+angka_tuple = (10, 20, 30, 40, 50)
+print("Pertama:", angka_tuple[0])
+print("Terakhir:", angka_tuple[-1])
+for n in angka_tuple:
+    print(n)
+
+# Set
+angka_set = {1, 2, 2, 3, 4}
+print("Set unik:", angka_set)
+angka_set.add(5)
+angka_set.remove(2)
+print("Set setelah modifikasi:", angka_set)
+
+# Operasi set
+a = {1, 2, 3}
+b = {3, 4, 5}
+print("Union:", a.union(b))
+print("Intersection:", a.intersection(b))
+            `,
+                expectedOutput: `
+Pertama: 10
+Terakhir: 50
+10
+20
+30
+40
+50
+Set unik: {1, 2, 3, 4}
+Set setelah modifikasi: {1, 3, 4, 5}
+Union: {1, 2, 3, 4, 5}
+Intersection: {3}
+            `
+            }
+        ]
     }
 ];
 
