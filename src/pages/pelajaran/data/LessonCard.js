@@ -621,6 +621,24 @@ export const lessonCards = [
             "Latihan Looping List"
         ],
         color: "#22D3EE",
+    },
+    {
+        id: 36,
+        title: "Latihan List",
+        description: "Latihan praktis untuk mengasah kemampuan manipulasi list. Cocok buat penguatan materi list sebelum lanjut ke List Comprehension.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 1,
+        progress: 0,
+        image: "📝",
+        topics: [
+            "Latihan Akses & Modifikasi List",
+            "Latihan Nested List",
+            "Latihan Copy List",
+            "Latihan Looping & Enumerate",
+            "Latihan Kombinasi List"
+        ],
+        color: "#F97316",
     }
 ];
 

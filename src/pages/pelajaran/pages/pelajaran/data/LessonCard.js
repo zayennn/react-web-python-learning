@@ -6113,6 +6113,124 @@ matrix[1][1] = 4
             `
             }
         ]
+    },
+    {
+        id: 36,
+        title: "Latihan List",
+        description: "Latihan praktis untuk mengasah kemampuan manipulasi list. Cocok buat penguatan materi list sebelum lanjut ke List Comprehension.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 1,
+        progress: 0,
+        image: "📝",
+        topics: [
+            "Latihan Akses & Modifikasi List",
+            "Latihan Nested List",
+            "Latihan Copy List",
+            "Latihan Looping & Enumerate",
+            "Latihan Kombinasi List"
+        ],
+        color: "#F97316",
+        content: [
+            {
+                id: 1,
+                title: "Latihan List Gabungan",
+                type: "practice",
+                content: `
+# Latihan Praktik List
+
+Coba selesaikan soal-soal berikut untuk menguatkan pemahamanmu:
+
+1. Buat list berisi 5 buah nama temanmu.  
+   - Tampilkan nama pertama dan terakhir.  
+   - Ubah nama teman ke-2 menjadi nama baru.  
+
+2. Buat nested list berisi 3x3 angka (1-9).  
+   - Tampilkan semua elemen per baris.  
+   - Ubah angka di tengah menjadi 99.  
+
+3. Buat shallow copy dari nested list tadi → ubah elemen pertama → cek pengaruh ke list asli.  
+   Buat deep copy → ubah elemen terakhir → pastikan list asli tetap.  
+
+4. Loop list nama teman pakai enumerate → tampilkan nomor + nama.  
+
+5. Tambahkan 1 teman baru di list → hapus teman ke-2 → cetak list akhir.  
+
+6. Loop nested list → hitung jumlah semua angka.  
+
+7. Bonus: Buat list baru berisi hasil perkalian angka nested list dengan 2.
+            `,
+                codeExample: `
+import copy
+
+# 1. List nama teman
+teman = ["Ali", "Budi", "Citra", "Dina", "Eka"]
+print("Nama pertama:", teman[0])
+print("Nama terakhir:", teman[-1])
+teman[1] = "Bahar"
+
+# 2. Nested list 3x3
+matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+for row in matrix:
+    print(row)
+
+matrix[1][1] = 99  # ubah angka tengah
+
+# 3. Shallow & deep copy
+shallow = matrix.copy()
+shallow[0][0] = 100
+deep = copy.deepcopy(matrix)
+deep[2][2] = 999
+
+print("Shallow copy:", shallow)
+print("Deep copy:", deep)
+print("Original matrix:", matrix)
+
+# 4. Loop enumerate nama teman
+for idx, t in enumerate(teman, start=1):
+    print(f"{idx}. {t}")
+
+# 5. Tambah & hapus teman
+teman.append("Fajar")
+teman.pop(1)
+print("List akhir teman:", teman)
+
+# 6. Hitung jumlah angka di nested list
+total = 0
+for row in matrix:
+    for num in row:
+        total += num
+print("Jumlah semua angka:", total)
+
+# 7. List baru hasil perkalian nested list * 2
+hasil = [[num*2 for num in row] for row in matrix]
+print("Hasil perkalian:", hasil)
+            `,
+                expectedOutput: `
+Nama pertama: Ali
+Nama terakhir: Eka
+[1, 2, 3]
+[4, 99, 6]
+[7, 8, 9]
+Shallow copy: [[100, 2, 3], [4, 99, 6], [7, 8, 9]]
+Deep copy: [[1, 2, 3], [4, 99, 6], [7, 8, 999]]
+Original matrix: [[1, 2, 3], [4, 99, 6], [7, 8, 9]]
+1. Ali
+2. Bahar
+3. Citra
+4. Dina
+5. Eka
+List akhir teman: ['Ali', 'Citra', 'Dina', 'Eka', 'Fajar']
+Jumlah semua angka: 140
+Hasil perkalian: [[2, 4, 6], [8, 198, 12], [14, 16, 18]]
+            `
+            }
+        ]
     }
 ];
 
