@@ -6568,6 +6568,196 @@ Budi umur: 21
             `
             }
         ]
+    },
+    {
+        id: 39,
+        title: "Operasi Dictionary",
+        description: "Pelajari operasi lanjutan pada dictionary: akses, update, hapus, cek key, gabung dictionary, dan manipulasi nested dictionary.",
+        level: "Menengah-Tinggi",
+        duration: "1.5 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🗄️",
+        topics: [
+            "Akses & Update Key-Value",
+            "Cek Key di Dictionary",
+            "Hapus Key",
+            "Gabung & Update Dictionary",
+            "Operasi di Nested Dictionary",
+            "Latihan Operasi Dictionary"
+        ],
+        color: "#FBBF24",
+        content: [
+            {
+                id: 1,
+                title: "Akses & Update Key-Value",
+                type: "theory",
+                content: `
+# Akses & Update Key-Value
+
+- Akses value:
+\`\`\`python
+data = {"nama": "Zayen", "umur": 20}
+print(data["nama"])
+\`\`\`
+
+- Update value:
+\`\`\`python
+data["umur"] = 21
+print(data)
+\`\`\`
+
+- Tambah key baru:
+\`\`\`python
+data["kota"] = "Jakarta"
+print(data)
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Cek Key di Dictionary",
+                type: "theory",
+                content: `
+# Cek Key
+
+- Gunakan 'in' untuk cek key:
+\`\`\`python
+if "nama" in data:
+    print("Key nama ada")
+\`\`\`
+
+- Gunakan get() untuk akses aman:
+\`\`\`python
+print(data.get("hobi", "Tidak ada hobi"))
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Hapus Key",
+                type: "theory",
+                content: `
+# Hapus Key
+
+- pakai del:
+\`\`\`python
+del data["kota"]
+\`\`\`
+
+- pakai pop() untuk ambil value sekaligus hapus:
+\`\`\`python
+umur = data.pop("umur")
+print("Umur dihapus:", umur)
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Gabung & Update Dictionary",
+                type: "theory",
+                content: `
+# Gabung Dictionary
+
+- update() → gabung dictionary atau update key existing:
+\`\`\`python
+data1 = {"a":1, "b":2}
+data2 = {"b":3, "c":4}
+
+data1.update(data2)
+print(data1)
+\`\`\`
+
+Output:
+\`\`\`
+{'a':1, 'b':3, 'c':4}
+\`\`\`
+            `
+            },
+            {
+                id: 5,
+                title: "Operasi di Nested Dictionary",
+                type: "theory",
+                content: `
+# Nested Dictionary
+
+- Akses nested dictionary:
+\`\`\`python
+teman = {
+    "Ali": {"umur": 20, "kota": "Jakarta"},
+    "Budi": {"umur": 21, "kota": "Bandung"}
+}
+
+print(teman["Ali"]["kota"])  # Jakarta
+\`\`\`
+
+- Update nested dictionary:
+\`\`\`python
+teman["Ali"]["umur"] = 22
+\`\`\`
+            `
+            },
+            {
+                id: 6,
+                title: "Latihan Operasi Dictionary",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat dictionary 3 teman: nama, umur, kota.  
+2. Update umur teman pertama.  
+3. Tambah key baru 'hobi' ke tiap teman.  
+4. Hapus key 'kota' teman kedua pakai pop().  
+5. Gabung dictionary tambahan {"Dina": {"umur": 19, "kota":"Surabaya"}}  
+6. Loop semua teman → print nama + info lengkap.
+            `,
+                codeExample: `
+# Buat dictionary teman
+teman = {
+    "Ali": {"umur": 20, "kota": "Jakarta"},
+    "Budi": {"umur": 21, "kota": "Bandung"},
+    "Citra": {"umur": 19, "kota": "Surabaya"}
+}
+
+# Update umur teman pertama
+teman["Ali"]["umur"] = 22
+
+# Tambah key hobi
+teman["Ali"]["hobi"] = ["bola", "ngoding"]
+teman["Budi"]["hobi"] = ["musik"]
+teman["Citra"]["hobi"] = ["membaca"]
+
+# Hapus key kota teman kedua
+hapus_kota = teman["Budi"].pop("kota", None)
+
+# Gabung dictionary tambahan
+teman_baru = {"Dina": {"umur": 19, "kota": "Surabaya"}}
+teman.update(teman_baru)
+
+# Loop semua teman
+for nama, info in teman.items():
+    print(nama)
+    for key, value in info.items():
+        print(f"  {key}: {value}")
+            `,
+                expectedOutput: `
+Ali
+  umur: 22
+  kota: Jakarta
+  hobi: ['bola', 'ngoding']
+Budi
+  umur: 21
+  hobi: ['musik']
+Citra
+  umur: 19
+  kota: Surabaya
+  hobi: ['membaca']
+Dina
+  umur: 19
+  kota: Surabaya
+            `
+            }
+        ]
     }
 ];
 

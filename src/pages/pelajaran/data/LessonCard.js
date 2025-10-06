@@ -675,6 +675,25 @@ export const lessonCards = [
             "Latihan Dictionary"
         ],
         color: "#22C55E",
+    },
+    {
+        id: 39,
+        title: "Operasi Dictionary",
+        description: "Pelajari operasi lanjutan pada dictionary: akses, update, hapus, cek key, gabung dictionary, dan manipulasi nested dictionary.",
+        level: "Menengah-Tinggi",
+        duration: "1.5 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🗄️",
+        topics: [
+            "Akses & Update Key-Value",
+            "Cek Key di Dictionary",
+            "Hapus Key",
+            "Gabung & Update Dictionary",
+            "Operasi di Nested Dictionary",
+            "Latihan Operasi Dictionary"
+        ],
+        color: "#FBBF24",
     }
 ];
 
