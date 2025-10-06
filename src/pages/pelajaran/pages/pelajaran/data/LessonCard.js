@@ -6758,6 +6758,185 @@ Dina
             `
             }
         ]
+    },
+    {
+        id: 40,
+        title: "Looping Dictionary",
+        description: "Pelajari cara looping dictionary di Python, termasuk akses key, value, dan kombinasi key-value, serta looping nested dictionary.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Looping Key",
+            "Looping Value",
+            "Looping Key & Value",
+            "Looping Nested Dictionary",
+            "Latihan Looping Dictionary"
+        ],
+        color: "#10B981",
+        content: [
+            {
+                id: 1,
+                title: "Looping Key",
+                type: "theory",
+                content: `
+# Looping Key
+
+Looping dictionary default → key:
+
+\`\`\`python
+teman = {"Ali": 20, "Budi": 21, "Citra": 19}
+
+for key in teman:
+    print(key)
+\`\`\`
+
+Output:
+\`\`\`
+Ali
+Budi
+Citra
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Looping Value",
+                type: "theory",
+                content: `
+# Looping Value
+
+Gunakan .values() untuk looping value:
+
+\`\`\`python
+for umur in teman.values():
+    print(umur)
+\`\`\`
+
+Output:
+\`\`\`
+20
+21
+19
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Looping Key & Value",
+                type: "theory",
+                content: `
+# Looping Key & Value
+
+Gunakan .items() untuk looping key & value sekaligus:
+
+\`\`\`python
+for key, value in teman.items():
+    print(f"{key} berumur {value} tahun")
+\`\`\`
+
+Output:
+\`\`\`
+Ali berumur 20 tahun
+Budi berumur 21 tahun
+Citra berumur 19 tahun
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Looping Nested Dictionary",
+                type: "theory",
+                content: `
+# Looping Nested Dictionary
+
+Jika value adalah dictionary lagi:
+
+\`\`\`python
+teman = {
+    "Ali": {"umur": 20, "kota": "Jakarta"},
+    "Budi": {"umur": 21, "kota": "Bandung"}
+}
+
+for nama, info in teman.items():
+    print(nama)
+    for key, value in info.items():
+        print(f"  {key}: {value}")
+\`\`\`
+
+Output:
+\`\`\`
+Ali
+  umur: 20
+  kota: Jakarta
+Budi
+  umur: 21
+  kota: Bandung
+\`\`\`
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Looping Dictionary",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat dictionary 3 teman: nama, umur, kota.  
+2. Loop dictionary → tampilkan semua key.  
+3. Loop dictionary → tampilkan semua value.  
+4. Loop dictionary → tampilkan key & value.  
+5. Loop nested dictionary → print nama teman + info lengkap.
+            `,
+                codeExample: `
+teman = {
+    "Ali": {"umur": 20, "kota": "Jakarta"},
+    "Budi": {"umur": 21, "kota": "Bandung"},
+    "Citra": {"umur": 19, "kota": "Surabaya"}
+}
+
+# 2. Loop key
+for key in teman:
+    print(key)
+
+# 3. Loop value
+for value in teman.values():
+    print(value)
+
+# 4. Loop key & value
+for key, value in teman.items():
+    print(f"{key} berumur {value['umur']} dan tinggal di {value['kota']}")
+
+# 5. Nested loop
+for nama, info in teman.items():
+    print(nama)
+    for key, value in info.items():
+        print(f"  {key}: {value}")
+            `,
+                expectedOutput: `
+Ali
+Budi
+Citra
+{'umur': 20, 'kota': 'Jakarta'}
+{'umur': 21, 'kota': 'Bandung'}
+{'umur': 19, 'kota': 'Surabaya'}
+Ali berumur 20 dan tinggal di Jakarta
+Budi berumur 21 dan tinggal di Bandung
+Citra berumur 19 dan tinggal di Surabaya
+Ali
+  umur: 20
+  kota: Jakarta
+Budi
+  umur: 21
+  kota: Bandung
+Citra
+  umur: 19
+  kota: Surabaya
+            `
+            }
+        ]
     }
 ];
 

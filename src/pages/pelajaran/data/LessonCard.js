@@ -694,6 +694,24 @@ export const lessonCards = [
             "Latihan Operasi Dictionary"
         ],
         color: "#FBBF24",
+    },
+    {
+        id: 40,
+        title: "Looping Dictionary",
+        description: "Pelajari cara looping dictionary di Python, termasuk akses key, value, dan kombinasi key-value, serta looping nested dictionary.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Looping Key",
+            "Looping Value",
+            "Looping Key & Value",
+            "Looping Nested Dictionary",
+            "Latihan Looping Dictionary"
+        ],
+        color: "#10B981",
     }
 ];
 
