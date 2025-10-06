@@ -568,6 +568,59 @@ export const lessonCards = [
             "Latihan Copy List"
         ],
         color: "#14B8A6",
+    },
+    {
+        id: 33,
+        title: "Nested List (List Bersarang)",
+        description: "List di dalam list — kayak kotak di dalam kotak. Konsep ini bikin lo bisa nyimpen data lebih kompleks, misalnya tabel, grid, atau data 2 dimensi.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🧱",
+        topics: [
+            "Konsep Nested List",
+            "Akses Elemen di Dalam List Bersarang",
+            "Loop di Nested List",
+            "Modifikasi Data di Nested List",
+            "Latihan Nested List"
+        ],
+        color: "#EAB308"
+    },
+    {
+        id: 34,
+        title: "Deep Copy Nested List",
+        description: "Saat list lo punya list di dalamnya, copy biasa nggak cukup. Deep copy bikin salinan total supaya data asli tetap aman.",
+        level: "Pemula-Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🗂️",
+        topics: [
+            "Masalah Shallow Copy di Nested List",
+            "Gunakan copy.deepcopy()",
+            "Modifikasi Deep Copy",
+            "Latihan Deep Copy"
+        ],
+        color: "#F472B6",
+    },
+    {
+        id: 35,
+        title: "Looping List dan Enumerate",
+        description: "Pelajari cara looping list di Python, termasuk cara pakai enumerate() buat dapetin index dan value sekaligus. Sangat berguna untuk manipulasi list dan tracking posisi elemen.",
+        level: "Pemula-Menengah",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Loop Dasar List",
+            "Looping dengan For",
+            "Looping dengan While",
+            "Menggunakan enumerate()",
+            "Latihan Looping List"
+        ],
+        color: "#22D3EE",
     }
 ];
 

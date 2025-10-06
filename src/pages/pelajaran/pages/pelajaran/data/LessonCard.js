@@ -5574,6 +5574,546 @@ print("4. Deep Copy:", deep)
             }
         ]
     },
+    {
+        id: 33,
+        title: "Nested List (List Bersarang)",
+        description: "List di dalam list — kayak kotak di dalam kotak. Konsep ini bikin lo bisa nyimpen data lebih kompleks, misalnya tabel, grid, atau data 2 dimensi.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🧱",
+        topics: [
+            "Konsep Nested List",
+            "Akses Elemen di Dalam List Bersarang",
+            "Loop di Nested List",
+            "Modifikasi Data di Nested List",
+            "Latihan Nested List"
+        ],
+        color: "#EAB308",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Nested List",
+                type: "theory",
+                content: `
+# Apa itu Nested List?
+
+**Nested List** = List yang berisi list lain.  
+Ibaratnya, lo punya *kotak besar* (list utama), dan di dalamnya ada beberapa *kotak kecil* (list di dalam).
+
+Contoh:
+\`\`\`python
+data = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+\`\`\`
+
+Kalau lo print:
+\`\`\`python
+print(data)
+\`\`\`
+
+Output:
+\`\`\`
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+\`\`\`
+
+💡 Ini mirip **tabel 3x3** — baris dan kolom.
+            `
+            },
+            {
+                id: 2,
+                title: "Akses Elemen di Dalam List Bersarang",
+                type: "theory",
+                content: `
+# Cara Akses Data di Nested List
+
+Gunakan **dua indeks**:
+- Indeks pertama → pilih list utama (baris)
+- Indeks kedua → pilih elemen di dalam list itu (kolom)
+
+\`\`\`python
+data = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+print(data[0])     # [10, 20, 30]
+print(data[1][2])  # 60
+print(data[2][0])  # 70
+\`\`\`
+
+💡 \`data[1][2]\` artinya: ambil baris ke-2, lalu kolom ke-3.
+            `
+            },
+            {
+                id: 3,
+                title: "Loop di Nested List",
+                type: "theory",
+                content: `
+# Looping di Dalam Nested List
+
+Kita bisa pakai **loop bersarang (nested loop)** buat baca semua datanya.
+
+\`\`\`python
+data = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for baris in data:
+    for kolom in baris:
+        print(kolom, end=" ")
+    print()  # biar tiap baris turun
+\`\`\`
+
+Output:
+\`\`\`
+1 2 3
+4 5 6
+7 8 9
+\`\`\`
+
+➡️ Ini berguna banget buat *tabel, game grid, atau matriks data.*
+            `
+            },
+            {
+                id: 4,
+                title: "Modifikasi Data di Nested List",
+                type: "theory",
+                content: `
+# Modifikasi Elemen di Nested List
+
+Kita bisa ubah data langsung dengan indeks ganda.
+
+\`\`\`python
+data = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+data[1][2] = 99
+print(data)
+\`\`\`
+
+Output:
+\`\`\`
+[[1, 2, 3], [4, 5, 99]]
+\`\`\`
+
+💡 Bisa juga tambah data baru di baris tertentu:
+\`\`\`python
+data[0].append(10)
+print(data)
+# [[1, 2, 3, 10], [4, 5, 99]]
+\`\`\`
+
+Atau bahkan nambah list baru:
+\`\`\`python
+data.append([7, 8, 9])
+\`\`\`
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Nested List",
+                type: "practice",
+                content: `
+# Latihan: Nested List
+
+1. Buat list 2D berisi nilai siswa:
+   \`nilai = [[80, 90, 85], [70, 88, 92], [60, 75, 70]]\`
+2. Tampilkan semua nilai tiap siswa per baris.
+3. Hitung rata-rata tiap siswa.
+4. Ubah nilai pertama siswa ke-2 jadi 100.
+5. Tambahkan satu siswa baru dengan nilai [90, 95, 85].
+
+Bonus ⚡:
+Coba tampilin data dalam bentuk:
+\`\`\`
+Siswa 1: 80, 90, 85
+Siswa 2: 100, 88, 92
+Siswa 3: 60, 75, 70
+Siswa 4: 90, 95, 85
+\`\`\`
+            `,
+                codeExample: `
+nilai = [
+    [80, 90, 85],
+    [70, 88, 92],
+    [60, 75, 70]
+]
+
+# 1. Tampilkan nilai tiap siswa
+for i, siswa in enumerate(nilai):
+    print(f"Siswa {i+1}: ", end="")
+    for n in siswa:
+        print(n, end=" ")
+    print()
+
+# 2. Hitung rata-rata
+for i, siswa in enumerate(nilai):
+    rata = sum(siswa) / len(siswa)
+    print(f"Rata-rata Siswa {i+1}: {rata}")
+
+# 3. Ubah nilai
+nilai[1][0] = 100
+
+# 4. Tambah siswa baru
+nilai.append([90, 95, 85])
+
+print("\\nData akhir:", nilai)
+            `,
+                expectedOutput: `
+Siswa 1: 80 90 85
+Siswa 2: 70 88 92
+Siswa 3: 60 75 70
+Rata-rata Siswa 1: 85.0
+Rata-rata Siswa 2: 83.3333
+Rata-rata Siswa 3: 68.3333
+
+Data akhir: [[80, 90, 85], [100, 88, 92], [60, 75, 70], [90, 95, 85]]
+            `
+            }
+        ]
+    },
+    {
+        id: 34,
+        title: "Deep Copy Nested List",
+        description: "Saat list lo punya list di dalamnya, copy biasa nggak cukup. Deep copy bikin salinan total supaya data asli tetap aman.",
+        level: "Pemula-Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🗂️",
+        topics: [
+            "Masalah Shallow Copy di Nested List",
+            "Gunakan copy.deepcopy()",
+            "Modifikasi Deep Copy",
+            "Latihan Deep Copy"
+        ],
+        color: "#F472B6",
+        content: [
+            {
+                id: 1,
+                title: "Masalah Shallow Copy di Nested List",
+                type: "theory",
+                content: `
+# Shallow Copy Tidak Cukup
+
+Kalau lo punya nested list dan pakai copy() atau slicing,  
+list luar bakal terpisah, tapi list di dalam **masih nyambung ke list asli**.
+
+\`\`\`python
+nested = [[1, 2], [3, 4]]
+shallow = nested.copy()
+
+shallow[0][0] = 99
+print("Original:", nested)
+print("Shallow Copy:", shallow)
+\`\`\`
+
+Output:
+\`\`\`
+Original: [[99, 2], [3, 4]]
+Shallow Copy: [[99, 2], [3, 4]]
+\`\`\`
+
+➡️ Perubahan di shallow copy bikin list asli ikut berubah.
+            `
+            },
+            {
+                id: 2,
+                title: "Gunakan copy.deepcopy()",
+                type: "theory",
+                content: `
+# Solusi: deepcopy()
+
+Python punya modul \`copy\` dengan fungsi \`deepcopy()\`  
+untuk bikin salinan total dari nested list.
+
+\`\`\`python
+import copy
+
+nested = [[1, 2], [3, 4]]
+deep = copy.deepcopy(nested)
+
+deep[0][0] = 99
+print("Original:", nested)
+print("Deep Copy:", deep)
+\`\`\`
+
+Output:
+\`\`\`
+Original: [[1, 2], [3, 4]]
+Deep Copy: [[99, 2], [3, 4]]
+\`\`\`
+
+✅ Sekarang list asli tetap aman meskipun salinan diubah.
+            `
+            },
+            {
+                id: 3,
+                title: "Modifikasi Deep Copy",
+                type: "theory",
+                content: `
+# Modifikasi Deep Copy
+
+Kamu bisa bebas ngubah data di deep copy tanpa takut ngubah data asli:
+
+\`\`\`python
+import copy
+
+data_asli = [[10, 20], [30, 40]]
+salinan = copy.deepcopy(data_asli)
+
+# ubah nilai di salinan
+salinan[1][1] = 99
+
+print("Data Asli:", data_asli)
+print("Salinan:", salinan)
+\`\`\`
+
+Output:
+\`\`\`
+Data Asli: [[10, 20], [30, 40]]
+Salinan: [[10, 20], [30, 99]]
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Latihan Deep Copy Nested List",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat nested list berisi nilai matriks 2x3:
+   \`matriks = [[1, 2, 3], [4, 5, 6]]\`
+2. Buat shallow copy dan ubah elemen [0][0] → lihat pengaruhnya ke list asli.
+3. Buat deep copy dan ubah elemen [1][2] → pastikan list asli tidak berubah.
+4. Tambahkan baris baru di deep copy.
+5. Tulis kesimpulan: kapan pakai shallow copy, kapan pakai deep copy.
+            `,
+                codeExample: `
+import copy
+
+matriks = [[1, 2, 3], [4, 5, 6]]
+
+# Shallow copy
+shallow = matriks.copy()
+shallow[0][0] = 99
+print("Shallow Copy:", shallow)
+print("Original:", matriks)
+
+# Deep copy
+deep = copy.deepcopy(matriks)
+deep[1][2] = 88
+print("Deep Copy:", deep)
+print("Original:", matriks)
+
+# Tambah baris baru di deep copy
+deep.append([7, 8, 9])
+print("Deep Copy setelah tambah baris:", deep)
+            `,
+                expectedOutput: `
+Shallow Copy: [[99, 2, 3], [4, 5, 6]]
+Original: [[99, 2, 3], [4, 5, 6]]
+Deep Copy: [[99, 2, 3], [4, 5, 88]]
+Original: [[99, 2, 3], [4, 5, 6]]
+Deep Copy setelah tambah baris: [[99, 2, 3], [4, 5, 88], [7, 8, 9]]
+            `
+            }
+        ]
+    },
+    {
+        id: 35,
+        title: "Looping List dan Enumerate",
+        description: "Pelajari cara looping list di Python, termasuk cara pakai enumerate() buat dapetin index dan value sekaligus. Sangat berguna untuk manipulasi list dan tracking posisi elemen.",
+        level: "Pemula-Menengah",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Loop Dasar List",
+            "Looping dengan For",
+            "Looping dengan While",
+            "Menggunakan enumerate()",
+            "Latihan Looping List"
+        ],
+        color: "#22D3EE",
+        content: [
+            {
+                id: 1,
+                title: "Loop Dasar List",
+                type: "theory",
+                content: `
+# Looping Dasar List
+
+Kita bisa looping list pakai for loop:
+
+\`\`\`python
+buah = ["apel", "jeruk", "pisang"]
+
+for b in buah:
+    print(b)
+\`\`\`
+
+Output:
+\`\`\`
+apel
+jeruk
+pisang
+\`\`\`
+
+➡️ Looping ini cuma ambil **value** tiap elemen.
+            `
+            },
+            {
+                id: 2,
+                title: "Looping dengan For & While",
+                type: "theory",
+                content: `
+# Looping For dan While
+
+Selain for, kita juga bisa pakai while loop:
+
+\`\`\`python
+angka = [10, 20, 30]
+i = 0
+while i < len(angka):
+    print(angka[i])
+    i += 1
+\`\`\`
+
+Output:
+\`\`\`
+10
+20
+30
+\`\`\`
+
+💡 Gunakan while kalau lo butuh kondisi loop yang lebih fleksibel.
+            `
+            },
+            {
+                id: 3,
+                title: "Menggunakan enumerate()",
+                type: "theory",
+                content: `
+# enumerate()
+
+Kadang kita butuh **index dan value** sekaligus. Gunakan enumerate():
+
+\`\`\`python
+buah = ["apel", "jeruk", "pisang"]
+
+for idx, b in enumerate(buah):
+    print(f"{idx+1}. {b}")
+\`\`\`
+
+Output:
+\`\`\`
+1. apel
+2. jeruk
+3. pisang
+\`\`\`
+
+💡 \`enumerate()\` sangat membantu buat tracking posisi elemen dalam list.
+            `
+            },
+            {
+                id: 4,
+                title: "Looping List Lanjutan",
+                type: "theory",
+                content: `
+# Tips Looping
+
+1. Bisa juga mulai index dari angka lain:
+\`\`\`python
+for idx, b in enumerate(buah, start=100):
+    print(idx, b)
+\`\`\`
+
+Output:
+\`\`\`
+100 apel
+101 jeruk
+102 pisang
+\`\`\`
+
+2. Bisa dipakai di nested list juga:
+\`\`\`python
+matrix = [[1, 2], [3, 4]]
+for i, row in enumerate(matrix):
+    for j, val in enumerate(row):
+        print(f"matrix[{i}][{j}] = {val}")
+\`\`\`
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Looping List & Enumerate",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat list nama buah: ["apel", "jeruk", "pisang", "mangga"]
+2. Loop list dan tampilkan tiap elemen.
+3. Gunakan enumerate() buat tampilkan index + nama buah dimulai dari 1.
+4. Buat list angka [5, 10, 15, 20] → looping pakai while, tampilkan setiap angka.
+5. Loop nested list: [[1,2], [3,4]] dan print posisi + nilainya.
+            `,
+                codeExample: `
+# Looping list pakai for
+buah = ["apel", "jeruk", "pisang", "mangga"]
+for b in buah:
+    print(b)
+
+# Looping list pakai enumerate
+for idx, b in enumerate(buah, start=1):
+    print(f"{idx}. {b}")
+
+# Looping pakai while
+angka = [5, 10, 15, 20]
+i = 0
+while i < len(angka):
+    print(angka[i])
+    i += 1
+
+# Looping nested list
+matrix = [[1,2], [3,4]]
+for i, row in enumerate(matrix):
+    for j, val in enumerate(row):
+        print(f"matrix[{i}][{j}] = {val}")
+            `,
+                expectedOutput: `
+apel
+jeruk
+pisang
+mangga
+1. apel
+2. jeruk
+3. pisang
+4. mangga
+5
+10
+15
+20
+matrix[0][0] = 1
+matrix[0][1] = 2
+matrix[1][0] = 3
+matrix[1][1] = 4
+            `
+            }
+        ]
+    }
 ];
 
 export default lessonCards;
