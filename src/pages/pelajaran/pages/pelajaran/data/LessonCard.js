@@ -3188,6 +3188,1476 @@ print(waktu.strftime("Hari ini: %A, %d %B %Y - Jam: %H:%M"))`
                 ]
             }
         ]
+    },
+    {
+        id: 21,
+        title: "IF dan ELSE Statement di Python",
+        description: "Belajar gimana Python bisa ngambil keputusan pakai if, else, dan elif biar program bisa mikir kayak manusia.",
+        level: "Pemula",
+        duration: "1 jam 30 menit",
+        lessons: 4,
+        progress: 0,
+        image: "🧠",
+        topics: [
+            "Konsep Percabangan",
+            "IF Statement",
+            "ELSE dan ELIF Statement",
+            "Latihan Kondisi"
+        ],
+        color: "#4F46E5",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Percabangan",
+                type: "theory",
+                content: `
+# Apa Itu Percabangan?
+
+Percabangan atau *conditional statement* dipakai buat **ngambil keputusan di program**.
+
+Bayangin lo bikin program kasir:
+- Kalau total belanja lebih dari 100 ribu → dapet diskon.
+- Kalau kurang → bayar full.
+
+Nah, logika kayak gini dibuat pakai **IF dan ELSE** di Python.
+
+Contoh simpel:
+\`\`\`python
+uang = 120000
+
+if uang > 100000:
+    print("Kamu dapet diskon!")
+else:
+    print("Belum dapet diskon :(")
+\`\`\`
+
+Output:
+\`\`\`
+Kamu dapet diskon!
+\`\`\`
+
+Python ngecek kondisi di dalam **if**, kalo hasilnya **True**, baris di bawahnya dijalankan.
+Kalau **False**, lompat ke bagian **else**.
+            `
+            },
+            {
+                id: 2,
+                title: "IF Statement",
+                type: "theory",
+                content: `
+# IF Statement
+
+Kita mulai dari bentuk paling dasar.
+
+\`\`\`python
+if kondisi:
+    # kode yang dijalankan kalau kondisi True
+\`\`\`
+
+Contoh:
+\`\`\`python
+nilai = 85
+
+if nilai >= 75:
+    print("Lulus!")
+\`\`\`
+
+Output:
+\`\`\`
+Lulus!
+\`\`\`
+
+Penjelasan:
+- Python bakal cek \`nilai >= 75\`
+- Kalau benar (True), print "Lulus!"
+- Kalau salah, ya ga ngapa-ngapain.
+
+> Catatan: perhatikan **indentasi (spasi 4)** setelah if, itu penting banget di Python!
+            `
+            },
+            {
+                id: 3,
+                title: "ELSE dan ELIF Statement",
+                type: "theory",
+                content: `
+# ELSE & ELIF Statement
+
+Kalau lo mau program jalanin aksi lain saat kondisi **False**, pake **else**.
+
+\`\`\`python
+umur = 16
+
+if umur >= 18:
+    print("Kamu sudah dewasa.")
+else:
+    print("Masih di bawah umur.")
+\`\`\`
+
+Output:
+\`\`\`
+Masih di bawah umur.
+\`\`\`
+
+Kalau mau nambah kondisi lain di tengah-tengah, pakai **elif** (else if).
+
+\`\`\python
+nilai = 70
+
+if nilai >= 90:
+    print("Nilai kamu A")
+elif nilai >= 80:
+    print("Nilai kamu B")
+elif nilai >= 70:
+    print("Nilai kamu C")
+else:
+    print("Nilai kamu D")
+\`\`\`
+
+Output:
+\`\`\`
+Nilai kamu C
+\`\`\`
+
+> Urutan if → elif → else dicek dari atas ke bawah. Begitu satu kondisi True, sisanya dilewatin.
+            `,
+                codeExample: `nilai = 70
+
+if nilai >= 90:
+    print("Nilai kamu A")
+elif nilai >= 80:
+    print("Nilai kamu B")
+elif nilai >= 70:
+    print("Nilai kamu C")
+else:
+    print("Nilai kamu D")`,
+                expectedOutput: `Nilai kamu C`
+            },
+            {
+                id: 4,
+                title: "Latihan Kondisi",
+                type: "practice",
+                content: `
+# Latihan IF dan ELSE
+
+Coba kerjain soal di bawah ini biar makin ngerti:
+
+1. Buat program yang ngecek apakah angka genap atau ganjil.
+2. Cek apakah umur >= 18 (boleh buat KTP atau belum).
+3. Buat program nilai ujian: A (>=90), B (>=80), C (>=70), D (>=60), E (di bawah 60).
+4. Bonus: simulasi kasir — kalau total belanja >= 100 ribu, kasih diskon 10%.
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Genap atau Ganjil",
+                        description: "Buat program yang bisa cek apakah angka genap atau ganjil.",
+                        hint: "Gunakan operator modulus (%).",
+                        solution: `angka = 7
+
+if angka % 2 == 0:
+    print("Genap")
+else:
+    print("Ganjil")`
+                    },
+                    {
+                        id: 2,
+                        title: "Cek Umur",
+                        description: "Kalau umur >= 18, tulis 'Boleh buat KTP'. Kalau tidak, tulis 'Belum cukup umur'.",
+                        hint: "Gunakan if dan else.",
+                        solution: `umur = 17
+
+if umur >= 18:
+    print("Boleh buat KTP")
+else:
+    print("Belum cukup umur")`
+                    },
+                    {
+                        id: 3,
+                        title: "Nilai Ujian",
+                        description: "Gunakan if-elif-else untuk menentukan nilai huruf dari angka.",
+                        hint: "Urutkan dari kondisi tertinggi ke terendah.",
+                        solution: `nilai = 82
+
+if nilai >= 90:
+    print("A")
+elif nilai >= 80:
+    print("B")
+elif nilai >= 70:
+    print("C")
+elif nilai >= 60:
+    print("D")
+else:
+    print("E")`
+                    },
+                    {
+                        id: 4,
+                        title: "Diskon Kasir",
+                        description: "Kalau total belanja >= 100000, kasih diskon 10%. Tampilkan total bayar akhir.",
+                        hint: "Gunakan if-else dan sedikit operasi aritmatika.",
+                        solution: `total = 120000
+
+if total >= 100000:
+    total *= 0.9  # diskon 10%
+    print("Kamu dapet diskon!")
+else:
+    print("Belum dapet diskon.")
+    
+print("Total bayar:", total)`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 22,
+        title: "ELIF Statement di Python",
+        description: "Pelajari cara menangani lebih dari dua kondisi dengan elif (else if) agar program bisa mengambil keputusan yang lebih kompleks.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🪜",
+        topics: [
+            "Kapan Harus Pakai ELIF",
+            "Cara Kerja ELIF",
+            "Latihan ELIF Statement"
+        ],
+        color: "#3B82F6",
+        content: [
+            {
+                id: 1,
+                title: "Kapan Harus Pakai ELIF",
+                type: "theory",
+                content: `
+# Kapan Harus Pakai ELIF?
+
+Kadang kita perlu **lebih dari dua pilihan** dalam keputusan.
+
+Kalau cuma pakai \`if\` dan \`else\`, pilihannya cuma dua: benar atau salah.  
+Tapi gimana kalau ada **beberapa kondisi berbeda** yang bisa terjadi?
+
+Contohnya: penilaian ujian.
+- Kalau nilai >= 90 → A
+- Kalau nilai >= 80 → B
+- Kalau nilai >= 70 → C
+- Selain itu → D
+
+Nah, di sinilah **elif** (kepanjangan dari *else if*) dipakai.
+
+Struktur dasarnya:
+\`\`\`python
+if kondisi1:
+    # aksi kalau kondisi1 benar
+elif kondisi2:
+    # aksi kalau kondisi2 benar
+else:
+    # aksi kalau semua kondisi salah
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Cara Kerja ELIF",
+                type: "theory",
+                content: `
+# Cara Kerja ELIF di Python
+
+Python bakal **ngecek kondisi dari atas ke bawah**.
+Begitu nemu kondisi yang hasilnya True, dia langsung jalanin bagian itu dan **skip** sisanya.
+
+Contoh:
+\`\`\`python
+nilai = 85
+
+if nilai >= 90:
+    print("Nilai kamu A")
+elif nilai >= 80:
+    print("Nilai kamu B")
+elif nilai >= 70:
+    print("Nilai kamu C")
+else:
+    print("Nilai kamu D")
+\`\`\`
+
+Output:
+\`\`\`
+Nilai kamu B
+\`\`\`
+
+Penjelasan:
+- \`nilai >= 90\` → False  
+- \`nilai >= 80\` → True → jadi Python langsung print "Nilai kamu B"
+- Bagian bawahnya gak dicek lagi.
+
+> Catatan: lo bisa pakai **sebanyak mungkin elif**, tapi jangan lupa cuma satu *else* di paling bawah.
+            `,
+                codeExample: `hari = "Rabu"
+
+if hari == "Senin":
+    print("Semangat kerja, awal minggu nih!")
+elif hari == "Rabu":
+    print("Udah tengah minggu, gas terus!")
+elif hari == "Jumat":
+    print("Hampir weekend, sabar dikit lagi!")
+else:
+    print("Selamat beristirahat!")`,
+                expectedOutput: `Udah tengah minggu, gas terus!`
+            },
+            {
+                id: 3,
+                title: "Latihan ELIF Statement",
+                type: "practice",
+                content: `
+# Latihan ELIF Statement
+
+Coba bikin beberapa program di bawah ini untuk menguji pemahaman kamu:
+
+1. Program pengecekan suhu:
+   - Suhu > 30 → "Panas banget!"
+   - Suhu antara 20–30 → "Cukup hangat."
+   - Suhu < 20 → "Dingin, butuh jaket!"
+   
+2. Program penilaian:
+   - >= 90 → A
+   - >= 80 → B
+   - >= 70 → C
+   - >= 60 → D
+   - Lainnya → E
+
+3. Program harga tiket bioskop:
+   - Umur < 5 → Gratis
+   - 5–12 → 30.000
+   - 13–17 → 40.000
+   - 18+ → 50.000
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Cek Suhu",
+                        description: "Tentukan reaksi berdasarkan suhu yang dimasukkan.",
+                        hint: "Gunakan urutan if → elif → else.",
+                        solution: `suhu = 25
+
+if suhu > 30:
+    print("Panas banget!")
+elif suhu >= 20:
+    print("Cukup hangat.")
+else:
+    print("Dingin, butuh jaket!")`
+                    },
+                    {
+                        id: 2,
+                        title: "Nilai Huruf",
+                        description: "Konversi nilai angka ke huruf dengan if, elif, else.",
+                        hint: "Urutkan kondisi dari nilai tertinggi ke terendah.",
+                        solution: `nilai = 73
+
+if nilai >= 90:
+    print("A")
+elif nilai >= 80:
+    print("B")
+elif nilai >= 70:
+    print("C")
+elif nilai >= 60:
+    print("D")
+else:
+    print("E")`
+                    },
+                    {
+                        id: 3,
+                        title: "Harga Tiket Bioskop",
+                        description: "Tentukan harga tiket berdasarkan umur pengunjung.",
+                        hint: "Gunakan elif untuk membatasi rentang umur.",
+                        solution: `umur = 14
+
+if umur < 5:
+    print("Gratis")
+elif umur <= 12:
+    print("Harga tiket: 30000")
+elif umur <= 17:
+    print("Harga tiket: 40000")
+else:
+    print("Harga tiket: 50000")`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 23,
+        title: "Latihan Percabangan – Kalkulator Sederhana",
+        description: "Praktik nyata pakai percabangan IF-ELSE buat bikin kalkulator sederhana dengan operasi dasar: tambah, kurang, kali, dan bagi.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 2,
+        progress: 0,
+        image: "🧮",
+        topics: [
+            "Konsep Program Kalkulator",
+            "Latihan Buat Sendiri"
+        ],
+        color: "#E879F9",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Program Kalkulator",
+                type: "theory",
+                content: `
+# Kalkulator Sederhana dengan Percabangan
+
+Di bab ini, kita bakal bikin **program kalkulator** yang bisa ngerjain operasi:
+- Penjumlahan (+)
+- Pengurangan (-)
+- Perkalian (*)
+- Pembagian (/)
+
+Tapi yang seru, semua itu diatur pakai **percabangan IF-ELSE**.  
+Jadi, program bakal ngecek simbol operator dari input user, terus nentuin operasi yang harus dijalankan.
+
+Contoh alur program:
+
+1. User masukin angka pertama  
+2. Masukin operator (misal '+', '-', '*', '/')  
+3. Masukin angka kedua  
+4. Program cek operator dan hitung hasilnya
+
+Kita mulai dari versi paling dasar:
+\`\`\`python
+print("=== Kalkulator Sederhana ===")
+
+angka1 = float(input("Masukkan angka pertama: "))
+operator = input("Masukkan operator (+, -, *, /): ")
+angka2 = float(input("Masukkan angka kedua: "))
+
+if operator == '+':
+    hasil = angka1 + angka2
+    print("Hasil:", hasil)
+elif operator == '-':
+    hasil = angka1 - angka2
+    print("Hasil:", hasil)
+elif operator == '*':
+    hasil = angka1 * angka2
+    print("Hasil:", hasil)
+elif operator == '/':
+    hasil = angka1 / angka2
+    print("Hasil:", hasil)
+else:
+    print("Operator tidak dikenali!")
+\`\`\`
+
+Output (contoh):
+\`\`\`
+=== Kalkulator Sederhana ===
+Masukkan angka pertama: 5
+Masukkan operator (+, -, *, /): *
+Masukkan angka kedua: 4
+Hasil: 20.0
+\`\`\`
+
+🧠 *Penjelasan singkat:*
+- Kita pakai **percabangan if-elif-else** buat milih operasi.
+- Kalau operatornya ga sesuai (\\\`+ - * /\\\`), program bakal munculin pesan error.
+- \\\`float()\\\` dipakai biar bisa input angka desimal juga.
+
+✨ Tips:
+Lo bisa tambahin validasi, misalnya biar ga bisa bagi nol, nanti di bagian latihan kita tambahin!
+            `
+            },
+            {
+                id: 2,
+                title: "Latihan Buat Sendiri",
+                type: "practice",
+                content: `
+# Tantangan Wajib 💪
+
+Sekarang saatnya lo ngebangun versi lo sendiri dari kalkulator ini.
+
+## Soal Latihan
+
+1. Buat program kalkulator yang:
+   - Minta input angka pertama, operator, dan angka kedua.
+   - Jalankan operasi sesuai operator yang dimasukkan.
+   - Kalau operator salah, tampilkan "Operator tidak valid!"
+
+2. Tambahkan **pengecekan khusus untuk pembagian**:
+   - Kalau angka kedua = 0, tampilkan "Tidak bisa dibagi dengan nol!"
+
+3. Tambahkan fitur bonus:
+   - Setelah hasil ditampilkan, munculkan teks:
+     \\\`print("Terima kasih sudah menggunakan kalkulator!")\\\`
+
+---
+
+🧩 **Contoh Hasil Akhir (Output):**
+\`\`\`
+=== Kalkulator Sederhana ===
+Masukkan angka pertama: 10
+Masukkan operator (+, -, *, /): /
+Masukkan angka kedua: 0
+Tidak bisa dibagi dengan nol!
+\`\`\`
+
+atau
+
+\`\`\`
+=== Kalkulator Sederhana ===
+Masukkan angka pertama: 10
+Masukkan operator (+, -, *, /): +
+Masukkan angka kedua: 5
+Hasil: 15.0
+Terima kasih sudah menggunakan kalkulator!
+\`\`\`
+
+---
+
+💡 **Solusi Contoh:**
+\`\`\`python
+print("=== Kalkulator Sederhana ===")
+
+angka1 = float(input("Masukkan angka pertama: "))
+operator = input("Masukkan operator (+, -, *, /): ")
+angka2 = float(input("Masukkan angka kedua: "))
+
+if operator == '+':
+    hasil = angka1 + angka2
+    print("Hasil:", hasil)
+elif operator == '-':
+    hasil = angka1 - angka2
+    print("Hasil:", hasil)
+elif operator == '*':
+    hasil = angka1 * angka2
+    print("Hasil:", hasil)
+elif operator == '/':
+    if angka2 == 0:
+        print("Tidak bisa dibagi dengan nol!")
+    else:
+        hasil = angka1 / angka2
+        print("Hasil:", hasil)
+else:
+    print("Operator tidak valid!")
+
+print("Terima kasih sudah menggunakan kalkulator!")
+\`\`\`
+
+---
+
+🎯 **Tujuan Latihan:**
+- Melatih logika berpikir pakai \\\`if-elif-else\\\`
+- Ngatur alur keputusan program
+- Mulai bikin program interaktif yang beneran bisa dipakai user
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Bikin Kalkulator Dasar",
+                        description: "Gunakan input dan percabangan untuk membuat kalkulator dengan +, -, *, /",
+                        hint: "Gunakan if-elif-else dan float() untuk input angka.",
+                        solution: `print("=== Kalkulator Sederhana ===")
+
+angka1 = float(input("Masukkan angka pertama: "))
+operator = input("Masukkan operator (+, -, *, /): ")
+angka2 = float(input("Masukkan angka kedua: "))
+
+if operator == '+':
+    print("Hasil:", angka1 + angka2)
+elif operator == '-':
+    print("Hasil:", angka1 - angka2)
+elif operator == '*':
+    print("Hasil:", angka1 * angka2)
+elif operator == '/':
+    if angka2 == 0:
+        print("Tidak bisa dibagi dengan nol!")
+    else:
+        print("Hasil:", angka1 / angka2)
+else:
+    print("Operator tidak valid!")
+
+print("Terima kasih sudah menggunakan kalkulator!")`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 24,
+        title: "For Loop (Perulangan) di Python",
+        description: "Belajar gimana Python bisa ngulang kode berkali-kali dengan mudah pakai perulangan for. Cocok buat iterasi list, string, atau range angka.",
+        level: "Pemula",
+        duration: "1 jam 30 menit",
+        lessons: 4,
+        progress: 0,
+        image: "🔁",
+        topics: [
+            "Konsep Perulangan",
+            "For Loop Dasar",
+            "Loop dengan Range dan Data Koleksi",
+            "Latihan Perulangan"
+        ],
+        color: "#EAB308",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Perulangan",
+                type: "theory",
+                content: `
+# Apa Itu Perulangan?
+
+Perulangan (loop) dipakai buat **menjalankan blok kode secara berulang**.  
+Bayangin lo mau print angka 1 sampai 10 — kalo nulis manual satu-satu, capek dong.  
+Nah, Python bisa lakuin itu otomatis pakai **loop**.
+
+Python punya 2 jenis loop utama:
+1. **for loop** → buat ngulang item dalam urutan (list, string, range, dll)
+2. **while loop** → ngulang selama kondisi masih True
+
+Di bab ini, kita fokus dulu ke **for loop**.
+            `
+            },
+            {
+                id: 2,
+                title: "For Loop Dasar",
+                type: "theory",
+                content: `
+# Struktur For Loop
+
+Sintaks dasar:
+
+\`\`\`python
+for variabel in iterable:
+    # kode yang diulang
+\`\`\`
+
+> *iterable* artinya data yang bisa diulang — kayak list, string, atau range angka.
+
+Contoh 1:
+\`\`\`python
+for i in range(5):
+    print("Halo", i)
+\`\`\`
+
+Output:
+\`\`\`
+Halo 0
+Halo 1
+Halo 2
+Halo 3
+Halo 4
+\`\`\`
+
+Python bakal ngulang dari 0 sampai 4 (ingat: range berhenti sebelum angka terakhir).
+
+Contoh 2: loop di list
+\`\`\`python
+buah = ["apel", "mangga", "jeruk"]
+
+for item in buah:
+    print("Saya suka", item)
+\`\`\`
+
+Output:
+\`\`\`
+Saya suka apel
+Saya suka mangga
+Saya suka jeruk
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Loop dengan Range dan Data Koleksi",
+                type: "theory",
+                content: `
+# Fungsi Range() dan Loop Koleksi
+
+## 1️⃣ Range()
+\`range(start, stop, step)\` → buat bikin urutan angka otomatis.
+
+Contoh:
+\`\`\`python
+for i in range(1, 6):
+    print(i)
+\`\`\`
+
+Output:
+\`\`\`
+1
+2
+3
+4
+5
+\`\`\`
+
+Kalau mau loncat-loncat (step):
+\`\`\`python
+for i in range(0, 10, 2):
+    print(i)
+\`\`\`
+Output:
+\`\`\`
+0
+2
+4
+6
+8
+\`\`\`
+
+## 2️⃣ Loop di String
+String juga bisa di-loop karena terdiri dari karakter.
+
+\`\`\`python
+for huruf in "Python":
+    print(huruf)
+\`\`\`
+
+Output:
+\`\`\`
+P
+y
+t
+h
+o
+n
+\`\`\`
+
+## 3️⃣ Loop di List / Array
+\`\`\`python
+angka = [10, 20, 30, 40]
+
+for a in angka:
+    print("Nilai:", a)
+\`\`\`
+
+Output:
+\`\`\`
+Nilai: 10
+Nilai: 20
+Nilai: 30
+Nilai: 40
+\`\`\`
+
+## 4️⃣ Loop dengan Indeks (pakai enumerate)
+\`\`\`python
+buah = ["apel", "pisang", "ceri"]
+
+for index, nama in enumerate(buah):
+    print(index, "-", nama)
+\`\`\`
+
+Output:
+\`\`\`
+0 - apel
+1 - pisang
+2 - ceri
+\`\`\`
+
+> enumerate() berguna banget kalo lo mau tau *posisi data* dalam list.
+            `,
+                codeExample: `buah = ["apel", "pisang", "ceri"]
+
+for index, nama in enumerate(buah):
+    print(index, "-", nama)`,
+                expectedOutput: `0 - apel
+1 - pisang
+2 - ceri`
+            },
+            {
+                id: 4,
+                title: "Latihan Perulangan",
+                type: "practice",
+                content: `
+# Latihan For Loop
+
+Coba latihan ini biar makin jago:
+1. Tampilkan angka dari 1–5 pakai for loop.
+2. Tampilkan setiap huruf dari kata "Python".
+3. Tampilkan isi list \`hewan = ["kucing", "anjing", "kelinci"]\` dengan urutan dan nomor.
+4. Hitung total dari list angka [2, 4, 6, 8, 10].
+5. Bonus: buat pola bintang bertingkat segitiga.
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Angka 1–5",
+                        description: "Gunakan range untuk menampilkan angka 1 sampai 5.",
+                        hint: "Ingat, range berhenti sebelum angka terakhir.",
+                        solution: `for i in range(1, 6):
+    print(i)`
+                    },
+                    {
+                        id: 2,
+                        title: "Huruf Python",
+                        description: "Tampilkan tiap huruf dari kata 'Python'.",
+                        hint: "String bisa di-loop juga.",
+                        solution: `for huruf in "Python":
+    print(huruf)`
+                    },
+                    {
+                        id: 3,
+                        title: "List Hewan",
+                        description: "Tampilkan daftar hewan dengan nomor urutnya.",
+                        hint: "Gunakan enumerate().",
+                        solution: `hewan = ["kucing", "anjing", "kelinci"]
+
+for i, nama in enumerate(hewan, start=1):
+    print(i, "-", nama)`
+                    },
+                    {
+                        id: 4,
+                        title: "Jumlah Total",
+                        description: "Hitung total semua angka di list.",
+                        hint: "Gunakan for dan variabel penjumlahan.",
+                        solution: `angka = [2, 4, 6, 8, 10]
+total = 0
+
+for i in angka:
+    total += i
+
+print("Total:", total)`
+                    },
+                    {
+                        id: 5,
+                        title: "Pola Bintang Segitiga",
+                        description: "Gunakan loop untuk membentuk segitiga bintang seperti ini:\n*\n**\n***\n****\n*****",
+                        hint: "Gunakan string '*' * i di dalam loop range.",
+                        solution: `for i in range(1, 6):
+    print('*' * i)`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 25,
+        title: "While Loop (Perulangan)",
+        description: "Pelajari cara membuat perulangan di Python dengan while loop — biar program bisa jalan terus sampai kondisi tertentu terpenuhi.",
+        level: "Menengah",
+        duration: "2 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🔁",
+        topics: [
+            "Konsep While Loop",
+            "Contoh While Loop Dasar",
+            "Infinite Loop (Perulangan Tak Berhenti)",
+            "Break & Continue",
+            "Latihan Praktik While Loop"
+        ],
+        color: "#F59E0B",
+        content: [
+            {
+                id: 1,
+                title: "Konsep While Loop",
+                type: "theory",
+                content: `
+# Apa Itu While Loop?
+
+While loop digunakan buat **mengulang blok kode selama kondisi bernilai True**.  
+Kalau kondisi jadi False, perulangan langsung berhenti.
+
+Strukturnya kayak gini:
+
+\`\`\`python
+while kondisi:
+    # kode yang diulang
+\`\`\`
+
+Selama \`kondisi\` itu True, Python bakal terus ngulangin isi loop-nya.
+Begitu False, langsung stop.
+
+---
+
+### Analogi gampang:
+Bayangin lo lagi main game, dan lo bakal terus main **selama nyawanya > 0**.
+Begitu nyawa habis, loop selesai. 🎮💀
+                `
+            },
+            {
+                id: 2,
+                title: "Contoh While Loop Dasar",
+                type: "theory",
+                content: `
+# Contoh While Loop
+
+Contoh simple buat ngulang angka dari 1 sampai 5.
+
+\`\`\`python
+i = 1
+while i <= 5:
+    print("Angka:", i)
+    i += 1
+\`\`\`
+
+## Penjelasan:
+1. \`i = 1\` → nilai awal
+2. \`while i <= 5\` → kondisi, loop jalan selama i masih ≤ 5
+3. Di dalam loop, \`i\` dicetak dan ditambah 1
+4. Begitu i = 6, kondisi False → loop berhenti
+
+Output:
+\`\`\`
+Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+Angka: 5
+\`\`\`
+                `,
+                codeExample: `i = 1
+while i <= 5:
+    print("Angka:", i)
+    i += 1`,
+                expectedOutput: `Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+Angka: 5`
+            },
+            {
+                id: 3,
+                title: "Infinite Loop (Perulangan Tak Berhenti)",
+                type: "theory",
+                content: `
+# Infinite Loop
+
+Kalau kondisi **selalu True**, loop gak bakal pernah berhenti — alias *infinite loop*.
+
+\`\`\`python
+while True:
+    print("Loop jalan terus...")
+\`\`\`
+
+Hati-hati, ini bakal jalan **tanpa henti** kecuali lo hentikan manual (misal dengan Ctrl + C di terminal).
+
+---
+
+### Gunanya apa?
+Kadang infinite loop berguna buat program yang **harus jalan terus**, misalnya:
+- Aplikasi server
+- Program chatbot
+- Game loop
+                `,
+                codeExample: `while True:
+    print("Loop jalan terus...")`,
+                expectedOutput: `Loop jalan terus...
+Loop jalan terus...
+Loop jalan terus...
+... (dan seterusnya)`
+            },
+            {
+                id: 4,
+                title: "Break & Continue",
+                type: "theory",
+                content: `
+# Mengontrol Jalannya Loop
+
+Kadang kita perlu *ngatur sendiri* kapan loop berhenti atau lanjut ke iterasi berikutnya.
+
+## 1️⃣ break → langsung keluar dari loop
+\`\`\`python
+i = 1
+while i <= 10:
+    print(i)
+    if i == 5:
+        break
+    i += 1
+\`\`\`
+Output:
+\`\`\`
+1
+2
+3
+4
+5
+\`\`\`
+
+Begitu i = 5, Python ketemu \`break\`, dan loop langsung berhenti.
+
+---
+
+## 2️⃣ continue → lompat ke iterasi berikutnya
+\`\`\`python
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        continue
+    print(i)
+\`\`\`
+
+Output:
+\`\`\`
+1
+2
+4
+5
+\`\`\`
+
+Pas i = 3, baris \`print(i)\` dilewatin karena ada \`continue\`.
+                `,
+                codeExample: `i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        continue
+    print(i)`,
+                expectedOutput: `1
+2
+4
+5`
+            },
+            {
+                id: 5,
+                title: "Latihan Praktik While Loop",
+                type: "practice",
+                content: `
+# Latihan While Loop
+
+Coba kerjain latihan ini biar makin ngerti konsep while loop dan logika kontrolnya:
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Hitung Mundur",
+                        description: "Tampilkan hitung mundur dari 5 ke 1, lalu cetak 'Boom!' di akhir.",
+                        hint: "Gunakan while dan kurangi nilai tiap iterasi.",
+                        solution: `i = 5
+while i > 0:
+    print(i)
+    i -= 1
+print("Boom!")`
+                    },
+                    {
+                        id: 2,
+                        title: "Jumlahkan Angka",
+                        description: "Minta input angka terus menerus, berhenti kalau user input 0. Tampilkan totalnya.",
+                        hint: "Gunakan while True dan break.",
+                        solution: `total = 0
+while True:
+    angka = int(input("Masukkan angka (0 untuk berhenti): "))
+    if angka == 0:
+        break
+    total += angka
+print("Total:", total)`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek Password",
+                        description: "Buat program yang terus minta user input password sampai benar.",
+                        hint: "Gunakan while dan kondisi string.",
+                        solution: `password = "python123"
+input_user = ""
+
+while input_user != password:
+    input_user = input("Masukkan password: ")
+
+print("Akses diterima ✅")`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 26,
+        title: "Continue dan Pass",
+        description: "Pelajari cara mengontrol jalannya loop menggunakan 'continue' untuk melewati satu iterasi, dan 'pass' untuk blok kosong tanpa error.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "⏭️",
+        topics: [
+            "Konsep Continue",
+            "Contoh Penggunaan Continue",
+            "Konsep Pass",
+            "Latihan Praktik Continue & Pass"
+        ],
+        color: "#8B5CF6",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Continue",
+                type: "theory",
+                content: `
+# Apa Itu Continue?
+
+\`continue\` digunakan buat **melewati satu iterasi loop** dan langsung lanjut ke iterasi berikutnya.  
+Artinya, kode di bawah \`continue\` **tidak akan dijalankan** pada iterasi itu.
+
+Struktur umum:
+
+\`\`\`python
+while kondisi:
+    # kode sebelum continue
+    if syarat:
+        continue  # lompat ke iterasi berikutnya
+    # kode setelah continue (tidak dijalankan kalau continue terpanggil)
+\`\`\`
+
+---
+
+### Analogi gampang:
+Lo lagi makan keripik satu-satu.  
+Kalau ketemu yang gosong, lo **lewati** dan lanjut ke keripik berikutnya.  
+Itu lah \`continue\`. 😆
+                `
+            },
+            {
+                id: 2,
+                title: "Contoh Penggunaan Continue",
+                type: "theory",
+                content: `
+# Contoh Continue di Loop
+
+Contoh: cetak angka 1 sampai 10, tapi **skip angka 5**.
+
+\`\`\`python
+i = 0
+while i < 10:
+    i += 1
+    if i == 5:
+        continue  # lompat ke iterasi berikutnya
+    print("Angka:", i)
+\`\`\`
+
+Output:
+\`\`\`
+Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+Angka: 6
+Angka: 7
+Angka: 8
+Angka: 9
+Angka: 10
+\`\`\`
+
+Lihat? Angka 5 **dilewatin** karena saat i == 5, Python langsung lanjut ke iterasi berikutnya.
+                `,
+                codeExample: `i = 0
+while i < 10:
+    i += 1
+    if i == 5:
+        continue
+    print("Angka:", i)`,
+                expectedOutput: `Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+Angka: 6
+Angka: 7
+Angka: 8
+Angka: 9
+Angka: 10`
+            },
+            {
+                id: 3,
+                title: "Konsep Pass",
+                type: "theory",
+                content: `
+# Apa Itu Pass?
+
+Kadang lo butuh nulis **blok kode kosong** tapi Python gak boleh error.  
+Nah, di situ fungsi \`pass\`.
+
+\`pass\` artinya **“lewati aja dulu, nanti isi belakangan”**.  
+Python bakal ngeliat baris itu dan lanjut jalan tanpa protes.
+
+---
+
+### Contoh 1: Dalam Loop
+\`\`\`python
+for i in range(5):
+    if i == 3:
+        pass  # nanti bakal diisi logika lain
+    print("Angka:", i)
+\`\`\`
+
+Output:
+\`\`\`
+Angka: 0
+Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+\`\`\`
+
+### Contoh 2: Dalam Fungsi
+\`\`\`python
+def coming_soon():
+    pass
+\`\`\`
+
+Tanpa \`pass\`, Python bakal error karena fungsi kosong dianggap tidak valid.
+                `,
+                codeExample: `for i in range(5):
+    if i == 3:
+        pass
+    print("Angka:", i)`,
+                expectedOutput: `Angka: 0
+Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4`
+            },
+            {
+                id: 4,
+                title: "Latihan Praktik Continue & Pass",
+                type: "practice",
+                content: `
+# Latihan Continue dan Pass
+
+Yuk uji pemahamanmu. Coba selesaikan latihan-latihan ini:
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Skip Angka Ganjil",
+                        description: "Tampilkan hanya angka genap dari 1 sampai 10.",
+                        hint: "Gunakan continue untuk lewati angka ganjil.",
+                        solution: `for i in range(1, 11):
+    if i % 2 != 0:
+        continue
+    print(i)`
+                    },
+                    {
+                        id: 2,
+                        title: "Pass di Fungsi",
+                        description: "Buat fungsi dengan nama 'belum_jalan' yang isinya belum diimplementasi, tapi tidak error.",
+                        hint: "Gunakan pass di dalam fungsi.",
+                        solution: `def belum_jalan():
+    pass
+
+print("Program tetap jalan tanpa error!")`
+                    },
+                    {
+                        id: 3,
+                        title: "Filter Huruf Vokal",
+                        description: "Loop tiap huruf dalam string, tapi skip huruf vokal (a, i, u, e, o).",
+                        hint: "Gunakan continue di dalam for loop.",
+                        solution: `teks = "python"
+for huruf in teks:
+    if huruf in "aiueo":
+        continue
+    print(huruf)`
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 27,
+        title: "Break",
+        description: "Pelajari bagaimana menggunakan perintah break untuk menghentikan loop secara paksa saat kondisi tertentu terpenuhi.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🛑",
+        topics: [
+            "Konsep Break",
+            "Contoh Penggunaan Break",
+            "Break dalam While dan For Loop",
+            "Latihan Praktik Break"
+        ],
+        color: "#EF4444",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Break",
+                type: "theory",
+                content: `
+# Apa Itu Break?
+
+\`break\` adalah perintah spesial di Python buat **menghentikan perulangan lebih cepat** dari biasanya.
+
+Normalnya, loop jalan terus sampai kondisi selesai.  
+Tapi kadang kita pengen **berhenti di tengah jalan**, misalnya kalau udah nemu data yang dicari atau kondisi tertentu.
+
+Nah, di situlah \`break\` jadi hero. 🦸‍♂️
+
+---
+
+### Contoh analogi gampang:
+Bayangin lo lagi cari kunci di tumpukan barang.  
+Begitu ketemu, lo langsung berhenti — gak lanjut bongkar barang lain.  
+Nah, itulah konsep \`break\`.
+                `
+            },
+            {
+                id: 2,
+                title: "Contoh Penggunaan Break",
+                type: "theory",
+                content: `
+# Contoh Dasar
+
+\`\`\`python
+for angka in range(1, 10):
+    if angka == 5:
+        print("Ketemu 5! Stop!")
+        break
+    print("Angka:", angka)
+\`\`\`
+
+## Penjelasan:
+1. Loop jalan dari 1 sampai 9.
+2. Pas \`angka == 5\`, Python ketemu \`break\`.
+3. Loop langsung berhenti — baris selanjutnya gak dijalanin.
+
+Output:
+\`\`\`
+Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+Ketemu 5! Stop!
+\`\`\`
+
+---
+
+### Jadi, break itu kayak “exit door” buat loop.
+Begitu ketemu, Python langsung keluar dari lingkaran loop itu.
+                `,
+                codeExample: `for angka in range(1, 10):
+    if angka == 5:
+        print("Ketemu 5! Stop!")
+        break
+    print("Angka:", angka)`,
+                expectedOutput: `Angka: 1
+Angka: 2
+Angka: 3
+Angka: 4
+Ketemu 5! Stop!`
+            },
+            {
+                id: 3,
+                title: "Break dalam While dan For Loop",
+                type: "theory",
+                content: `
+# Break Bisa Dipakai di Semua Jenis Loop
+
+Gak cuma di \`for\`, tapi juga bisa di \`while\`.
+
+---
+
+### Contoh While:
+\`\`\`python
+i = 1
+while i <= 10:
+    print("Nilai:", i)
+    if i == 6:
+        print("Berhenti di 6")
+        break
+    i += 1
+\`\`\`
+
+Output:
+\`\`\`
+Nilai: 1
+Nilai: 2
+Nilai: 3
+Nilai: 4
+Nilai: 5
+Nilai: 6
+Berhenti di 6
+\`\`\`
+
+---
+
+### Contoh For:
+\`\`\python
+buah = ["apel", "jeruk", "pisang", "mangga", "durian"]
+for item in buah:
+    print("Cek:", item)
+    if item == "pisang":
+        print("Ketemu pisang, stop loop!")
+        break
+\`\`\`
+
+Output:
+\`\`\`
+Cek: apel
+Cek: jeruk
+Cek: pisang
+Ketemu pisang, stop loop!
+\`\`\`
+
+---
+
+> 🔍 **Kesimpulan singkat:**
+> - \`break\` cuma berhentiin **loop tempat dia berada** (bukan semua loop kalau nested).
+> - Kalau ada loop bersarang (loop di dalam loop), \`break\` cuma keluar dari loop yang paling dalam.
+                `,
+                codeExample: `buah = ["apel", "jeruk", "pisang", "mangga", "durian"]
+for item in buah:
+    print("Cek:", item)
+    if item == "pisang":
+        print("Ketemu pisang, stop loop!")
+        break`,
+                expectedOutput: `Cek: apel
+Cek: jeruk
+Cek: pisang
+Ketemu pisang, stop loop!`
+            },
+            {
+                id: 4,
+                title: "Latihan Praktik Break",
+                type: "practice",
+                content: `
+# Latihan Break
+
+Coba beberapa latihan ini biar makin paham gimana break bekerja.
+                `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Cari Angka Tertentu",
+                        description: "Loop dari 1 sampai 100, berhenti kalau nemu angka 42.",
+                        hint: "Gunakan if dan break di dalam for loop.",
+                        solution: `for i in range(1, 101):
+    if i == 42:
+        print("Ketemu 42! Berhenti di sini.")
+        break
+    print("Cek angka:", i)`
+                    },
+                    {
+                        id: 2,
+                        title: "Login dengan Limit Percobaan",
+                        description: "Buat program yang ngasih 3x kesempatan input password. Kalau benar, tampilkan 'Login berhasil'. Kalau gagal 3x, tampilkan 'Akses ditolak'.",
+                        hint: "Gunakan while loop dan break kalau password benar.",
+                        solution: `password_benar = "python123"
+percobaan = 0
+
+while percobaan < 3:
+    pw = input("Masukkan password: ")
+    if pw == password_benar:
+        print("Login berhasil ✅")
+        break
+    else:
+        percobaan += 1
+        print("Salah! Percobaan:", percobaan)
+
+if percobaan == 3:
+    print("Akses ditolak ❌")`
+                    },
+                    {
+                        id: 3,
+                        title: "Cari Nama di Daftar",
+                        description: "Program minta user input nama, lalu cari di daftar nama. Berhenti begitu ketemu.",
+                        hint: "Gunakan loop dan break begitu nama cocok.",
+                        solution: `daftar = ["Zayen", "Andi", "Putri", "Budi", "Rina"]
+nama_cari = input("Cari nama: ")
+
+for nama in daftar:
+    if nama == nama_cari:
+        print(f"{nama_cari} ditemukan ✅")
+        break
+else:
+    print(f"{nama_cari} tidak ada di daftar ❌")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 

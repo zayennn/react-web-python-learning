@@ -360,6 +360,123 @@ export const lessonCards = [
             "Latihan Praktik: Kalkulator Umur & Event Reminder"
         ],
         color: "#6A5ACD",
+    },
+    {
+        id: 21,
+        title: "IF dan ELSE Statement di Python",
+        description: "Belajar gimana Python bisa ngambil keputusan pakai if, else, dan elif biar program bisa mikir kayak manusia.",
+        level: "Pemula",
+        duration: "1 jam 30 menit",
+        lessons: 4,
+        progress: 0,
+        image: "🧠",
+        topics: [
+            "Konsep Percabangan",
+            "IF Statement",
+            "ELSE dan ELIF Statement",
+            "Latihan Kondisi"
+        ],
+        color: "#4F46E5",
+    },
+    {
+        id: 22,
+        title: "ELIF Statement di Python",
+        description: "Pelajari cara menangani lebih dari dua kondisi dengan elif (else if) agar program bisa mengambil keputusan yang lebih kompleks.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🪜",
+        topics: [
+            "Kapan Harus Pakai ELIF",
+            "Cara Kerja ELIF",
+            "Latihan ELIF Statement"
+        ],
+        color: "#3B82F6",
+    },
+    {
+        id: 23,
+        title: "Latihan Percabangan – Kalkulator Sederhana",
+        description: "Praktik nyata pakai percabangan IF-ELSE buat bikin kalkulator sederhana dengan operasi dasar: tambah, kurang, kali, dan bagi.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 2,
+        progress: 0,
+        image: "🧮",
+        topics: [
+            "Konsep Program Kalkulator",
+            "Latihan Buat Sendiri"
+        ],
+        color: "#E879F9",
+    },
+    {
+        id: 24,
+        title: "For Loop (Perulangan) di Python",
+        description: "Belajar gimana Python bisa ngulang kode berkali-kali dengan mudah pakai perulangan for. Cocok buat iterasi list, string, atau range angka.",
+        level: "Pemula",
+        duration: "1 jam 30 menit",
+        lessons: 4,
+        progress: 0,
+        image: "🔁",
+        topics: [
+            "Konsep Perulangan",
+            "For Loop Dasar",
+            "Loop dengan Range dan Data Koleksi",
+            "Latihan Perulangan"
+        ],
+        color: "#EAB308",
+    },
+    {
+        id: 25,
+        title: "While Loop (Perulangan)",
+        description: "Pelajari cara membuat perulangan di Python dengan while loop — biar program bisa jalan terus sampai kondisi tertentu terpenuhi.",
+        level: "Menengah",
+        duration: "2 jam",
+        lessons: 5,
+        progress: 0,
+        image: "🔁",
+        topics: [
+            "Konsep While Loop",
+            "Contoh While Loop Dasar",
+            "Infinite Loop (Perulangan Tak Berhenti)",
+            "Break & Continue",
+            "Latihan Praktik While Loop"
+        ],
+        color: "#F59E0B",
+    },
+    {
+        id: 26,
+        title: "Continue dan Pass",
+        description: "Pelajari cara mengontrol jalannya loop menggunakan 'continue' untuk melewati satu iterasi, dan 'pass' untuk blok kosong tanpa error.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 4,
+        progress: 0,
+        image: "⏭️",
+        topics: [
+            "Konsep Continue",
+            "Contoh Penggunaan Continue",
+            "Konsep Pass",
+            "Latihan Praktik Continue & Pass"
+        ],
+        color: "#8B5CF6",
+    },
+    {
+        id: 27,
+        title: "Break",
+        description: "Pelajari bagaimana menggunakan perintah break untuk menghentikan loop secara paksa saat kondisi tertentu terpenuhi.",
+        level: "Menengah",
+        duration: "1.5 jam",
+        lessons: 4,
+        progress: 0,
+        image: "🛑",
+        topics: [
+            "Konsep Break",
+            "Contoh Penggunaan Break",
+            "Break dalam While dan For Loop",
+            "Latihan Praktik Break"
+        ],
+        color: "#EF4444",
     }
 ];
 
