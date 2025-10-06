@@ -477,6 +477,97 @@ export const lessonCards = [
             "Latihan Praktik Break"
         ],
         color: "#EF4444",
+    },
+    {
+        id: 28,
+        title: "Latihan Perulangan",
+        description: "Saatnya latihan! Gabungkan pemahaman tentang for loop, while loop, dan break untuk menyelesaikan berbagai kasus nyata.",
+        level: "Menengah",
+        duration: "1 jam 30 menit",
+        lessons: 4,
+        progress: 0,
+        image: "🔁",
+        topics: [
+            "Latihan dasar for & while",
+            "Kombinasi perulangan bersarang",
+            "Penggunaan break & continue",
+            "Mini project: Hitung Data"
+        ],
+        color: "#2563EB",
+    },
+    {
+        id: 29,
+        title: "List (Daftar Data)",
+        description: "List adalah salah satu tipe data paling penting di Python. Dengan list, kita bisa nyimpen banyak nilai sekaligus dalam satu variabel!",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Apa itu List?",
+            "Cara Membuat List",
+            "Akses Data di List",
+            "Mengubah & Menambah Data",
+            "Latihan"
+        ],
+        color: "#60A5FA",
+    },
+    {
+        id: 30,
+        title: "Manipulasi List",
+        description: "Sekarang saatnya naik level! Lo bakal belajar berbagai cara buat ngolah list di Python — dari nyari data, ngitung, sampai ngacak urutan.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 6,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Mengetahui Panjang List",
+            "Mengecek Data dalam List",
+            "Mengurutkan dan Membalik List",
+            "Menyalin List",
+            "Menggabungkan List",
+            "Latihan"
+        ],
+        color: "#4ADE80",
+    },
+    {
+        id: 31,
+        title: "Operasi List",
+        description: "Python bisa ngelakuin berbagai operasi langsung ke list — dari ngitung jumlah, nyari nilai tertinggi, sampe nggabungin list jadi satu. Gampang tapi powerful banget!",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 6,
+        progress: 0,
+        image: "➕",
+        topics: [
+            "Operasi Penjumlahan & Pengulangan",
+            "Mengetahui Nilai Tertinggi & Terendah",
+            "Menjumlahkan Semua Elemen",
+            "Mencari Nilai Tertentu",
+            "Membandingkan List",
+            "Latihan"
+        ],
+        color: "#FACC15",
+    },
+    {
+        id: 32,
+        title: "Copy List (Menyalin List)",
+        description: "Bikin salinan list kelihatannya gampang, tapi ternyata nggak sesimpel itu. Di Python, copy bisa berarti dua hal: salinan asli atau cuma ngacu ke data yang sama.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Masalah Saat Menyalin Langsung",
+            "Menyalin List dengan copy()",
+            "Menyalin List dengan Slicing",
+            "Perbedaan Shallow Copy vs Deep Copy",
+            "Latihan Copy List"
+        ],
+        color: "#14B8A6",
     }
 ];
 

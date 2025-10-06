@@ -4658,7 +4658,922 @@ else:
                 ]
             }
         ]
-    }
+    },
+    {
+        id: 28,
+        title: "Latihan Perulangan",
+        description: "Saatnya latihan! Gabungkan pemahaman tentang for loop, while loop, dan break untuk menyelesaikan berbagai kasus nyata.",
+        level: "Menengah",
+        duration: "1 jam 30 menit",
+        lessons: 4,
+        progress: 0,
+        image: "🔁",
+        topics: [
+            "Latihan dasar for & while",
+            "Kombinasi perulangan bersarang",
+            "Penggunaan break & continue",
+            "Mini project: Hitung Data"
+        ],
+        color: "#2563EB",
+        content: [
+            {
+                id: 1,
+                title: "Latihan 1: Hitung Jumlah Angka",
+                type: "exercise",
+                content: `
+# 🎯 Tujuan:
+Melatih penggunaan **for loop** untuk menjumlahkan angka dari 1 sampai N.
+
+# 💡 Deskripsi:
+Kamu diminta membuat program yang menghitung total dari angka 1 sampai angka yang dimasukkan user.
+
+Contoh:
+\`\`\`
+Masukkan angka: 5
+Hasil: 15
+\`\`\`
+
+# 🧠 Hint:
+Gunakan \`range()\` dan \`for\` loop.
+            `,
+                codeExample: `
+total = 0
+n = int(input("Masukkan angka: "))
+
+for i in range(1, n + 1):
+    total += i
+
+print("Hasil:", total)
+            `,
+                expectedOutput: `
+Masukkan angka: 5
+Hasil: 15
+            `
+            },
+            {
+                id: 2,
+                title: "Latihan 2: Cek Angka Ganjil Genap",
+                type: "exercise",
+                content: `
+# 🎯 Tujuan:
+Memahami cara menggunakan **while loop** dan kondisi untuk menentukan angka ganjil/genap.
+
+# 💡 Deskripsi:
+User akan diminta memasukkan angka.  
+Program akan menampilkan semua angka dari 1 hingga angka tersebut, dan memberi tahu apakah angka itu ganjil atau genap.
+
+# 🧠 Hint:
+Gunakan \`while\` dan operator modulus (\`%\`).
+            `,
+                codeExample: `
+n = int(input("Masukkan angka: "))
+i = 1
+
+while i <= n:
+    if i % 2 == 0:
+        print(i, "adalah angka genap")
+    else:
+        print(i, "adalah angka ganjil")
+    i += 1
+            `,
+                expectedOutput: `
+Masukkan angka: 5
+1 adalah angka ganjil
+2 adalah angka genap
+3 adalah angka ganjil
+4 adalah angka genap
+5 adalah angka ganjil
+            `
+            },
+            {
+                id: 3,
+                title: "Latihan 3: Break Saat Angka Ditemukan",
+                type: "exercise",
+                content: `
+# 🎯 Tujuan:
+Melatih penggunaan **break** untuk menghentikan perulangan berdasarkan kondisi tertentu.
+
+# 💡 Deskripsi:
+Program mencari angka tertentu dalam sebuah list.  
+Kalau angka ditemukan, langsung berhenti dengan pesan.
+
+# 🧠 Hint:
+Gunakan \`for\` dan \`if\` + \`break\`.
+            `,
+                codeExample: `
+data = [3, 5, 7, 9, 11, 13]
+target = int(input("Cari angka: "))
+
+for angka in data:
+    if angka == target:
+        print("Angka", target, "ditemukan!")
+        break
+else:
+    print("Angka tidak ditemukan.")
+            `,
+                expectedOutput: `
+Cari angka: 9
+Angka 9 ditemukan!
+            `
+            },
+            {
+                id: 4,
+                title: "Mini Project: Kalkulator Jumlah Bilangan Positif",
+                type: "project",
+                content: `
+# 🎯 Tujuan:
+Menggabungkan semua konsep perulangan, kondisi, dan break.
+
+# 💡 Deskripsi:
+Buat program yang terus meminta input angka dari user.
+Jika user memasukkan angka negatif, hentikan input dan tampilkan total semua angka positif yang dimasukkan.
+
+# 🧠 Hint:
+Gunakan \`while True\`, \`break\`, dan logika sederhana.
+            `,
+                codeExample: `
+total = 0
+
+while True:
+    angka = int(input("Masukkan angka (negatif untuk berhenti): "))
+
+    if angka < 0:
+        break
+
+    total += angka
+
+print("Total semua angka positif:", total)
+            `,
+                expectedOutput: `
+Masukkan angka (negatif untuk berhenti): 10
+Masukkan angka (negatif untuk berhenti): 5
+Masukkan angka (negatif untuk berhenti): -1
+Total semua angka positif: 15
+            `
+            }
+        ]
+    },
+    {
+        id: 29,
+        title: "List (Daftar Data)",
+        description: "List adalah salah satu tipe data paling penting di Python. Dengan list, kita bisa nyimpen banyak nilai sekaligus dalam satu variabel!",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Apa itu List?",
+            "Cara Membuat List",
+            "Akses Data di List",
+            "Mengubah & Menambah Data",
+            "Latihan"
+        ],
+        color: "#60A5FA",
+        content: [
+            {
+                id: 1,
+                title: "Apa Itu List?",
+                type: "theory",
+                content: `
+# Apa Itu List?
+
+Bayangin lo punya rak buku — tiap slot bisa lo isi dengan satu buku.
+Nah, **list** itu ibarat rak itu: lo bisa nyimpen banyak data di satu variabel.
+
+List bisa nyimpen **angka**, **string**, **boolean**, bahkan **list lain** (alias nested list).
+
+Contoh:
+\`\`\`python
+data = [1, 2, 3, 4, 5]
+buah = ["apel", "pisang", "jeruk"]
+campuran = [1, "Python", True, 3.14]
+\`\`\`
+
+List ditandai dengan tanda kurung siku **[ ]** dan tiap item dipisahkan pakai koma.
+            `
+            },
+            {
+                id: 2,
+                title: "Akses Data di List",
+                type: "theory",
+                content: `
+# Akses Data
+
+Python pake sistem **index**, mulai dari 0.  
+Artinya: item pertama = index ke-0, kedua = ke-1, dst.
+
+\`\`\`python
+buah = ["apel", "pisang", "jeruk"]
+
+print(buah[0])  # "apel"
+print(buah[1])  # "pisang"
+print(buah[-1]) # "jeruk" (index negatif = dari belakang)
+\`\`\`
+
+Kalo lo pengen ambil sebagian, bisa juga pakai **slicing**:
+\`\`\`python
+print(buah[0:2])  # ['apel', 'pisang']
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Ubah & Tambah Data di List",
+                type: "theory",
+                content: `
+# Ubah Isi List
+
+Karena list itu **mutable** (bisa diubah), lo bisa ganti isinya dengan gampang.
+
+\`\`\`python
+angka = [10, 20, 30]
+angka[1] = 99
+print(angka)  # [10, 99, 30]
+\`\`\`
+
+# Nambah Data ke List
+
+Ada beberapa cara buat nambah item ke list:
+
+1. **append()** → nambah di akhir
+   \`\`\`python
+   buah = ["apel", "pisang"]
+   buah.append("mangga")
+   print(buah)
+   # ['apel', 'pisang', 'mangga']
+   \`\`\`
+
+2. **insert()** → nambah di posisi tertentu
+   \`\`\`python
+   buah.insert(1, "jeruk")  # masuk di index ke-1
+   print(buah)
+   # ['apel', 'jeruk', 'pisang', 'mangga']
+   \`\`\`
+
+3. **extend()** → nambah banyak item sekaligus
+   \`\`\`python
+   buah.extend(["anggur", "melon"])
+   print(buah)
+   # ['apel', 'jeruk', 'pisang', 'mangga', 'anggur', 'melon']
+   \`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Hapus Data dari List",
+                type: "theory",
+                content: `
+# Hapus Data
+
+Python nyediain beberapa cara juga buat hapus data dari list:
+
+1. **remove()** → hapus berdasarkan nilai  
+   \`\`\`python
+   buah.remove("pisang")
+   \`\`\`
+
+2. **pop()** → hapus berdasarkan index (default: terakhir)  
+   \`\`\`python
+   buah.pop(0)  # hapus item pertama
+   \`\`\`
+
+3. **del** → hapus elemen atau seluruh list  
+   \`\`\`python
+   del buah[1]
+   \`\`\`
+
+4. **clear()** → kosongin list  
+   \`\`\`python
+   buah.clear()
+   \`\`\`
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan: Bermain dengan List",
+                type: "practice",
+                content: `
+# Latihan Wajib
+
+1. Buat list berisi 5 nama teman lo.
+2. Ganti elemen ke-3 dengan nama baru.
+3. Tambahkan satu nama lagi di akhir.
+4. Hapus elemen pertama.
+5. Tampilkan list hasil akhirnya.
+
+Contoh output akhir:
+\`\`\`
+['Adit', 'Budi', 'Dina', 'Eka', 'Farah']
+\`\`\`
+
+Coba bikin pake fungsi list yang udah lo pelajarin!
+            `,
+                codeExample: `
+teman = ["Andi", "Budi", "Citra", "Dewi", "Eka"]
+
+# Ganti elemen ke-3
+teman[2] = "Dina"
+
+# Tambah 1 nama
+teman.append("Farah")
+
+# Hapus elemen pertama
+teman.pop(0)
+
+print(teman)
+            `,
+                expectedOutput: `
+['Budi', 'Dina', 'Dewi', 'Eka', 'Farah']
+            `
+            }
+        ]
+    },
+    {
+        id: 30,
+        title: "Manipulasi List",
+        description: "Sekarang saatnya naik level! Lo bakal belajar berbagai cara buat ngolah list di Python — dari nyari data, ngitung, sampai ngacak urutan.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 6,
+        progress: 0,
+        image: "🧩",
+        topics: [
+            "Mengetahui Panjang List",
+            "Mengecek Data dalam List",
+            "Mengurutkan dan Membalik List",
+            "Menyalin List",
+            "Menggabungkan List",
+            "Latihan"
+        ],
+        color: "#4ADE80",
+        content: [
+            {
+                id: 1,
+                title: "Mengetahui Panjang List",
+                type: "theory",
+                content: `
+# Panjang List
+
+Kadang lo perlu tau berapa banyak item di dalam list.  
+Gunain fungsi **len()** buat itu:
+
+\`\`\`python
+buah = ["apel", "pisang", "jeruk", "mangga"]
+print(len(buah))  # Output: 4
+\`\`\`
+
+Fungsi \`len()\` bakal ngembaliin jumlah elemen dalam list.
+            `
+            },
+            {
+                id: 2,
+                title: "Mengecek Data dalam List",
+                type: "theory",
+                content: `
+# Cek Apakah Item Ada di List
+
+Gunain keyword **in** buat ngecek keberadaan data:
+
+\`\`\`python
+buah = ["apel", "pisang", "jeruk"]
+
+if "apel" in buah:
+    print("Ada apel!")
+else:
+    print("Gak ada apel.")
+\`\`\`
+
+Output:
+\`\`\`
+Ada apel!
+\`\`\`
+
+Lo juga bisa pake **not in** buat kebalikannya:
+\`\`\`python
+if "mangga" not in buah:
+    print("Mangga belum ada di list.")
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Mengurutkan dan Membalik List",
+                type: "theory",
+                content: `
+# Mengurutkan List
+
+Gunain method **sort()** buat ngurutin list:
+
+\`\`\`python
+angka = [5, 2, 9, 1, 7]
+angka.sort()
+print(angka)  # [1, 2, 5, 7, 9]
+\`\`\`
+
+Untuk urutan **terbalik (descending)**, pake parameter \`reverse=True\`:
+\`\`\`python
+angka.sort(reverse=True)
+print(angka)  # [9, 7, 5, 2, 1]
+\`\`\`
+
+Kalau lo cuma pengen balik urutan TANPA ngurutin, pake:
+\`\`\`python
+angka.reverse()
+\`\`\`
+
+# Hati-hati:
+\`sort()\` ngubah list asli, sedangkan \`sorted()\` bikin list baru:
+\`\`\`python
+baru = sorted(angka)
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Menyalin List",
+                type: "theory",
+                content: `
+# Copy List
+
+Kalo lo cuma assign langsung (\`=\`), itu bukan bikin salinan, tapi bikin **referensi** ke list yang sama.  
+Jadi kalau salah satu diubah, yang lain ikut berubah 😬
+
+\`\`\`python
+a = [1, 2, 3]
+b = a  # ini cuma ngereferensi
+b[0] = 99
+print(a)  # [99, 2, 3]
+\`\`\`
+
+Cara yang **benar** buat nyalin list:
+\`\`\`python
+a = [1, 2, 3]
+b = a.copy()      # Cara 1
+c = list(a)       # Cara 2
+d = a[:]          # Cara 3
+
+b[0] = 99
+print(a)  # [1, 2, 3]
+print(b)  # [99, 2, 3]
+\`\`\`
+            `
+            },
+            {
+                id: 5,
+                title: "Menggabungkan List",
+                type: "theory",
+                content: `
+# Gabungin Dua List
+
+Lo bisa gabungin dua list jadi satu pakai tanda **+** atau **extend()**.
+
+\`\`\`python
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+gabung = a + b
+print(gabung)  # [1, 2, 3, 4, 5, 6]
+\`\`\`
+
+Atau:
+\`\`\`python
+a.extend(b)
+print(a)  # [1, 2, 3, 4, 5, 6]
+\`\`\`
+            `
+            },
+            {
+                id: 6,
+                title: "Latihan: Operasi List Lengkap",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat list berisi angka [3, 1, 4, 1, 5, 9].
+2. Tambahkan angka 2 dan 6 ke list.
+3. Urutkan list dari kecil ke besar.
+4. Balik urutannya.
+5. Salin list ke variabel baru tanpa memengaruhi list asli.
+6. Gabungkan list asli dan list salinan.
+7. Cek apakah angka 9 ada di list hasil gabungan.
+
+Tampilkan semua hasilnya.
+            `,
+                codeExample: `
+angka = [3, 1, 4, 1, 5, 9]
+
+# Tambah elemen baru
+angka.extend([2, 6])
+print("Setelah tambah:", angka)
+
+# Urutkan dan balik
+angka.sort()
+print("Urut naik:", angka)
+angka.reverse()
+print("Urut turun:", angka)
+
+# Copy list
+salinan = angka.copy()
+
+# Gabungkan
+gabung = angka + salinan
+print("Gabungan:", gabung)
+
+# Cek keberadaan angka
+if 9 in gabung:
+    print("Angka 9 ditemukan!")
+else:
+    print("Angka 9 gak ada.")
+            `,
+                expectedOutput: `
+Setelah tambah: [3, 1, 4, 1, 5, 9, 2, 6]
+Urut naik: [1, 1, 2, 3, 4, 5, 6, 9]
+Urut turun: [9, 6, 5, 4, 3, 2, 1, 1]
+Gabungan: [9, 6, 5, 4, 3, 2, 1, 1, 9, 6, 5, 4, 3, 2, 1, 1]
+Angka 9 ditemukan!
+            `
+            }
+        ]
+    },
+    {
+        id: 31,
+        title: "Operasi List",
+        description: "Python bisa ngelakuin berbagai operasi langsung ke list — dari ngitung jumlah, nyari nilai tertinggi, sampe nggabungin list jadi satu. Gampang tapi powerful banget!",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 6,
+        progress: 0,
+        image: "➕",
+        topics: [
+            "Operasi Penjumlahan & Pengulangan",
+            "Mengetahui Nilai Tertinggi & Terendah",
+            "Menjumlahkan Semua Elemen",
+            "Mencari Nilai Tertentu",
+            "Membandingkan List",
+            "Latihan"
+        ],
+        color: "#FACC15",
+        content: [
+            {
+                id: 1,
+                title: "Operasi Penjumlahan & Pengulangan",
+                type: "theory",
+                content: `
+# Operasi Dasar
+
+Lo bisa *nambahin list* atau *ngulang list* kayak gini:
+
+\`\`\`python
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+# Gabungin dua list
+gabung = a + b
+print(gabung)  # [1, 2, 3, 4, 5, 6]
+
+# Ulang list
+ulang = a * 3
+print(ulang)  # [1, 2, 3, 1, 2, 3, 1, 2, 3]
+\`\`\`
+
+Operator \`+\` = gabung list  
+Operator \`*\` = ngulang elemen list
+            `
+            },
+            {
+                id: 2,
+                title: "Mengetahui Nilai Tertinggi & Terendah",
+                type: "theory",
+                content: `
+# Nilai Maksimum & Minimum
+
+Python punya fungsi bawaan buat nyari nilai terbesar dan terkecil:
+
+\`\`\`python
+angka = [10, 3, 7, 2, 9]
+
+print(max(angka))  # 10
+print(min(angka))  # 2
+\`\`\`
+
+Catatan: pastiin semua elemen list bisa dibandingin (misal semuanya angka).
+            `
+            },
+            {
+                id: 3,
+                title: "Menjumlahkan Semua Elemen",
+                type: "theory",
+                content: `
+# Menjumlahkan Isi List
+
+Gunain fungsi **sum()** buat ngitung total dari semua angka di list:
+
+\`\`\`python
+angka = [1, 2, 3, 4, 5]
+print(sum(angka))  # 15
+\`\`\`
+
+Kalau mau lebih fleksibel (misal nambah kondisi), bisa juga pake loop:
+
+\`\`\`python
+total = 0
+for i in angka:
+    total += i
+print(total)
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Mencari Nilai Tertentu di List",
+                type: "theory",
+                content: `
+# Cari Elemen di List
+
+Ada dua cara populer:
+
+1. **Cek apakah elemen ada**
+   \`\`\`python
+   angka = [1, 2, 3, 4, 5]
+   if 3 in angka:
+       print("Ada 3 di dalam list!")
+   \`\`\`
+
+2. **Cari posisi (index) elemen**
+   \`\`\`python
+   buah = ["apel", "jeruk", "pisang"]
+   posisi = buah.index("jeruk")
+   print(posisi)  # 1
+   \`\`\`
+
+Kalau elemen gak ada dan lo maksa \`index()\` — Python bakal error.  
+Makanya amanin dulu pake \`if item in list\`.
+            `
+            },
+            {
+                id: 5,
+                title: "Membandingkan Dua List",
+                type: "theory",
+                content: `
+# Bandingin List
+
+Lo bisa langsung bandingin dua list pakai operator pembanding (\`==\`, \`!=\`, \`<\`, \`>\`).
+
+\`\`\`python
+a = [1, 2, 3]
+b = [1, 2, 3]
+c = [3, 2, 1]
+
+print(a == b)  # True
+print(a == c)  # False
+\`\`\`
+
+Python nge-cek elemen satu per satu, termasuk urutannya.  
+Kalau semua elemen dan urutan sama → hasilnya True.
+            `
+            },
+            {
+                id: 6,
+                title: "Latihan: Operasi List",
+                type: "practice",
+                content: `
+# Latihan Operasi List
+
+1. Buat list berisi angka [10, 20, 30, 40, 50].
+2. Tambahkan list lain [60, 70].
+3. Hitung jumlah seluruh elemen.
+4. Cari nilai tertinggi dan terendah.
+5. Cek apakah angka 25 ada di dalam list.
+6. Ulang list sebanyak 2 kali dan tampilkan hasil akhirnya.
+
+Bonus 💡: Bandingkan hasil list asli dengan list hasil pengulangan.
+            `,
+                codeExample: `
+angka = [10, 20, 30, 40, 50]
+angka_lain = [60, 70]
+
+# Gabungkan list
+gabung = angka + angka_lain
+print("Gabungan:", gabung)
+
+# Jumlahkan isi list
+print("Total:", sum(gabung))
+
+# Nilai max dan min
+print("Tertinggi:", max(gabung))
+print("Terendah:", min(gabung))
+
+# Cek keberadaan angka
+if 25 in gabung:
+    print("25 ada di list.")
+else:
+    print("25 tidak ditemukan.")
+
+# Ulang list 2x
+ulang = gabung * 2
+print("List diulang:", ulang)
+
+# Bandingkan
+print("Apakah list asli == list hasil ulang?", gabung == ulang)
+            `,
+                expectedOutput: `
+Gabungan: [10, 20, 30, 40, 50, 60, 70]
+Total: 280
+Tertinggi: 70
+Terendah: 10
+25 tidak ditemukan.
+List diulang: [10, 20, 30, 40, 50, 60, 70, 10, 20, 30, 40, 50, 60, 70]
+Apakah list asli == list hasil ulang? False
+            `
+            }
+        ]
+    },
+    {
+        id: 32,
+        title: "Copy List (Menyalin List)",
+        description: "Bikin salinan list kelihatannya gampang, tapi ternyata nggak sesimpel itu. Di Python, copy bisa berarti dua hal: salinan asli atau cuma ngacu ke data yang sama.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Masalah Saat Menyalin Langsung",
+            "Menyalin List dengan copy()",
+            "Menyalin List dengan Slicing",
+            "Perbedaan Shallow Copy vs Deep Copy",
+            "Latihan Copy List"
+        ],
+        color: "#14B8A6",
+        content: [
+            {
+                id: 1,
+                title: "Masalah Saat Menyalin Langsung",
+                type: "theory",
+                content: `
+# Masalah Copy Langsung
+
+Kalau lo coba “copy” list pakai tanda sama dengan (=),  
+sebenernya **Python cuma bikin referensi baru**, bukan list baru.
+
+\`\`\`python
+a = [1, 2, 3]
+b = a  # bukan copy, tapi referensi ke list yang sama
+
+b.append(4)
+print("a:", a)
+print("b:", b)
+\`\`\`
+
+Outputnya:
+\`\`\`
+a: [1, 2, 3, 4]
+b: [1, 2, 3, 4]
+\`\`\`
+
+➡️ Keduanya berubah bareng, karena mereka *nunjuk ke tempat yang sama di memori*.
+            `
+            },
+            {
+                id: 2,
+                title: "Menyalin List dengan copy()",
+                type: "theory",
+                content: `
+# Solusi 1: Gunakan copy()
+
+Gunain method **.copy()** buat bikin salinan baru dari list.
+
+\`\`\`python
+a = [1, 2, 3]
+b = a.copy()
+
+b.append(4)
+print("a:", a)
+print("b:", b)
+\`\`\`
+
+Output:
+\`\`\`
+a: [1, 2, 3]
+b: [1, 2, 3, 4]
+\`\`\`
+
+💡 Sekarang \`a\` dan \`b\` udah beda list di memori.
+            `
+            },
+            {
+                id: 3,
+                title: "Menyalin List dengan Slicing",
+                type: "theory",
+                content: `
+# Solusi 2: Gunakan Slicing [:]
+
+Trik klasik Python buat nyalin list:  
+Gunakan slicing dari awal sampai akhir.
+
+\`\`\`python
+a = [10, 20, 30]
+b = a[:]  # salinan penuh
+
+b.append(40)
+print("a:", a)
+print("b:", b)
+\`\`\`
+
+Output:
+\`\`\`
+a: [10, 20, 30]
+b: [10, 20, 30, 40]
+\`\`\`
+
+Cara ini sama efektifnya kayak \`.copy()\`.
+            `
+            },
+            {
+                id: 4,
+                title: "Perbedaan Shallow Copy vs Deep Copy",
+                type: "theory",
+                content: `
+# Shallow Copy vs Deep Copy
+
+Kalau list lo **cuma berisi angka/string**, semua aman.  
+Tapi kalau isinya **list di dalam list (nested list)**,  
+copy biasa (shallow) **masih nyambung ke list dalamnya**.
+
+\`\`\`python
+import copy
+
+a = [[1, 2], [3, 4]]
+b = a.copy()       # shallow copy
+c = copy.deepcopy(a)  # deep copy
+
+b[0][0] = 99
+print("a:", a)
+print("b:", b)
+print("c:", c)
+\`\`\`
+
+Output:
+\`\`\`
+a: [[99, 2], [3, 4]]
+b: [[99, 2], [3, 4]]
+c: [[1, 2], [3, 4]]
+\`\`\`
+
+➡️ Jadi, kalau lo mau **copy total sampai ke isi dalamnya**,  
+pakai **deepcopy()** dari modul \`copy\`.
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Copy List",
+                type: "practice",
+                content: `
+# Latihan: Copy List
+
+1. Buat list berisi [1, 2, 3, 4, 5]
+2. Salin pakai tanda "=" → ubah list kedua, cek apa list pertama ikut berubah?
+3. Salin pakai .copy() → ubah list kedua, pastikan list pertama tetap.
+4. Coba salin nested list pakai .copy() dan copy.deepcopy()
+5. Tulis kesimpulan lo sendiri: apa bedanya shallow dan deep copy?
+
+💡 Hint:
+Gunakan print() buat bandingin hasil tiap langkah.
+            `,
+                codeExample: `
+import copy
+
+# List dasar
+angka = [1, 2, 3, 4, 5]
+bayangan = angka   # bukan copy asli
+bayangan.append(6)
+print("1. Pakai '=' :", angka)
+
+# Copy pakai .copy()
+angka2 = [10, 20, 30]
+copy_beneran = angka2.copy()
+copy_beneran.append(40)
+print("2. Pakai copy() :", angka2, copy_beneran)
+
+# Nested list test
+nested = [[1, 2], [3, 4]]
+shallow = nested.copy()
+deep = copy.deepcopy(nested)
+
+shallow[0][0] = 99
+print("3. Shallow Copy:", nested)
+print("4. Deep Copy:", deep)
+            `,
+                expectedOutput: `
+1. Pakai '=' : [1, 2, 3, 4, 5, 6]
+2. Pakai copy() : [10, 20, 30] [10, 20, 30, 40]
+3. Shallow Copy: [[99, 2], [3, 4]]
+4. Deep Copy: [[1, 2], [3, 4]]
+            `
+            }
+        ]
+    },
 ];
 
 export default lessonCards;
