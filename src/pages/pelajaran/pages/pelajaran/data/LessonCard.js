@@ -6397,6 +6397,177 @@ Intersection: {3}
             `
             }
         ]
+    },
+    {
+        id: 38,
+        title: "Dictionary",
+        description: "Pelajari dictionary di Python, struktur data key-value. Sangat berguna untuk menyimpan data terstruktur dan akses cepat berdasarkan kunci.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📖",
+        topics: [
+            "Apa itu Dictionary?",
+            "Akses & Modifikasi Dictionary",
+            "Looping Dictionary",
+            "Metode Umum Dictionary",
+            "Latihan Dictionary"
+        ],
+        color: "#22C55E",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu Dictionary?",
+                type: "theory",
+                content: `
+# Dictionary
+
+Dictionary = struktur data **key-value**  
+- Key = unik  
+- Value = bisa apa saja (angka, string, list, dictionary lain)
+
+\`\`\`python
+data = {
+    "nama": "Zayen",
+    "umur": 20,
+    "hobi": ["ngoding", "membaca"]
+}
+print(data)
+\`\`\`
+
+Output:
+\`\`\`
+{'nama': 'Zayen', 'umur': 20, 'hobi': ['ngoding', 'membaca']}
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Akses & Modifikasi Dictionary",
+                type: "theory",
+                content: `
+# Akses & Modifikasi
+
+- Akses value pakai key:
+\`\`\`python
+print(data["nama"])  # Zayen
+\`\`\`
+
+- Tambah/ubah key-value:
+\`\`\`python
+data["umur"] = 21  # ubah
+data["kota"] = "Jakarta"  # tambah
+\`\`\`
+
+- Hapus key-value:
+\`\`\`python
+del data["hobi"]
+\`\`\`
+            `
+            },
+            {
+                id: 3,
+                title: "Looping Dictionary",
+                type: "theory",
+                content: `
+# Looping Dictionary
+
+Loop key:
+\`\`\`python
+for k in data:
+    print(k)
+\`\`\`
+
+Loop value:
+\`\`\`python
+for v in data.values():
+    print(v)
+\`\`\`
+
+Loop key & value:
+\`\`\`python
+for k, v in data.items():
+    print(k, ":", v)
+\`\`\`
+            `
+            },
+            {
+                id: 4,
+                title: "Metode Umum Dictionary",
+                type: "theory",
+                content: `
+# Metode Umum
+
+- data.keys() → list semua key  
+- data.values() → list semua value  
+- data.items() → list tuple (key, value)  
+- data.get("key") → ambil value tanpa error  
+- data.pop("key") → hapus key dan ambil value  
+- data.update({...}) → gabung dictionary
+            `
+            },
+            {
+                id: 5,
+                title: "Latihan Dictionary",
+                type: "practice",
+                content: `
+# Latihan
+
+1. Buat dictionary berisi info 3 teman (nama, umur, hobi).  
+2. Tambah key 'kota' untuk tiap teman.  
+3. Loop dictionary → print key & value.  
+4. Hapus key 'hobi' → cek dictionary akhir.  
+5. Gunakan .get() untuk ambil value key yang ada & yang tidak ada.
+            `,
+                codeExample: `
+teman = {
+    "Ali": {"umur": 20, "hobi": ["bola", "game"]},
+    "Budi": {"umur": 21, "hobi": ["musik", "ngoding"]},
+    "Citra": {"umur": 19, "hobi": ["membaca", "lari"]}
+}
+
+# Tambah key kota
+teman["Ali"]["kota"] = "Jakarta"
+teman["Budi"]["kota"] = "Bandung"
+teman["Citra"]["kota"] = "Surabaya"
+
+# Loop dictionary
+for nama, info in teman.items():
+    print(nama)
+    for key, value in info.items():
+        print(f"  {key}: {value}")
+
+# Hapus key hobi
+for info in teman.values():
+    info.pop("hobi", None)
+
+# Cek dictionary akhir
+print("Dictionary akhir:", teman)
+
+# .get()
+print("Ali hobi:", teman.get("Ali", {}).get("hobi"))
+print("Budi umur:", teman.get("Budi", {}).get("umur"))
+            `,
+                expectedOutput: `
+Ali
+  umur: 20
+  hobi: ['bola', 'game']
+  kota: Jakarta
+Budi
+  umur: 21
+  hobi: ['musik', 'ngoding']
+  kota: Bandung
+Citra
+  umur: 19
+  hobi: ['membaca', 'lari']
+  kota: Surabaya
+Dictionary akhir: {'Ali': {'umur': 20, 'kota': 'Jakarta'}, 'Budi': {'umur': 21, 'kota': 'Bandung'}, 'Citra': {'umur': 19, 'kota': 'Surabaya'}}
+Ali hobi: None
+Budi umur: 21
+            `
+            }
+        ]
     }
 ];
 

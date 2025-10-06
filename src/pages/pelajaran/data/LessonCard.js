@@ -657,6 +657,24 @@ export const lessonCards = [
             "Latihan Tuple & Set"
         ],
         color: "#8B5CF6",
+    },
+    {
+        id: 38,
+        title: "Dictionary",
+        description: "Pelajari dictionary di Python, struktur data key-value. Sangat berguna untuk menyimpan data terstruktur dan akses cepat berdasarkan kunci.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 5,
+        progress: 0,
+        image: "📖",
+        topics: [
+            "Apa itu Dictionary?",
+            "Akses & Modifikasi Dictionary",
+            "Looping Dictionary",
+            "Metode Umum Dictionary",
+            "Latihan Dictionary"
+        ],
+        color: "#22C55E",
     }
 ];
 
