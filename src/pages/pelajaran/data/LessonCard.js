@@ -245,7 +245,7 @@ export const lessonCards = [
         color: "#D97D55",
     },
     {
-        id: 14,
+        id: 15,
         title: "Operator Assignment di Python",
         description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
         level: "Pemula",
@@ -261,7 +261,7 @@ export const lessonCards = [
         color: "#5A9690",
     },
     {
-        id: 15,
+        id: 16,
         title: "Pengenalan String",
         description: "Belajar tipe data string di Python: cara membuat, mengakses, memodifikasi, dan operasi penting pada string.",
         level: "Pemula",
@@ -279,7 +279,7 @@ export const lessonCards = [
         color: "#6B3F69",
     },
     {
-        id: 16,
+        id: 17,
         title: "Operasi dan Manipulasi String (Part 1)",
         description: "Belajar cara menggabungkan, mengulang, dan memeriksa string di Python. Dasar penting sebelum lanjut ke manipulasi string lanjutan.",
         level: "Menengah",
@@ -296,7 +296,7 @@ export const lessonCards = [
         color: "#0065F8",
     },
     {
-        id: 17,
+        id: 18,
         title: "Operasi dan Manipulasi String (Part 2)",
         description: "Belajar berbagai method string di Python untuk ubah huruf, ganti teks, pecah string jadi list, dan gabungin lagi dengan cara singkat dan efektif.",
         level: "Menengah",
@@ -313,7 +313,7 @@ export const lessonCards = [
         color: "#FAB12F",
     },
     {
-        id: 18,
+        id: 19,
         title: "Format String di Python",
         description: "Belajar gimana cara menampilkan teks dengan variabel di dalamnya menggunakan teknik format string — biar output jadi lebih rapi dan dinamis.",
         level: "Pemula",
