@@ -1,5 +1,5 @@
 export const lessonCards = [
-    {
+    { // 1
         id: 1,
         title: "Apa Itu Python?",
         description: "Kenalan dulu sama Python: sejarah singkat, kelebihan, kegunaan, dan kenapa banyak dipakai pemula maupun expert.",
@@ -85,7 +85,7 @@ Hello, World!
             }
         ]
     },
-    {
+    { // 2
         id: 2,
         title: "Instalasi Python & VS Code",
         description: "Panduan install Python 3 dan Visual Studio Code di Windows & MacOS, termasuk setting awal biar siap ngoding.",
@@ -177,8 +177,8 @@ print("Halo, Python dari VS Code!")
                 expectedOutput: `Halo, Python dari VS Code!`
             }
         ]
-    },
-    {
+    }, 
+    { // 3
         id: 3,
         title: "Cara Kerja Program & Bytecode",
         description: "Pelajari bagaimana Python menjalankan kode: dari source code, bytecode, hingga interpreter Python.",
@@ -257,7 +257,7 @@ dis.dis(halo)`,
             }
         ]
     },
-    {
+    { // 4
         id: 4,
         title: "Mengenal Variabel",
         description: "Belajar tentang variabel di Python: apa itu variabel, cara membuatnya, aturan penamaan, tipe data dasar, dan latihan praktik.",
@@ -431,7 +431,7 @@ print(type(status))`
             }
         ]
     },
-    {
+    { // 5
         id: 5,
         title: "Tipe Data di Python",
         description: "Belajar berbagai tipe data penting di Python: angka, string, boolean, list, tuple, set, dict, dan NoneType.",
@@ -665,7 +665,7 @@ print(unik)`
             }
         ]
     },
-    {
+    { // 6
         id: 6,
         title: "Casting Tipe Data di Python",
         description: "Belajar cara mengubah tipe data (casting) di Python: int, float, str, dan bool. Lengkap dengan contoh dan latihan.",
@@ -799,7 +799,7 @@ else:
             }
         ]
     },
-    {
+    { // 7
         id: 7,
         title: "Mengambil Input Data dari User",
         description: "Belajar cara menerima input dari pengguna dengan fungsi input(), mengolahnya, dan menampilkannya kembali.",
@@ -929,7 +929,7 @@ print(f"Luas persegi panjang = {luas}")`
             }
         ]
     },
-    {
+    { // 8
         id: 8,
         title: "Operasi Aritmatika di Python",
         description: "Pelajari cara melakukan operasi matematika dasar di Python, mulai dari tambah, kurang, kali, bagi, sampai modulus dan pangkat.",
@@ -1075,7 +1075,7 @@ print(f"Hasil: {angka} ** {pangkat} = {hasil}")`
             }
         ]
     },
-    {
+    { // 9
         id: 9,
         title: "Latihan Perhitungan Sederhana",
         description: "Praktik dasar matematika di Python: penjumlahan, pengurangan, perkalian, pembagian, modulus, dan latihan mini-kalkulator.",
@@ -1215,7 +1215,7 @@ print("Kubik:", n ** 3)`
             }
         ]
     },
-    {
+    { // 10
         id: 10,
         title: "Operasi Komparasi",
         description: "Belajar operator perbandingan di Python: ==, !=, >, <, >=, <=. Pahami gimana cara membandingkan nilai.",
@@ -1362,7 +1362,7 @@ else:
             }
         ]
     },
-    {
+    { // 11
         id: 11,
         title: "Operasi Logika & Boolean",
         description: "Pelajari tipe data boolean (True/False), operator logika (and, or, not), serta cara menggunakannya dalam kondisi.",
@@ -1501,7 +1501,7 @@ else:
             }
         ]
     },
-    {
+    { // 12
         id: 12,
         title: "Latihan Komparasi dan Logika",
         description: "Latihan pemahaman operator perbandingan dan logika di Python. Dari membandingkan angka hingga menggabungkan kondisi dengan AND, OR, dan NOT.",
@@ -1659,7 +1659,7 @@ else:
             }
         ]
     },
-    {
+    { // 13
         id: 13,
         title: "Operator Bitwise di Python",
         description: "Pelajari cara kerja operator bitwise (AND, OR, XOR, NOT, shift) untuk memanipulasi data biner di Python.",
@@ -1842,7 +1842,7 @@ cek_genap_ganjil(10)`
             }
         ]
     },
-    {
+    { // 14
         id: 14,
         title: "Operator Assignment di Python",
         description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
@@ -2041,7 +2041,7 @@ print(saldo)  # 2100`
             }
         ]
     },
-    {
+    { // 15
         id: 15,
         title: "Pengenalan String",
         description: "Belajar tipe data string di Python: cara membuat, mengakses, memodifikasi, dan operasi penting pada string.",
@@ -2247,7 +2247,7 @@ print(teks[::-1])`
             }
         ]
     },
-    {
+    { // 16
         id: 16,
         title: "Operasi dan Manipulasi String (Part 1)",
         description: "Belajar cara menggabungkan, mengulang, dan memeriksa string di Python. Dasar penting sebelum lanjut ke manipulasi string lanjutan.",
@@ -2419,7 +2419,7 @@ print("=" * 30)`
             }
         ]
     },
-    {
+    { // 17
         id: 17,
         title: "Operasi dan Manipulasi String (Part 2)",
         description: "Belajar berbagai method string di Python untuk ubah huruf, ganti teks, pecah string jadi list, dan gabungin lagi dengan cara singkat dan efektif.",
@@ -2636,7 +2636,7 @@ print(f"Halo {nama}, kamu suka {bahasa} ya?")`
             }
         ]
     },
-    {
+    { // 18
         id: 18,
         title: "Format String di Python",
         description: "Belajar gimana cara menampilkan teks dengan variabel di dalamnya menggunakan teknik format string — biar output jadi lebih rapi dan dinamis.",
@@ -2835,7 +2835,7 @@ print(f"Halo {nama}, umur kamu {umur} tahun!")`
             }
         ]
     },
-    {
+    { // 19
         id: 19,
         title: "String Width dan Alignment di Python",
         description: "Belajar cara ngatur lebar teks (width) dan posisi teks (alignment) di output Python biar rapi dan profesional.",
@@ -2993,7 +2993,7 @@ print(f"|{kata:=^10}|")  # =Python==`
             }
         ]
     },
-    {
+    { // 20
         id: 20,
         title: "Latihan Date and Time",
         description: "Latihan praktis buat memperdalam pemahaman tentang modul datetime: ambil waktu sekarang, hitung selisih tanggal, dan format tanggal sesuai kebutuhan.",
@@ -3189,7 +3189,7 @@ print(waktu.strftime("Hari ini: %A, %d %B %Y - Jam: %H:%M"))`
             }
         ]
     },
-    {
+    { // 21
         id: 21,
         title: "IF dan ELSE Statement di Python",
         description: "Belajar gimana Python bisa ngambil keputusan pakai if, else, dan elif biar program bisa mikir kayak manusia.",
@@ -3408,7 +3408,7 @@ print("Total bayar:", total)`
             }
         ]
     },
-    {
+    { // 22
         id: 22,
         title: "ELIF Statement di Python",
         description: "Pelajari cara menangani lebih dari dua kondisi dengan elif (else if) agar program bisa mengambil keputusan yang lebih kompleks.",
@@ -3583,7 +3583,7 @@ else:
             }
         ]
     },
-    {
+    { // 23
         id: 23,
         title: "Latihan Percabangan – Kalkulator Sederhana",
         description: "Praktik nyata pakai percabangan IF-ELSE buat bikin kalkulator sederhana dengan operasi dasar: tambah, kurang, kali, dan bagi.",
@@ -3778,7 +3778,7 @@ print("Terima kasih sudah menggunakan kalkulator!")`
             }
         ]
     },
-    {
+    { // 24
         id: 24,
         title: "For Loop (Perulangan) di Python",
         description: "Belajar gimana Python bisa ngulang kode berkali-kali dengan mudah pakai perulangan for. Cocok buat iterasi list, string, atau range angka.",
@@ -4026,7 +4026,7 @@ print("Total:", total)`
             }
         ]
     },
-    {
+    { // 25
         id: 25,
         title: "While Loop (Perulangan)",
         description: "Pelajari cara membuat perulangan di Python dengan while loop — biar program bisa jalan terus sampai kondisi tertentu terpenuhi.",
@@ -4256,7 +4256,7 @@ print("Akses diterima ✅")`
             }
         ]
     },
-    {
+    { // 26
         id: 26,
         title: "Continue dan Pass",
         description: "Pelajari cara mengontrol jalannya loop menggunakan 'continue' untuk melewati satu iterasi, dan 'pass' untuk blok kosong tanpa error.",
@@ -4445,7 +4445,7 @@ for huruf in teks:
             }
         ]
     },
-    {
+    { // 27
         id: 27,
         title: "Break",
         description: "Pelajari bagaimana menggunakan perintah break untuk menghentikan loop secara paksa saat kondisi tertentu terpenuhi.",
@@ -4659,7 +4659,7 @@ else:
             }
         ]
     },
-    {
+    { // 28
         id: 28,
         title: "Latihan Perulangan",
         description: "Saatnya latihan! Gabungkan pemahaman tentang for loop, while loop, dan break untuk menyelesaikan berbagai kasus nyata.",
@@ -4813,7 +4813,7 @@ Total semua angka positif: 15
             }
         ]
     },
-    {
+    { // 29
         id: 29,
         title: "List (Daftar Data)",
         description: "List adalah salah satu tipe data paling penting di Python. Dengan list, kita bisa nyimpen banyak nilai sekaligus dalam satu variabel!",
@@ -4989,7 +4989,7 @@ print(teman)
             }
         ]
     },
-    {
+    { // 30
         id: 30,
         title: "Manipulasi List",
         description: "Sekarang saatnya naik level! Lo bakal belajar berbagai cara buat ngolah list di Python — dari nyari data, ngitung, sampai ngacak urutan.",
@@ -5196,7 +5196,7 @@ Angka 9 ditemukan!
             }
         ]
     },
-    {
+    { // 31
         id: 31,
         title: "Operasi List",
         description: "Python bisa ngelakuin berbagai operasi langsung ke list — dari ngitung jumlah, nyari nilai tertinggi, sampe nggabungin list jadi satu. Gampang tapi powerful banget!",
@@ -5389,7 +5389,7 @@ Apakah list asli == list hasil ulang? False
             }
         ]
     },
-    {
+    { // 32
         id: 32,
         title: "Copy List (Menyalin List)",
         description: "Bikin salinan list kelihatannya gampang, tapi ternyata nggak sesimpel itu. Di Python, copy bisa berarti dua hal: salinan asli atau cuma ngacu ke data yang sama.",
@@ -5574,7 +5574,7 @@ print("4. Deep Copy:", deep)
             }
         ]
     },
-    {
+    { // 33
         id: 33,
         title: "Nested List (List Bersarang)",
         description: "List di dalam list — kayak kotak di dalam kotak. Konsep ini bikin lo bisa nyimpen data lebih kompleks, misalnya tabel, grid, atau data 2 dimensi.",
@@ -5782,7 +5782,7 @@ Data akhir: [[80, 90, 85], [100, 88, 92], [60, 75, 70], [90, 95, 85]]
             }
         ]
     },
-    {
+    { // 34
         id: 34,
         title: "Deep Copy Nested List",
         description: "Saat list lo punya list di dalamnya, copy biasa nggak cukup. Deep copy bikin salinan total supaya data asli tetap aman.",
@@ -5931,7 +5931,7 @@ Deep Copy setelah tambah baris: [[99, 2, 3], [4, 5, 88], [7, 8, 9]]
             }
         ]
     },
-    {
+    { // 35
         id: 35,
         title: "Looping List dan Enumerate",
         description: "Pelajari cara looping list di Python, termasuk cara pakai enumerate() buat dapetin index dan value sekaligus. Sangat berguna untuk manipulasi list dan tracking posisi elemen.",
@@ -6114,7 +6114,7 @@ matrix[1][1] = 4
             }
         ]
     },
-    {
+    { // 36
         id: 36,
         title: "Latihan List",
         description: "Latihan praktis untuk mengasah kemampuan manipulasi list. Cocok buat penguatan materi list sebelum lanjut ke List Comprehension.",
@@ -6232,7 +6232,7 @@ Hasil perkalian: [[2, 4, 6], [8, 198, 12], [14, 16, 18]]
             }
         ]
     },
-    {
+    { // 37
         id: 37,
         title: "Tuples dan Set",
         description: "Pelajari tuple (immutable) dan set (unik & tidak berurutan) di Python. Keduanya sering dipakai buat data yang berbeda dari list.",
@@ -6398,7 +6398,7 @@ Intersection: {3}
             }
         ]
     },
-    {
+    { // 38
         id: 38,
         title: "Dictionary",
         description: "Pelajari dictionary di Python, struktur data key-value. Sangat berguna untuk menyimpan data terstruktur dan akses cepat berdasarkan kunci.",
@@ -6569,7 +6569,7 @@ Budi umur: 21
             }
         ]
     },
-    {
+    { // 39
         id: 39,
         title: "Operasi Dictionary",
         description: "Pelajari operasi lanjutan pada dictionary: akses, update, hapus, cek key, gabung dictionary, dan manipulasi nested dictionary.",
@@ -6759,7 +6759,7 @@ Dina
             }
         ]
     },
-    {
+    { // 40
         id: 40,
         title: "Looping Dictionary",
         description: "Pelajari cara looping dictionary di Python, termasuk akses key, value, dan kombinasi key-value, serta looping nested dictionary.",
