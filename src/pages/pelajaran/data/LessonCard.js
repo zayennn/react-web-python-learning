@@ -1,5 +1,5 @@
 export const lessonCards = [
-    {
+    { // 1
         id: 1,
         title: "Apa Itu Python?",
         description: "Kenalan dulu sama Python: sejarah singkat, kelebihan, kegunaan, dan kenapa banyak dipakai pemula maupun expert.",
@@ -16,7 +16,7 @@ export const lessonCards = [
         ],
         color: "#10B981",
     },
-    {
+    { // 2
         id: 2,
         title: "Instalasi Python & VS Code",
         description: "Panduan install Python 3 dan Visual Studio Code di Windows & MacOS, termasuk setting awal biar siap ngoding.",
@@ -33,7 +33,7 @@ export const lessonCards = [
         ],
         color: "#F59E0B",
     },
-    {
+    { // 3
         id: 3,
         title: "Cara Kerja Program & Bytecode",
         description: "Pelajari bagaimana Python menjalankan kode: dari source code, bytecode, hingga interpreter Python.",
@@ -49,7 +49,7 @@ export const lessonCards = [
         ],
         color: "#F29E93",
     },
-    {
+    { // 4
         id: 4,
         title: "Mengenal Variabel",
         description: "Belajar tentang variabel di Python: apa itu variabel, cara membuatnya, aturan penamaan, tipe data dasar, dan latihan praktik.",
@@ -67,7 +67,7 @@ export const lessonCards = [
         ],
         color: "#3C467B",
     },
-    {
+    { // 5
         id: 5,
         title: "Tipe Data di Python",
         description: "Belajar berbagai tipe data penting di Python: angka, string, boolean, list, tuple, set, dict, dan NoneType.",
@@ -89,7 +89,7 @@ export const lessonCards = [
         ],
         color: "#FA812F",
     },
-    {
+    { // 6
         id: 6,
         title: "Casting Tipe Data di Python",
         description: "Belajar cara mengubah tipe data (casting) di Python: int, float, str, dan bool. Lengkap dengan contoh dan latihan.",
@@ -106,7 +106,7 @@ export const lessonCards = [
         ],
         color: "#6F00FF",
     },
-    {
+    { // 7
         id: 7,
         title: "Mengambil Input Data dari User",
         description: "Belajar cara menerima input dari pengguna dengan fungsi input(), mengolahnya, dan menampilkannya kembali.",
@@ -122,7 +122,7 @@ export const lessonCards = [
         ],
         color: "#F39F9F",
     },
-    {
+    { // 8
         id: 8,
         title: "Operasi Aritmatika di Python",
         description: "Pelajari cara melakukan operasi matematika dasar di Python, mulai dari tambah, kurang, kali, bagi, sampai modulus dan pangkat.",
@@ -140,7 +140,7 @@ export const lessonCards = [
         ],
         color: "#59AC77",
     },
-    {
+    { // 9
         id: 9,
         title: "Latihan Perhitungan Sederhana",
         description: "Praktik dasar matematika di Python: penjumlahan, pengurangan, perkalian, pembagian, modulus, dan latihan mini-kalkulator.",
@@ -157,7 +157,7 @@ export const lessonCards = [
         ],
         color: "#DC143C",
     },
-    {
+    { // 10
         id: 10,
         title: "Operasi Komparasi",
         description: "Belajar operator perbandingan di Python: ==, !=, >, <, >=, <=. Pahami gimana cara membandingkan nilai.",
@@ -173,7 +173,7 @@ export const lessonCards = [
         ],
         color: "#3396D3",
     },
-    {
+    { // 11
         id: 11,
         title: "Operasi Logika & Boolean",
         description: "Pelajari tipe data boolean (True/False), operator logika (and, or, not), serta cara menggunakannya dalam kondisi.",
@@ -190,7 +190,7 @@ export const lessonCards = [
         ],
         color: "#FFD93D",
     },
-    {
+    { // 12
         id: 12,
         title: "Latihan Komparasi dan Logika",
         description: "Latihan pemahaman operator perbandingan dan logika di Python. Dari membandingkan angka hingga menggabungkan kondisi dengan AND, OR, dan NOT.",
@@ -208,7 +208,7 @@ export const lessonCards = [
         ],
         color: "#154D71",
     },
-    {
+    { // 13
         id: 13,
         title: "Operator Bitwise di Python",
         description: "Pelajari cara kerja operator bitwise (AND, OR, XOR, NOT, shift) untuk memanipulasi data biner di Python.",
@@ -228,7 +228,7 @@ export const lessonCards = [
         ],
         color: "#0046FF",
     },
-    {
+    { // 14
         id: 14,
         title: "Operator Assignment di Python",
         description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
@@ -244,475 +244,6 @@ export const lessonCards = [
         ],
         color: "#D97D55",
     },
-    {
-        id: 15,
-        title: "Operator Assignment di Python",
-        description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 3,
-        progress: 0,
-        image: "✍️",
-        topics: [
-            "Apa itu Operator Assignment?",
-            "Macam-Macam Operator Assignment",
-            "Latihan Praktik"
-        ],
-        color: "#5A9690",
-    },
-    {
-        id: 16,
-        title: "Pengenalan String",
-        description: "Belajar tipe data string di Python: cara membuat, mengakses, memodifikasi, dan operasi penting pada string.",
-        level: "Pemula",
-        duration: "2 jam",
-        lessons: 5,
-        progress: 0,
-        image: "🔤",
-        topics: [
-            "Apa Itu String?",
-            "Mengakses Karakter dalam String",
-            "Slicing String",
-            "Metode Penting pada String",
-            "Latihan Praktik"
-        ],
-        color: "#6B3F69",
-    },
-    {
-        id: 17,
-        title: "Operasi dan Manipulasi String (Part 1)",
-        description: "Belajar cara menggabungkan, mengulang, dan memeriksa string di Python. Dasar penting sebelum lanjut ke manipulasi string lanjutan.",
-        level: "Menengah",
-        duration: "1.5 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🧩",
-        topics: [
-            "Penggabungan String (Concatenation)",
-            "Pengulangan String",
-            "Mengecek Panjang String",
-            "Latihan Praktik"
-        ],
-        color: "#0065F8",
-    },
-    {
-        id: 18,
-        title: "Operasi dan Manipulasi String (Part 2)",
-        description: "Belajar berbagai method string di Python untuk ubah huruf, ganti teks, pecah string jadi list, dan gabungin lagi dengan cara singkat dan efektif.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🧩",
-        topics: [
-            "Mengubah Huruf (upper, lower, title, capitalize)",
-            "Mencari & Mengganti Teks (find, replace)",
-            "Memecah & Menggabung String (split, join)",
-            "Formatting String (f-string, format)"
-        ],
-        color: "#FAB12F",
-    },
-    {
-        id: 19,
-        title: "Format String di Python",
-        description: "Belajar gimana cara menampilkan teks dengan variabel di dalamnya menggunakan teknik format string — biar output jadi lebih rapi dan dinamis.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🧩",
-        topics: [
-            "Apa itu Format String?",
-            "Cara Lama vs Cara Baru",
-            "f-string: Cara Modern Python",
-            "Latihan Praktik"
-        ],
-        color: "#6C63FF",
-    },
-    {
-        id: 19,
-        title: "String Width dan Alignment di Python",
-        description: "Belajar cara ngatur lebar teks (width) dan posisi teks (alignment) di output Python biar rapi dan profesional.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 3,
-        progress: 0,
-        image: "📏",
-        topics: [
-            "Konsep Lebar (Width) String",
-            "Alignment: Rata Kiri, Kanan, dan Tengah",
-            "Latihan Formatting String"
-        ],
-        color: "#4B8F8C",
-    },
-    {
-        id: 20,
-        title: "Latihan Date and Time",
-        description: "Latihan praktis buat memperdalam pemahaman tentang modul datetime: ambil waktu sekarang, hitung selisih tanggal, dan format tanggal sesuai kebutuhan.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 3,
-        progress: 0,
-        image: "⏰",
-        topics: [
-            "Membuat dan Menampilkan Waktu",
-            "Menghitung Selisih Waktu (timedelta)",
-            "Latihan Praktik: Kalkulator Umur & Event Reminder"
-        ],
-        color: "#6A5ACD",
-    },
-    {
-        id: 21,
-        title: "IF dan ELSE Statement di Python",
-        description: "Belajar gimana Python bisa ngambil keputusan pakai if, else, dan elif biar program bisa mikir kayak manusia.",
-        level: "Pemula",
-        duration: "1 jam 30 menit",
-        lessons: 4,
-        progress: 0,
-        image: "🧠",
-        topics: [
-            "Konsep Percabangan",
-            "IF Statement",
-            "ELSE dan ELIF Statement",
-            "Latihan Kondisi"
-        ],
-        color: "#4F46E5",
-    },
-    {
-        id: 22,
-        title: "ELIF Statement di Python",
-        description: "Pelajari cara menangani lebih dari dua kondisi dengan elif (else if) agar program bisa mengambil keputusan yang lebih kompleks.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 3,
-        progress: 0,
-        image: "🪜",
-        topics: [
-            "Kapan Harus Pakai ELIF",
-            "Cara Kerja ELIF",
-            "Latihan ELIF Statement"
-        ],
-        color: "#3B82F6",
-    },
-    {
-        id: 23,
-        title: "Latihan Percabangan – Kalkulator Sederhana",
-        description: "Praktik nyata pakai percabangan IF-ELSE buat bikin kalkulator sederhana dengan operasi dasar: tambah, kurang, kali, dan bagi.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 2,
-        progress: 0,
-        image: "🧮",
-        topics: [
-            "Konsep Program Kalkulator",
-            "Latihan Buat Sendiri"
-        ],
-        color: "#E879F9",
-    },
-    {
-        id: 24,
-        title: "For Loop (Perulangan) di Python",
-        description: "Belajar gimana Python bisa ngulang kode berkali-kali dengan mudah pakai perulangan for. Cocok buat iterasi list, string, atau range angka.",
-        level: "Pemula",
-        duration: "1 jam 30 menit",
-        lessons: 4,
-        progress: 0,
-        image: "🔁",
-        topics: [
-            "Konsep Perulangan",
-            "For Loop Dasar",
-            "Loop dengan Range dan Data Koleksi",
-            "Latihan Perulangan"
-        ],
-        color: "#EAB308",
-    },
-    {
-        id: 25,
-        title: "While Loop (Perulangan)",
-        description: "Pelajari cara membuat perulangan di Python dengan while loop — biar program bisa jalan terus sampai kondisi tertentu terpenuhi.",
-        level: "Menengah",
-        duration: "2 jam",
-        lessons: 5,
-        progress: 0,
-        image: "🔁",
-        topics: [
-            "Konsep While Loop",
-            "Contoh While Loop Dasar",
-            "Infinite Loop (Perulangan Tak Berhenti)",
-            "Break & Continue",
-            "Latihan Praktik While Loop"
-        ],
-        color: "#F59E0B",
-    },
-    {
-        id: 26,
-        title: "Continue dan Pass",
-        description: "Pelajari cara mengontrol jalannya loop menggunakan 'continue' untuk melewati satu iterasi, dan 'pass' untuk blok kosong tanpa error.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 4,
-        progress: 0,
-        image: "⏭️",
-        topics: [
-            "Konsep Continue",
-            "Contoh Penggunaan Continue",
-            "Konsep Pass",
-            "Latihan Praktik Continue & Pass"
-        ],
-        color: "#8B5CF6",
-    },
-    {
-        id: 27,
-        title: "Break",
-        description: "Pelajari bagaimana menggunakan perintah break untuk menghentikan loop secara paksa saat kondisi tertentu terpenuhi.",
-        level: "Menengah",
-        duration: "1.5 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🛑",
-        topics: [
-            "Konsep Break",
-            "Contoh Penggunaan Break",
-            "Break dalam While dan For Loop",
-            "Latihan Praktik Break"
-        ],
-        color: "#EF4444",
-    },
-    {
-        id: 28,
-        title: "Latihan Perulangan",
-        description: "Saatnya latihan! Gabungkan pemahaman tentang for loop, while loop, dan break untuk menyelesaikan berbagai kasus nyata.",
-        level: "Menengah",
-        duration: "1 jam 30 menit",
-        lessons: 4,
-        progress: 0,
-        image: "🔁",
-        topics: [
-            "Latihan dasar for & while",
-            "Kombinasi perulangan bersarang",
-            "Penggunaan break & continue",
-            "Mini project: Hitung Data"
-        ],
-        color: "#2563EB",
-    },
-    {
-        id: 29,
-        title: "List (Daftar Data)",
-        description: "List adalah salah satu tipe data paling penting di Python. Dengan list, kita bisa nyimpen banyak nilai sekaligus dalam satu variabel!",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 5,
-        progress: 0,
-        image: "📋",
-        topics: [
-            "Apa itu List?",
-            "Cara Membuat List",
-            "Akses Data di List",
-            "Mengubah & Menambah Data",
-            "Latihan"
-        ],
-        color: "#60A5FA",
-    },
-    {
-        id: 30,
-        title: "Manipulasi List",
-        description: "Sekarang saatnya naik level! Lo bakal belajar berbagai cara buat ngolah list di Python — dari nyari data, ngitung, sampai ngacak urutan.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 6,
-        progress: 0,
-        image: "🧩",
-        topics: [
-            "Mengetahui Panjang List",
-            "Mengecek Data dalam List",
-            "Mengurutkan dan Membalik List",
-            "Menyalin List",
-            "Menggabungkan List",
-            "Latihan"
-        ],
-        color: "#4ADE80",
-    },
-    {
-        id: 31,
-        title: "Operasi List",
-        description: "Python bisa ngelakuin berbagai operasi langsung ke list — dari ngitung jumlah, nyari nilai tertinggi, sampe nggabungin list jadi satu. Gampang tapi powerful banget!",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 6,
-        progress: 0,
-        image: "➕",
-        topics: [
-            "Operasi Penjumlahan & Pengulangan",
-            "Mengetahui Nilai Tertinggi & Terendah",
-            "Menjumlahkan Semua Elemen",
-            "Mencari Nilai Tertentu",
-            "Membandingkan List",
-            "Latihan"
-        ],
-        color: "#FACC15",
-    },
-    {
-        id: 32,
-        title: "Copy List (Menyalin List)",
-        description: "Bikin salinan list kelihatannya gampang, tapi ternyata nggak sesimpel itu. Di Python, copy bisa berarti dua hal: salinan asli atau cuma ngacu ke data yang sama.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 5,
-        progress: 0,
-        image: "📋",
-        topics: [
-            "Masalah Saat Menyalin Langsung",
-            "Menyalin List dengan copy()",
-            "Menyalin List dengan Slicing",
-            "Perbedaan Shallow Copy vs Deep Copy",
-            "Latihan Copy List"
-        ],
-        color: "#14B8A6",
-    },
-    {
-        id: 33,
-        title: "Nested List (List Bersarang)",
-        description: "List di dalam list — kayak kotak di dalam kotak. Konsep ini bikin lo bisa nyimpen data lebih kompleks, misalnya tabel, grid, atau data 2 dimensi.",
-        level: "Pemula",
-        duration: "1 jam",
-        lessons: 5,
-        progress: 0,
-        image: "🧱",
-        topics: [
-            "Konsep Nested List",
-            "Akses Elemen di Dalam List Bersarang",
-            "Loop di Nested List",
-            "Modifikasi Data di Nested List",
-            "Latihan Nested List"
-        ],
-        color: "#EAB308"
-    },
-    {
-        id: 34,
-        title: "Deep Copy Nested List",
-        description: "Saat list lo punya list di dalamnya, copy biasa nggak cukup. Deep copy bikin salinan total supaya data asli tetap aman.",
-        level: "Pemula-Menengah",
-        duration: "1 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🗂️",
-        topics: [
-            "Masalah Shallow Copy di Nested List",
-            "Gunakan copy.deepcopy()",
-            "Modifikasi Deep Copy",
-            "Latihan Deep Copy"
-        ],
-        color: "#F472B6",
-    },
-    {
-        id: 35,
-        title: "Looping List dan Enumerate",
-        description: "Pelajari cara looping list di Python, termasuk cara pakai enumerate() buat dapetin index dan value sekaligus. Sangat berguna untuk manipulasi list dan tracking posisi elemen.",
-        level: "Pemula-Menengah",
-        duration: "1 jam",
-        lessons: 5,
-        progress: 0,
-        image: "🔄",
-        topics: [
-            "Loop Dasar List",
-            "Looping dengan For",
-            "Looping dengan While",
-            "Menggunakan enumerate()",
-            "Latihan Looping List"
-        ],
-        color: "#22D3EE",
-    },
-    {
-        id: 36,
-        title: "Latihan List",
-        description: "Latihan praktis untuk mengasah kemampuan manipulasi list. Cocok buat penguatan materi list sebelum lanjut ke List Comprehension.",
-        level: "Menengah",
-        duration: "1.5 jam",
-        lessons: 1,
-        progress: 0,
-        image: "📝",
-        topics: [
-            "Latihan Akses & Modifikasi List",
-            "Latihan Nested List",
-            "Latihan Copy List",
-            "Latihan Looping & Enumerate",
-            "Latihan Kombinasi List"
-        ],
-        color: "#F97316",
-    },
-    {
-        id: 37,
-        title: "Tuples dan Set",
-        description: "Pelajari tuple (immutable) dan set (unik & tidak berurutan) di Python. Keduanya sering dipakai buat data yang berbeda dari list.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🔹",
-        topics: [
-            "Apa itu Tuple?",
-            "Akses & Operasi Tuple",
-            "Apa itu Set?",
-            "Operasi Set",
-            "Latihan Tuple & Set"
-        ],
-        color: "#8B5CF6",
-    },
-    {
-        id: 38,
-        title: "Dictionary",
-        description: "Pelajari dictionary di Python, struktur data key-value. Sangat berguna untuk menyimpan data terstruktur dan akses cepat berdasarkan kunci.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 5,
-        progress: 0,
-        image: "📖",
-        topics: [
-            "Apa itu Dictionary?",
-            "Akses & Modifikasi Dictionary",
-            "Looping Dictionary",
-            "Metode Umum Dictionary",
-            "Latihan Dictionary"
-        ],
-        color: "#22C55E",
-    },
-    {
-        id: 39,
-        title: "Operasi Dictionary",
-        description: "Pelajari operasi lanjutan pada dictionary: akses, update, hapus, cek key, gabung dictionary, dan manipulasi nested dictionary.",
-        level: "Menengah-Tinggi",
-        duration: "1.5 jam",
-        lessons: 5,
-        progress: 0,
-        image: "🗄️",
-        topics: [
-            "Akses & Update Key-Value",
-            "Cek Key di Dictionary",
-            "Hapus Key",
-            "Gabung & Update Dictionary",
-            "Operasi di Nested Dictionary",
-            "Latihan Operasi Dictionary"
-        ],
-        color: "#FBBF24",
-    },
-    {
-        id: 40,
-        title: "Looping Dictionary",
-        description: "Pelajari cara looping dictionary di Python, termasuk akses key, value, dan kombinasi key-value, serta looping nested dictionary.",
-        level: "Menengah",
-        duration: "1 jam",
-        lessons: 4,
-        progress: 0,
-        image: "🔄",
-        topics: [
-            "Looping Key",
-            "Looping Value",
-            "Looping Key & Value",
-            "Looping Nested Dictionary",
-            "Latihan Looping Dictionary"
-        ],
-        color: "#10B981",
-    }
 ];
 
 export default lessonCards;
