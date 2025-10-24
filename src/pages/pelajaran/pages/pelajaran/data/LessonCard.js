@@ -6266,6 +6266,3199 @@ while True:
                 ]
             }
         ]
+    },
+
+    { // 31
+        id: 31,
+        title: "Operasi List di Python",
+        description: "Belajar berbagai operasi dasar pada list seperti menambah, menghapus, mengubah, dan mengakses elemen.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Apa itu List?",
+            "Operasi Dasar List",
+            "Method-Method List"
+        ],
+        color: "#FF6B6B",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu List?",
+                type: "theory",
+                content: `
+# Pengenalan List
+
+**List** adalah struktur data yang digunakan untuk menyimpan kumpulan data dalam satu variabel.
+
+## Karakteristik List:
+- **Ordered** → Elemen memiliki urutan tetap
+- **Mutable** → Bisa diubah setelah dibuat
+- **Boleh duplikat** → Boleh ada elemen yang sama
+- **Bisa berisi tipe data berbeda**
+
+## Cara Membuat List:
+\`\`\`python
+# List kosong
+list_kosong = []
+list_kosong2 = list()
+
+# List dengan elemen
+buah = ["apel", "jeruk", "mangga"]
+angka = [1, 2, 3, 4, 5]
+campuran = [1, "hello", 3.14, True]
+
+# List dengan duplikat
+nilai = [85, 90, 85, 78, 90]
+\`\`\`
+
+## Mengakses Elemen List:
+\`\`\`python
+buah = ["apel", "jeruk", "mangga", "pisang"]
+
+print(buah[0])    # apel (elemen pertama)
+print(buah[1])    # jeruk
+print(buah[-1])   # pisang (elemen terakhir)
+print(buah[1:3])  # ['jeruk', 'mangga'] (slicing)
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Operasi Dasar List",
+                type: "theory",
+                content: `
+# Operasi Dasar pada List
+
+## 1. Mengubah Elemen
+\`\`\`python
+buah = ["apel", "jeruk", "mangga"]
+buah[1] = "anggur"  # Ubah elemen index 1
+print(buah)  # ['apel', 'anggur', 'mangga']
+\`\`\`
+
+## 2. Menambah Elemen
+\`\`\`python
+buah = ["apel", "jeruk"]
+
+# append() - tambah di akhir
+buah.append("mangga")
+print(buah)  # ['apel', 'jeruk', 'mangga']
+
+# insert() - tambah di index tertentu
+buah.insert(1, "anggur")
+print(buah)  # ['apel', 'anggur', 'jeruk', 'mangga']
+
+# extend() - tambah multiple elemen
+buah.extend(["pisang", "kiwi"])
+print(buah)  # ['apel', 'anggur', 'jeruk', 'mangga', 'pisang', 'kiwi']
+\`\`\`
+
+## 3. Menghapus Elemen
+\`\`\`python
+buah = ["apel", "anggur", "jeruk", "mangga"]
+
+# remove() - hapus berdasarkan nilai
+buah.remove("anggur")
+print(buah)  # ['apel', 'jeruk', 'mangga']
+
+# pop() - hapus berdasarkan index (default terakhir)
+buah.pop(1)  # hapus index 1
+print(buah)  # ['apel', 'mangga']
+
+# del - hapus dengan statement
+del buah[0]
+print(buah)  # ['mangga']
+
+# clear() - hapus semua elemen
+buah.clear()
+print(buah)  # []
+\`\`\`
+
+## 4. Operasi Lainnya
+\`\`\`python
+angka = [3, 1, 4, 1, 5, 9]
+
+# len() - panjang list
+print(len(angka))  # 6
+
+# count() - hitung kemunculan nilai
+print(angka.count(1))  # 2
+
+# index() - cari index nilai
+print(angka.index(4))  # 2
+
+# sort() - urutkan
+angka.sort()
+print(angka)  # [1, 1, 3, 4, 5, 9]
+
+# reverse() - balik urutan
+angka.reverse()
+print(angka)  # [9, 5, 4, 3, 1, 1]
+\`\`\`
+            `,
+                codeExample: `# Contoh operasi list
+print("=== MENAMBAH ELEMEN ===")
+buah = ["apel", "jeruk"]
+print("Awal:", buah)
+
+buah.append("mangga")
+print("Setelah append:", buah)
+
+buah.insert(1, "anggur")
+print("Setelah insert:", buah)
+
+print("\\n=== MENGUBAH ELEMEN ===")
+buah[0] = "APEL"
+print("Setubah ubah index 0:", buah)
+
+print("\\n=== MENGHAPUS ELEMEN ===")
+buah.remove("anggur")
+print("Setelah remove:", buah)
+
+terhapus = buah.pop()
+print("Elemen terhapus:", terhapus)
+print("Setelah pop:", buah)
+
+print("\\n=== OPERASI LAIN ===")
+angka = [5, 2, 8, 1, 9]
+print("Panjang list:", len(angka))
+print("Index dari 8:", angka.index(8))
+
+angka.sort()
+print("Setelah sort:", angka)`,
+                expectedOutput: `=== MENAMBAH ELEMEN ===
+Awal: ['apel', 'jeruk']
+Setelah append: ['apel', 'jeruk', 'mangga']
+Setelah insert: ['apel', 'anggur', 'jeruk', 'mangga']
+
+=== MENGUBAH ELEMEN ===
+Setubah ubah index 0: ['APEL', 'anggur', 'jeruk', 'mangga']
+
+=== MENGHAPUS ELEMEN ===
+Setelah remove: ['APEL', 'jeruk', 'mangga']
+Elemen terhapus: mangga
+Setelah pop: ['APEL', 'jeruk']
+
+=== OPERASI LAIN ===
+Panjang list: 5
+Index dari 8: 2
+Setelah sort: [1, 2, 5, 8, 9]`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi List
+
+Kerjakan soal berikut:
+1. Buat list buah dan tambahkan 3 buah baru
+2. Hapus buah tertentu dari list
+3. Urutkan list angka secara descending
+4. Cari dan ubah elemen tertentu dalam list
+5. Gabungkan dua list menjadi satu
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Tambah Buah",
+                        description: "Buat list buah awal ['apel', 'jeruk'], lalu tambah 'mangga', 'pisang', 'anggur'",
+                        hint: "Gunakan extend() atau multiple append()",
+                        solution: `buah = ['apel', 'jeruk']
+buah.extend(['mangga', 'pisang', 'anggur'])
+print(buah)  # ['apel', 'jeruk', 'mangga', 'pisang', 'anggur']`
+                    },
+                    {
+                        id: 2,
+                        title: "Hapus Elemen",
+                        description: "Dari list ['apel', 'jeruk', 'mangga', 'pisang'], hapus 'jeruk'",
+                        hint: "Gunakan remove()",
+                        solution: `buah = ['apel', 'jeruk', 'mangga', 'pisang']
+buah.remove('jeruk')
+print(buah)  # ['apel', 'mangga', 'pisang']`
+                    },
+                    {
+                        id: 3,
+                        title: "Sort Descending",
+                        description: "Urutkan [5, 2, 8, 1, 9] dari terbesar ke terkecil",
+                        hint: "Gunakan sort() lalu reverse(), atau sort(reverse=True)",
+                        solution: `angka = [5, 2, 8, 1, 9]
+angka.sort(reverse=True)
+print(angka)  # [9, 8, 5, 2, 1]`
+                    },
+                    {
+                        id: 4,
+                        title: "Cari dan Ubah",
+                        description: "Dalam list ['apel', 'jeruk', 'mangga'], cari 'jeruk' dan ubah menjadi 'anggur'",
+                        hint: "Gunakan index() untuk mencari posisi, lalu assignment",
+                        solution: `buah = ['apel', 'jeruk', 'mangga']
+index_jeruk = buah.index('jeruk')
+buah[index_jeruk] = 'anggur'
+print(buah)  # ['apel', 'anggur', 'mangga']`
+                    },
+                    {
+                        id: 5,
+                        title: "Gabung List",
+                        description: "Gabungkan list1 = [1, 2, 3] dan list2 = [4, 5, 6]",
+                        hint: "Gunakan extend() atau operator +",
+                        solution: `list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list1.extend(list2)
+print(list1)  # [1, 2, 3, 4, 5, 6]`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 32
+        id: 32,
+        title: "Copy List di Python",
+        description: "Memahami perbedaan antara shallow copy dan deep copy pada list, serta kapan menggunakannya.",
+        level: "Pemula Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📑",
+        topics: [
+            "Shallow Copy",
+            "Deep Copy",
+            "Perbedaan dan Penggunaan"
+        ],
+        color: "#4ECDC4",
+        content: [
+            {
+                id: 1,
+                title: "Shallow Copy",
+                type: "theory",
+                content: `
+# Shallow Copy pada List
+
+**Shallow Copy** membuat list baru, tetapi elemen-elemennya masih merujuk ke objek yang sama.
+
+## Cara Melakukan Shallow Copy:
+
+\`\`\`python
+# Original list
+original = [1, 2, 3, 4]
+
+# 1. Menggunakan slicing [:]
+copy1 = original[:]
+
+# 2. Menggunakan method copy()
+copy2 = original.copy()
+
+# 3. Menggunakan constructor list()
+copy3 = list(original)
+
+print("Original:", original)
+print("Copy1:", copy1)
+print("Copy2:", copy2)
+print("Copy3:", copy3)
+\`\`\`
+
+## Perilaku Shallow Copy:
+\`\`\`python
+original = [1, 2, 3]
+copy = original.copy()
+
+# Mengubah copy TIDAK mempengaruhi original
+copy[0] = 99
+
+print("Original:", original)  # [1, 2, 3]
+print("Copy:", copy)          # [99, 2, 3]
+\`\`\`
+
+## Masalah dengan Shallow Copy (pada nested list):
+\`\`\`python
+original = [[1, 2], [3, 4]]
+copy = original.copy()
+
+# Mengubah elemen dalam nested list
+copy[0][0] = 99
+
+print("Original:", original)  # [[99, 2], [3, 4]] → TERPENGARUH!
+print("Copy:", copy)          # [[99, 2], [3, 4]]
+\`\`\`
+
+**Kesimpulan:** Shallow copy aman untuk list 1 dimensi, tetapi bermasalah untuk nested list.
+            `
+            },
+            {
+                id: 2,
+                title: "Deep Copy",
+                type: "theory",
+                content: `
+# Deep Copy pada List
+
+**Deep Copy** membuat list baru beserta semua elemen di dalamnya (termasuk nested list) benar-benar terpisah.
+
+## Menggunakan Module copy
+\`\`\`python
+import copy
+
+original = [[1, 2], [3, 4]]
+deep_copy = copy.deepcopy(original)
+
+# Mengubah deep copy TIDAK mempengaruhi original
+deep_copy[0][0] = 99
+
+print("Original:", original)    # [[1, 2], [3, 4]] → TIDAK TERPENGARUH!
+print("Deep Copy:", deep_copy)  # [[99, 2], [3, 4]]
+\`\`\`
+
+## Perbandingan Shallow vs Deep Copy:
+\`\`\`python
+import copy
+
+# Original nested list
+original = [[1, 2], [3, 4]]
+
+# Shallow Copy
+shallow = original.copy()
+
+# Deep Copy  
+deep = copy.deepcopy(original)
+
+# Test dengan mengubah nested element
+shallow[0][0] = "SHALLOW"
+deep[0][0] = "DEEP"
+
+print("Original:", original)   # [['SHALLOW', 2], [3, 4]]
+print("Shallow:", shallow)     # [['SHALLOW', 2], [3, 4]]
+print("Deep:", deep)           # [['DEEP', 2], [3, 4]]
+\`\`\`
+
+## Kapan Menggunakan Deep Copy?
+- Ketika bekerja dengan **nested list**
+- Ketika ingin **benar-benar memisahkan** data
+- Ketika melakukan **manipulasi data kompleks**
+
+## Kapan Cukup Shallow Copy?
+- Untuk **list 1 dimensi** sederhana
+- Ketika **performansi** lebih penting (deep copy lebih lambat)
+- Ketika tidak ada nested mutable objects
+            `,
+                codeExample: `import copy
+
+print("=== SHALLOW COPY ===")
+original1 = [1, 2, 3, 4]
+shallow = original1.copy()
+
+shallow[0] = 99
+print("Original:", original1)  # [1, 2, 3, 4]
+print("Shallow:", shallow)     # [99, 2, 3, 4]
+
+print("\\n=== MASALAH SHALLOW COPY ===")
+original2 = [[1, 2], [3, 4]]
+shallow2 = original2.copy()
+
+shallow2[0][0] = 99
+print("Original:", original2)  # [[99, 2], [3, 4]]
+print("Shallow:", shallow2)    # [[99, 2], [3, 4]]
+
+print("\\n=== DEEP COPY ===")
+original3 = [[1, 2], [3, 4]]
+deep = copy.deepcopy(original3)
+
+deep[0][0] = 999
+print("Original:", original3)  # [[1, 2], [3, 4]]
+print("Deep:", deep)           # [[999, 2], [3, 4]]
+
+print("\\n=== PERBANDINGAN ===")
+list_a = [1, [2, 3], 4]
+list_b = list_a.copy()          # Shallow
+list_c = copy.deepcopy(list_a)  # Deep
+
+list_b[1][0] = "SHALLOW"
+list_c[1][0] = "DEEP"
+
+print("A (original):", list_a)  # [1, ['SHALLOW', 3], 4]
+print("B (shallow):", list_b)   # [1, ['SHALLOW', 3], 4]  
+print("C (deep):", list_c)      # [1, ['DEEP', 3], 4]`,
+                expectedOutput: `=== SHALLOW COPY ===
+Original: [1, 2, 3, 4]
+Shallow: [99, 2, 3, 4]
+
+=== MASALAH SHALLOW COPY ===
+Original: [[99, 2], [3, 4]]
+Shallow: [[99, 2], [3, 4]]
+
+=== DEEP COPY ===
+Original: [[1, 2], [3, 4]]
+Deep: [[999, 2], [3, 4]]
+
+=== PERBANDINGAN ===
+A (original): [1, ['SHALLOW', 3], 4]
+B (shallow): [1, ['SHALLOW', 3], 4]
+C (deep): [1, ['DEEP', 3], 4]`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Copy List
+
+Kerjakan soal berikut:
+1. Buat shallow copy dan ubah elemen non-nested
+2. Demonstrasi masalah shallow copy dengan nested list
+3. Gunakan deep copy untuk nested list
+4. Bandingkan hasil shallow vs deep copy
+5. Buat fungsi untuk duplikasi list dengan aman
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Shallow Copy Sederhana",
+                        description: "Buat shallow copy dari [1, 2, 3, 4] dan ubah elemen pertama menjadi 99",
+                        hint: "Gunakan copy() method",
+                        solution: `original = [1, 2, 3, 4]
+copy_list = original.copy()
+copy_list[0] = 99
+print("Original:", original)
+print("Copy:", copy_list)`
+                    },
+                    {
+                        id: 2,
+                        title: "Masalah Shallow Copy",
+                        description: "Demonstrasi masalah shallow copy dengan nested list [[1, 2], [3, 4]]",
+                        hint: "Ubah elemen dalam nested list pada copy",
+                        solution: `original = [[1, 2], [3, 4]]
+shallow = original.copy()
+shallow[0][0] = 99
+print("Original terpengaruh:", original)  # [[99, 2], [3, 4]]`
+                    },
+                    {
+                        id: 3,
+                        title: "Deep Copy Solution",
+                        description: "Selesaikan masalah nested list dengan deep copy",
+                        hint: "Gunakan copy.deepcopy()",
+                        solution: `import copy
+original = [[1, 2], [3, 4]]
+deep = copy.deepcopy(original)
+deep[0][0] = 99
+print("Original aman:", original)  # [[1, 2], [3, 4]]`
+                    },
+                    {
+                        id: 4,
+                        title: "Perbandingan Langsung",
+                        description: "Bandingkan shallow vs deep copy pada list yang sama [1, [2, 3], 4]",
+                        hint: "Buat kedua jenis copy dan ubah nested element",
+                        solution: `import copy
+original = [1, [2, 3], 4]
+shallow = original.copy()
+deep = copy.deepcopy(original)
+
+shallow[1][0] = "SHALLOW"
+deep[1][0] = "DEEP"
+
+print("Original:", original)
+print("Shallow:", shallow)
+print("Deep:", deep)`
+                    },
+                    {
+                        id: 5,
+                        title: "Fungsi Duplikasi Aman",
+                        description: "Buat fungsi yang return copy aman dari list (otomatis pilih shallow/deep)",
+                        hint: "Cek jika ada nested list, gunakan deep copy",
+                        solution: `import copy
+
+def safe_copy(lst):
+    # Cek jika ada nested list
+    for item in lst:
+        if isinstance(item, list):
+            return copy.deepcopy(lst)
+    return lst.copy()
+
+# Test
+list1 = [1, 2, 3]
+list2 = [[1, 2], [3, 4]]
+
+print("Simple:", safe_copy(list1))
+print("Nested:", safe_copy(list2))`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 33
+        id: 33,
+        title: "Nested List / List Bersarang",
+        description: "Belajar bekerja dengan list di dalam list, akses elemen, dan manipulasi data multidimensi.",
+        level: "Pemula Menengah",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📊",
+        topics: [
+            "Konsep Nested List",
+            "Akses Elemen Nested List",
+            "Manipulasi Nested List"
+        ],
+        color: "#45B7D1",
+        content: [
+            {
+                id: 1,
+                title: "Konsep Nested List",
+                type: "theory",
+                content: `
+# Pengenalan Nested List
+
+**Nested List** adalah list yang berisi list lain di dalamnya. Ini berguna untuk merepresentasikan data multidimensi.
+
+## Contoh Nested List:
+
+\`\`\`python
+# List 2D (seperti matriks)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6], 
+    [7, 8, 9]
+]
+
+# List siswa dengan nilai
+siswa = [
+    ["Alice", 85, 90, 78],
+    ["Bob", 92, 88, 95],
+    ["Charlie", 78, 85, 80]
+]
+
+# List bersarang tidak beraturan
+irregular = [
+    [1, 2],
+    [3, 4, 5],
+    [6]
+]
+\`\`\`
+
+## Visualisasi Nested List:
+
+\`\`\`python
+matrix = [
+    [1, 2, 3],     # matrix[0]
+    [4, 5, 6],     # matrix[1] 
+    [7, 8, 9]      # matrix[2]
+]
+
+# matrix[0] = [1, 2, 3]
+# matrix[1] = [4, 5, 6]
+# matrix[2] = [7, 8, 9]
+\`\`\`
+
+## Kegunaan Nested List:
+- **Matriks** dalam matematika
+- **Tabel data** 
+- **Game boards** (papan catur, tic-tac-toe)
+- **Grafik dan koordinat**
+- **Struktur data tree**
+            `
+            },
+            {
+                id: 2,
+                title: "Akses dan Manipulasi",
+                type: "theory",
+                content: `
+# Akses dan Manipulasi Nested List
+
+## 1. Mengakses Elemen Nested List
+\`\`\`python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Akses elemen tunggal
+print(matrix[0][0])   # 1 (baris 0, kolom 0)
+print(matrix[1][2])   # 6 (baris 1, kolom 2)
+print(matrix[2][1])   # 8 (baris 2, kolom 1)
+
+# Akses entire row
+print(matrix[0])      # [1, 2, 3]
+
+# Akses entire column (dengan list comprehension)
+kolom_0 = [row[0] for row in matrix]
+print(kolom_0)        # [1, 4, 7]
+\`\`\`
+
+## 2. Mengubah Elemen Nested List
+\`\`\`python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Ubah elemen tunggal
+matrix[0][0] = 99
+print(matrix)  # [[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Ubah entire row
+matrix[1] = [10, 11, 12]
+print(matrix)  # [[99, 2, 3], [10, 11, 12], [7, 8, 9]]
+\`\`\`
+
+## 3. Iterasi melalui Nested List
+\`\`\`python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Iterasi baris demi baris
+for baris in matrix:
+    print(baris)
+# Output:
+# [1, 2, 3]
+# [4, 5, 6]  
+# [7, 8, 9]
+
+# Iterasi setiap elemen
+for i, baris in enumerate(matrix):
+    for j, nilai in enumerate(baris):
+        print(f"matrix[{i}][{j}] = {nilai}")
+\`\`\`
+
+## 4. Operasi pada Nested List
+\`\`\`python
+# Menambah row baru
+matrix = [[1, 2], [3, 4]]
+matrix.append([5, 6])
+print(matrix)  # [[1, 2], [3, 4], [5, 6]]
+
+# Menambah kolom baru
+for row in matrix:
+    row.append(0)  # tambah 0 di setiap row
+print(matrix)  # [[1, 2, 0], [3, 4, 0], [5, 6, 0]]
+
+# Menghapus row
+matrix.pop(0)
+print(matrix)  # [[3, 4, 0], [5, 6, 0]]
+\`\`\`
+            `,
+                codeExample: `print("=== AKSES ELEMEN ===")
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print("Elemen [0][0]:", matrix[0][0])
+print("Elemen [1][2]:", matrix[1][2])
+print("Row 1:", matrix[1])
+
+print("\\n=== ITERASI ===")
+print("Iterasi per baris:")
+for baris in matrix:
+    print(baris)
+
+print("\\nIterasi dengan index:")
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print(f"matrix[{i}][{j}] = {matrix[i][j]}")
+
+print("\\n=== MANIPULASI ===")
+# Ubah elemen
+matrix[0][0] = 99
+print("Setelah ubah [0][0]:", matrix)
+
+# Tambah row
+matrix.append([10, 11, 12])
+print("Setelah tambah row:", matrix)
+
+# Tambah kolom
+for row in matrix:
+    row.append(0)
+print("Setelah tambah kolom:", matrix)`,
+                expectedOutput: `=== AKSES ELEMEN ===
+Elemen [0][0]: 1
+Elemen [1][2]: 6
+Row 1: [4, 5, 6]
+
+=== ITERASI ===
+Iterasi per baris:
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+
+Iterasi dengan index:
+matrix[0][0] = 1
+matrix[0][1] = 2
+matrix[0][2] = 3
+matrix[1][0] = 4
+matrix[1][1] = 5
+matrix[1][2] = 6
+matrix[2][0] = 7
+matrix[2][1] = 8
+matrix[2][2] = 9
+
+=== MANIPULASI ===
+Setelah ubah [0][0]: [[99, 2, 3], [4, 5, 6], [7, 8, 9]]
+Setelah tambah row: [[99, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+Setelah tambah kolom: [[99, 2, 3, 0], [4, 5, 6, 0], [7, 8, 9, 0], [10, 11, 12, 0]]`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Nested List
+
+Kerjakan soal berikut:
+1. Buat matriks 3x3 dan akses elemen diagonal
+2. Buat list data siswa dengan nilai
+3. Hitung rata-rata nilai setiap siswa
+4. Transpose matriks (tukar baris dan kolom)
+5. Buat papan tic-tac-toe kosong
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Akses Diagonal",
+                        description: "Dari matriks 3x3, akses elemen diagonal [0,0], [1,1], [2,2]",
+                        hint: "Gunakan loop dengan index yang sama",
+                        solution: `matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+diagonal = []
+for i in range(3):
+    diagonal.append(matrix[i][i])
+print("Diagonal:", diagonal)  # [1, 5, 9]`
+                    },
+                    {
+                        id: 2,
+                        title: "Data Siswa",
+                        description: "Buat nested list berisi data: [nama, nilai_matematika, nilai_fisika, nilai_kimia]",
+                        hint: "Gunakan list dalam list",
+                        solution: `siswa = [
+    ["Alice", 85, 90, 78],
+    ["Bob", 92, 88, 95],
+    ["Charlie", 78, 85, 80]
+]
+print("Data siswa:", siswa)`
+                    },
+                    {
+                        id: 3,
+                        title: "Rata-rata Nilai",
+                        description: "Hitung rata-rata nilai setiap siswa dari data sebelumnya",
+                        hint: "Loop melalui siswa, hitung rata-rata nilai (index 1-3)",
+                        solution: `siswa = [
+    ["Alice", 85, 90, 78],
+    ["Bob", 92, 88, 95],
+    ["Charlie", 78, 85, 80]
+]
+
+for data in siswa:
+    nama = data[0]
+    nilai = data[1:]
+    rata_rata = sum(nilai) / len(nilai)
+    print(f"{nama}: {rata_rata:.2f}")`
+                    },
+                    {
+                        id: 4,
+                        title: "Transpose Matriks",
+                        description: "Buat fungsi untuk transpose matriks (tukar baris dan kolom)",
+                        hint: "Gunakan nested loop dan list comprehension",
+                        solution: `def transpose(matrix):
+    return [[matrix[j][i] for j in range(len(matrix))] 
+            for i in range(len(matrix[0]))]
+
+matrix = [[1, 2, 3], [4, 5, 6]]
+print("Original:", matrix)
+print("Transpose:", transpose(matrix))`
+                    },
+                    {
+                        id: 5,
+                        title: "Papan Tic-Tac-Toe",
+                        description: "Buat papan tic-tac-toe 3x3 kosong dengan nilai '-'",
+                        hint: "Gunakan nested list dengan 3 baris dan 3 kolom",
+                        solution: `papan = [['-' for _ in range(3)] for _ in range(3)]
+print("Papan tic-tac-toe:")
+for baris in papan:
+    print(baris)`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 34
+        id: 34,
+        title: "Deep Copy Nested List",
+        description: "Memahami deep copy secara mendalam untuk nested list dan kapan harus menggunakannya.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔍",
+        topics: [
+            "Kebutuhan Deep Copy",
+            "Implementasi Deep Copy",
+            "Studi Kasus"
+        ],
+        color: "#96CEB4",
+        content: [
+            {
+                id: 1,
+                title: "Kebutuhan Deep Copy",
+                type: "theory",
+                content: `
+# Mengapa Deep Copy Diperlukan?
+
+**Deep Copy** diperlukan ketika kita ingin membuat salinan lengkap dari nested list tanpa ada hubungan referensi.
+
+## Masalah dengan Shallow Copy pada Nested List:
+
+\`\`\`python
+import copy
+
+# Original nested list
+original = [[1, 2], [3, 4], [5, 6]]
+
+# Shallow Copy (masalah!)
+shallow = original.copy()
+
+# Ubah nested element pada copy
+shallow[0][0] = 99
+
+print("Original:", original)  # [[99, 2], [3, 4], [5, 6]] → TERPENGARUH!
+print("Shallow:", shallow)    # [[99, 2], [3, 4], [5, 6]]
+\`\`\`
+
+## Solusi dengan Deep Copy:
+
+\`\`\`python
+import copy
+
+# Original nested list  
+original = [[1, 2], [3, 4], [5, 6]]
+
+# Deep Copy (solusi!)
+deep = copy.deepcopy(original)
+
+# Ubah nested element pada copy
+deep[0][0] = 99
+
+print("Original:", original)  # [[1, 2], [3, 4], [5, 6]] → AMAN!
+print("Deep:", deep)          # [[99, 2], [3, 4], [5, 6]]
+\`\`\`
+
+## Kapan Deep Copy Dibutuhkan?
+1. **Manipulasi data tanpa mengubah original**
+2. **Backup data kompleks**
+3. **Parallel processing**
+4. **Simulasi dan testing**
+5. **Algoritma recursive**
+            `
+            },
+            {
+                id: 2,
+                title: "Implementasi Deep Copy",
+                type: "theory",
+                content: `
+# Implementasi Deep Copy
+
+## 1. Menggunakan copy.deepcopy() (Recommended)
+\`\`\`python
+import copy
+
+original = [[1, 2], [3, 4], [5, 6]]
+deep_copy = copy.deepcopy(original)
+
+# Test independence
+deep_copy[0][0] = 999
+print("Original tetap:", original)     # [[1, 2], [3, 4], [5, 6]]
+print("Deep copy berubah:", deep_copy) # [[999, 2], [3, 4], [5, 6]]
+\`\`\`
+
+## 2. Manual Deep Copy (Educational Purpose)
+\`\`\`python
+def manual_deepcopy(nested_list):
+    """Membuat deep copy manual untuk nested list"""
+    if not isinstance(nested_list, list):
+        return nested_list
+    
+    result = []
+    for item in nested_list:
+        if isinstance(item, list):
+            result.append(manual_deepcopy(item))
+        else:
+            result.append(item)
+    return result
+
+# Test
+original = [[1, 2], [3, 4], [5, 6]]
+manual_copy = manual_deepcopy(original)
+
+manual_copy[0][0] = 777
+print("Original:", original)       # [[1, 2], [3, 4], [5, 6]]
+print("Manual Copy:", manual_copy) # [[777, 2], [3, 4], [5, 6]]
+\`\`\`
+
+## 3. Deep Copy dengan List Comprehension
+\`\`\`python
+def deepcopy_comprehension(nested_list):
+    """Deep copy menggunakan list comprehension"""
+    return [deepcopy_comprehension(item) if isinstance(item, list) else item 
+            for item in nested_list]
+
+# Test
+original = [[1, 2], [3, 4]]
+comprehension_copy = deepcopy_comprehension(original)
+
+comprehension_copy[0][0] = 888
+print("Original:", original)               # [[1, 2], [3, 4]]
+print("Comprehension Copy:", comprehension_copy) # [[888, 2], [3, 4]]
+\`\`\`
+
+## 4. Performance Considerations
+\`\`\`python
+import copy
+import time
+
+# Large nested list
+large_list = [[i for i in range(1000)] for _ in range(1000)]
+
+# Time shallow copy
+start = time.time()
+shallow = large_list.copy()
+print(f"Shallow copy: {time.time() - start:.4f} seconds")
+
+# Time deep copy  
+start = time.time()
+deep = copy.deepcopy(large_list)
+print(f"Deep copy: {time.time() - start:.4f} seconds")
+\`\`\`
+
+**Catatan:** Deep copy lebih lambat tetapi lebih aman untuk nested structures.
+            `,
+                codeExample: `import copy
+
+print("=== MASALAH SHALLOW COPY ===")
+original = [[1, 2], [3, 4], [5, 6]]
+shallow = original.copy()
+
+print("Sebelum perubahan:")
+print("Original:", original)
+print("Shallow:", shallow)
+
+shallow[0][0] = 99
+print("\\nSetelah ubah shallow[0][0]:")
+print("Original:", original)  # Terpengaruh!
+print("Shallow:", shallow)
+
+print("\\n=== SOLUSI DEEP COPY ===")
+original2 = [[1, 2], [3, 4], [5, 6]]
+deep = copy.deepcopy(original2)
+
+print("Sebelum perubahan:")
+print("Original:", original2)
+print("Deep:", deep)
+
+deep[0][0] = 999
+print("\\nSetelah ubah deep[0][0]:")
+print("Original:", original2)  # Tidak terpengaruh!
+print("Deep:", deep)
+
+print("\\n=== MANUAL DEEP COPY ===")
+def manual_deepcopy(lst):
+    if not isinstance(lst, list):
+        return lst
+    return [manual_deepcopy(item) for item in lst]
+
+original3 = [[1, 2], [3, [4, 5]]]
+manual = manual_deepcopy(original3)
+
+manual[1][1][0] = 777
+print("Original:", original3)  # [[1, 2], [3, [4, 5]]]
+print("Manual:", manual)       # [[1, 2], [3, [777, 5]]]`,
+                expectedOutput: `=== MASALAH SHALLOW COPY ===
+Sebelum perubahan:
+Original: [[1, 2], [3, 4], [5, 6]]
+Shallow: [[1, 2], [3, 4], [5, 6]]
+
+Setelah ubah shallow[0][0]:
+Original: [[99, 2], [3, 4], [5, 6]]
+Shallow: [[99, 2], [3, 4], [5, 6]]
+
+=== SOLUSI DEEP COPY ===
+Sebelum perubahan:
+Original: [[1, 2], [3, 4], [5, 6]]
+Deep: [[1, 2], [3, 4], [5, 6]]
+
+Setelah ubah deep[0][0]:
+Original: [[1, 2], [3, 4], [5, 6]]
+Deep: [[999, 2], [3, 4], [5, 6]]
+
+=== MANUAL DEEP COPY ===
+Original: [[1, 2], [3, [4, 5]]]
+Manual: [[1, 2], [3, [777, 5]]]`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Deep Copy
+
+Kerjakan soal berikut:
+1. Demonstrasikan masalah shallow copy dengan nested list 3 level
+2. Gunakan deep copy untuk membuat backup data yang aman
+3. Buat fungsi deep copy manual untuk list 2 level
+4. Bandingkan performa shallow vs deep copy
+5. Implementasi game state dengan deep copy untuk undo functionality
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Nested List 3 Level",
+                        description: "Demonstrasi masalah shallow copy dengan list 3 level: [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]",
+                        hint: "Ubah elemen paling dalam pada copy",
+                        solution: `import copy
+original = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+shallow = original.copy()
+shallow[0][0][0] = 99
+print("Original terpengaruh:", original[0][0][0])  # 99`
+                    },
+                    {
+                        id: 2,
+                        title: "Backup Data Aman",
+                        description: "Buat backup dari data siswa [[nama, [nilai1, nilai2]], ...] menggunakan deep copy",
+                        hint: "Gunakan copy.deepcopy()",
+                        solution: `import copy
+data_siswa = [["Alice", [85, 90]], ["Bob", [92, 88]]]
+backup = copy.deepcopy(data_siswa)
+backup[0][1][0] = 100
+print("Original aman:", data_siswa[0][1][0])  # 85`
+                    },
+                    {
+                        id: 3,
+                        title: "Deep Copy Manual 2 Level",
+                        description: "Buat fungsi deep copy manual yang bekerja untuk list 2 level",
+                        hint: "Gunakan nested loop atau list comprehension",
+                        solution: `def deepcopy_2level(lst):
+    return [[item for item in sublist] for sublist in lst]
+
+original = [[1, 2], [3, 4]]
+copy_list = deepcopy_2level(original)
+copy_list[0][0] = 99
+print("Original:", original[0][0])  # 1`
+                    },
+                    {
+                        id: 4,
+                        title: "Performa Copy",
+                        description: "Bandingkan waktu yang dibutuhkan shallow vs deep copy untuk list besar",
+                        hint: "Gunakan time.time()",
+                        solution: `import copy
+import time
+
+large_list = [[i for i in range(100)] for _ in range(1000)]
+
+start = time.time()
+shallow = large_list.copy()
+print(f"Shallow: {time.time()-start:.4f}s")
+
+start = time.time()
+deep = copy.deepcopy(large_list)
+print(f"Deep: {time.time()-start:.4f}s")`
+                    },
+                    {
+                        id: 5,
+                        title: "Undo Functionality",
+                        description: "Implementasi simple undo dengan menyimpan history menggunakan deep copy",
+                        hint: "Gunakan stack untuk menyimpan state",
+                        solution: `import copy
+
+class Game:
+    def __init__(self):
+        self.state = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+        self.history = []
+    
+    def make_move(self, row, col, player):
+        self.history.append(copy.deepcopy(self.state))
+        self.state[row][col] = player
+    
+    def undo(self):
+        if self.history:
+            self.state = self.history.pop()
+
+game = Game()
+game.make_move(0, 0, 'X')
+game.make_move(1, 1, 'O')
+print("Current:", game.state)
+game.undo()
+print("After undo:", game.state)`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 35
+        id: 35,
+        title: "Looping List dan Enumerate",
+        description: "Belajar berbagai cara iterasi melalui list menggunakan for loop, while loop, dan enumerate.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "For Loop dengan List",
+            "Enumerate Function",
+            "While Loop dengan List"
+        ],
+        color: "#FECA57",
+        content: [
+            {
+                id: 1,
+                title: "For Loop dengan List",
+                type: "theory",
+                content: `
+# For Loop dengan List
+
+For loop adalah cara paling umum untuk iterasi melalui list di Python.
+
+## 1. Basic For Loop
+\`\`\`python
+buah = ["apel", "jeruk", "mangga", "pisang"]
+
+# Iterasi melalui nilai
+for item in buah:
+    print(item)
+# Output:
+# apel
+# jeruk  
+# mangga
+# pisang
+\`\`\`
+
+## 2. For Loop dengan Range dan Index
+\`\`\`python
+buah = ["apel", "jeruk", "mangga", "pisang"]
+
+# Iterasi melalui index
+for i in range(len(buah)):
+    print(f"Index {i}: {buah[i]}")
+# Output:
+# Index 0: apel
+# Index 1: jeruk
+# Index 2: mangga  
+# Index 3: pisang
+\`\`\`
+
+## 3. For Loop dengan Conditional
+\`\`\`python
+angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Hanya angka genap
+for num in angka:
+    if num % 2 == 0:
+        print(num)
+# Output: 2, 4, 6, 8, 10
+
+# Dengan break
+for num in angka:
+    if num > 5:
+        break
+    print(num)
+# Output: 1, 2, 3, 4, 5
+\`\`\`
+
+## 4. Nested For Loop untuk Nested List
+\`\`\`python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for row in matrix:
+    for item in row:
+        print(item, end=" ")
+    print()  # newline
+# Output:
+# 1 2 3
+# 4 5 6  
+# 7 8 9
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Enumerate Function",
+                type: "theory",
+                content: `
+# Enumerate Function
+
+**enumerate()** memberikan index dan value sekaligus selama iterasi.
+
+## 1. Basic Enumerate
+\`\`\`python
+buah = ["apel", "jeruk", "mangga"]
+
+for index, value in enumerate(buah):
+    print(f"Index {index}: {value}")
+# Output:
+# Index 0: apel
+# Index 1: jeruk
+# Index 2: mangga
+\`\`\`
+
+## 2. Enumerate dengan Start Index
+\`\`\`python
+buah = ["apel", "jeruk", "mangga"]
+
+for index, value in enumerate(buah, start=1):
+    print(f"No. {index}: {value}")
+# Output:
+# No. 1: apel
+# No. 2: jeruk  
+# No. 3: mangga
+\`\`\`
+
+## 3. Enumerate dengan Conditional
+\`\`\`python
+nilai = [85, 92, 78, 60, 95, 88]
+
+for i, score in enumerate(nilai):
+    if score >= 90:
+        print(f"Siswa {i} lulus dengan nilai {score}")
+# Output:
+# Siswa 1 lulus dengan nilai 92
+# Siswa 4 lulus dengan nilai 95
+\`\`\`
+
+## 4. Enumerate untuk Nested List
+\`\`\`python
+siswa = [
+    ["Alice", 85, 90],
+    ["Bob", 92, 88],
+    ["Charlie", 78, 85]
+]
+
+for i, data in enumerate(siswa):
+    nama = data[0]
+    rata_rata = sum(data[1:]) / len(data[1:])
+    print(f"Siswa {i+1}: {nama} - Rata-rata: {rata_rata:.1f}")
+\`\`\`
+
+## 5. While Loop dengan List
+\`\`\`python
+buah = ["apel", "jeruk", "mangga", "pisang"]
+i = 0
+
+while i < len(buah):
+    print(buah[i])
+    i += 1
+
+# Dengan conditional break
+angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+i = 0
+while i < len(angka):
+    if angka[i] > 5:
+        break
+    print(angka[i])
+    i += 1
+\`\`\`
+            `,
+                codeExample: `print("=== BASIC FOR LOOP ===")
+buah = ["apel", "jeruk", "mangga", "pisang"]
+print("Iterasi nilai:")
+for item in buah:
+    print(f"- {item}")
+
+print("\\n=== FOR LOOP DENGAN INDEX ===")
+print("Iterasi dengan index:")
+for i in range(len(buah)):
+    print(f"Index {i}: {buah[i]}")
+
+print("\\n=== ENUMERATE ===")
+print("Menggunakan enumerate:")
+for index, value in enumerate(buah):
+    print(f"Index {index}: {value}")
+
+print("\\n=== ENUMERATE DENGAN START ===")
+for no, item in enumerate(buah, start=1):
+    print(f"Buah #{no}: {item}")
+
+print("\\n=== WHILE LOOP ===")
+print("Menggunakan while loop:")
+i = 0
+while i < len(buah):
+    print(f"Buah {i}: {buah[i]}")
+    i += 1
+
+print("\\n=== NESTED LIST ITERATION ===")
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print("Nested list dengan enumerate:")
+for i, row in enumerate(matrix):
+    for j, value in enumerate(row):
+        print(f"matrix[{i}][{j}] = {value}")`,
+                expectedOutput: `=== BASIC FOR LOOP ===
+Iterasi nilai:
+- apel
+- jeruk
+- mangga
+- pisang
+
+=== FOR LOOP DENGAN INDEX ===
+Iterasi dengan index:
+Index 0: apel
+Index 1: jeruk
+Index 2: mangga
+Index 3: pisang
+
+=== ENUMERATE ===
+Menggunakan enumerate:
+Index 0: apel
+Index 1: jeruk
+Index 2: mangga
+Index 3: pisang
+
+=== ENUMERATE DENGAN START ===
+Buah #1: apel
+Buah #2: jeruk
+Buah #3: mangga
+Buah #4: pisang
+
+=== WHILE LOOP ===
+Menggunakan while loop:
+Buah 0: apel
+Buah 1: jeruk
+Buah 2: mangga
+Buah 3: pisang
+
+=== NESTED LIST ITERATION ===
+Nested list dengan enumerate:
+matrix[0][0] = 1
+matrix[0][1] = 2
+matrix[0][2] = 3
+matrix[1][0] = 4
+matrix[1][1] = 5
+matrix[1][2] = 6
+matrix[2][0] = 7
+matrix[2][1] = 8
+matrix[2][2] = 9`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Looping List
+
+Kerjakan soal berikut:
+1. Iterasi list dan cetak hanya elemen dengan panjang > 5
+2. Gunakan enumerate untuk memberi nomor urut
+3. Cari index dari elemen tertentu dalam list
+4. Hitung total dan rata-rata nilai dalam list
+5. Buat program pencarian sederhana dalam list
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Filter Panjang String",
+                        description: "Dari list ['apel', 'jeruk', 'kiwi', 'mangga', 'pisang'], cetak hanya yang panjang > 4",
+                        hint: "Gunakan for loop dengan if dan len()",
+                        solution: `buah = ['apel', 'jeruk', 'kiwi', 'mangga', 'pisang']
+for item in buah:
+    if len(item) > 4:
+        print(item)  # jeruk, mangga, pisang`
+                    },
+                    {
+                        id: 2,
+                        title: "Numbered List",
+                        description: "Gunakan enumerate untuk mencetak list dengan nomor urut 1, 2, 3...",
+                        hint: "Gunakan start=1 dalam enumerate",
+                        solution: `items = ['apel', 'jeruk', 'mangga']
+for no, item in enumerate(items, start=1):
+    print(f"{no}. {item}")`
+                    },
+                    {
+                        id: 3,
+                        title: "Cari Index Elemen",
+                        description: "Cari index dari 'mangga' dalam list ['apel', 'jeruk', 'mangga', 'pisang']",
+                        hint: "Gunakan enumerate dengan conditional",
+                        solution: `buah = ['apel', 'jeruk', 'mangga', 'pisang']
+for i, item in enumerate(buah):
+    if item == 'mangga':
+        print(f"Index mangga: {i}")
+        break`
+                    },
+                    {
+                        id: 4,
+                        title: "Total dan Rata-rata",
+                        description: "Hitung total dan rata-rata dari [85, 92, 78, 90, 88]",
+                        hint: "Gunakan for loop untuk total, lalu bagi dengan len()",
+                        solution: `nilai = [85, 92, 78, 90, 88]
+total = 0
+for score in nilai:
+    total += score
+rata_rata = total / len(nilai)
+print(f"Total: {total}, Rata-rata: {rata_rata:.1f}")`
+                    },
+                    {
+                        id: 5,
+                        title: "Program Pencarian",
+                        description: "Buat program yang mencari apakah elemen ada dalam list, dan tampilkan indexnya",
+                        hint: "Gunakan for loop dengan enumerate dan flag",
+                        solution: `def cari_elemen(lst, target):
+    for i, item in enumerate(lst):
+        if item == target:
+            return i
+    return -1
+
+buah = ['apel', 'jeruk', 'mangga']
+hasil = cari_elemen(buah, 'jeruk')
+print(f"Index: {hasil}")  # 1`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 36
+        id: 36,
+        title: "Latihan List",
+        description: "Praktik comprehensive dengan berbagai operasi list melalui studi kasus dan problem solving.",
+        level: "Pemula Menengah",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "💪",
+        topics: [
+            "Manipulasi Data List",
+            "Algoritma dengan List",
+            "Studi Kasus Real World"
+        ],
+        color: "#FF9FF3",
+        content: [
+            {
+                id: 1,
+                title: "Manipulasi Data List",
+                type: "theory",
+                content: `
+# Manipulasi Data dengan List
+
+## 1. Filtering Data
+\`\`\`python
+# Filter angka genap
+angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+genap = [x for x in angka if x % 2 == 0]
+print(genap)  # [2, 4, 6, 8, 10]
+
+# Filter string dengan panjang tertentu
+kata = ["apel", "jeruk", "kiwi", "mangga", "pisang"]
+panjang_5 = [k for k in kata if len(k) == 5]
+print(panjang_5)  # ['jeruk', 'mangga', 'pisang']
+\`\`\`
+
+## 2. Transformasi Data
+\`\`\`python
+# Kuadrat dari setiap angka
+angka = [1, 2, 3, 4, 5]
+kuadrat = [x**2 for x in angka]
+print(kuadrat)  # [1, 4, 9, 16, 25]
+
+# Kapitalisasi string
+buah = ["apel", "jeruk", "mangga"]
+kapital = [b.upper() for b in buah]
+print(kapital)  # ['APEL', 'JERUK', 'MANGA']
+\`\`\`
+
+## 3. Aggregasi Data
+\`\`\`python
+# Total dan rata-rata
+nilai = [85, 92, 78, 90, 88]
+total = sum(nilai)
+rata_rata = total / len(nilai)
+print(f"Total: {total}, Rata-rata: {rata_rata:.1f}")
+
+# Maksimum dan minimum
+print(f"Nilai tertinggi: {max(nilai)}")
+print(f"Nilai terendah: {min(nilai)}")
+\`\`\`
+
+## 4. Sorting Data
+\`\`\`python
+# Sorting sederhana
+angka = [5, 2, 8, 1, 9]
+angka.sort()
+print(angka)  # [1, 2, 5, 8, 9]
+
+# Sorting descending
+angka.sort(reverse=True)
+print(angka)  # [9, 8, 5, 2, 1]
+
+# Sorting dengan key
+siswa = [("Alice", 85), ("Bob", 92), ("Charlie", 78)]
+siswa.sort(key=lambda x: x[1], reverse=True)
+print(siswa)  # [('Bob', 92), ('Alice', 85), ('Charlie', 78)]
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Algoritma dengan List",
+                type: "theory",
+                content: `
+# Algoritma Umum dengan List
+
+## 1. Mencari Elemen
+\`\`\`python
+# Linear search
+def linear_search(lst, target):
+    for i, item in enumerate(lst):
+        if item == target:
+            return i
+    return -1
+
+angka = [5, 2, 8, 1, 9]
+print(linear_search(angka, 8))  # 2
+\`\`\`
+
+## 2. Menghitung Frekuensi
+\`\`\`python
+def hitung_frekuensi(lst):
+    frekuensi = {}
+    for item in lst:
+        frekuensi[item] = frekuensi.get(item, 0) + 1
+    return frekuensi
+
+data = ["apel", "jeruk", "apel", "mangga", "jeruk", "apel"]
+print(hitung_frekuensi(data))
+# {'apel': 3, 'jeruk': 2, 'mangga': 1}
+\`\`\`
+
+## 3. Menghapus Duplikat
+\`\`\`python
+def hapus_duplikat(lst):
+    seen = set()
+    result = []
+    for item in lst:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
+
+angka = [1, 2, 2, 3, 4, 4, 5, 1]
+print(hapus_duplikat(angka))  # [1, 2, 3, 4, 5]
+\`\`\`
+
+## 4. Rotasi List
+\`\`\`python
+def rotate_list(lst, k):
+    k = k % len(lst)  # Handle k > len(lst)
+    return lst[-k:] + lst[:-k]
+
+angka = [1, 2, 3, 4, 5]
+print(rotate_list(angka, 2))  # [4, 5, 1, 2, 3]
+\`\`\`
+
+## 5. Flatten Nested List
+\`\`\`python
+def flatten_list(nested_list):
+    result = []
+    for item in nested_list:
+        if isinstance(item, list):
+            result.extend(flatten_list(item))
+        else:
+            result.append(item)
+    return result
+
+nested = [1, [2, 3], [4, [5, 6]], 7]
+print(flatten_list(nested))  # [1, 2, 3, 4, 5, 6, 7]
+\`\`\`
+            `,
+                codeExample: `print("=== MANIPULASI DATA ===")
+# Data contoh
+siswa = [
+    ["Alice", 85, 90, 78],
+    ["Bob", 92, 88, 95],
+    ["Charlie", 78, 85, 80],
+    ["Diana", 88, 92, 90]
+]
+
+print("Data siswa:")
+for data in siswa:
+    print(data)
+
+print("\\n=== FILTERING ===")
+# Siswa dengan nilai rata-rata >= 85
+siswa_berprestasi = []
+for data in siswa:
+    nama = data[0]
+    nilai = data[1:]
+    rata_rata = sum(nilai) / len(nilai)
+    if rata_rata >= 85:
+        siswa_berprestasi.append((nama, rata_rata))
+
+print("Siswa berprestasi:")
+for nama, rata in siswa_berprestasi:
+    print(f"{nama}: {rata:.1f}")
+
+print("\\n=== TRANSFORMASI ===")
+# Tambah bonus 5 point untuk nilai < 80
+for data in siswa:
+    for i in range(1, len(data)):
+        if data[i] < 80:
+            data[i] += 5
+
+print("Setelah bonus:")
+for data in siswa:
+    print(data)
+
+print("\\n=== AGREGASI ===")
+# Statistik seluruh nilai
+semua_nilai = []
+for data in siswa:
+    semua_nilai.extend(data[1:])
+
+print(f"Total nilai: {sum(semua_nilai)}")
+print(f"Rata-rata: {sum(semua_nilai)/len(semua_nilai):.1f}")
+print(f"Nilai tertinggi: {max(semua_nilai)}")
+print(f"Nilai terendah: {min(semua_nilai)}")`,
+                expectedOutput: `=== MANIPULASI DATA ===
+Data siswa:
+['Alice', 85, 90, 78]
+['Bob', 92, 88, 95]
+['Charlie', 78, 85, 80]
+['Diana', 88, 92, 90]
+
+=== FILTERING ===
+Siswa berprestasi:
+Alice: 84.3
+Bob: 91.7
+Diana: 90.0
+
+=== TRANSFORMASI ===
+Setelah bonus:
+['Alice', 85, 90, 83]
+['Bob', 92, 88, 95]
+['Charlie', 83, 85, 85]
+['Diana', 88, 92, 90]
+
+=== AGREGASI ===
+Total nilai: 1064
+Rata-rata: 88.7
+Nilai tertinggi: 95
+Nilai terendah: 83`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Comprehensive List
+
+Kerjakan soal berikut:
+1. Buat program manajemen inventory sederhana
+2. Implementasi sistem voting dengan list
+3. Buat fungsi untuk analisis data numerik
+4. Implementasi algoritma sorting sederhana
+5. Buat game tic-tac-toe sederhana
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Manajemen Inventory",
+                        description: "Buat sistem inventory dengan fungsi: tambah, hapus, cari, dan tampilkan barang",
+                        hint: "Gunakan list of lists untuk [nama, stok, harga]",
+                        solution: `inventory = []
+
+def tambah_barang(nama, stok, harga):
+    inventory.append([nama, stok, harga])
+
+def tampilkan_inventory():
+    for i, barang in enumerate(inventory, 1):
+        print(f"{i}. {barang[0]} - Stok: {barang[1]} - Harga: {barang[2]}")
+
+# Test
+tambah_barang("Laptop", 5, 10000000)
+tambah_barang("Mouse", 20, 250000)
+tampilkan_inventory()`
+                    },
+                    {
+                        id: 2,
+                        title: "Sistem Voting",
+                        description: "Hitung hasil voting dari list kandidat dan tampilkan pemenang",
+                        hint: "Gunakan dictionary atau list untuk menghitung votes",
+                        solution: `def hitung_voting(votes):
+    hasil = {}
+    for vote in votes:
+        hasil[vote] = hasil.get(vote, 0) + 1
+    
+    pemenang = max(hasil, key=hasil.get)
+    return pemenang, hasil[pemenang]
+
+votes = ["A", "B", "A", "C", "B", "A", "A"]
+pemenang, jumlah = hitung_voting(votes)
+print(f"Pemenang: {pemenang} dengan {jumlah} vote")`
+                    },
+                    {
+                        id: 3,
+                        title: "Analisis Data Numerik",
+                        description: "Buat fungsi yang menerima list angka dan return statistik: mean, median, modus",
+                        hint: "Gunakan built-in functions dan sorting",
+                        solution: `def analisis_data(angka):
+    angka.sort()
+    mean = sum(angka) / len(angka)
+    
+    # Median
+    n = len(angka)
+    if n % 2 == 0:
+        median = (angka[n//2-1] + angka[n//2]) / 2
+    else:
+        median = angka[n//2]
+    
+    # Modus
+    from collections import Counter
+    counter = Counter(angka)
+    modus = counter.most_common(1)[0][0]
+    
+    return mean, median, modus
+
+data = [1, 2, 3, 4, 5, 5, 6]
+print(analisis_data(data))`
+                    },
+                    {
+                        id: 4,
+                        title: "Bubble Sort",
+                        description: "Implementasi bubble sort algorithm untuk mengurutkan list",
+                        hint: "Gunakan nested loop dan swap elemen",
+                        solution: `def bubble_sort(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lst[j] > lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+    return lst
+
+angka = [64, 34, 25, 12, 22, 11, 90]
+print("Sorted:", bubble_sort(angka))`
+                    },
+                    {
+                        id: 5,
+                        title: "Tic-Tac-Toe",
+                        description: "Buat game tic-tac-toe sederhana dengan board 3x3",
+                        hint: "Gunakan nested list dan loop untuk display board",
+                        solution: `def print_board(board):
+    for row in board:
+        print(" | ".join(row))
+        print("-" * 9)
+
+def check_winner(board):
+    # Check rows, columns, diagonals
+    for i in range(3):
+        if board[i][0] == board[i][1] == board[i][2] != " ":
+            return board[i][0]
+        if board[0][i] == board[1][i] == board[2][i] != " ":
+            return board[0][i]
+    if board[0][0] == board[1][1] == board[2][2] != " ":
+        return board[0][0]
+    if board[0][2] == board[1][1] == board[2][0] != " ":
+        return board[0][2]
+    return None
+
+# Initialize board
+board = [[" " for _ in range(3)] for _ in range(3)]
+print_board(board)`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 37
+        id: 37,
+        title: "Tuples dan Set",
+        description: "Belajar tentang tuples (immutable sequences) dan sets (unordered collections dengan unique elements).",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔒",
+        topics: [
+            "Tuples - Immutable Sequences",
+            "Sets - Unique Collections",
+            "Operasi Sets"
+        ],
+        color: "#54A0FF",
+        content: [
+            {
+                id: 1,
+                title: "Tuples - Immutable Sequences",
+                type: "theory",
+                content: `
+# Pengenalan Tuples
+
+**Tuple** adalah sequence yang immutable (tidak bisa diubah setelah dibuat).
+
+## Karakteristik Tuple:
+- **Immutable** → Tidak bisa diubah setelah dibuat
+- **Ordered** → Elemen memiliki urutan tetap
+- **Boleh duplikat** → Boleh ada elemen yang sama
+- **Bisa berisi tipe data berbeda**
+
+## Membuat Tuple:
+\`\`\`python
+# Tuple kosong
+tuple_kosong = ()
+tuple_kosong2 = tuple()
+
+# Tuple dengan elemen
+buah = ("apel", "jeruk", "mangga")
+angka = (1, 2, 3, 4, 5)
+campuran = (1, "hello", 3.14, True)
+
+# Tuple dengan 1 elemen (perlu koma)
+tuple_satu = ("satu",)  # Ini tuple
+bukan_tuple = ("satu")   # Ini string biasa
+
+# Tanpa kurung (tuple packing)
+tuple_packing = 1, 2, 3
+print(type(tuple_packing))  # <class 'tuple'>
+\`\`\`
+
+## Mengakses Elemen Tuple:
+\`\`\`python
+buah = ("apel", "jeruk", "mangga", "pisang")
+
+print(buah[0])    # apel
+print(buah[1])    # jeruk  
+print(buah[-1])   # pisang
+print(buah[1:3])  # ('jeruk', 'mangga')
+\`\`\`
+
+## Tuple Tidak Bisa Diubah:
+\`\`\`python
+buah = ("apel", "jeruk", "mangga")
+
+# Ini akan ERROR!
+# buah[0] = "anggur"  # TypeError
+
+# Tapi bisa di-reassign seluruhnya
+buah = ("anggur", "jeruk", "mangga")
+print(buah)  # ('anggur', 'jeruk', 'mangga')
+\`\`\`
+
+## Keuntungan Menggunakan Tuple:
+1. **Lebih cepat** dari list
+2. **Data integrity** → tidak bisa diubah accidentally
+3. **Bisa digunakan sebagai dictionary keys**
+4. **Return multiple values dari function**
+            `
+            },
+            {
+                id: 2,
+                title: "Sets - Unique Collections",
+                type: "theory",
+                content: `
+# Pengenalan Sets
+
+**Set** adalah collection yang unordered, unindexed, dan tidak boleh ada duplikat.
+
+## Karakteristik Set:
+- **Unordered** → Tidak ada urutan tertentu
+- **Unindexed** → Tidak bisa diakses dengan index
+- **No duplicates** → Elemen unik otomatis
+- **Mutable** → Bisa diubah (tambah/hapus)
+
+## Membuat Set:
+\`\`\`python
+# Set kosong
+set_kosong = set()  # BUKAN {} → itu dictionary
+
+# Set dengan elemen
+buah = {"apel", "jeruk", "mangga"}
+angka = {1, 2, 3, 4, 5}
+
+# Dari list (menghapus duplikat)
+list_angka = [1, 2, 2, 3, 4, 4, 5]
+set_angka = set(list_angka)
+print(set_angka)  # {1, 2, 3, 4, 5}
+\`\`\`
+
+## Operasi Set Dasar:
+\`\`\`python
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+# Union (gabungan)
+print(set1 | set2)  # {1, 2, 3, 4, 5, 6, 7, 8}
+
+# Intersection (irisan)
+print(set1 & set2)  # {4, 5}
+
+# Difference (selisih)
+print(set1 - set2)  # {1, 2, 3}
+print(set2 - set1)  # {6, 7, 8}
+
+# Symmetric Difference (yang tidak sama)
+print(set1 ^ set2)  # {1, 2, 3, 6, 7, 8}
+\`\`\`
+
+## Method Set:
+\`\`\`python
+buah = {"apel", "jeruk", "mangga"}
+
+# Menambah elemen
+buah.add("pisang")
+print(buah)  # {'apel', 'jeruk', 'mangga', 'pisang'}
+
+# Menghapus elemen
+buah.remove("jeruk")  # Error jika tidak ada
+buah.discard("kiwi")  # Tidak error jika tidak ada
+
+# Pop (hapus random element)
+terhapus = buah.pop()
+print(f"Terhapus: {terhapus}")
+
+# Clear
+buah.clear()
+print(buah)  # set()
+\`\`\`
+
+## Set Operations untuk Data Analysis:
+\`\`\`python
+# Menemukan common elements
+kategori1 = {"elektronik", "fashion", "olahraga"}
+kategori2 = {"fashion", "makanan", "otomotif"}
+common = kategori1 & kategori2
+print(f"Kategori common: {common}")  # {'fashion'}
+
+# Menemukan unique elements
+hanya_kategori1 = kategori1 - kategori2
+print(f"Hanya di kategori1: {hanya_kategori1}")  # {'elektronik', 'olahraga'}
+\`\`\`
+            `,
+                codeExample: `print("=== TUPLE OPERATIONS ===")
+# Tuple creation and access
+koordinat = (10, 20)
+print("Koordinat:", koordinat)
+print("X:", koordinat[0])
+print("Y:", koordinat[1])
+
+# Tuple unpacking
+x, y = koordinat
+print(f"Unpacked: x={x}, y={y}")
+
+# Multiple return values
+def hitung_statistik(angka):
+    return min(angka), max(angka), sum(angka)/len(angka)
+
+data = [5, 2, 8, 1, 9]
+min_val, max_val, avg_val = hitung_statistik(data)
+print(f"Min: {min_val}, Max: {max_val}, Avg: {avg_val:.1f}")
+
+print("\\n=== SET OPERATIONS ===")
+set_a = {1, 2, 3, 4, 5}
+set_b = {4, 5, 6, 7, 8}
+
+print("Set A:", set_a)
+print("Set B:", set_b)
+print("Union:", set_a | set_b)
+print("Intersection:", set_a & set_b)
+print("Difference A-B:", set_a - set_b)
+print("Symmetric Difference:", set_a ^ set_b)
+
+print("\\n=== SET METHODS ===")
+colors = {"red", "green", "blue"}
+print("Original:", colors)
+
+colors.add("yellow")
+print("After add:", colors)
+
+colors.discard("green")
+print("After discard:", colors)
+
+# Remove duplicates from list
+numbers = [1, 2, 2, 3, 4, 4, 4, 5]
+unique_numbers = set(numbers)
+print("Original list:", numbers)
+print("Unique:", unique_numbers)`,
+                expectedOutput: `=== TUPLE OPERATIONS ===
+Koordinat: (10, 20)
+X: 10
+Y: 20
+Unpacked: x=10, y=20
+Min: 1, Max: 9, Avg: 5.0
+
+=== SET OPERATIONS ===
+Set A: {1, 2, 3, 4, 5}
+Set B: {4, 5, 6, 7, 8}
+Union: {1, 2, 3, 4, 5, 6, 7, 8}
+Intersection: {4, 5}
+Difference A-B: {1, 2, 3}
+Symmetric Difference: {1, 2, 3, 6, 7, 8}
+
+=== SET METHODS ===
+Original: {'red', 'green', 'blue'}
+After add: {'red', 'green', 'blue', 'yellow'}
+After discard: {'red', 'blue', 'yellow'}
+Original list: [1, 2, 2, 3, 4, 4, 4, 5]
+Unique: {1, 2, 3, 4, 5}`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Tuples dan Sets
+
+Kerjakan soal berikut:
+1. Gunakan tuple untuk koordinat 2D dan 3D
+2. Buat function yang return multiple values menggunakan tuple
+3. Gunakan set untuk menghapus duplikat dari list
+4. Temukan common elements antara dua list menggunakan set
+5. Implementasi simple database dengan tuple
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Koordinat dengan Tuple",
+                        description: "Buat tuple untuk titik 2D (x, y) dan 3D (x, y, z), lalu hitung jarak dari origin",
+                        hint: "Gunakan tuple unpacking dan rumus Pythagoras",
+                        solution: `import math
+
+def jarak_2d(titik):
+    x, y = titik
+    return math.sqrt(x**2 + y**2)
+
+def jarak_3d(titik):
+    x, y, z = titik
+    return math.sqrt(x**2 + y**2 + z**2)
+
+titik_a = (3, 4)
+titik_b = (1, 2, 2)
+
+print(f"Jarak A: {jarak_2d(titik_a):.2f}")  # 5.00
+print(f"Jarak B: {jarak_3d(titik_b):.2f}")  # 3.00`
+                    },
+                    {
+                        id: 2,
+                        title: "Multiple Return Values",
+                        description: "Buat function yang menerima list angka dan return min, max, average dalam tuple",
+                        hint: "Gunakan built-in functions min, max, sum",
+                        solution: `def statistik(angka):
+    if not angka:
+        return None
+    return min(angka), max(angka), sum(angka)/len(angka)
+
+data = [10, 20, 30, 40, 50]
+hasil = statistik(data)
+print(f"Min: {hasil[0]}, Max: {hasil[1]}, Avg: {hasil[2]}")`
+                    },
+                    {
+                        id: 3,
+                        title: "Hapus Duplikat dengan Set",
+                        description: "Hapus duplikat dari list [1, 2, 2, 3, 4, 4, 4, 5, 1] menggunakan set",
+                        hint: "Convert ke set lalu kembali ke list",
+                        solution: `numbers = [1, 2, 2, 3, 4, 4, 4, 5, 1]
+unique_numbers = list(set(numbers))
+print("Original:", numbers)
+print("Unique:", unique_numbers)`
+                    },
+                    {
+                        id: 4,
+                        title: "Common Elements",
+                        description: "Temukan elemen yang sama antara list1 = [1, 2, 3, 4] dan list2 = [3, 4, 5, 6]",
+                        hint: "Gunakan set intersection",
+                        solution: `list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+common = set(list1) & set(list2)
+print("Common elements:", common)  # {3, 4}`
+                    },
+                    {
+                        id: 5,
+                        title: "Simple Database",
+                        description: "Buat simple database dengan tuple: (id, nama, usia) dan cari berdasarkan id",
+                        hint: "Gunakan list of tuples dan loop untuk searching",
+                        solution: `database = [
+    (1, "Alice", 25),
+    (2, "Bob", 30),
+    (3, "Charlie", 28)
+]
+
+def cari_by_id(id_target):
+    for record in database:
+        if record[0] == id_target:
+            return record
+    return None
+
+print(cari_by_id(2))  # (2, 'Bob', 30)`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 38
+        id: 38,
+        title: "Dictionary",
+        description: "Belajar tentang dictionary - struktur data key-value pairs yang powerful di Python.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📚",
+        topics: [
+            "Pengenalan Dictionary",
+            "Membuat dan Mengakses Dictionary",
+            "Method-Method Dictionary"
+        ],
+        color: "#FF6B6B",
+        content: [
+            {
+                id: 1,
+                title: "Pengenalan Dictionary",
+                type: "theory",
+                content: `
+# Pengenalan Dictionary
+
+**Dictionary** adalah struktur data yang menyimpan data dalam pasangan **key-value**.
+
+## Karakteristik Dictionary:
+- **Unordered** (sebelum Python 3.7, sekarang ordered)
+- **Mutable** → bisa diubah
+- **Indexed by keys** → bukan oleh index numerik
+- **No duplicate keys** → key harus unik
+- **Keys must be immutable** → string, number, tuple
+
+## Analogi Dictionary:
+Bayangkan dictionary seperti kamus:
+- **Key** = kata yang dicari
+- **Value** = arti dari kata tersebut
+
+\`\`\`python
+# Contoh: Kamus bahasa
+kamus = {
+    "apple": "apel",
+    "banana": "pisang", 
+    "orange": "jeruk"
+}
+\`\`\`
+
+## Mengapa Menggunakan Dictionary?
+1. **Fast lookup** → akses data sangat cepat
+2. **Flexible data structure** → bisa menyimpan berbagai tipe data
+3. **Real-world modeling** → cocok untuk data seperti JSON, database records
+4. **Powerful methods** → banyak method built-in yang useful
+            `
+            },
+            {
+                id: 2,
+                title: "Membuat dan Mengakses Dictionary",
+                type: "theory",
+                content: `
+# Membuat dan Mengakses Dictionary
+
+## 1. Membuat Dictionary:
+\`\`\`python
+# Dictionary kosong
+dict_kosong = {}
+dict_kosong2 = dict()
+
+# Dictionary dengan data
+siswa = {
+    "nama": "Alice",
+    "usia": 20,
+    "jurusan": "Informatika"
+}
+
+# Dictionary dengan berbagai tipe key
+campuran = {
+    "string_key": "value1",
+    123: "value2",           # integer key
+    (1, 2): "value3"         # tuple key
+}
+
+# Dictionary nested
+mahasiswa = {
+    "identitas": {
+        "nama": "Bob",
+        "nim": "12345"
+    },
+    "nilai": [85, 90, 78]
+}
+\`\`\`
+
+## 2. Mengakses Values:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+# Mengakses dengan key
+print(siswa["nama"])     # Alice
+print(siswa["usia"])     # 20
+
+# Mengakses dengan get() (lebih aman)
+print(siswa.get("nama"))     # Alice
+print(siswa.get("alamat"))   # None (tidak error)
+print(siswa.get("alamat", "Tidak ada"))  # "Tidak ada" (default value)
+
+# Mengakses keys dan values
+print(siswa.keys())    # dict_keys(['nama', 'usia', 'jurusan'])
+print(siswa.values())  # dict_values(['Alice', 20, 'Informatika'])
+print(siswa.items())   # dict_items([('nama', 'Alice'), ('usia', 20), ...])
+\`\`\`
+
+## 3. Mengubah dan Menambah Data:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20}
+
+# Mengubah value
+siswa["usia"] = 21
+print(siswa)  # {'nama': 'Alice', 'usia': 21}
+
+# Menambah key-value baru
+siswa["jurusan"] = "Informatika"
+siswa["ipk"] = 3.75
+print(siswa)  # {'nama': 'Alice', 'usia': 21, 'jurusan': 'Informatika', 'ipk': 3.75}
+
+# Update multiple values
+siswa.update({"usia": 22, "ipk": 3.8})
+print(siswa)
+\`\`\`
+
+## 4. Menghapus Data:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+# pop() - hapus key tertentu
+usia = siswa.pop("usia")
+print(usia)    # 20
+print(siswa)   # {'nama': 'Alice', 'jurusan': 'Informatika'}
+
+# popitem() - hapas last item (Python 3.7+)
+last = siswa.popitem()
+print(last)    # ('jurusan', 'Informatika')
+print(siswa)   # {'nama': 'Alice'}
+
+# del statement
+del siswa["nama"]
+print(siswa)   # {}
+
+# clear() - hapus semua
+siswa = {"a": 1, "b": 2}
+siswa.clear()
+print(siswa)   # {}
+\`\`\`
+            `,
+                codeExample: `print("=== MEMBUAT DICTIONARY ===")
+# Membuat dictionary siswa
+siswa = {
+    "nama": "Budi Santoso",
+    "nim": "123456789",
+    "jurusan": "Teknik Informatika",
+    "usia": 21,
+    "nilai": [85, 90, 78, 92]
+}
+
+print("Data siswa:", siswa)
+
+print("\\n=== MENGASES DATA ===")
+print("Nama:", siswa["nama"])
+print("NIM:", siswa.get("nim"))
+print("Usia:", siswa.get("usia"))
+
+# Akses nested data
+print("Nilai pertama:", siswa["nilai"][0])
+
+print("\\n=== METHODS ===")
+print("Keys:", list(siswa.keys()))
+print("Values:", list(siswa.values()))
+print("Items:", list(siswa.items()))
+
+print("\\n=== MENGUBAH DATA ===")
+siswa["usia"] = 22
+siswa["ipk"] = 3.75  # Menambah baru
+print("Setelah diubah:", siswa)
+
+print("\\n=== MENGHAPUS DATA ===")
+nilai = siswa.pop("nilai")
+print("Nilai yang dihapus:", nilai)
+print("Setelah pop:", siswa)
+
+print("\\n=== CHECK EXISTENCE ===")
+print("Ada key 'nama'?", "nama" in siswa)
+print("Ada key 'alamat'?", "alamat" in siswa)`,
+                expectedOutput: `=== MEMBUAT DICTIONARY ===
+Data siswa: {'nama': 'Budi Santoso', 'nim': '123456789', 'jurusan': 'Teknik Informatika', 'usia': 21, 'nilai': [85, 90, 78, 92]}
+
+=== MENGASES DATA ===
+Nama: Budi Santoso
+NIM: 123456789
+Usia: 21
+Nilai pertama: 85
+
+=== METHODS ===
+Keys: ['nama', 'nim', 'jurusan', 'usia', 'nilai']
+Values: ['Budi Santoso', '123456789', 'Teknik Informatika', 21, [85, 90, 78, 92]]
+Items: [('nama', 'Budi Santoso'), ('nim', '123456789'), ('jurusan', 'Teknik Informatika'), ('usia', 21), ('nilai', [85, 90, 78, 92])]
+
+=== MENGUBAH DATA ===
+Setelah diubah: {'nama': 'Budi Santoso', 'nim': '123456789', 'jurusan': 'Teknik Informatika', 'usia': 22, 'ipk': 3.75}
+
+=== MENGHAPUS DATA ===
+Nilai yang dihapus: [85, 90, 78, 92]
+Setelah pop: {'nama': 'Budi Santoso', 'nim': '123456789', 'jurusan': 'Teknik Informatika', 'usia': 22, 'ipk': 3.75}
+
+=== CHECK EXISTENCE ===
+Ada key 'nama'? True
+Ada key 'alamat'? False`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Dictionary
+
+Kerjakan soal berikut:
+1. Buat dictionary untuk menyimpan data buku
+2. Buat sistem manajemen kontak sederhana
+3. Hitung frekuensi kemunculan kata dalam list
+4. Buat konverter suhu menggunakan dictionary
+5. Implementasi simple database dengan dictionary
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Data Buku",
+                        description: "Buat dictionary untuk buku dengan key: judul, penulis, tahun, harga",
+                        hint: "Gunakan string keys dan berbagai value types",
+                        solution: `buku = {
+    "judul": "Python Programming",
+    "penulis": "John Doe",
+    "tahun": 2024,
+    "harga": 150000,
+    "tersedia": True
+}
+print("Data buku:", buku)`
+                    },
+                    {
+                        id: 2,
+                        title: "Manajemen Kontak",
+                        description: "Buat sistem untuk tambah, hapus, dan cari kontak berdasarkan nama",
+                        hint: "Gunakan dictionary dengan nama sebagai key",
+                        solution: `kontak = {}
+
+def tambah_kontak(nama, telepon):
+    kontak[nama] = telepon
+
+def hapus_kontak(nama):
+    if nama in kontak:
+        del kontak[nama]
+        return True
+    return False
+
+def cari_kontak(nama):
+    return kontak.get(nama, "Tidak ditemukan")
+
+# Test
+tambah_kontak("Alice", "08123456789")
+tambah_kontak("Bob", "08198765432")
+print("Kontak Alice:", cari_kontak("Alice"))`
+                    },
+                    {
+                        id: 3,
+                        title: "Frekuensi Kata",
+                        description: "Hitung frekuensi kemunculan setiap kata dalam list ['apel', 'jeruk', 'apel', 'mangga', 'jeruk', 'apel']",
+                        hint: "Gunakan dictionary dengan get() method",
+                        solution: `kata_list = ['apel', 'jeruk', 'apel', 'mangga', 'jeruk', 'apel']
+frekuensi = {}
+
+for kata in kata_list:
+    frekuensi[kata] = frekuensi.get(kata, 0) + 1
+
+print("Frekuensi:", frekuensi)`
+                    },
+                    {
+                        id: 4,
+                        title: "Konverter Suhu",
+                        description: "Buat dictionary konversi suhu dari Celsius ke Fahrenheit dan Kelvin",
+                        hint: "Gunakan lambda functions atau rumus dalam dictionary",
+                        solution: `konverter = {
+    "c_to_f": lambda c: c * 9/5 + 32,
+    "c_to_k": lambda c: c + 273.15,
+    "f_to_c": lambda f: (f - 32) * 5/9,
+    "k_to_c": lambda k: k - 273.15
+}
+
+celsius = 25
+print(f"{celsius}°C = {konverter['c_to_f'](celsius):.1f}°F")
+print(f"{celsius}°C = {konverter['c_to_k'](celsius):.1f}K")`
+                    },
+                    {
+                        id: 5,
+                        title: "Simple Database",
+                        description: "Buat database siswa dengan NIM sebagai key dan dictionary sebagai value",
+                        hint: "Gunakan nested dictionaries",
+                        solution: `database_siswa = {
+    "12345": {
+        "nama": "Alice",
+        "jurusan": "Informatika",
+        "ipk": 3.8
+    },
+    "12346": {
+        "nama": "Bob", 
+        "jurusan": "Sistem Informasi",
+        "ipk": 3.6
+    }
+}
+
+def tampilkan_siswa(nim):
+    if nim in database_siswa:
+        return database_siswa[nim]
+    return "NIM tidak ditemukan"
+
+print("Data 12345:", tampilkan_siswa("12345"))`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 39
+        id: 39,
+        title: "Operasi Dictionary",
+        description: "Belajar berbagai operasi dan method dictionary untuk manipulasi data yang efektif.",
+        level: "Pemula Menengah",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🛠️",
+        topics: [
+            "Method-Method Dictionary",
+            "Dictionary Comprehension",
+            "Advanced Operations"
+        ],
+        color: "#1DD1A1",
+        content: [
+            {
+                id: 1,
+                title: "Method-Method Dictionary",
+                type: "theory",
+                content: `
+# Method-Method Dictionary
+
+## 1. Access Methods:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+# get() - akses dengan default value
+print(siswa.get("nama"))           # Alice
+print(siswa.get("alamat", "Tidak ada"))  # Tidak ada
+
+# setdefault() - get atau set jika tidak ada
+usia = siswa.setdefault("usia", 21)      # 20 (sudah ada)
+alamat = siswa.setdefault("alamat", "Jakarta")  # Jakarta (dibuat)
+print(siswa)  # {'nama': 'Alice', 'usia': 20, 'jurusan': 'Informatika', 'alamat': 'Jakarta'}
+\`\`\`
+
+## 2. Update Methods:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20}
+
+# update() - update multiple items
+siswa.update({"usia": 21, "jurusan": "Informatika"})
+print(siswa)  # {'nama': 'Alice', 'usia': 21, 'jurusan': 'Informatika'}
+
+# update dengan iterable
+siswa.update([("ipk", 3.8), ("semester", 5)])
+print(siswa)
+\`\`\`
+
+## 3. Copy dan Clear:
+\`\`\`python
+original = {"a": 1, "b": 2, "c": 3}
+
+# copy() - shallow copy
+copy_dict = original.copy()
+copy_dict["a"] = 99
+print("Original:", original)  # {'a': 1, 'b': 2, 'c': 3}
+print("Copy:", copy_dict)     # {'a': 99, 'b': 2, 'c': 3}
+
+# clear() - hapus semua
+original.clear()
+print("After clear:", original)  # {}
+\`\`\`
+
+## 4. Iteration Methods:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+# keys(), values(), items()
+print("Keys:", list(siswa.keys()))
+print("Values:", list(siswa.values()))
+print("Items:", list(siswa.items()))
+
+# Iterasi langsung
+for key in siswa:
+    print(f"{key}: {siswa[key]}")
+
+# Iterasi dengan items()
+for key, value in siswa.items():
+    print(f"{key}: {value}")
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Dictionary Comprehension",
+                type: "theory",
+                content: `
+# Dictionary Comprehension
+
+Dictionary comprehension memungkinkan membuat dictionary dengan sintaks yang ringkas.
+
+## 1. Basic Comprehension:
+\`\`\`python
+# Buat dictionary {number: square}
+squares = {x: x**2 for x in range(1, 6)}
+print(squares)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Dari list ke dictionary
+buah = ["apel", "jeruk", "mangga"]
+panjang_buah = {b: len(b) for b in buah}
+print(panjang_buah)  # {'apel': 4, 'jeruk': 5, 'mangga': 6}
+\`\`\`
+
+## 2. Comprehension dengan Conditional:
+\`\`\`python
+# Hanya angka genap
+even_squares = {x: x**2 for x in range(10) if x % 2 == 0}
+print(even_squares)  # {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+
+# Filter berdasarkan value
+siswa = {"Alice": 85, "Bob": 92, "Charlie": 78, "Diana": 95}
+lulus = {nama: nilai for nama, nilai in siswa.items() if nilai >= 80}
+print(lulus)  # {'Alice': 85, 'Bob': 92, 'Diana': 95}
+\`\`\`
+
+## 3. Transformasi Key dan Value:
+\`\`\`python
+# Transform key menjadi uppercase
+siswa = {"alice": 85, "bob": 92, "charlie": 78}
+siswa_upper = {k.upper(): v for k, v in siswa.items()}
+print(siswa_upper)  # {'ALICE': 85, 'BOB': 92, 'CHARLIE': 78}
+
+# Transform value (tambah bonus)
+siswa_bonus = {nama: nilai + 5 for nama, nilai in siswa.items()}
+print(siswa_bonus)  # {'alice': 90, 'bob': 97, 'charlie': 83}
+\`\`\`
+
+## 4. Advanced Operations:
+
+### Merging Dictionaries:
+\`\`\`python
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+
+# Python 3.5+
+merged = {**dict1, **dict2}
+print(merged)  # {'a': 1, 'b': 3, 'c': 4}
+
+# Python 3.9+
+merged2 = dict1 | dict2
+print(merged2)  # {'a': 1, 'b': 3, 'c': 4}
+\`\`\`
+
+### Inverting Dictionary:
+\`\`\`python
+# Swap key dan value (jika values unique)
+siswa = {"Alice": 85, "Bob": 92, "Charlie": 78}
+nilai_siswa = {nilai: nama for nama, nilai in siswa.items()}
+print(nilai_siswa)  # {85: 'Alice', 92: 'Bob', 78: 'Charlie'}
+\`\`\`
+
+### Grouping Data:
+\`\`\`python
+# Group by category
+items = [("fruit", "apple"), ("fruit", "banana"), ("vegetable", "carrot"), ("fruit", "orange")]
+
+grouped = {}
+for category, item in items:
+    if category not in grouped:
+        grouped[category] = []
+    grouped[category].append(item)
+
+print(grouped)  # {'fruit': ['apple', 'banana', 'orange'], 'vegetable': ['carrot']}
+\`\`\`
+            `,
+                codeExample: `print("=== DICTIONARY METHODS ===")
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+print("get():", siswa.get("nama"))
+print("setdefault():", siswa.setdefault("ipk", 3.8))
+print("After setdefault:", siswa)
+
+print("\\n=== DICTIONARY COMPREHENSION ===")
+# Buat dictionary dari range
+numbers = {x: x**3 for x in range(1, 6)}
+print("Cubes:", numbers)
+
+# Filter comprehension
+buah = ["apel", "jeruk", "kiwi", "mangga", "pisang"]
+panjang_filter = {b: len(b) for b in buah if len(b) > 4}
+print("Buah panjang > 4:", panjang_filter)
+
+print("\\n=== MERGING DICTIONARIES ===")
+default_settings = {"theme": "light", "language": "en"}
+user_settings = {"language": "id", "font_size": 14}
+
+# Merge dengan update priority ke right
+merged_settings = {**default_settings, **user_settings}
+print("Merged settings:", merged_settings)
+
+print("\\n=== GROUPING DATA ===")
+data = [
+    ("programming", "Python"),
+    ("programming", "JavaScript"), 
+    ("science", "Physics"),
+    ("programming", "Java"),
+    ("science", "Chemistry")
+]
+
+# Group by category menggunakan setdefault
+categories = {}
+for category, item in data:
+    categories.setdefault(category, []).append(item)
+
+print("Grouped data:", categories)
+
+print("\\n=== INVERTING DICTIONARY ===")
+color_codes = {"red": "#FF0000", "green": "#00FF00", "blue": "#0000FF"}
+codes_color = {code: color for color, code in color_codes.items()}
+print("Inverted:", codes_color)`,
+                expectedOutput: `=== DICTIONARY METHODS ===
+get(): Alice
+setdefault(): 3.8
+After setdefault: {'nama': 'Alice', 'usia': 20, 'jurusan': 'Informatika', 'ipk': 3.8}
+
+=== DICTIONARY COMPREHENSION ===
+Cubes: {1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+Buah panjang > 4: {'jeruk': 5, 'mangga': 6, 'pisang': 6}
+
+=== MERGING DICTIONARIES ===
+Merged settings: {'theme': 'light', 'language': 'id', 'font_size': 14}
+
+=== GROUPING DATA ===
+Grouped data: {'programming': ['Python', 'JavaScript', 'Java'], 'science': ['Physics', 'Chemistry']}
+
+=== INVERTING DICTIONARY ===
+Inverted: {'#FF0000': 'red', '#00FF00': 'green', '#0000FF': 'blue'}`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi Dictionary
+
+Kerjakan soal berikut:
+1. Buat word frequency counter menggunakan dictionary
+2. Implementasi cache sederhana dengan dictionary
+3. Buat konfigurasi system dengan nested dictionary
+4. Transformasi data menggunakan dictionary comprehension
+5. Buat fungsi untuk merge multiple dictionaries
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Word Frequency Counter",
+                        description: "Hitung frekuensi setiap kata dalam string yang diberikan",
+                        hint: "Split string dan gunakan dictionary untuk counting",
+                        solution: `def word_frequency(text):
+    words = text.lower().split()
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    return frequency
+
+text = "hello world hello python world python python"
+print(word_frequency(text))`
+                    },
+                    {
+                        id: 2,
+                        title: "Simple Cache",
+                        description: "Buat cache system yang menyimpan hasil komputasi mahal",
+                        hint: "Gunakan dictionary dengan function arguments sebagai key",
+                        solution: `cache = {}
+
+def expensive_function(x):
+    if x in cache:
+        print("Returning cached result")
+        return cache[x]
+    
+    print("Computing...")
+    result = x * x  # Simulasi komputasi mahal
+    cache[x] = result
+    return result
+
+print(expensive_function(5))
+print(expensive_function(5))  # Should return cached`
+                    },
+                    {
+                        id: 3,
+                        title: "System Configuration",
+                        description: "Buat nested dictionary untuk system configuration",
+                        hint: "Gunakan multiple level dictionaries",
+                        solution: `config = {
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "credentials": {
+            "username": "admin",
+            "password": "secret"
+        }
+    },
+    "server": {
+        "host": "0.0.0.0",
+        "port": 8000
+    }
+}
+
+print("DB username:", config["database"]["credentials"]["username"])`
+                    },
+                    {
+                        id: 4,
+                        title: "Data Transformation",
+                        description: "Transform list of tuples menjadi dictionary menggunakan comprehension",
+                        hint: "Gunakan dictionary comprehension dengan tuple unpacking",
+                        solution: `data = [("a", 1), ("b", 2), ("c", 3), ("d", 4)]
+result = {key: value * 2 for key, value in data}
+print(result)  # {'a': 2, 'b': 4, 'c': 6, 'd': 8}`
+                    },
+                    {
+                        id: 5,
+                        title: "Merge Dictionaries",
+                        description: "Buat fungsi yang merge multiple dictionaries, dengan priority right-to-left",
+                        hint: "Gunakan ** unpacking atau update()",
+                        solution: `def merge_dicts(*dicts):
+    result = {}
+    for d in dicts:
+        result.update(d)
+    return result
+
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+dict3 = {"c": 5, "d": 6}
+
+print(merge_dicts(dict1, dict2, dict3))  # {'a': 1, 'b': 3, 'c': 5, 'd': 6}`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 40
+        id: 40,
+        title: "Looping Dictionary",
+        description: "Belajar berbagai cara iterasi melalui dictionary menggunakan for loop, items(), keys(), dan values().",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Basic Dictionary Iteration",
+            "Iterasi dengan items()",
+            "Advanced Looping Techniques"
+        ],
+        color: "#F368E0",
+        content: [
+            {
+                id: 1,
+                title: "Basic Dictionary Iteration",
+                type: "theory",
+                content: `
+# Basic Dictionary Iteration
+
+## 1. Iterasi melalui Keys (Default):
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+# Cara 1: Langsung iterasi (akan iterasi keys)
+for key in siswa:
+    print(f"Key: {key}")
+# Output:
+# Key: nama
+# Key: usia  
+# Key: jurusan
+
+# Cara 2: Explicit dengan keys()
+for key in siswa.keys():
+    print(f"Key: {key} -> Value: {siswa[key]}")
+\`\`\`
+
+## 2. Iterasi melalui Values:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+for value in siswa.values():
+    print(f"Value: {value}")
+# Output:
+# Value: Alice
+# Value: 20
+# Value: Informatika
+\`\`\`
+
+## 3. Mengakses Values selama Iterasi:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+for key in siswa:
+    value = siswa[key]
+    print(f"{key}: {value}")
+# Output:
+# nama: Alice
+# usia: 20
+# jurusan: Informatika
+\`\`\`
+
+## 4. Conditional Iteration:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika", "ipk": 3.8}
+
+# Hanya keys dengan nilai string
+for key in siswa:
+    if isinstance(siswa[key], str):
+        print(f"{key}: {siswa[key]}")
+# Output:
+# nama: Alice
+# jurusan: Informatika
+
+# Hanya keys tertentu
+target_keys = ["nama", "jurusan"]
+for key in target_keys:
+    if key in siswa:
+        print(f"{key}: {siswa[key]}")
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Iterasi dengan items()",
+                type: "theory",
+                content: `
+# Iterasi dengan items() Method
+
+**items()** method mengembalikan view object yang berisi key-value pairs sebagai tuples.
+
+## 1. Basic items() Iteration:
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+for item in siswa.items():
+    print(f"Item: {item} - Type: {type(item)}")
+# Output:
+# Item: ('nama', 'Alice') - Type: <class 'tuple'>
+# Item: ('usia', 20) - Type: <class 'tuple'>
+# Item: ('jurusan', 'Informatika') - Type: <class 'tuple'>
+\`\`\`
+
+## 2. Tuple Unpacking dengan items():
+\`\`\`python
+siswa = {"nama": "Alice", "usia": 20, "jurusan": "Informatika"}
+
+for key, value in siswa.items():
+    print(f"{key}: {value}")
+# Output:
+# nama: Alice
+# usia: 20  
+# jurusan: Informatika
+\`\`\`
+
+## 3. items() dengan Conditional:
+\`\`\`python
+siswa = {"Alice": 85, "Bob": 92, "Charlie": 78, "Diana": 95}
+
+# Hanya siswa dengan nilai >= 90
+for nama, nilai in siswa.items():
+    if nilai >= 90:
+        print(f"{nama} lulus dengan nilai {nilai}")
+# Output:
+# Bob lulus dengan nilai 92
+# Diana lulus dengan nilai 95
+
+# Filter berdasarkan key
+for key, value in siswa.items():
+    if key.startswith("A"):
+        print(f"{key}: {value}")
+# Output:
+# Alice: 85
+\`\`\`
+
+## 4. items() dengan Enumerate:
+\`\`\`python
+siswa = {"Alice": 85, "Bob": 92, "Charlie": 78}
+
+for i, (nama, nilai) in enumerate(siswa.items(), 1):
+    print(f"{i}. {nama}: {nilai}")
+# Output:
+# 1. Alice: 85
+# 2. Bob: 92  
+# 3. Charlie: 78
+\`\`\`
+
+## 5. Advanced Looping Techniques:
+
+### Looping dengan Sorting:
+\`\`\`python
+siswa = {"Charlie": 78, "Alice": 85, "Bob": 92}
+
+# Sort by key
+for nama, nilai in sorted(siswa.items()):
+    print(f"{nama}: {nilai}")
+# Output:
+# Alice: 85
+# Bob: 92
+# Charlie: 78
+
+# Sort by value (descending)
+for nama, nilai in sorted(siswa.items(), key=lambda x: x[1], reverse=True):
+    print(f"{nama}: {nilai}")
+# Output:
+# Bob: 92
+# Alice: 85
+# Charlie: 78
+\`\`\`
+
+### Looping Nested Dictionaries:
+\`\`\`python
+sekolah = {
+    "kelas_A": {"Alice": 85, "Bob": 92},
+    "kelas_B": {"Charlie": 78, "Diana": 95}
+}
+
+for kelas, siswa_dict in sekolah.items():
+    print(f"\\n{kela s}:")
+    for nama, nilai in siswa_dict.items():
+        print(f"  {nama}: {nilai}")
+# Output:
+# kelas_A:
+#   Alice: 85
+#   Bob: 92
+# kelas_B:
+#   Charlie: 78
+#   Diana: 95
+\`\`\`
+            `,
+                codeExample: `print("=== BASIC ITERATION ===")
+siswa = {
+    "nama": "Budi Santoso",
+    "nim": "123456789", 
+    "jurusan": "Teknik Informatika",
+    "ipk": 3.75,
+    "semester": 5
+}
+
+print("Iterasi keys:")
+for key in siswa:
+    print(f"- {key}")
+
+print("\\nIterasi values:")
+for value in siswa.values():
+    print(f"- {value}")
+
+print("\\n=== ITEMS() ITERATION ===")
+print("Dengan tuple unpacking:")
+for key, value in siswa.items():
+    print(f"{key}: {value}")
+
+print("\\n=== CONDITIONAL ITERATION ===")
+print("Hanya numeric values:")
+for key, value in siswa.items():
+    if isinstance(value, (int, float)):
+        print(f"{key}: {value}")
+
+print("\\n=== SORTED ITERATION ===")
+nilai_siswa = {"Charlie": 78, "Alice": 85, "Bob": 92, "Diana": 88}
+
+print("Sorted by name:")
+for nama, nilai in sorted(nilai_siswa.items()):
+    print(f"{nama}: {nilai}")
+
+print("\\nSorted by value (descending):")
+for nama, nilai in sorted(nilai_siswa.items(), key=lambda x: x[1], reverse=True):
+    print(f"{nama}: {nilai}")
+
+print("\\n=== NESTED DICTIONARY ITERATION ===")
+universitas = {
+    "Fakultas_Teknik": {
+        "Informatika": {"jumlah_mahasiswa": 200, "akreditasi": "A"},
+        "Sipil": {"jumlah_mahasiswa": 150, "akreditasi": "A"}
+    },
+    "Fakultas_Ekonomi": {
+        "Manajemen": {"jumlah_mahasiswa": 180, "akreditasi": "B"},
+        "Akuntansi": {"jumlah_mahasiswa": 160, "akreditasi": "A"}
+    }
+}
+
+for fakultas, jurusan_dict in universitas.items():
+    print(f"\\n{fakultas}:")
+    for jurusan, info in jurusan_dict.items():
+        print(f"  {jurusan}: {info['jumlah_mahasiswa']} mahasiswa, Akreditasi {info['akreditasi']}")`,
+                expectedOutput: `=== BASIC ITERATION ===
+Iterasi keys:
+- nama
+- nim
+- jurusan
+- ipk
+- semester
+
+Iterasi values:
+- Budi Santoso
+- 123456789
+- Teknik Informatika
+- 3.75
+- 5
+
+=== ITEMS() ITERATION ===
+Dengan tuple unpacking:
+nama: Budi Santoso
+nim: 123456789
+jurusan: Teknik Informatika
+ipk: 3.75
+semester: 5
+
+=== CONDITIONAL ITERATION ===
+Hanya numeric values:
+ipk: 3.75
+semester: 5
+
+=== SORTED ITERATION ===
+Sorted by name:
+Alice: 85
+Bob: 92
+Charlie: 78
+Diana: 88
+
+Sorted by value (descending):
+Bob: 92
+Alice: 85
+Diana: 88
+Charlie: 78
+
+=== NESTED DICTIONARY ITERATION ===
+Fakultas_Teknik:
+  Informatika: 200 mahasiswa, Akreditasi A
+  Sipil: 150 mahasiswa, Akreditasi A
+
+Fakultas_Ekonomi:
+  Manajemen: 180 mahasiswa, Akreditasi B
+  Akuntansi: 160 mahasiswa, Akreditasi A`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Looping Dictionary
+
+Kerjakan soal berikut:
+1. Iterasi dictionary dan format output yang rapi
+2. Hitung statistik dari dictionary values
+3. Filter dictionary berdasarkan kondisi tertentu
+4. Transform dictionary selama iterasi
+5. Buat report dari nested dictionary
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Format Output",
+                        description: "Iterasi dictionary siswa dan tampilkan dalam format tabel rapi",
+                        hint: "Gunakan string formatting dengan alignment",
+                        solution: `siswa = {
+    "nama": "Alice",
+    "usia": 20,
+    "jurusan": "Informatika",
+    "ipk": 3.8,
+    "semester": 5
+}
+
+print("DATA SISWA")
+print("-" * 30)
+for key, value in siswa.items():
+    print(f"{key:10} : {value}")`
+                    },
+                    {
+                        id: 2,
+                        title: "Hitung Statistik",
+                        description: "Dari dictionary nilai {'matematika': 85, 'fisika': 92, 'kimia': 78}, hitung rata-rata",
+                        hint: "Gunakan values() method dan sum()",
+                        solution: `nilai = {'matematika': 85, 'fisika': 92, 'kimia': 78}
+total = sum(nilai.values())
+rata_rata = total / len(nilai)
+print(f"Rata-rata: {rata_rata:.1f}")`
+                    },
+                    {
+                        id: 3,
+                        title: "Filter Dictionary",
+                        description: "Dari dictionary produk {'laptop': 1000, 'mouse': 25, 'keyboard': 50, 'monitor': 200}, filter yang harga > 100",
+                        hint: "Gunakan dictionary comprehension dengan conditional",
+                        solution: `produk = {'laptop': 1000, 'mouse': 25, 'keyboard': 50, 'monitor': 200}
+mahal = {nama: harga for nama, harga in produk.items() if harga > 100}
+print("Produk mahal:", mahal)`
+                    },
+                    {
+                        id: 4,
+                        title: "Transform Dictionary",
+                        description: "Dari dictionary suhu {'Jakarta': 30, 'Bandung': 22, 'Surabaya': 35}, konversi ke Fahrenheit",
+                        hint: "Gunakan dictionary comprehension dengan transformasi value",
+                        solution: `suhu_c = {'Jakarta': 30, 'Bandung': 22, 'Surabaya': 35}
+suhu_f = {kota: (c * 9/5 + 32) for kota, c in suhu_c.items()}
+print("Suhu Fahrenheit:", suhu_f)`
+                    },
+                    {
+                        id: 5,
+                        title: "Nested Dictionary Report",
+                        description: "Buat report dari nested dictionary data perusahaan",
+                        hint: "Gunakan nested loops dengan items()",
+                        solution: `perusahaan = {
+    "IT": {
+        "programmer": 10,
+        "designer": 5,
+        "manager": 2
+    },
+    "HR": {
+        "recruiter": 3,
+        "manager": 1
+    },
+    "Finance": {
+        "accountant": 4,
+        "analyst": 2
+    }
+}
+
+print("LAPORAN KARYAWAN")
+print("=" * 30)
+total_karyawan = 0
+
+for dept, positions in perusahaan.items():
+    print(f"\\n{dept}:")
+    dept_total = sum(positions.values())
+    total_karyawan += dept_total
+    for pos, count in positions.items():
+        print(f"  {pos}: {count}")
+    print(f"  Total {dept}: {dept_total}")
+
+print(f"\\nTotal semua karyawan: {total_karyawan}")`
+                    }
+                ]
+            }
+        ]
     }
 ];
 
