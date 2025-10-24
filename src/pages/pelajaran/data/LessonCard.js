@@ -339,6 +339,22 @@ export const lessonCards = [
             "Operasi DateTime"
         ],
         color: "#607D8B",
+    },
+    { // 21
+        id: 21,
+        title: "IF dan ELSE Statement",
+        description: "Belajar dasar percabangan dengan IF dan ELSE untuk pengambilan keputusan dalam program.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔀",
+        topics: [
+            "Konsep Percabangan",
+            "IF Statement",
+            "ELSE Statement"
+        ],
+        color: "#E91E63",
     }
 ];
 
