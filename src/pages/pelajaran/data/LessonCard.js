@@ -563,6 +563,22 @@ export const lessonCards = [
             "Studi Kasus"
         ],
         color: "#96CEB4",
+    },
+    { // 35
+        id: 35,
+        title: "Looping List dan Enumerate",
+        description: "Belajar berbagai cara iterasi melalui list menggunakan for loop, while loop, dan enumerate.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "For Loop dengan List",
+            "Enumerate Function",
+            "While Loop dengan List"
+        ],
+        color: "#FECA57",
     }
 ];
 
