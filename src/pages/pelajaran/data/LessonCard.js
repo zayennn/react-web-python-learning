@@ -306,7 +306,7 @@ export const lessonCards = [
             "str.format() Method",
             "f-String (Modern)"
         ],
-        color: "#9C27B0",    
+        color: "#9C27B0",
     },
     { // 19
         id: 19,
@@ -419,7 +419,7 @@ export const lessonCards = [
             "Infinite Loop"
         ],
         color: "#FF9800",
-    }, 
+    },
     { // 26
         id: 26,
         title: "Continue dan Pass",
