@@ -643,6 +643,22 @@ export const lessonCards = [
             "Advanced Operations"
         ],
         color: "#1DD1A1",
+    },
+    { // 40
+        id: 40,
+        title: "Looping Dictionary",
+        description: "Belajar berbagai cara iterasi melalui dictionary menggunakan for loop, items(), keys(), dan values().",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Basic Dictionary Iteration",
+            "Iterasi dengan items()",
+            "Advanced Looping Techniques"
+        ],
+        color: "#F368E0",
     }
 ];
 
