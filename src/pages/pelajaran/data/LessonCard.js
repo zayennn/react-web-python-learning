@@ -323,6 +323,22 @@ export const lessonCards = [
             "Formatting Lanjutan"
         ],
         color: "#795548",
+    },
+    { // 20
+        id: 20,
+        title: "Latihan Date and Time",
+        description: "Praktik penggunaan module datetime untuk manipulasi tanggal dan waktu.",
+        level: "Pemula Menengah",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📅",
+        topics: [
+            "Module datetime Dasar",
+            "Formatting Tanggal & Waktu",
+            "Operasi DateTime"
+        ],
+        color: "#607D8B",
     }
 ];
 
