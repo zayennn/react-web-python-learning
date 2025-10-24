@@ -548,6 +548,22 @@ export const lessonCards = [
         ],
         color: "#45B7D1",
     },
+    { // 34
+        id: 34,
+        title: "Deep Copy Nested List",
+        description: "Memahami deep copy secara mendalam untuk nested list dan kapan harus menggunakannya.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔍",
+        topics: [
+            "Kebutuhan Deep Copy",
+            "Implementasi Deep Copy",
+            "Studi Kasus"
+        ],
+        color: "#96CEB4",
+    }
 ];
 
 export default lessonCards;
