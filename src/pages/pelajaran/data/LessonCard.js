@@ -307,6 +307,22 @@ export const lessonCards = [
             "f-String (Modern)"
         ],
         color: "#9C27B0",    
+    },
+    { // 19
+        id: 19,
+        title: "String Width and Alignment",
+        description: "Belajar mengatur lebar, alignment, dan padding string untuk tampilan yang rapi.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📐",
+        topics: [
+            "Text Alignment",
+            "Width dan Padding",
+            "Formatting Lanjutan"
+        ],
+        color: "#795548",
     }
 ];
 
