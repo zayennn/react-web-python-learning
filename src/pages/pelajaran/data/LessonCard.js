@@ -595,6 +595,22 @@ export const lessonCards = [
             "Studi Kasus Real World"
         ],
         color: "#FF9FF3",
+    },
+    { // 37
+        id: 37,
+        title: "Tuples dan Set",
+        description: "Belajar tentang tuples (immutable sequences) dan sets (unordered collections dengan unique elements).",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔒",
+        topics: [
+            "Tuples - Immutable Sequences",
+            "Sets - Unique Collections",
+            "Operasi Sets"
+        ],
+        color: "#54A0FF",
     }
 ];
 
