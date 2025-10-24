@@ -516,7 +516,22 @@ export const lessonCards = [
         ],
         color: "#FF6B6B",
     },
-    
+    { // 32
+        id: 32,
+        title: "Copy List di Python",
+        description: "Memahami perbedaan antara shallow copy dan deep copy pada list, serta kapan menggunakannya.",
+        level: "Pemula Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📑",
+        topics: [
+            "Shallow Copy",
+            "Deep Copy",
+            "Perbedaan dan Penggunaan"
+        ],
+        color: "#4ECDC4",
+    }
 ];
 
 export default lessonCards;
