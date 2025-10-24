@@ -483,6 +483,22 @@ export const lessonCards = [
             "Operasi Dasar List"
         ],
         color: "#3F51B5",
+    }, 
+    { // 30
+      id: 30,
+        title: "Manipulasi List",
+        description: "Belajar memanipulasi list dengan method seperti append, insert, remove, sort, dan lainnya.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔧",
+        topics: [
+            "Method List Dasar",
+            "Modifikasi List",
+            "Sorting dan Searching"
+        ],
+        color: "#FF9800",  
     }
 ];
 
