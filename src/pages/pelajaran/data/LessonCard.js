@@ -467,6 +467,9 @@ export const lessonCards = [
             "Optimasi Kode"
         ],
         color: "#795548",
+    },
+    { // 29
+
     }
 ];
 
