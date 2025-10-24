@@ -177,7 +177,7 @@ print("Halo, Python dari VS Code!")
                 expectedOutput: `Halo, Python dari VS Code!`
             }
         ]
-    }, 
+    },
     { // 3
         id: 3,
         title: "Cara Kerja Program & Bytecode",
@@ -2041,6 +2041,1235 @@ print(saldo)  # 2100`
             }
         ]
     },
+    { // 15
+        id: 15,
+        title: "Pengenalan String di Python",
+        description: "Belajar dasar-dasar string, cara membuat, dan operasi sederhana dengan string di Python.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📝",
+        topics: [
+            "Apa itu String?",
+            "Cara Membuat String",
+            "Latihan Praktik"
+        ],
+        color: "#4CAF50",
+        content: [
+            {
+                id: 1,
+                title: "Apa itu String?",
+                type: "theory",
+                content: `
+# Pengenalan String
+
+**String** adalah tipe data yang digunakan untuk menyimpan teks atau kumpulan karakter. 
+
+Contoh string:
+- "Hello World"
+- 'Python'
+- "123" (ini string, bukan angka!)
+- "A"
+
+**Karakteristik String:**
+- Diapit oleh tanda kutip (bisa tunggal ' ' atau ganda " ")
+- Bersifat **immutable** (tidak bisa diubah setelah dibuat)
+- Bisa berisi huruf, angka, simbol, dan spasi
+
+\`\`\`python
+nama = "Budi"
+alamat = 'Jakarta'
+pesan = "Selamat belajar Python!"
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Cara Membuat String",
+                type: "theory",
+                content: `
+# Cara Membuat String di Python
+
+## 1. Menggunakan Tanda Kutip Tunggal
+\`\`\`python
+teks1 = 'Hello World'
+teks2 = '123'
+\`\`\`
+
+## 2. Menggunakan Tanda Kutip Ganda
+\`\`\`python
+teks1 = "Hello World"
+teks2 = "Python itu menyenangkan"
+\`\`\`
+
+## 3. String Multibaris (Triple Quotes)
+\`\`\`python
+teks_panjang = """Ini adalah string
+yang terdiri dari
+beberapa baris"""
+
+puisi = '''Mawar itu merah
+Melati itu putih
+Python itu seru'''
+\`\`\`
+
+## 4. Escape Character
+\`\`\`python
+# \\n untuk baris baru
+teks = "Baris pertama\\nBaris kedua"
+
+# \\t untuk tab
+teks = "Nama:\\tBudi"
+
+# \\" untuk kutip ganda dalam string
+teks = "Dia berkata, \\"Halo!\\""
+
+# \\\\ untuk backslash
+teks = "Path: C:\\\\folder\\\\file.txt"
+\`\`\`
+            `,
+                codeExample: `# Contoh berbagai cara membuat string
+nama = "Alice"
+kota = 'Bandung'
+multiline = """String ini
+terdiri dari
+beberapa baris"""
+
+print("Nama:", nama)
+print("Kota:", kota)
+print("Multiline:", multiline)
+
+# Escape character
+print("Dia berkata: \\"Halo!\\"")
+print("Baris 1\\nBaris 2")`,
+                expectedOutput: `Nama: Alice
+Kota: Bandung
+Multiline: String ini
+terdiri dari
+beberapa baris
+Dia berkata: "Halo!"
+Baris 1
+Baris 2`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Pengenalan String
+
+Coba kerjakan soal berikut:
+1. Buat variabel string untuk menyimpan nama lengkap kamu
+2. Buat string yang berisi alamat dengan menggunakan escape character \\n untuk baris baru
+3. Buat string multibaris untuk membuat puisi pendek
+4. Buat string yang mengandung kutip ganda di dalamnya
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "String Nama",
+                        description: "Buat variabel untuk menyimpan nama lengkap kamu",
+                        hint: "Gunakan tanda kutip tunggal atau ganda",
+                        solution: `nama = "John Doe"
+print(nama)`
+                    },
+                    {
+                        id: 2,
+                        title: "String Alamat",
+                        description: "Buat string alamat dengan baris baru",
+                        hint: "Gunakan \\n untuk baris baru",
+                        solution: `alamat = "Jalan Merdeka No. 123\\nJakarta Pusat"
+print(alamat)`
+                    },
+                    {
+                        id: 3,
+                        title: "String Puisi",
+                        description: "Buat puisi pendek dengan string multibaris",
+                        hint: "Gunakan triple quotes",
+                        solution: `puisi = """Python itu seru
+Belajar setiap hari
+Hasil memuaskan"""
+print(puisi)`
+                    },
+                    {
+                        id: 4,
+                        title: "String dengan Kutip",
+                        description: "Buat string yang mengandung kutip ganda di dalamnya",
+                        hint: "Gunakan escape character \\\"",
+                        solution: `kutipan = "Dia berkata: \\"Selamat pagi!\\""
+print(kutipan)`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 16
+        id: 16,
+        title: "Operasi dan Manipulasi String (Part 1)",
+        description: "Belajar operasi dasar string seperti concatenation, repetition, indexing, dan slicing.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔤",
+        topics: [
+            "Concatenation dan Repetition",
+            "Indexing String",
+            "Slicing String"
+        ],
+        color: "#2196F3",
+        content: [
+            {
+                id: 1,
+                title: "Concatenation dan Repetition",
+                type: "theory",
+                content: `
+# Operasi Dasar String
+
+## 1. Concatenation (Penggabungan)
+Menggabungkan dua atau lebih string menggunakan operator **+**
+
+\`\`\`python
+nama_depan = "John"
+nama_belakang = "Doe"
+nama_lengkap = nama_depan + " " + nama_belakang
+print(nama_lengkap)  # John Doe
+\`\`\`
+
+## 2. Repetition (Pengulangan)
+Mengulang string sebanyak n kali menggunakan operator *****
+
+\`\`\`python
+kata = "Ha"
+tertawa = kata * 3
+print(tertawa)  # HaHaHa
+
+pembatas = "-" * 20
+print(pembatas)  # --------------------
+\`\`\`
+
+## 3. String Length (Panjang String)
+Menggunakan fungsi **len()** untuk mengetahui panjang string
+
+\`\`\`python
+teks = "Python"
+print(len(teks))  # 6
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Indexing dan Slicing",
+                type: "theory",
+                content: `
+# Indexing dan Slicing String
+
+## 1. Indexing (Akses Karakter)
+Setiap karakter dalam string memiliki index (dimulai dari 0)
+
+\`\`\`python
+kata = "Python"
+
+print(kata[0])   # P
+print(kata[1])   # y
+print(kata[5])   # n
+print(kata[-1])  # n (index dari belakang)
+print(kata[-2])  # o
+\`\`\`
+
+## 2. Slicing (Memotong String)
+Mengambil sebagian dari string menggunakan [start:end:step]
+
+\`\`\`python
+kata = "Python Programming"
+
+print(kata[0:6])    # Python
+print(kata[7:])     # Programming
+print(kata[:6])     # Python
+print(kata[::2])    # Pto rgamn (setiap 2 karakter)
+print(kata[::-1])   # gnimmargorP nohtyP (reverse)
+\`\`\`
+
+**Format Slicing:**
+- [start:end] → dari index start sampai end-1
+- [start:] → dari start sampai akhir
+- [:end] → dari awal sampai end-1
+- [::step] → dari awal sampai akhir dengan loncatan step
+            `,
+                codeExample: `# Contoh indexing dan slicing
+bahasa = "Python Programming"
+
+print("Indexing:")
+print("Karakter pertama:", bahasa[0])
+print("Karakter terakhir:", bahasa[-1])
+
+print("\\nSlicing:")
+print("6 karakter pertama:", bahasa[:6])
+print("Dari index 7:", bahasa[7:])
+print("Setiap 2 karakter:", bahasa[::2])
+print("Reverse:", bahasa[::-1])
+
+# Concatenation dan repetition
+salam = "Halo " + "Dunia!"
+ulang = "Wow! " * 3
+print("\\nConcatenation:", salam)
+print("Repetition:", ulang)`,
+                expectedOutput: `Indexing:
+Karakter pertama: P
+Karakter terakhir: g
+
+Slicing:
+6 karakter pertama: Python
+Dari index 7: Programming
+Setiap 2 karakter: Pto rgamn
+Reverse: gnimmargorP nohtyP
+
+Concatenation: Halo Dunia!
+Repetition: Wow! Wow! Wow!`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi String Part 1
+
+Kerjakan soal berikut:
+1. Gabungkan nama depan dan belakang menjadi nama lengkap
+2. Buat border dengan mengulang karakter "=" sebanyak 30 kali
+3. Ambil 3 karakter pertama dari sebuah string
+4. Reverse sebuah string menggunakan slicing
+5. Ambil setiap karakter ganjil dari sebuah string
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Gabung Nama",
+                        description: "Gabungkan nama depan dan belakang dengan spasi",
+                        hint: "Gunakan operator +",
+                        solution: `depan = "John"
+belakang = "Doe"
+lengkap = depan + " " + belakang
+print(lengkap)  # John Doe`
+                    },
+                    {
+                        id: 2,
+                        title: "Buat Border",
+                        description: "Buat garis pembatas dengan karakter = sebanyak 30 kali",
+                        hint: "Gunakan operator *",
+                        solution: `border = "=" * 30
+print(border)  # ==============================`
+                    },
+                    {
+                        id: 3,
+                        title: "Ambil Awal",
+                        description: "Ambil 3 karakter pertama dari string 'Python'",
+                        hint: "Gunakan slicing [0:3]",
+                        solution: `kata = "Python"
+awal = kata[:3]
+print(awal)  # Pyt`
+                    },
+                    {
+                        id: 4,
+                        title: "Reverse String",
+                        description: "Reverse string 'Hello' menggunakan slicing",
+                        hint: "Gunakan [::-1]",
+                        solution: `kata = "Hello"
+reverse = kata[::-1]
+print(reverse)  # olleH`
+                    },
+                    {
+                        id: 5,
+                        title: "Karakter Ganjil",
+                        description: "Ambil setiap karakter ganjil dari 'Programming'",
+                        hint: "Gunakan [::2]",
+                        solution: `kata = "Programming"
+ganjil = kata[::2]
+print(ganjil)  # Pormig`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 17
+        id: 17,
+        title: "Operasi dan Manipulasi String (Part 2)",
+        description: "Belajar method-method string yang umum digunakan seperti upper(), lower(), strip(), replace(), dll.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🛠️",
+        topics: [
+            "Method String Umum",
+            "Pencarian dan Validasi",
+            "Transformasi String"
+        ],
+        color: "#FF9800",
+        content: [
+            {
+                id: 1,
+                title: "Method String Umum",
+                type: "theory",
+                content: `
+# Method-Method String yang Sering Digunakan
+
+## 1. Mengubah Case (Huruf Besar/Kecil)
+\`\`\`python
+teks = "Hello Python"
+
+print(teks.upper())      # HELLO PYTHON
+print(teks.lower())      # hello python
+print(teks.title())      # Hello Python
+print(teks.capitalize()) # Hello python
+\`\`\`
+
+## 2. Membersihkan String
+\`\`\`python
+teks = "   hello world   "
+
+print(teks.strip())      # "hello world" (hapus spasi kiri-kanan)
+print(teks.lstrip())     # "hello world   " (hapus spasi kiri)
+print(teks.rstrip())     # "   hello world" (hapus spasi kanan)
+\`\`\`
+
+## 3. Replace (Mengganti)
+\`\`\`python
+teks = "Saya suka Java"
+teks_baru = teks.replace("Java", "Python")
+print(teks_baru)  # Saya suka Python
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Pencarian dan Validasi",
+                type: "theory",
+                content: `
+# Pencarian dan Validasi String
+
+## 1. Pencarian
+\`\`\`python
+teks = "Python Programming is fun"
+
+print(teks.find("Pro"))     # 7 (index ditemukan)
+print(teks.find("Java"))    # -1 (tidak ditemukan)
+print(teks.index("Pro"))    # 7
+print(teks.count("m"))      # 3 (jumlah kemunculan)
+
+# Pengecekan awal/akhir
+print(teks.startswith("Py"))    # True
+print(teks.endswith("fun"))     # True
+\`\`\`
+
+## 2. Validasi
+\`\`\`python
+teks1 = "Hello123"
+teks2 = "12345"
+teks3 = "HELLO"
+
+print(teks1.isalnum())  # True (huruf dan angka)
+print(teks2.isdigit())  # True (angka saja)
+print(teks3.isupper())  # True (huruf besar semua)
+print(teks1.islower())  # False (tidak semua kecil)
+
+teks4 = "   "
+teks5 = "Hello"
+print(teks4.isspace())  # True (hanya spasi)
+print(teks5.isalpha())  # True (huruf saja)
+\`\`\`
+
+## 3. Split dan Join
+\`\`\`python
+# Split - memecah string menjadi list
+kalimat = "Python adalah bahasa pemrograman"
+kata_kata = kalimat.split()
+print(kata_kata)  # ['Python', 'adalah', 'bahasa', 'pemrograman']
+
+email = "user@example.com"
+parts = email.split("@")
+print(parts)  # ['user', 'example.com']
+
+# Join - menggabungkan list menjadi string
+kata_list = ['Python', 'is', 'awesome']
+kalimat = " ".join(kata_list)
+print(kalimat)  # Python is awesome
+
+path = "/".join(['folder', 'subfolder', 'file.txt'])
+print(path)  # folder/subfolder/file.txt
+\`\`\`
+            `,
+                codeExample: `# Contoh penggunaan method string
+teks = "   Hello Python World!   "
+
+print("Original:", f"'{teks}'")
+print("Strip:", f"'{teks.strip()}'")
+print("Upper:", teks.upper())
+print("Lower:", teks.lower())
+
+# Pencarian
+print("\\nPencarian:")
+print("Find 'Python':", teks.find("Python"))
+print("Count 'l':", teks.count("l"))
+print("Startswith 'Hello':", teks.startswith("Hello"))
+
+# Split dan Join
+kalimat = "Python adalah bahasa pemrograman"
+print("\\nSplit:", kalimat.split())
+print("Join:", "-".join(["A", "B", "C"]))`,
+                expectedOutput: `Original: '   Hello Python World!   '
+Strip: 'Hello Python World!'
+Upper:    HELLO PYTHON WORLD!   
+Lower:    hello python world!   
+
+Pencarian:
+Find 'Python': 8
+Count 'l': 3
+Startswith 'Hello': False
+
+Split: ['Python', 'adalah', 'bahasa', 'pemrograman']
+Join: A-B-C`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Operasi String Part 2
+
+Kerjakan soal berikut:
+1. Normalisasi input user (hapus spasi, ubah ke huruf kecil)
+2. Ganti semua spasi dengan underscore dalam sebuah string
+3. Cek apakah string mengandung angka
+4. Pecah URL menjadi protocol, domain, dan path
+5. Gabungkan list kata menjadi kalimat yang rapi
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Normalisasi Input",
+                        description: "Bersihkan spasi dan ubah ke huruf kecil dari input '  HeLLo WoRLD  '",
+                        hint: "Gunakan strip() dan lower()",
+                        solution: `input_user = "  HeLLo WoRLD  "
+normalized = input_user.strip().lower()
+print(normalized)  # hello world`
+                    },
+                    {
+                        id: 2,
+                        title: "Ganti Spasi",
+                        description: "Ganti semua spasi dengan underscore dalam 'file name with spaces'",
+                        hint: "Gunakan replace()",
+                        solution: `filename = "file name with spaces"
+new_filename = filename.replace(" ", "_")
+print(new_filename)  # file_name_with_spaces`
+                    },
+                    {
+                        id: 3,
+                        title: "Cek Angka",
+                        description: "Cek apakah string '12345' hanya berisi angka",
+                        hint: "Gunakan isdigit()",
+                        solution: `teks = "12345"
+if teks.isdigit():
+    print("Hanya angka")
+else:
+    print("Tidak hanya angka")`
+                    },
+                    {
+                        id: 4,
+                        title: "Parse URL",
+                        description: "Pecah URL 'https://example.com/path/to/page' menjadi bagian-bagian",
+                        hint: "Gunakan split() dengan pemisah '/'",
+                        solution: `url = "https://example.com/path/to/page"
+parts = url.split("/")
+print("Protocol:", parts[0])
+print("Domain:", parts[2])
+print("Path:", "/".join(parts[3:]))`
+                    },
+                    {
+                        id: 5,
+                        title: "Gabung Kalimat",
+                        description: "Gabungkan list ['Saya', 'sedang', 'belajar', 'Python'] menjadi kalimat",
+                        hint: "Gunakan join() dengan spasi",
+                        solution: `kata_list = ['Saya', 'sedang', 'belajar', 'Python']
+kalimat = " ".join(kata_list)
+print(kalimat)  # Saya sedang belajar Python`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 18
+        id: 18,
+        title: "Format String di Python",
+        description: "Belajar berbagai cara formatting string: %-formatting, str.format(), dan f-string.",
+        level: "Pemula Menengah",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🎨",
+        topics: [
+            "%-formatting (Lama)",
+            "str.format() Method",
+            "f-String (Modern)"
+        ],
+        color: "#9C27B0",
+        content: [
+            {
+                id: 1,
+                title: "%-formatting (Cara Lama)",
+                type: "theory",
+                content: `
+# %-formatting (String Formatting Lama)
+
+Ini adalah cara tradisional yang diwarisi dari bahasa C.
+
+## Format Dasar:
+\`\`\`python
+nama = "Alice"
+umur = 25
+print("Nama: %s, Umur: %d" % (nama, umur))
+# Output: Nama: Alice, Umur: 25
+\`\`\`
+
+## Placeholder yang Sering Digunakan:
+- **%s** → String
+- **%d** → Integer  
+- **%f** → Float
+- **%.2f** → Float dengan 2 digit desimal
+
+\`\`\`python
+# Contoh berbagai tipe data
+nama = "Budi"
+nilai = 85.5
+kehadiran = 20
+
+print("Nama: %s" % nama)
+print("Nilai: %.1f" % nilai)      # 85.5
+print("Kehadiran: %d dari 25" % kehadiran)
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "str.format() dan f-String",
+                type: "theory",
+                content: `
+# str.format() Method
+
+Cara yang lebih modern dan readable:
+
+\`\`\`python
+nama = "Charlie"
+umur = 30
+
+# Posisional
+print("Nama: {}, Umur: {}".format(nama, umur))
+
+# Named placeholder
+print("Nama: {nama}, Umur: {umur}".format(nama=nama, umur=umur))
+
+# Dengan index
+print("{0} berumur {1}. {0} suka Python.".format(nama, umur))
+\`\`\`
+
+# f-String (Python 3.6+)
+
+Cara terbaru dan paling recommended:
+
+\`\`\`python
+nama = "Diana"
+umur = 28
+gaji = 7500.50
+
+# Basic f-string
+print(f"Nama: {nama}, Umur: {umur}")
+
+# Ekspresi dalam f-string
+print(f"Tahun lahir: {2024 - umur}")
+
+# Formatting angka
+print(f"Gaji: Rp {gaji:,.2f}")        # Rp 7,500.50
+print(f"Persentase: {0.75:.1%}")      # 75.0%
+
+# Operasi dalam f-string
+a = 5
+b = 3
+print(f"{a} + {b} = {a + b}")         # 5 + 3 = 8
+\`\`\`
+
+## Perbandingan Ketiga Metode:
+
+\`\`\`python
+nama, umur, tinggi = "Eva", 25, 165.5
+
+# %-formatting
+print("%-formatting: Nama: %s, Umur: %d, Tinggi: %.1f" % (nama, umur, tinggi))
+
+# str.format()
+print("str.format: Nama: {}, Umur: {}, Tinggi: {:.1f}".format(nama, umur, tinggi))
+
+# f-string
+print(f"f-string: Nama: {nama}, Umur: {umur}, Tinggi: {tinggi:.1f}")
+\`\`\`
+            `,
+                codeExample: `# Contoh perbandingan ketiga metode formatting
+produk = "Laptop"
+harga = 12500000
+stok = 15
+
+print("=== %-formatting ===")
+print("Produk: %s, Harga: Rp %d, Stok: %d" % (produk, harga, stok))
+
+print("\\n=== str.format() ===")
+print("Produk: {}, Harga: Rp {:,}, Stok: {}".format(produk, harga, stok))
+
+print("\\n=== f-string ===")
+print(f"Produk: {produk}, Harga: Rp {harga:,}, Stok: {stok}")
+
+# Contoh f-string dengan ekspresi
+diskon = 0.1
+print(f"\\nHarga setelah diskon {diskon:.0%}: Rp {harga * (1-diskon):,}")
+
+# Formatting lanjutan
+pi = 3.14159265
+print(f"\\nNilai pi: {pi:.3f}")  # 3.142
+print(f"Persentase: {0.756:.1%}")  # 75.6%`,
+                expectedOutput: `=== %-formatting ===
+Produk: Laptop, Harga: Rp 12500000, Stok: 15
+
+=== str.format() ===
+Produk: Laptop, Harga: Rp 12,500,000, Stok: 15
+
+=== f-string ===
+Produk: Laptop, Harga: Rp 12,500,000, Stok: 15
+
+Harga setelah diskon 10%: Rp 11,250,000
+
+Nilai pi: 3.142
+Persentase: 75.6%`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Format String
+
+Kerjakan soal berikut menggunakan f-string:
+1. Format harga produk dengan pemisah ribuan
+2. Tampilkan persentase dengan 1 digit desimal
+3. Buat laporan sederhana dengan multiple variable
+4. Hitung dan tampilkan hasil operasi matematika
+5. Format angka desimal dengan presisi tertentu
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Format Harga",
+                        description: "Format harga 15000000 menjadi 'Rp 15,000,000'",
+                        hint: "Gunakan f-string dengan {harga:,}",
+                        solution: `harga = 15000000
+print(f"Rp {harga:,}")  # Rp 15,000,000`
+                    },
+                    {
+                        id: 2,
+                        title: "Format Persentase",
+                        description: "Tampilkan 0.875 sebagai '87.5%'",
+                        hint: "Gunakan {nilai:.1%}",
+                        solution: `nilai = 0.875
+print(f"{nilai:.1%}")  # 87.5%`
+                    },
+                    {
+                        id: 3,
+                        title: "Laporan Sederhana",
+                        description: "Buat laporan: 'Produk: Buku, Terjual: 45 dari 50 (90.0%)'",
+                        hint: "Gunakan multiple variable dalam f-string",
+                        solution: `produk = "Buku"
+terjual = 45
+total = 50
+print(f"Produk: {produk}, Terjual: {terjual} dari {total} ({terjual/total:.1%})")`
+                    },
+                    {
+                        id: 4,
+                        title: "Operasi Matematika",
+                        description: "Tampilkan '15 × 3 = 45' menggunakan f-string dengan operasi",
+                        hint: "Langsung lakukan operasi dalam {}",
+                        solution: `a = 15
+b = 3
+print(f"{a} × {b} = {a * b}")  # 15 × 3 = 45`
+                    },
+                    {
+                        id: 5,
+                        title: "Presisi Desimal",
+                        description: "Tampilkan 3.14159265 dengan 4 digit desimal",
+                        hint: "Gunakan {pi:.4f}",
+                        solution: `pi = 3.14159265
+print(f"{pi:.4f}")  # 3.1416`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 19
+        id: 19,
+        title: "String Width and Alignment",
+        description: "Belajar mengatur lebar, alignment, dan padding string untuk tampilan yang rapi.",
+        level: "Menengah",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📐",
+        topics: [
+            "Text Alignment",
+            "Width dan Padding",
+            "Formatting Lanjutan"
+        ],
+        color: "#795548",
+        content: [
+            {
+                id: 1,
+                title: "Text Alignment",
+                type: "theory",
+                content: `
+# Text Alignment dalam String
+
+Mengatur perataan teks (kiri, kanan, tengah) dalam lebar tertentu.
+
+## 1. Left Alignment (<)
+\`\`\`python
+teks = "Python"
+print(f"|{teks:<10}|")  # |Python    |
+\`\`\`
+
+## 2. Right Alignment (>)
+\`\`\`python
+teks = "Python"
+print(f"|{teks:>10}|")  # |    Python|
+\`\`\`
+
+## 3. Center Alignment (^)
+\`\`\`python
+teks = "Python"
+print(f"|{teks:^10}|")  # |  Python  |
+\`\`\`
+
+## 4. Dengan Fill Character
+\`\`\`python
+teks = "Python"
+print(f"|{teks:*<10}|")  # |Python****|
+print(f"|{teks:->10}|")  # |----Python|
+print(f"|{teks:=^10}|")  # |==Python==|
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Width dan Padding",
+                type: "theory",
+                content: `
+# Width, Padding, dan Formatting Lanjutan
+
+## 1. Mengatur Lebar Minimum
+\`\`\`python
+nama = "Ali"
+umur = 20
+
+print(f"Nama: {nama:10} Umur: {umur:5}")
+# Nama: Ali        Umur:    20
+\`\`\`
+
+## 2. Kombinasi Alignment dan Type
+\`\`\`python
+# Untuk angka dengan alignment
+harga = 5000
+print(f"|{harga:<10,}|")  # |5,000     |
+print(f"|{harga:>10,}|")  # |     5,000|
+print(f"|{harga:^10,}|")  # |  5,000   |
+
+# Untuk string
+produk = "Laptop"
+print(f"|{produk:<15}|")  # |Laptop          |
+print(f"|{produk:>15}|")  # |          Laptop|
+print(f"|{produk:^15}|")  # |     Laptop     |
+\`\`\`
+
+## 3. Formatting Tabel Sederhana
+\`\`\`python
+# Header
+print(f"{'PRODUK':<15} {'HARGA':>10} {'STOK':>6}")
+print("-" * 35)
+
+# Data
+print(f"{'Laptop':<15} {15000000:>10,} {5:>6}")
+print(f"{'Mouse':<15} {250000:>10,} {20:>6}")
+print(f"{'Keyboard':<15} {500000:>10,} {15:>6}")
+\`\`\`
+
+## 4. Truncating String (Pemotongan)
+\`\`\`python
+teks_panjang = "Ini adalah teks yang sangat panjang sekali"
+
+# Potong menjadi 20 karakter
+print(f"{teks_panjang:.20}...")  # Ini adalah teks yang...
+
+# Dengan alignment dan truncation
+print(f"|{teks_panjang:25.25}|")  # |Ini adalah teks yang san|
+\`\`\`
+            `,
+                codeExample: `# Contoh width dan alignment
+print("=== ALIGNMENT DASAR ===")
+teks = "Python"
+print(f"Kiri     : |{teks:<10}|")
+print(f"Kanan    : |{teks:>10}|")
+print(f"Tengah   : |{teks:^10}|")
+
+print("\\n=== DENGAN FILL CHARACTER ===")
+print(f"Kiri     : |{teks:*<10}|")
+print(f"Kanan    : |{teks:->10}|")
+print(f"Tengah   : |{teks:=^10}|")
+
+print("\\n=== FORMATTING TABEL ===")
+print(f"{'NAMA':<12} {'USIA':>6} {'Gaji':>10}")
+print("-" * 32)
+print(f"{'Andi':<12} {25:>6} {5000000:>10,}")
+print(f"{'Budi':<12} {30:>6} {7500000:>10,}")
+print(f"{'Citra':<12} {28:>6} {6000000:>10,}")
+
+print("\\n=== TRUNCATION ===")
+panjang = "Ini adalah string yang sangat panjang sekali"
+print(f"Potong: {panjang:.15}...")`,
+                expectedOutput: `=== ALIGNMENT DASAR ===
+Kiri     : |Python    |
+Kanan    : |    Python|
+Tengah   : |  Python  |
+
+=== DENGAN FILL CHARACTER ===
+Kiri     : |Python****|
+Kanan    : |----Python|
+Tengah   : |==Python==|
+
+=== FORMATTING TABEL ===
+NAMA             USIA       Gaji
+--------------------------------
+Andi               25   5,000,000
+Budi               30   7,500,000
+Citra              28   6,000,000
+
+=== TRUNCATION ===
+Potong: Ini adalah str...`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan String Width dan Alignment
+
+Kerjakan soal berikut:
+1. Buat tabel produk dengan alignment yang rapi
+2. Format daftar nama dengan padding tertentu
+3. Buat header yang centered dengan border
+4. Tampilkan angka dengan alignment dan pemisah ribuan
+5. Buat laporan dengan multiple column
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Tabel Produk",
+                        description: "Buat tabel dengan kolom: Nama (lebar 15, kiri), Harga (lebar 12, kanan), Stok (lebar 6, kanan)",
+                        hint: "Gunakan f-string dengan < dan >",
+                        solution: `print(f"{'NAMA':<15} {'HARGA':>12} {'STOK':>6}")
+print("-" * 35)
+print(f"{'Laptop':<15} {15000000:>12,} {5:>6}")
+print(f"{'Mouse':<15} {250000:>12,} {20:>6}")`
+                    },
+                    {
+                        id: 2,
+                        title: "Format Nama",
+                        description: "Tampilkan daftar nama dengan lebar 10 karakter, rata kiri, dan fill character '.'",
+                        hint: "Gunakan {nama:.<10}",
+                        solution: `nama1, nama2, nama3 = "Ali", "Budi", "Citra"
+print(f"{nama1:.<10}")
+print(f"{nama2:.<10}")
+print(f"{nama3:.<10}")`
+                    },
+                    {
+                        id: 3,
+                        title: "Header Centered",
+                        description: "Buat header 'LAPORAN PENJUALAN' yang centered dalam lebar 40 karakter dengan border =",
+                        hint: "Gunakan {teks:=^40}",
+                        solution: `header = "LAPORAN PENJUALAN"
+print(f"{header:=^40}")`
+                    },
+                    {
+                        id: 4,
+                        title: "Format Angka",
+                        description: "Tampilkan angka 1234567 dengan lebar 15, rata kanan, dan pemisah ribuan",
+                        hint: "Gunakan {angka:>15,}",
+                        solution: `angka = 1234567
+print(f"|{angka:>15,}|")  # |        1,234,567|`
+                    },
+                    {
+                        id: 5,
+                        title: "Laporan Multi Kolom",
+                        description: "Buat laporan dengan 3 kolom: Kode (lebar 8), Deskripsi (lebar 25), Nilai (lebar 10)",
+                        hint: "Kombinasikan alignment untuk masing-masing kolom",
+                        solution: `print(f"{'KODE':<8} {'DESKRIPSI':<25} {'NILAI':>10}")
+print("-" * 45)
+print(f"{'A001':<8} {'Produk A Premium':<25} {150000:>10,}")
+print(f"{'B002':<8} {'Produk B Standard':<25} {75000:>10,}")`
+                    }
+                ]
+            }
+        ]
+    },
+
+    { // 20
+        id: 20,
+        title: "Latihan Date and Time",
+        description: "Praktik penggunaan module datetime untuk manipulasi tanggal dan waktu.",
+        level: "Pemula Menengah",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📅",
+        topics: [
+            "Module datetime Dasar",
+            "Formatting Tanggal & Waktu",
+            "Operasi DateTime"
+        ],
+        color: "#607D8B",
+        content: [
+            {
+                id: 1,
+                title: "Module datetime Dasar",
+                type: "theory",
+                content: `
+# Pengenalan Module datetime
+
+Module datetime menyediakan class untuk memanipulasi tanggal dan waktu.
+
+## Import Module
+\`\`\`python
+from datetime import datetime, date, time, timedelta
+\`\`\`
+
+## 1. datetime.now() - Waktu Sekarang
+\`\`\`python
+sekarang = datetime.now()
+print(sekarang)  # 2024-03-20 15:30:45.123456
+\`\`\`
+
+## 2. date.today() - Tanggal Hari Ini
+\`\`\`python
+hari_ini = date.today()
+print(hari_ini)  # 2024-03-20
+\`\`\`
+
+## 3. Membuat Object DateTime Manual
+\`\`\`python
+# datetime(year, month, day, hour, minute, second)
+waktu_kustom = datetime(2024, 12, 25, 18, 30, 0)
+print(waktu_kustom)  # 2024-12-25 18:30:00
+
+# date(year, month, day)
+tanggal_kustom = date(2024, 6, 15)
+print(tanggal_kustom)  # 2024-06-15
+
+# time(hour, minute, second)
+waktu_saja = time(14, 30, 45)
+print(waktu_saja)  # 14:30:45
+\`\`\`
+            `
+            },
+            {
+                id: 2,
+                title: "Formatting dan Operasi",
+                type: "theory",
+                content: `
+# Formatting DateTime
+
+## 1. strftime() - Format DateTime ke String
+\`\`\`python
+sekarang = datetime.now()
+
+print(sekarang.strftime("%Y-%m-%d"))           # 2024-03-20
+print(sekarang.strftime("%d/%m/%Y"))           # 20/03/2024
+print(sekarang.strftime("%A, %d %B %Y"))       # Wednesday, 20 March 2024
+print(sekarang.strftime("%H:%M:%S"))           # 15:30:45
+print(sekarang.strftime("%I:%M %p"))           # 03:30 PM
+\`\`\`
+
+## 2. strptime() - Parse String ke DateTime
+\`\`\`python
+# Convert string to datetime
+string_tanggal = "2024-12-25 18:30:00"
+format_string = "%Y-%m-%d %H:%M:%S"
+waktu = datetime.strptime(string_tanggal, format_string)
+print(waktu)  # 2024-12-25 18:30:00
+\`\`\`
+
+## 3. Operasi DateTime dengan timedelta
+\`\`\`python
+sekarang = datetime.now()
+
+# Tambah 7 hari
+minggu_depan = sekarang + timedelta(days=7)
+print("Minggu depan:", minggu_depan)
+
+# Kurang 2 jam
+dua_jam_lalu = sekarang - timedelta(hours=2)
+print("2 jam lalu:", dua_jam_lalu)
+
+# Kombinasi
+waktu_baru = sekarang + timedelta(days=1, hours=3, minutes=30)
+print("Besok + 3.5 jam:", waktu_baru)
+
+# Selisih antara dua datetime
+waktu1 = datetime(2024, 1, 1)
+waktu2 = datetime(2024, 1, 15)
+selisih = waktu2 - waktu1
+print("Selisih hari:", selisih.days)  # 14
+\`\`\`
+
+## Format Kode strftime yang Umum:
+- **%Y** → Tahun 4 digit (2024)
+- **%m** → Bulan 2 digit (01-12)
+- **%d** → Hari 2 digit (01-31)
+- **%H** → Jam 24-hour (00-23)
+- **%I** → Jam 12-hour (01-12)
+- **%M** → Menit (00-59)
+- **%S** → Detik (00-59)
+- **%A** → Nama hari lengkap (Monday)
+- **%B** → Nama bulan lengkap (January)
+- **%p** → AM/PM
+            `,
+                codeExample: `from datetime import datetime, timedelta
+
+print("=== WAKTU SEKARANG ===")
+sekarang = datetime.now()
+print("Waktu lengkap:", sekarang)
+print("Format custom:", sekarang.strftime("%A, %d %B %Y %H:%M"))
+
+print("\\n=== OPERASI DATETIME ===")
+besok = sekarang + timedelta(days=1)
+print("Besok:", besok.strftime("%d/%m/%Y"))
+
+# Hitung umur
+lahir = datetime(1990, 5, 15)
+umur = sekarang - lahir
+print("Umur dalam hari:", umur.days)
+print("Umur dalam tahun:", umur.days // 365)
+
+print("\\n=== PARSING STRING ===")
+string_waktu = "25/12/2024 18:30"
+parsed = datetime.strptime(string_waktu, "%d/%m/%Y %H:%M")
+print("Parsed:", parsed)
+
+print("\\n=== FORMAT BERBAGAI BAHASA ===")
+print("ISO Format:", sekarang.isoformat())
+print("RFC Format:", sekarang.strftime("%a, %d %b %Y %H:%M:%S"))`,
+                expectedOutput: `=== WAKTU SEKARANG ===
+Waktu lengkap: 2024-03-20 15:30:45.123456
+Format custom: Wednesday, 20 March 2024 15:30
+
+=== OPERASI DATETIME ===
+Besok: 21/03/2024
+Umur dalam hari: 12345
+Umur dalam tahun: 33
+
+=== PARSING STRING ===
+Parsed: 2024-12-25 18:30:00
+
+=== FORMAT BERBAGAI BAHASA ===
+ISO Format: 2024-03-20T15:30:45.123456
+RFC Format: Wed, 20 Mar 2024 15:30:45`
+            },
+            {
+                id: 3,
+                title: "Latihan Praktik",
+                type: "practice",
+                content: `
+# Latihan Date and Time
+
+Kerjakan soal berikut:
+1. Tampilkan tanggal dan waktu sekarang dalam format Indonesia
+2. Hitung berapa hari menuju ulang tahun kamu berikutnya
+3. Buat countdown menuju event tertentu
+4. Format tanggal untuk berbagai keperluan
+5. Hitung selisih antara dua tanggal
+            `,
+                exercises: [
+                    {
+                        id: 1,
+                        title: "Format Indonesia",
+                        description: "Tampilkan waktu sekarang dalam format 'Rabu, 20 Maret 2024 - 15:30 WIB'",
+                        hint: "Gunakan strftime dengan format custom",
+                        solution: `from datetime import datetime
+sekarang = datetime.now()
+format_indonesia = sekarang.strftime("%A, %d %B %Y - %H:%M WIB")
+print(format_indonesia)`
+                    },
+                    {
+                        id: 2,
+                        title: "Menuju Ulang Tahun",
+                        description: "Hitung berapa hari menuju ulang tahun berikutnya (asumsikan ulang tahun 15 Mei)",
+                        hint: "Bandingkan tanggal sekarang dengan ulang tahun tahun ini/tahun depan",
+                        solution: `from datetime import datetime, date
+sekarang = date.today()
+tahun_ini = sekarang.year
+ulang_tahun = date(tahun_ini, 5, 15)
+
+if ulang_tahun < sekarang:
+    ulang_tahun = date(tahun_ini + 1, 5, 15)
+
+selisih = ulang_tahun - sekarang
+print(f"Menuju ulang tahun: {selisih.days} hari")`
+                    },
+                    {
+                        id: 3,
+                        title: "Countdown Event",
+                        description: "Buat countdown menuju tahun baru 2025",
+                        hint: "Gunakan timedelta untuk hitung selisih",
+                        solution: `from datetime import datetime
+tahun_baru = datetime(2025, 1, 1)
+sekarang = datetime.now()
+selisih = tahun_baru - sekarang
+
+print(f"Countdown tahun baru: {selisih.days} hari, {selisih.seconds//3600} jam")`
+                    },
+                    {
+                        id: 4,
+                        title: "Multiple Format",
+                        description: "Tampilkan tanggal yang sama dalam 3 format berbeda: ISO, US, dan Indonesia",
+                        hint: "Gunakan strftime dengan format berbeda",
+                        solution: `from datetime import datetime
+tanggal = datetime(2024, 12, 25, 18, 30)
+
+print("ISO:", tanggal.strftime("%Y-%m-%d"))
+print("US:", tanggal.strftime("%m/%d/%Y"))
+print("ID:", tanggal.strftime("%d-%m-%Y"))`
+                    },
+                    {
+                        id: 5,
+                        title: "Selisih Tanggal",
+                        description: "Hitung selisih dalam hari antara dua tanggal: 1 Januari 2024 dan 20 Maret 2024",
+                        hint: "Kurangi dua objek datetime",
+                        solution: `from datetime import datetime
+tgl1 = datetime(2024, 1, 1)
+tgl2 = datetime(2024, 3, 20)
+selisih = tgl2 - tgl1
+print(f"Selisih: {selisih.days} hari")`
+                    }
+                ]
+            }
+        ]
+    }
 ];
 
 export default lessonCards;

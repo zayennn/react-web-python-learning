@@ -244,6 +244,23 @@ export const lessonCards = [
         ],
         color: "#D97D55",
     },
+    {
+        id: 15,
+        title: "Pengenalan String di Python",
+        description: "Belajar dasar-dasar string, cara membuat, dan operasi sederhana dengan string di Python.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📝",
+        topics: [
+            "Apa itu String?",
+            "Cara Membuat String",
+            "Latihan Praktik"
+        ],
+        color: "#4CAF50",
+    },
+    
 ];
 
 export default lessonCards;
