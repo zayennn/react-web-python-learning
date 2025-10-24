@@ -499,7 +499,24 @@ export const lessonCards = [
             "Sorting dan Searching"
         ],
         color: "#FF9800",
-    }
+    },
+    { // 31
+        id: 31,
+        title: "Operasi List di Python",
+        description: "Belajar berbagai operasi dasar pada list seperti menambah, menghapus, mengubah, dan mengakses elemen.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Apa itu List?",
+            "Operasi Dasar List",
+            "Method-Method List"
+        ],
+        color: "#FF6B6B",
+    },
+    
 ];
 
 export default lessonCards;
