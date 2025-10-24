@@ -291,6 +291,22 @@ export const lessonCards = [
             "Transformasi String"
         ],
         color: "#FF9800",
+    },
+    { //18
+        id: 18,
+        title: "Format String di Python",
+        description: "Belajar berbagai cara formatting string: %-formatting, str.format(), dan f-string.",
+        level: "Pemula Menengah",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🎨",
+        topics: [
+            "%-formatting (Lama)",
+            "str.format() Method",
+            "f-String (Modern)"
+        ],
+        color: "#9C27B0",    
     }
 ];
 
