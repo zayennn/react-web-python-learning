@@ -355,6 +355,86 @@ export const lessonCards = [
             "ELSE Statement"
         ],
         color: "#E91E63",
+    },
+    { // 22
+        id: 22,
+        title: "ELIF Statement",
+        description: "Belajar menggunakan ELIF untuk menangani multiple kondisi dalam percabangan.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Konsep ELIF",
+            "Multiple Conditions",
+            "Nested IF"
+        ],
+        color: "#9C27B0",
+    },
+    { // 23
+        id: 23,
+        title: "Latihan Percabangan - Kalkulator Sederhana",
+        description: "Praktik membuat kalkulator sederhana dengan menggunakan percabangan IF, ELIF, ELSE.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🧮",
+        topics: [
+            "Kalkulator Dasar",
+            "Validasi Input",
+            "Error Handling"
+        ],
+        color: "#FF5722",
+    },
+    { // 24
+        id: 24,
+        title: "For Loop (Perulangan)",
+        description: "Belajar menggunakan for loop untuk melakukan perulangan dengan jumlah yang diketahui.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔄",
+        topics: [
+            "Konsep For Loop",
+            "Loop dengan Range",
+            "Loop dengan List"
+        ],
+        color: "#2196F3",
+    },
+    { // 25
+        id: 25,
+        title: "While Loop (Perulangan)",
+        description: "Belajar menggunakan while loop untuk perulangan yang berhenti berdasarkan kondisi.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⏳",
+        topics: [
+            "Konsep While Loop",
+            "While vs For Loop",
+            "Infinite Loop"
+        ],
+        color: "#FF9800",
+    }, 
+    { // 26
+        id: 26,
+        title: "Continue dan Pass",
+        description: "Belajar menggunakan statement continue untuk melewati iterasi dan pass untuk placeholder.",
+        level: "Pemula",
+        duration: "1 jam",
+        lessons: 3,
+        progress: 0,
+        image: "⏭️",
+        topics: [
+            "Continue Statement",
+            "Pass Statement",
+            "Perbedaan Continue vs Pass"
+        ],
+        color: "#4CAF50",
     }
 ];
 
