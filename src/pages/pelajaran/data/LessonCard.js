@@ -469,7 +469,20 @@ export const lessonCards = [
         color: "#795548",
     },
     { // 29
-
+        id: 29,
+        title: "List di Python",
+        description: "Belajar dasar-dasar list, cara membuat, mengakses, dan operasi fundamental pada list.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📋",
+        topics: [
+            "Pengenalan List",
+            "Akses Element List",
+            "Operasi Dasar List"
+        ],
+        color: "#3F51B5",
     }
 ];
 
