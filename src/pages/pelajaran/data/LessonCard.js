@@ -579,6 +579,22 @@ export const lessonCards = [
             "While Loop dengan List"
         ],
         color: "#FECA57",
+    },
+    { // 36
+        id: 36,
+        title: "Latihan List",
+        description: "Praktik comprehensive dengan berbagai operasi list melalui studi kasus dan problem solving.",
+        level: "Pemula Menengah",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "💪",
+        topics: [
+            "Manipulasi Data List",
+            "Algoritma dengan List",
+            "Studi Kasus Real World"
+        ],
+        color: "#FF9FF3",
     }
 ];
 
