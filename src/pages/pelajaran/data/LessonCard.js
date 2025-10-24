@@ -260,7 +260,22 @@ export const lessonCards = [
         ],
         color: "#4CAF50",
     },
-
+    { // 16
+        id: 16,
+        title: "Operasi dan Manipulasi String (Part 1)",
+        description: "Belajar operasi dasar string seperti concatenation, repetition, indexing, dan slicing.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🔤",
+        topics: [
+            "Concatenation dan Repetition",
+            "Indexing String",
+            "Slicing String"
+        ],
+        color: "#2196F3",
+    }
 ];
 
 export default lessonCards;
