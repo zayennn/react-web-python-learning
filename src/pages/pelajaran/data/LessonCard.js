@@ -435,6 +435,9 @@ export const lessonCards = [
             "Perbedaan Continue vs Pass"
         ],
         color: "#4CAF50",
+    },
+    {
+        
     }
 ];
 
