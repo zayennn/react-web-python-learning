@@ -437,7 +437,20 @@ export const lessonCards = [
         color: "#4CAF50",
     },
     { // 27
-
+        id: 28,
+        title: "Latihan Perulangan",
+        description: "Praktik mengintegrasikan for loop, while loop, break, dan continue dalam studi kasus nyata.",
+        level: "Pemula Menengah",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "💪",
+        topics: [
+            "Integrasi Loop",
+            "Studi Kasus Nyata",
+            "Optimasi Kode"
+        ],
+        color: "#795548",
     }
 ];
 
