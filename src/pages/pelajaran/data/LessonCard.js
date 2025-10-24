@@ -611,6 +611,22 @@ export const lessonCards = [
             "Operasi Sets"
         ],
         color: "#54A0FF",
+    }, 
+    { // 38
+        id: 38,
+        title: "Dictionary",
+        description: "Belajar tentang dictionary - struktur data key-value pairs yang powerful di Python.",
+        level: "Pemula",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📚",
+        topics: [
+            "Pengenalan Dictionary",
+            "Membuat dan Mengakses Dictionary",
+            "Method-Method Dictionary"
+        ],
+        color: "#FF6B6B",
     }
 ];
 
