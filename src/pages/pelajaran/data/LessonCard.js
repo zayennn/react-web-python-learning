@@ -627,6 +627,22 @@ export const lessonCards = [
             "Method-Method Dictionary"
         ],
         color: "#FF6B6B",
+    },
+    { // 39
+        id: 39,
+        title: "Operasi Dictionary",
+        description: "Belajar berbagai operasi dan method dictionary untuk manipulasi data yang efektif.",
+        level: "Pemula Menengah",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🛠️",
+        topics: [
+            "Method-Method Dictionary",
+            "Dictionary Comprehension",
+            "Advanced Operations"
+        ],
+        color: "#1DD1A1",
     }
 ];
 
