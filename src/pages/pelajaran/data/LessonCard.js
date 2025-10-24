@@ -547,7 +547,7 @@ export const lessonCards = [
             "Manipulasi Nested List"
         ],
         color: "#45B7D1",
-    }
+    },
 ];
 
 export default lessonCards;
