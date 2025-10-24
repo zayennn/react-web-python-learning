@@ -531,6 +531,22 @@ export const lessonCards = [
             "Perbedaan dan Penggunaan"
         ],
         color: "#4ECDC4",
+    },
+    { // 33
+        id: 33,
+        title: "Nested List / List Bersarang",
+        description: "Belajar bekerja dengan list di dalam list, akses elemen, dan manipulasi data multidimensi.",
+        level: "Pemula Menengah",
+        duration: "1.5 jam",
+        lessons: 3,
+        progress: 0,
+        image: "📊",
+        topics: [
+            "Konsep Nested List",
+            "Akses Elemen Nested List",
+            "Manipulasi Nested List"
+        ],
+        color: "#45B7D1",
     }
 ];
 
