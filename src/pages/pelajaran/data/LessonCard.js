@@ -275,6 +275,22 @@ export const lessonCards = [
             "Slicing String"
         ],
         color: "#2196F3",
+    },
+    { // 17
+        id: 17,
+        title: "Operasi dan Manipulasi String (Part 2)",
+        description: "Belajar method-method string yang umum digunakan seperti upper(), lower(), strip(), replace(), dll.",
+        level: "Pemula",
+        duration: "2 jam",
+        lessons: 3,
+        progress: 0,
+        image: "🛠️",
+        topics: [
+            "Method String Umum",
+            "Pencarian dan Validasi",
+            "Transformasi String"
+        ],
+        color: "#FF9800",
     }
 ];
 
