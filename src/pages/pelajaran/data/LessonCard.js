@@ -244,7 +244,7 @@ export const lessonCards = [
         ],
         color: "#D97D55",
     },
-    {
+    { // 15
         id: 15,
         title: "Pengenalan String di Python",
         description: "Belajar dasar-dasar string, cara membuat, dan operasi sederhana dengan string di Python.",
@@ -260,7 +260,7 @@ export const lessonCards = [
         ],
         color: "#4CAF50",
     },
-    
+
 ];
 
 export default lessonCards;
