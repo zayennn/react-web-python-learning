@@ -1843,7 +1843,7 @@ cek_genap_ganjil(10)`
         ]
     },
     {
-        id: 14,
+        id: 14, // 14
         title: "Operator Assignment di Python",
         description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
         level: "Pemula",
