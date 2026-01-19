@@ -331,7 +331,7 @@ print(a, b, c)`,
 # Aturan Nama Variabel
 
 ✅ Boleh:
-- Huruf, angka, underscore (\_)
+- Huruf, angka, underscore (_)
 - Huruf kecil/besar (case-sensitive)
 
 ❌ Tidak boleh:
@@ -342,7 +342,7 @@ print(a, b, c)`,
 📌 Best practice:
 - Gunakan huruf kecil: \`umur\`, \`nama_lengkap\`
 - Nama jelas & mudah dipahami
-                `,
+`,
                 codeExample: `nama_lengkap = "Budi Setiawan"
 Umur = 21  # ini beda sama 'umur'
 print(nama_lengkap, Umur)`,
