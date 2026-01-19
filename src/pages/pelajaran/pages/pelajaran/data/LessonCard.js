@@ -1842,7 +1842,7 @@ cek_genap_ganjil(10)`
             }
         ]
     },
-    { // 14
+    {
         id: 14,
         title: "Operator Assignment di Python",
         description: "Belajar gimana cara pakai operator assignment (=, +=, -=, dll) buat nyimpen dan update nilai variabel dengan cara singkat.",
@@ -1875,13 +1875,13 @@ x = 10
 Artinya: *variabel x dikasih nilai 10.*
 
 Selain "=" biasa, Python juga punya bentuk assignment lain yang lebih singkat.  
-Misalnya: 
+Misalnya:
 - \`+=\` buat nambah nilai ke variabel
 - \`-=\` buat ngurangin nilai variabel
-- dst.
+- dan lain-lain
 
-Jadi, assignment operator ini kaya shortcut biar kita ga nulis kode panjang.
-                `
+Intinya, operator assignment ini kaya shortcut biar kita ga nulis kode kepanjangan.
+            `
             },
             {
                 id: 2,
@@ -1902,7 +1902,7 @@ Berikut operator assignment yang sering dipakai:
    Sama dengan: \`x = x + ...\`  
    \`\`\`python
    x = 5
-   x += 3   # sama dengan x = x + 3
+   x += 3
    print(x) # 8
    \`\`\`
 
@@ -1946,7 +1946,7 @@ Berikut operator assignment yang sering dipakai:
    print(x) # 1
    \`\`\`
 
-8. **\*\*= (pangkat lalu simpan)**  
+8. **\`**=\` (pangkat lalu simpan)**  
    Sama dengan: \`x = x ** ...\`  
    \`\`\`python
    x = 2
@@ -1954,15 +1954,15 @@ Berikut operator assignment yang sering dipakai:
    print(x) # 8
    \`\`\`
 
-9. **Operator assignment untuk bitwise (lanjutan):**  
-   - \`&=\` AND  
-   - \`|=\` OR  
-   - \`^=\` XOR  
-   - \`>>=\` geser kanan  
-   - \`<<=\` geser kiri  
+9. **Operator assignment untuk bitwise (lanjutan):**
+   - \`&=\` AND
+   - \`|=\` OR
+   - \`^=\` XOR
+   - \`>>=\` geser kanan
+   - \`<<=\` geser kiri
 
-   (Biasanya dipakai di level menengah, contohnya di bidang pemrosesan data biner).
-                `,
+   (Biasanya dipakai di level menengah, contohnya di pemrosesan data biner).
+            `,
                 codeExample: `x = 5
 x += 2
 print("Hasil += :", x)
@@ -1992,11 +1992,12 @@ Hasil **= : 81.0`
 # Latihan Operator Assignment
 
 Coba kerjain soal berikut buat nguji pemahaman kamu:
+
 1. Mulai dengan \`x = 10\`, lalu tambahkan 5 menggunakan operator assignment.
 2. Buat variabel \`y = 50\`, lalu kurangi 20 menggunakan \`-=\`.
 3. Buat variabel \`z = 4\`, kalikan dengan 3, lalu pangkatkan 2 (gunakan operator assignment).
-4. Simulasi tabungan: Mulai dengan saldo = 1000, lalu tambah 200, kurangi 150, dan kalikan 2 (karena dapet bonus). Tampilkan saldo akhir.
-                `,
+4. Simulasi tabungan: Mulai dengan saldo = 1000, lalu tambah 200, kurangi 150, dan kalikan 2 (bonus). Tampilkan saldo akhir.
+            `,
                 exercises: [
                     {
                         id: 1,
@@ -2022,8 +2023,8 @@ print(y)  # 30`
                         description: "Buat z = 4, kali 3 lalu pangkat 2.",
                         hint: "Gunakan *= dan **=.",
                         solution: `z = 4
-z *= 3   # z = 12
-z **= 2  # z = 144
+z *= 3
+z **= 2
 print(z)`
                     },
                     {
