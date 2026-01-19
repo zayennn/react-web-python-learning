@@ -6,7 +6,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import lessonCards from './data/LessonCard';
 
 const Materi = () => {
-    const [currentLesson, setCurrentLesson] = useState(0);
+    // const [currentLesson, setCurrentLesson] = useState(0);
     const [currentContent, setCurrentContent] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [codeOutput, setCodeOutput] = useState('');
